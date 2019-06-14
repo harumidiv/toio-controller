@@ -14,6 +14,9 @@
 		0D724DFE22B3C341009AACAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D724DFC22B3C341009AACAB /* LaunchScreen.storyboard */; };
 		0D724E0922B3C341009AACAB /* toio_controllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D724E0822B3C341009AACAB /* toio_controllerTests.swift */; };
 		0D724E1422B3C341009AACAB /* toio_controllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D724E1322B3C341009AACAB /* toio_controllerUITests.swift */; };
+		DAB643D6AF0D60216DEEB71C /* Pods_toio_controller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B509CD9B6424D367254BC1E /* Pods_toio_controller.framework */; };
+		E118F14F90C61D346FD687C8 /* Pods_toio_controllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29222B2E938123CD48C053FA /* Pods_toio_controllerTests.framework */; };
+		EEEC9E803C9547CCDC7450F7 /* Pods_toio_controllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0541184C37E8289B3F2A29B8 /* Pods_toio_controllerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0541184C37E8289B3F2A29B8 /* Pods_toio_controllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toio_controllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		078D301275AC29843C1DB682 /* Pods-toio controllerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toio controllerUITests.debug.xcconfig"; path = "Target Support Files/Pods-toio controllerUITests/Pods-toio controllerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0D724DF022B3C33F009AACAB /* toio controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toio controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D724DF322B3C33F009AACAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D724DF522B3C33F009AACAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,13 @@
 		0D724E0F22B3C341009AACAB /* toio controllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "toio controllerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D724E1322B3C341009AACAB /* toio_controllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toio_controllerUITests.swift; sourceTree = "<group>"; };
 		0D724E1522B3C341009AACAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29222B2E938123CD48C053FA /* Pods_toio_controllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toio_controllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C38498C0562E07B1A10EC54 /* Pods-toio controllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toio controllerTests.release.xcconfig"; path = "Target Support Files/Pods-toio controllerTests/Pods-toio controllerTests.release.xcconfig"; sourceTree = "<group>"; };
+		4727FDAEA6363F684A69D414 /* Pods-toio controller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toio controller.debug.xcconfig"; path = "Target Support Files/Pods-toio controller/Pods-toio controller.debug.xcconfig"; sourceTree = "<group>"; };
+		81DFA8F4FD2E2E946105B551 /* Pods-toio controllerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toio controllerUITests.release.xcconfig"; path = "Target Support Files/Pods-toio controllerUITests/Pods-toio controllerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8E5BCBFDCFBC9E54E060192C /* Pods-toio controllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toio controllerTests.debug.xcconfig"; path = "Target Support Files/Pods-toio controllerTests/Pods-toio controllerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		99C773C0FD9B7BFB8BEF2F3A /* Pods-toio controller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toio controller.release.xcconfig"; path = "Target Support Files/Pods-toio controller/Pods-toio controller.release.xcconfig"; sourceTree = "<group>"; };
+		9B509CD9B6424D367254BC1E /* Pods_toio_controller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toio_controller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB643D6AF0D60216DEEB71C /* Pods_toio_controller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E118F14F90C61D346FD687C8 /* Pods_toio_controllerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEEC9E803C9547CCDC7450F7 /* Pods_toio_controllerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				0D724E0722B3C341009AACAB /* toio controllerTests */,
 				0D724E1222B3C341009AACAB /* toio controllerUITests */,
 				0D724DF122B3C33F009AACAB /* Products */,
+				E0EDB999F1318BCB790E4152 /* Pods */,
+				CEE9A713426B0A2A6F194BF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,30 @@
 			path = "toio controllerUITests";
 			sourceTree = "<group>";
 		};
+		CEE9A713426B0A2A6F194BF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B509CD9B6424D367254BC1E /* Pods_toio_controller.framework */,
+				29222B2E938123CD48C053FA /* Pods_toio_controllerTests.framework */,
+				0541184C37E8289B3F2A29B8 /* Pods_toio_controllerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0EDB999F1318BCB790E4152 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4727FDAEA6363F684A69D414 /* Pods-toio controller.debug.xcconfig */,
+				99C773C0FD9B7BFB8BEF2F3A /* Pods-toio controller.release.xcconfig */,
+				8E5BCBFDCFBC9E54E060192C /* Pods-toio controllerTests.debug.xcconfig */,
+				3C38498C0562E07B1A10EC54 /* Pods-toio controllerTests.release.xcconfig */,
+				078D301275AC29843C1DB682 /* Pods-toio controllerUITests.debug.xcconfig */,
+				81DFA8F4FD2E2E946105B551 /* Pods-toio controllerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D724E1822B3C341009AACAB /* Build configuration list for PBXNativeTarget "toio controller" */;
 			buildPhases = (
+				81D286431649F18EC076855C /* [CP] Check Pods Manifest.lock */,
 				0D724DEC22B3C33F009AACAB /* Sources */,
 				0D724DED22B3C33F009AACAB /* Frameworks */,
 				0D724DEE22B3C33F009AACAB /* Resources */,
@@ -149,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D724E1B22B3C341009AACAB /* Build configuration list for PBXNativeTarget "toio controllerTests" */;
 			buildPhases = (
+				AA70A4945778EA995E0A326A /* [CP] Check Pods Manifest.lock */,
 				0D724E0022B3C341009AACAB /* Sources */,
 				0D724E0122B3C341009AACAB /* Frameworks */,
 				0D724E0222B3C341009AACAB /* Resources */,
@@ -167,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D724E1E22B3C341009AACAB /* Build configuration list for PBXNativeTarget "toio controllerUITests" */;
 			buildPhases = (
+				B3153B1E2200787835968308 /* [CP] Check Pods Manifest.lock */,
 				0D724E0B22B3C341009AACAB /* Sources */,
 				0D724E0C22B3C341009AACAB /* Frameworks */,
 				0D724E0D22B3C341009AACAB /* Resources */,
@@ -250,6 +294,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81D286431649F18EC076855C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-toio controller-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA70A4945778EA995E0A326A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-toio controllerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3153B1E2200787835968308 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-toio controllerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0D724DEC22B3C33F009AACAB /* Sources */ = {
@@ -430,6 +543,7 @@
 		};
 		0D724E1922B3C341009AACAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4727FDAEA6363F684A69D414 /* Pods-toio controller.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +562,7 @@
 		};
 		0D724E1A22B3C341009AACAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99C773C0FD9B7BFB8BEF2F3A /* Pods-toio controller.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +581,7 @@
 		};
 		0D724E1C22B3C341009AACAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E5BCBFDCFBC9E54E060192C /* Pods-toio controllerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +603,7 @@
 		};
 		0D724E1D22B3C341009AACAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C38498C0562E07B1A10EC54 /* Pods-toio controllerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +625,7 @@
 		};
 		0D724E1F22B3C341009AACAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 078D301275AC29843C1DB682 /* Pods-toio controllerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +646,7 @@
 		};
 		0D724E2022B3C341009AACAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81DFA8F4FD2E2E946105B551 /* Pods-toio controllerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
