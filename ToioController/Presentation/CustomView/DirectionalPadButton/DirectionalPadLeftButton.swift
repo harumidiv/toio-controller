@@ -8,14 +8,29 @@
 
 import UIKit
 
+@IBDesignable
 class DirectionalPadLeftButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupAttribute()
     }
-    */
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupAttribute()
+    }
+
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupAttribute()
+    }
+
+    private func setupAttribute() {
+        layer.cornerRadius = frame.height / 6
+        layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        setTitle("◀︎", for: .normal)
+        backgroundColor = UIColor(hex: "#F4B400")
+        setTitleColor(.white, for: .normal)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 40.0)
+    }
 }

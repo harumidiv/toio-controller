@@ -8,6 +8,4 @@
 
 import UIKit
 
-class DirectionalPadView: UIView {
-    
-}
+class DirectionalPadView: UIView {}
