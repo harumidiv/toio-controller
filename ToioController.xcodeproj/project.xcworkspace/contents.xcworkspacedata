@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:toio controller.xcodeproj">
+      location = "self:ToioController.xcodeproj">
    </FileRef>
 </Workspace>

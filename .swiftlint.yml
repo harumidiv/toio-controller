@@ -1,0 +1,17 @@
+included:
+  - ToioController/
+excluded:
+  - Pods/
+opt_in_rules:
+  - closure_spacing
+  - conditional_returns_on_newline
+  - empty_count
+  - operator_usage_whitespace
+disabled_rules:
+  - force_cast
+  - force_try
+line_length: 300
+identifier_name:
+  min_length:
+    warning: 1
+

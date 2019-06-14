@@ -1,6 +1,6 @@
 //
-//  toio_controllerUITests.swift
-//  toio controllerUITests
+//  ToioControllerUITests.swift
+//  ToioControllerUITests
 //
 //  Created by 佐川晴海 on 2019/06/14.
 //  Copyright © 2019 佐川晴海. All rights reserved.
@@ -8,8 +8,7 @@
 
 import XCTest
 
-class toio_controllerUITests: XCTestCase {
-
+class ToioControllerUITests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -30,5 +29,4 @@ class toio_controllerUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
 }
