@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -152,7 +152,6 @@
 				D383107B99481EF468C9BE40 /* Pods-ToioControllerUITests.debug.xcconfig */,
 				3881D1C7933616D0B9A1A87A /* Pods-ToioControllerUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -178,6 +177,8 @@
 				0DC6BCD322B3D02D00792ABB /* Frameworks */,
 				0DC6BCD422B3D02D00792ABB /* Resources */,
 				72A5B101E781758E8F377FE4 /* [CP] Embed Pods Frameworks */,
+				0DC6BD0722B3D57400792ABB /* SwiftFormat */,
+				0DC6BD0822B3D57600792ABB /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -297,6 +298,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0DC6BD0722B3D57400792ABB /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\n\n";
+		};
+		0DC6BD0822B3D57600792ABB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		2E60A7C7937883981A9286C7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

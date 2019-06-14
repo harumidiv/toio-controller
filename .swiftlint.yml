@@ -1,5 +1,5 @@
 included:
-  - ToioUpdate/
+  - ToioController/
 excluded:
   - Pods/
 opt_in_rules:
