@@ -14,7 +14,11 @@ protocol ConnectWireframe: AnyObject {
 }
 
 class ConnectWireframeImpl: ConnectWireframe {
-    func showInformation(vc: UIViewController) {}
+    func showInformation(vc: UIViewController) {
+        let toVC = InformationViewController()
+        vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        vc.navigationController?.pushViewController(toVC, animated: true)
+    }
 
     func showController(vc: UIViewController, model: CubeModel) {
         let toVC = ControlViewController(cubeModel: model)

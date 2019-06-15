@@ -30,7 +30,7 @@ class ControlViewController: UIViewController {
 
         title = "toio controller"
 
-        let informationButton: UIBarButtonItem = UIBarButtonItem(title: "⚙", style: .plain, target: self, action: #selector(showInformation(_:)))
+        let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
     }
 

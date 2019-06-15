@@ -25,7 +25,14 @@ class ConnectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "探索中..."
+
+        let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
+        navigationItem.rightBarButtonItem = informationButton
         presenter.checkPhoneState()
+    }
+
+    @objc func showInformation(_ sender: UIBarButtonItem) {
+        wireframe.showInformation(vc: self)
     }
 }
 
