@@ -19,6 +19,6 @@ class ControlViewController: UIViewController {
     }
 
     @objc func showInformation(_ sender: UIBarButtonItem) {
-        // TODO: 画面遷移
+        navigationController?.pushViewController(InformationViewController(), animated: true)
     }
 }
