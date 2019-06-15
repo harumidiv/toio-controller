@@ -51,7 +51,9 @@ final class BluetoothService {
 
     // MARK: - Public methods
 
-    func startScaning() {}
+    func startScaning(serviceUUIDs: [CBUUID]? = nil, duration: TimeInterval = 15) {
+        
+    }
 
     func stopScaning() {}
 

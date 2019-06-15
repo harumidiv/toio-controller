@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */; };
+		0D37740022B4D9AE000EFCCC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FF22B4D9AE000EFCCC /* Result.swift */; };
+		0D37740222B4E212000EFCCC /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740122B4E212000EFCCC /* Cube.swift */; };
+		0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740322B4E247000EFCCC /* ToioPeripheral.swift */; };
 		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
 		0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */; };
 		0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeModel.swift; sourceTree = "<group>"; };
+		0D3773FF22B4D9AE000EFCCC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		0D37740122B4E212000EFCCC /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		0D37740322B4E247000EFCCC /* ToioPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToioPeripheral.swift; sourceTree = "<group>"; };
 		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +139,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3773FB22B4D3EE000EFCCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D3773FE22B4D99B000EFCCC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0D3773FF22B4D9AE000EFCCC /* Result.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		0DA8BC3E22B4976B009AEB5A /* Connect */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +179,7 @@
 		0DA8BC4C22B49A74009AEB5A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				0D3773FB22B4D3EE000EFCCC /* Model */,
 				0DA8BC5022B49AD4009AEB5A /* Bluetooth */,
 				0DA8BC4D22B49A93009AEB5A /* UseCase */,
 			);
@@ -174,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */,
+				0D37740122B4E212000EFCCC /* Cube.swift */,
+				0D37740322B4E247000EFCCC /* ToioPeripheral.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -211,6 +238,7 @@
 		0DC6BCD822B3D02D00792ABB /* ToioController */ = {
 			isa = PBXGroup;
 			children = (
+				0D3773FE22B4D99B000EFCCC /* Common */,
 				0DA8BC5722B4A8CA009AEB5A /* Error */,
 				0DA8BC4C22B49A74009AEB5A /* Domain */,
 				0DA8BC4322B498C8009AEB5A /* DI */,
@@ -593,7 +621,9 @@
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,
 				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,
+				0D37740222B4E212000EFCCC /* Cube.swift in Sources */,
 				0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */,
+				0D37740022B4D9AE000EFCCC /* Result.swift in Sources */,
 				0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */,
 				0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */,
 				0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */,
@@ -602,7 +632,9 @@
 				0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */,
 				0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */,
 				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,
+				0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */,
 				0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */,
+				0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */,
 				0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */,
 				0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */,
 				0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */,

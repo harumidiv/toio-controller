@@ -24,6 +24,7 @@ class ConnectPresenterImpl: ConnectPresenter {
     private let phoneDeviceUseCase: PhoneDeviceUsecase = OtherInjector.container.resolve(PhoneDeviceUsecase.self)!
 
     private weak var output: ConnectPresenterOutput?
+    private let disposeBag = DisposeBag()
 
     init(output: ConnectPresenterOutput) {
         self.output = output
@@ -54,7 +55,7 @@ class ConnectPresenterImpl: ConnectPresenter {
                 default:
                     self.output?.showBluetoothError()
                 }
-            })
+            }).disposed(by: disposeBag)
     }
 
     func loadDevice() {}

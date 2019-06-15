@@ -31,14 +31,17 @@ class ConnectViewController: UIViewController {
 
 extension ConnectViewController: ConnectPresenterOutput {
     func showBatteryError() {
+        // TODO: アラート表示
         print("バッテリー不足")
     }
 
     func showBluetoothError() {
+        // TODO: アラート表示
         print("bluetoothエラー")
     }
 
     func showDevice() {
+        // TODO:
         print("デバイス発見")
     }
 }
