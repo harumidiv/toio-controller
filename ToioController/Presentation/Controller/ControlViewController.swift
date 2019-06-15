@@ -9,6 +9,19 @@
 import UIKit
 
 class ControlViewController: UIViewController {
+    let cubeModel: CubeModel
+
+    // MARK: - Initializer
+
+    init(cubeModel: CubeModel) {
+        self.cubeModel = cubeModel
+        super.init(nibName: String(describing: ControlViewController.self), bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

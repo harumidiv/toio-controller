@@ -7,8 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */; };
+		0D37740022B4D9AE000EFCCC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FF22B4D9AE000EFCCC /* Result.swift */; };
+		0D37740222B4E212000EFCCC /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740122B4E212000EFCCC /* Cube.swift */; };
+		0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740322B4E247000EFCCC /* ToioPeripheral.swift */; };
+		0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */; };
 		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
 		0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */; };
+		0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */; };
+		0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4022B4977C009AEB5A /* ConnectViewController.xib */; };
+		0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4422B498E4009AEB5A /* ConnectInjector.swift */; };
+		0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4622B4990E009AEB5A /* Injector.swift */; };
+		0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */; };
+		0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */; };
+		0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */; };
+		0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */; };
+		0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */; };
+		0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */; };
+		0DA8BC5922B4ABF9009AEB5A /* OtherInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5822B4ABF9009AEB5A /* OtherInjector.swift */; };
 		0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */; };
 		0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCDD22B3D02D00792ABB /* Main.storyboard */; };
 		0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCE022B3D02E00792ABB /* Assets.xcassets */; };
@@ -45,8 +61,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeModel.swift; sourceTree = "<group>"; };
+		0D3773FF22B4D9AE000EFCCC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		0D37740122B4E212000EFCCC /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		0D37740322B4E247000EFCCC /* ToioPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToioPeripheral.swift; sourceTree = "<group>"; };
+		0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Addition.swift"; sourceTree = "<group>"; };
 		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
+		0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		0DA8BC4022B4977C009AEB5A /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
+		0DA8BC4422B498E4009AEB5A /* ConnectInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectInjector.swift; sourceTree = "<group>"; };
+		0DA8BC4622B4990E009AEB5A /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPresenter.swift; sourceTree = "<group>"; };
+		0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWireframe.swift; sourceTree = "<group>"; };
+		0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectUseCase.swift; sourceTree = "<group>"; };
+		0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDeviceUseCase.swift; sourceTree = "<group>"; };
+		0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
+		0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothError.swift; sourceTree = "<group>"; };
+		0DA8BC5822B4ABF9009AEB5A /* OtherInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInjector.swift; sourceTree = "<group>"; };
 		0DC6BCD622B3D02D00792ABB /* ToioController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToioController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DC6BCDE22B3D02D00792ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +141,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3773FB22B4D3EE000EFCCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D3773FE22B4D99B000EFCCC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0D3773FF22B4D9AE000EFCCC /* Result.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0DA8BC3E22B4976B009AEB5A /* Connect */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */,
+				0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */,
+				0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */,
+				0DA8BC4022B4977C009AEB5A /* ConnectViewController.xib */,
+			);
+			path = Connect;
+			sourceTree = "<group>";
+		};
+		0DA8BC4322B498C8009AEB5A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC4622B4990E009AEB5A /* Injector.swift */,
+				0DA8BC4422B498E4009AEB5A /* ConnectInjector.swift */,
+				0DA8BC5822B4ABF9009AEB5A /* OtherInjector.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		0DA8BC4C22B49A74009AEB5A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0D3773FB22B4D3EE000EFCCC /* Model */,
+				0DA8BC5022B49AD4009AEB5A /* Bluetooth */,
+				0DA8BC4D22B49A93009AEB5A /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0DA8BC4D22B49A93009AEB5A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */,
+				0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		0DA8BC5022B49AD4009AEB5A /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */,
+				0D37740322B4E247000EFCCC /* ToioPeripheral.swift */,
+				0D37740122B4E212000EFCCC /* Cube.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		0DA8BC5722B4A8CA009AEB5A /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		0DC6BCCD22B3D02D00792ABB = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +240,10 @@
 		0DC6BCD822B3D02D00792ABB /* ToioController */ = {
 			isa = PBXGroup;
 			children = (
+				0D3773FE22B4D99B000EFCCC /* Common */,
+				0DA8BC5722B4A8CA009AEB5A /* Error */,
+				0DA8BC4C22B49A74009AEB5A /* Domain */,
+				0DA8BC4322B498C8009AEB5A /* DI */,
 				0DC6BD0E22B3D80F00792ABB /* Extension */,
 				0DC6BD0D22B3D70E00792ABB /* Presentation */,
 				0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */,
@@ -169,6 +279,7 @@
 				0DEB0FA322B3E39C009E9D9C /* CustomView */,
 				0DEB0FB922B49559009E9D9C /* Information */,
 				0DEB0FA222B3E388009E9D9C /* Controller */,
+				0DA8BC3E22B4976B009AEB5A /* Connect */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -177,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */,
+				0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -358,6 +470,7 @@
 				0DC6BCE422B3D02E00792ABB /* LaunchScreen.storyboard in Resources */,
 				0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */,
 				0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */,
+				0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */,
 				0DC6BD0C22B3D6F000792ABB /* ControlViewController.xib in Resources */,
 				0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */,
 			);
@@ -506,13 +619,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA8BC5922B4ABF9009AEB5A /* OtherInjector.swift in Sources */,
+				0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */,
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,
+				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,
+				0D37740222B4E212000EFCCC /* Cube.swift in Sources */,
+				0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */,
+				0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */,
+				0D37740022B4D9AE000EFCCC /* Result.swift in Sources */,
 				0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */,
 				0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */,
+				0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */,
+				0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */,
+				0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */,
 				0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */,
+				0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */,
 				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,
+				0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */,
+				0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */,
+				0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */,
 				0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */,
+				0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */,
 				0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
