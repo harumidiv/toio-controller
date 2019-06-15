@@ -35,6 +35,47 @@ class Cube: ToioPeripheral {
             return Disposables.create()
         }
     }
+
+    func writeValue(characteristic: CubeCharacteristic, data: Data, type: CBCharacteristicWriteType) -> Observable<Void> {
+        return Observable<Void>.create { [weak self] observe -> Disposable in
+            guard let self = self else {
+                return Disposables.create()
+            }
+            self.getCharacteristic(type: characteristic)
+                .subscribe(onNext: { [weak self] c in
+                    guard let self = self else {
+                        return
+                    }
+                    c.writeValue(data, type: type).subscribe { e in
+                        switch e {
+                        case .success:
+                            observe.onNext(())
+                            observe.onCompleted()
+                        case let .error(e):
+                            observe.onError(e)
+                        }
+                    }.disposed(by: self.disposeBag)
+                }).disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+    }
+
+    private func getCharacteristic(type: CubeCharacteristic) -> Observable<Characteristic> {
+        let innerGetCharacteristic = { (type: CubeCharacteristic, service: Service) -> Observable<Characteristic> in
+            self.discoveryCharacterstic(type: type, service: service).asObservable().flatMap { value -> Observable<Characteristic> in
+                Observable.of(value)
+            }
+        }
+        return getService(type: .toioTrolley).flatMap { service -> Observable<Characteristic> in
+            innerGetCharacteristic(type, service)
+        }
+    }
+
+    private func getService(type: CubeService) -> Observable<Service> {
+        return discoveryService(type: type).asObservable().flatMap { value -> Observable<Service> in
+            Observable.of(value)
+        }
+    }
 }
 
 // MARK: - CubeService
@@ -53,8 +94,9 @@ enum CubeService: String, ToioPeripheralService {
 
 enum CubeCharacteristic: String, ToioPeripheralCharacteristic {
     case light = "10B20103-5B3B-4571-9508-CF3EFCD7BBAE"
-    case button = "10B20107-5B3B-4571-9508-CF3EFCD7BBAE"
+    case sound = "10B20104-5B3B-4571-9508-CF3EFCD7BBAE"
     case battery = "10B20108-5B3B-4571-9508-CF3EFCD7BBAE"
+    case moter = "10B20102-5B3B-4571-9508-CF3EFCD7BBAE"
 
     var uuid: String {
         return rawValue

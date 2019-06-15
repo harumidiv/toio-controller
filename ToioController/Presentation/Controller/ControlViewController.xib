@@ -29,6 +29,10 @@
                                 <constraint firstAttribute="height" constant="80" id="weo-YT-uDg"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="leftStart:" destination="-1" eventType="touchDown" id="vvL-yZ-7t8"/>
+                                <action selector="leftStop:" destination="-1" eventType="touchUpInside" id="9zH-Nb-oM0"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-iS-Gre" customClass="DirectionalPadDownButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="85" y="150" width="80" height="100"/>
@@ -36,6 +40,10 @@
                                 <constraint firstAttribute="width" constant="80" id="63q-Wq-JMf"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="downStart:" destination="-1" eventType="touchDown" id="xHT-th-0ZY"/>
+                                <action selector="downStop:" destination="-1" eventType="touchUpInside" id="QWO-Ew-8CD"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-t4-5J7" customClass="DirectionalPadRightButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="150" y="85" width="100" height="80"/>
@@ -43,6 +51,10 @@
                                 <constraint firstAttribute="height" constant="80" id="t95-K4-fnQ"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="rightStart:" destination="-1" eventType="touchDown" id="h2q-fW-cfl"/>
+                                <action selector="rightStop:" destination="-1" eventType="touchUpInside" id="x6u-XY-kij"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiL-t0-rG8" customClass="DirectionalPadUpButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="85" y="0.0" width="80" height="100"/>
@@ -50,6 +62,10 @@
                                 <constraint firstAttribute="width" constant="80" id="apA-wp-NAt"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="upStart:" destination="-1" eventType="touchDown" id="pfo-Y9-TmK"/>
+                                <action selector="upStop:" destination="-1" eventType="touchUpInside" id="O8p-No-1nT"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
