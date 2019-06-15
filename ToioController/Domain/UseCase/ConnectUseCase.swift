@@ -1,5 +1,5 @@
 //
-//  ConnectPresenter.swift
+//  ConnectUseCase.swift
 //  ToioController
 //
 //  Created by 佐川晴海 on 2019/06/15.

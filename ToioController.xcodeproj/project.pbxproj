@@ -15,6 +15,7 @@
 		0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4622B4990E009AEB5A /* Injector.swift */; };
 		0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */; };
 		0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */; };
+		0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */; };
 		0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */; };
 		0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCDD22B3D02D00792ABB /* Main.storyboard */; };
 		0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCE022B3D02E00792ABB /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		0DA8BC4622B4990E009AEB5A /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPresenter.swift; sourceTree = "<group>"; };
 		0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWireframe.swift; sourceTree = "<group>"; };
+		0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectUseCase.swift; sourceTree = "<group>"; };
 		0DC6BCD622B3D02D00792ABB /* ToioController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToioController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DC6BCDE22B3D02D00792ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,30 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		0DA8BC4C22B49A74009AEB5A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC5022B49AD4009AEB5A /* Bluetooth */,
+				0DA8BC4D22B49A93009AEB5A /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0DA8BC4D22B49A93009AEB5A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		0DA8BC5022B49AD4009AEB5A /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
 		0DC6BCCD22B3D02D00792ABB = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +192,7 @@
 		0DC6BCD822B3D02D00792ABB /* ToioController */ = {
 			isa = PBXGroup;
 			children = (
+				0DA8BC4C22B49A74009AEB5A /* Domain */,
 				0DA8BC4322B498C8009AEB5A /* DI */,
 				0DC6BD0E22B3D80F00792ABB /* Extension */,
 				0DC6BD0D22B3D70E00792ABB /* Presentation */,
@@ -541,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */,
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,
 				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,

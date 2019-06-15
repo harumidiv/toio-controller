@@ -10,8 +10,6 @@ import Swinject
 
 final class ConnectInjector: Injector {
     static let container = Container()
-    
-    static func register() {
-        
-    }
+
+    static func register() {}
 }

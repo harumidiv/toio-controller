@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window?.rootViewController = UINavigationController(rootViewController: ControlViewController())
+        window?.rootViewController = UINavigationController(rootViewController: ConnectViewController())
 
         UINavigationBar.appearance().barTintColor = UIColor(appColor: .theme)
         UINavigationBar.appearance().tintColor = .white

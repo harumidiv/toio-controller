@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ConnectWireframe: class {
+protocol ConnectWireframe: AnyObject {
     func showInformation(vc: UIViewController)
     func showController(vc: UIViewController)
 }

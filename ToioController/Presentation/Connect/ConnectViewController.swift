@@ -9,10 +9,14 @@
 import UIKit
 
 class ConnectViewController: UIViewController {
+    @IBOutlet weak var indicator: UIActivityIndicatorView! {
+        didSet {
+            indicator.startAnimating()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "探索中..."
     }
 }
