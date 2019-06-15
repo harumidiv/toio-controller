@@ -41,20 +41,36 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func upStart(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x01, 0x64, 0x02, 0x01, 0x64]))
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.up)
     }
 
-    @IBAction func upStop(_ sender: Any) {}
+    @IBAction func upStop(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+    }
 
-    @IBAction func downStart(_ sender: Any) {}
-    @IBAction func downStop(_ sender: Any) {}
+    @IBAction func downStart(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.down)
+    }
 
-    @IBAction func rightStart(_ sender: Any) {}
+    @IBAction func downStop(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+    }
 
-    @IBAction func rightStop(_ sender: Any) {}
+    @IBAction func rightStart(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.right)
+    }
 
-    @IBAction func leftStart(_ sender: Any) {}
-    @IBAction func leftStop(_ sender: Any) {}
+    @IBAction func rightStop(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+    }
+
+    @IBAction func leftStart(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.left)
+    }
+
+    @IBAction func leftStop(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+    }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
         cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
