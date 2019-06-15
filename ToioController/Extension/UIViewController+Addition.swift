@@ -8,8 +8,7 @@
 
 import UIKit
 
-
-extension UIViewController{
+extension UIViewController {
     func showInformation(title: String = "", message: String, buttonText: String, handler: (() -> Void)? = nil) {
         let bleAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let close: UIAlertAction = UIAlertAction(title: buttonText, style: UIAlertAction.Style.default, handler: { _ in

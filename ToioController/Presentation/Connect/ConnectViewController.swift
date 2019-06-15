@@ -37,9 +37,7 @@ extension ConnectViewController: ConnectPresenterOutput {
     }
 
     func showBatteryError() {
-        // TODO: アラート表示
-        print("バッテリー不足")
-        
+        showInformation(message: "iPhoneの充電が少なくなっています\n充電してから遊んでください", buttonText: "閉じる")
     }
 
     func showBluetoothError() {
