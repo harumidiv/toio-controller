@@ -22,8 +22,6 @@ class ConnectViewController: UIViewController {
 
     private lazy var wireframe: ConnectWireframe = ConnectInjector.container.resolve(ConnectWireframe.self)!
 
-    lazy var p = ConnectPresenterImpl(output: self)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "探索中..."
@@ -45,8 +43,6 @@ extension ConnectViewController: ConnectPresenterOutput {
     }
 
     func showDevice() {
-        // TODO:
-        print("デバイス発見")
         presenter.loadDevice()
     }
 }
