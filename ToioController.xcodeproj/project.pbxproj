@@ -16,6 +16,9 @@
 		0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */; };
 		0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */; };
 		0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */; };
+		0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */; };
+		0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */; };
+		0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */; };
 		0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */; };
 		0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCDD22B3D02D00792ABB /* Main.storyboard */; };
 		0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCE022B3D02E00792ABB /* Assets.xcassets */; };
@@ -61,6 +64,9 @@
 		0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPresenter.swift; sourceTree = "<group>"; };
 		0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWireframe.swift; sourceTree = "<group>"; };
 		0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectUseCase.swift; sourceTree = "<group>"; };
+		0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDeviceUseCase.swift; sourceTree = "<group>"; };
+		0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
+		0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothError.swift; sourceTree = "<group>"; };
 		0DC6BCD622B3D02D00792ABB /* ToioController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToioController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DC6BCDE22B3D02D00792ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */,
+				0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -163,8 +170,17 @@
 		0DA8BC5022B49AD4009AEB5A /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */,
 			);
 			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		0DA8BC5722B4A8CA009AEB5A /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		0DC6BCCD22B3D02D00792ABB = {
@@ -192,6 +208,7 @@
 		0DC6BCD822B3D02D00792ABB /* ToioController */ = {
 			isa = PBXGroup;
 			children = (
+				0DA8BC5722B4A8CA009AEB5A /* Error */,
 				0DA8BC4C22B49A74009AEB5A /* Domain */,
 				0DA8BC4322B498C8009AEB5A /* DI */,
 				0DC6BD0E22B3D80F00792ABB /* Extension */,
@@ -572,15 +589,18 @@
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,
 				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,
+				0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */,
 				0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */,
 				0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */,
 				0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */,
 				0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */,
+				0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */,
 				0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */,
 				0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */,
 				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,
 				0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */,
 				0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */,
+				0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */,
 				0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
