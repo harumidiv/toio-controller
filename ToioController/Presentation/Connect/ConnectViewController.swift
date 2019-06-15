@@ -15,8 +15,30 @@ class ConnectViewController: UIViewController {
         }
     }
 
+    lazy var presenter: ConnectPresenter = {
+        let presenter = ConnectInjector.container.resolve(ConnectPresenter.self, argument: self as ConnectPresenterOutput)!
+        return presenter
+    }()
+
+    lazy var p = ConnectPresenterImpl(output: self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "探索中..."
+        presenter.checkPhoneState()
+    }
+}
+
+extension ConnectViewController: ConnectPresenterOutput {
+    func showBatteryError() {
+        print("バッテリー不足")
+    }
+
+    func showBluetoothError() {
+        print("bluetoothエラー")
+    }
+
+    func showDevice() {
+        print("デバイス発見")
     }
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
-import RxSwift
 import RxBluetoothKit
+import RxSwift
 
 protocol ConnectPresenter: AnyObject {
     func checkPhoneState()
@@ -18,19 +18,17 @@ protocol ConnectPresenterOutput: AnyObject {
     func showBatteryError()
     func showBluetoothError()
     func showDevice()
-
 }
 
 class ConnectPresenterImpl: ConnectPresenter {
-    
     private let phoneDeviceUseCase: PhoneDeviceUsecase = OtherInjector.container.resolve(PhoneDeviceUsecase.self)!
-    
+
     private weak var output: ConnectPresenterOutput?
-    
+
     init(output: ConnectPresenterOutput) {
         self.output = output
     }
-    
+
     // MAKR: - Public methods
     func checkPhoneState() {
         phoneDeviceUseCase.getBattery()
@@ -40,13 +38,13 @@ class ConnectPresenterImpl: ConnectPresenter {
                 guard let self = self else {
                     return Observable.empty()
                 }
-                if battery < 20 {
-                //TODO self.output.バッテリー足りない時
+                if battery < 0.2 {
+                    self.output?.showBatteryError()
                     return Observable.empty()
                 }
                 return self.phoneDeviceUseCase.getBluetoothState()
             }
-            .subscribe(onNext:{[weak self] state in
+            .subscribe(onNext: { [weak self] state in
                 guard let self = self else {
                     return
                 }
@@ -59,7 +57,5 @@ class ConnectPresenterImpl: ConnectPresenter {
             })
     }
 
-    func loadDevice() {
-        
-    }
+    func loadDevice() {}
 }
