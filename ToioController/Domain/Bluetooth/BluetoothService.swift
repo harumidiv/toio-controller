@@ -52,7 +52,28 @@ final class BluetoothService {
     // MARK: - Public methods
 
     func startScaning(serviceUUIDs: [CBUUID]? = nil, duration: TimeInterval = 15) {
-        
+        centralManager.attach()
+
+        scannningDisposable = manager.observeState()
+            .startWith(centralManager.state)
+            .filter { $0 == .poweredOn }
+            .subscribeOn(MainScheduler.instance)
+            .timeout(duration, scheduler: scheduler)
+            .flatMap { [weak self] _ -> Observable<ScannedPeripheral> in
+                guard let self = self else {
+                    return Observable.empty()
+                }
+                return self.centralManager.scanForPeripherals(withServices: serviceUUIDs)
+            }.subscribe(onNext: { [weak self] scannedPeripheral in
+                self?.scannedPeripheral[scannedPeripheral.peripheral.peripheral.identifier] = scannedPeripheral
+                self?.scanningSubjet.onNext(Result.success(scannedPeripheral))
+            }, onError: { [weak self] error in
+                if let rxError = error as? RxError, case RxError.timeout = rxError {
+                    self?.scanningSubjet.onNext(Result.error(ToioBluetoothError(type: .scanTimeout)))
+                } else {
+                    self?.scanningSubjet.onNext(Result.error(ToioBluetoothError(type: .unknown)))
+                }
+            })
     }
 
     func stopScaning() {}

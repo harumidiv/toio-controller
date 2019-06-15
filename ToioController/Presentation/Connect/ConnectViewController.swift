@@ -26,6 +26,7 @@ class ConnectViewController: UIViewController {
         super.viewDidLoad()
         title = "探索中..."
         presenter.checkPhoneState()
+        presenter.loadDevice()
     }
 }
 
@@ -43,5 +44,6 @@ extension ConnectViewController: ConnectPresenterOutput {
     func showDevice() {
         // TODO:
         print("デバイス発見")
+        presenter.loadDevice()
     }
 }

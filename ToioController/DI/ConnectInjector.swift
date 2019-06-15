@@ -15,5 +15,8 @@ final class ConnectInjector: Injector {
         container.register(ConnectPresenter.self) { _, output in
             ConnectPresenterImpl(output: output)
         }
+        container.register(ConnectUseCase.self) { _ in
+            ConnectUseCaseImpl()
+        }
     }
 }

@@ -23,11 +23,16 @@ protocol ConnectPresenterOutput: AnyObject {
 class ConnectPresenterImpl: ConnectPresenter {
     private let phoneDeviceUseCase: PhoneDeviceUsecase = OtherInjector.container.resolve(PhoneDeviceUsecase.self)!
 
+    private lazy var usecase: ConnectUseCase = {
+        ConnectInjector.container.resolve(ConnectUseCase.self)!
+    }()
+
     private weak var output: ConnectPresenterOutput?
     private let disposeBag = DisposeBag()
 
     init(output: ConnectPresenterOutput) {
         self.output = output
+        subscribeTargetDevice()
     }
 
     // MAKR: - Public methods
@@ -58,5 +63,21 @@ class ConnectPresenterImpl: ConnectPresenter {
             }).disposed(by: disposeBag)
     }
 
-    func loadDevice() {}
+    func loadDevice() {
+        usecase.loadDevice()
+    }
+
+    private func subscribeTargetDevice() {
+        usecase.targetDevice.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] result in
+            self?.usecase.loadStop()
+            switch result {
+            case let .success(model):
+
+                print("接続成功")
+            case .error:
+                // self?.output?.showSearchAgain()
+                break
+            }
+        }).disposed(by: disposeBag)
+    }
 }
