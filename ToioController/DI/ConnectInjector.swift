@@ -18,5 +18,8 @@ final class ConnectInjector: Injector {
         container.register(ConnectUseCase.self) { _ in
             ConnectUseCaseImpl()
         }
+        container.register(ConnectWireframe.self) { _ in
+            ConnectWireframeImpl()
+        }
     }
 }

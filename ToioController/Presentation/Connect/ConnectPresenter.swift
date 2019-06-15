@@ -18,6 +18,7 @@ protocol ConnectPresenterOutput: AnyObject {
     func showBatteryError()
     func showBluetoothError()
     func showDevice()
+    func showController(cube: CubeModel)
 }
 
 class ConnectPresenterImpl: ConnectPresenter {
@@ -72,7 +73,7 @@ class ConnectPresenterImpl: ConnectPresenter {
             self?.usecase.loadStop()
             switch result {
             case let .success(model):
-
+                self?.output?.showController(cube: model)
                 print("接続成功")
             case .error:
                 // self?.output?.showSearchAgain()

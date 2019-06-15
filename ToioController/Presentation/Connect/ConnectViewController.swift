@@ -20,17 +20,22 @@ class ConnectViewController: UIViewController {
         return presenter
     }()
 
+    private lazy var wireframe: ConnectWireframe = ConnectInjector.container.resolve(ConnectWireframe.self)!
+
     lazy var p = ConnectPresenterImpl(output: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "探索中..."
         presenter.checkPhoneState()
-        presenter.loadDevice()
     }
 }
 
 extension ConnectViewController: ConnectPresenterOutput {
+    func showController(cube: CubeModel) {
+        wireframe.showController(vc: self, model: cube)
+    }
+
     func showBatteryError() {
         // TODO: アラート表示
         print("バッテリー不足")

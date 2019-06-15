@@ -10,5 +10,15 @@ import UIKit
 
 protocol ConnectWireframe: AnyObject {
     func showInformation(vc: UIViewController)
-    func showController(vc: UIViewController)
+    func showController(vc: UIViewController, model: CubeModel)
+}
+
+class ConnectWireframeImpl: ConnectWireframe {
+    func showInformation(vc: UIViewController) {}
+
+    func showController(vc: UIViewController, model: CubeModel) {
+        let toVC = ControlViewController(cubeModel: model)
+        vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        vc.navigationController?.pushViewController(toVC, animated: true)
+    }
 }
