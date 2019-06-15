@@ -9,5 +9,5 @@
 import RxBluetoothKit
 
 struct CubeModel {
-    let peripheral: Peripheral
+    let peripheral: Cube
 }

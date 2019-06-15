@@ -58,7 +58,7 @@ class ConnectUseCaseImpl: ConnectUseCase {
                     guard let self = self else {
                         return
                     }
-                    self.targetSubject.onNext(Result.success(CubeModel(peripheral: retDevice!.peripheral)))
+                    self.targetSubject.onNext(Result.success(CubeModel(peripheral: retDevice!)))
                 }
             ).disposed(by: disposeBag)
         BluetoothService.shared.startScaning(serviceUUIDs: [CBUUID(string: "10B20100-5B3B-4571-9508-CF3EFCD7BBAE".uppercased())], duration: 15)
