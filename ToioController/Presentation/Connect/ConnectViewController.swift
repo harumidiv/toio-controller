@@ -41,8 +41,7 @@ extension ConnectViewController: ConnectPresenterOutput {
     }
 
     func showBluetoothError() {
-        // TODO: アラート表示
-        print("bluetoothエラー")
+        showInformation(message: "bluetoothの設定がoffになっています\nonに切り替えてください", buttonText: "閉じる")
     }
 
     func showDevice() {
