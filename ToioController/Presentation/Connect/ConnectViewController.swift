@@ -22,12 +22,17 @@ class ConnectViewController: UIViewController {
 
     private lazy var wireframe: ConnectWireframe = ConnectInjector.container.resolve(ConnectWireframe.self)!
 
-    lazy var p = ConnectPresenterImpl(output: self)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "探索中..."
+
+        let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
+        navigationItem.rightBarButtonItem = informationButton
         presenter.checkPhoneState()
+    }
+
+    @objc func showInformation(_ sender: UIBarButtonItem) {
+        wireframe.showInformation(vc: self)
     }
 }
 
@@ -37,18 +42,14 @@ extension ConnectViewController: ConnectPresenterOutput {
     }
 
     func showBatteryError() {
-        // TODO: アラート表示
-        print("バッテリー不足")
+        showInformation(message: "iPhoneの充電が少なくなっています\n充電してから遊んでください", buttonText: "閉じる")
     }
 
     func showBluetoothError() {
-        // TODO: アラート表示
-        print("bluetoothエラー")
+        showInformation(message: "bluetoothの設定がoffになっています\nonに切り替えてください", buttonText: "閉じる")
     }
 
     func showDevice() {
-        // TODO:
-        print("デバイス発見")
         presenter.loadDevice()
     }
 }

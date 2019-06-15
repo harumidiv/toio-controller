@@ -13,6 +13,7 @@
 		0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740322B4E247000EFCCC /* ToioPeripheral.swift */; };
 		0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */; };
 		0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A75E22B4F3C800304AB7 /* Constant.swift */; };
+		0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */; };
 		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
 		0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */; };
 		0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */; };
@@ -68,6 +69,7 @@
 		0D37740322B4E247000EFCCC /* ToioPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToioPeripheral.swift; sourceTree = "<group>"; };
 		0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Addition.swift"; sourceTree = "<group>"; };
 		0D94A75E22B4F3C800304AB7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			children = (
 				0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */,
 				0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */,
+				0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,
 				0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */,
 				0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */,
+				0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */,
 				0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */,
 				0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */,
 				0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */,

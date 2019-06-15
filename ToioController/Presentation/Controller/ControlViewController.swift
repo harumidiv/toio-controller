@@ -30,7 +30,7 @@ class ControlViewController: UIViewController {
 
         title = "toio controller"
 
-        let informationButton: UIBarButtonItem = UIBarButtonItem(title: "⚙", style: .plain, target: self, action: #selector(showInformation(_:)))
+        let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
     }
 
@@ -73,6 +73,6 @@ class ControlViewController: UIViewController {
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
-        cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+        _ = cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
     }
 }
