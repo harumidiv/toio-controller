@@ -13,15 +13,12 @@ class ControlViewController: UIViewController {
         super.viewDidLoad()
 
         title = "toio controller"
+
+        let informationButton: UIBarButtonItem = UIBarButtonItem(title: "⚙", style: .plain, target: self, action: #selector(showInformation(_:)))
+        navigationItem.rightBarButtonItem = informationButton
     }
 
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    @objc func showInformation(_ sender: UIBarButtonItem) {
+        navigationController?.pushViewController(InformationViewController(), animated: true)
+    }
 }

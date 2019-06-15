@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
+		0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */; };
 		0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */; };
 		0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCDD22B3D02D00792ABB /* Main.storyboard */; };
 		0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCE022B3D02E00792ABB /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		0DC6BCD622B3D02D00792ABB /* ToioController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToioController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DC6BCDE22B3D02D00792ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				0DEB0FA322B3E39C009E9D9C /* CustomView */,
+				0DEB0FB922B49559009E9D9C /* Information */,
 				0DEB0FA222B3E388009E9D9C /* Controller */,
 			);
 			path = Presentation;
@@ -206,6 +211,15 @@
 				0DEB0FB722B3E510009E9D9C /* DirectionalPadRightButton.xib */,
 			);
 			path = DirectionalPadButton;
+			sourceTree = "<group>";
+		};
+		0DEB0FB922B49559009E9D9C /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */,
+				0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */,
+			);
+			path = Information;
 			sourceTree = "<group>";
 		};
 		73AF7AED384F3509C41B2FD0 /* Pods */ = {
@@ -342,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC6BCE422B3D02E00792ABB /* LaunchScreen.storyboard in Resources */,
+				0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */,
 				0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */,
 				0DC6BD0C22B3D6F000792ABB /* ControlViewController.xib in Resources */,
 				0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */,
@@ -498,6 +513,7 @@
 				0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */,
 				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,
 				0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */,
+				0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
