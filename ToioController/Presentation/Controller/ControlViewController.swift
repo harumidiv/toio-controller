@@ -13,6 +13,7 @@ import UIKit
 
 class ControlViewController: UIViewController {
     let cubeModel: CubeModel
+    let userDefault = UserDefaults.standard
 
     // MARK: - Initializer
 
@@ -46,7 +47,19 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func upStart(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.up)
+        if userDefault.object(forKey: "up") != nil {
+            var writeData: [UInt8] = [0x01, 0x01, 0x01]
+            let speed = userDefault.integer(forKey: "up")
+            let data = UInt8(String(speed))!
+            writeData += [data]
+            writeData += [0x02]
+            writeData += [0x01]
+            writeData += [data]
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
+
+        } else {
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.up)
+        }
     }
 
     @IBAction func upStop(_ sender: Any) {

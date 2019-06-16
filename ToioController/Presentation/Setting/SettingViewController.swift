@@ -81,22 +81,22 @@ class SettingViewController: UIViewController {
 
     @IBAction func upSlider(_ sender: UISlider) {
         upLabel.text = String(Int(sender.value * 100)) + "%"
-        upValue = Int(sender.value * 64)
+        upValue = Int(sender.value * 100)
     }
 
     @IBAction func leftSlider(_ sender: UISlider) {
         leftLabel.text = String(Int(sender.value * 100)) + "%"
-        leftValue = Int(sender.value * 64)
+        leftValue = Int(sender.value * 100)
     }
 
     @IBAction func rightSlider(_ sender: UISlider) {
         rightLabel.text = String(Int(sender.value * 100)) + "%"
-        rightValue = Int(sender.value * 64)
+        rightValue = Int(sender.value * 100)
     }
 
     @IBAction func downSlider(_ sender: UISlider) {
         downLabel.text = String(Int(sender.value * 100)) + "%"
-        downValue = Int(sender.value * 64)
+        downValue = Int(sender.value * 100)
     }
 
     @IBAction func saveTaped(_ sender: Any) {

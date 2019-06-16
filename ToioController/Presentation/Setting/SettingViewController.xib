@@ -88,14 +88,14 @@
                         <action selector="downSlider:" destination="-1" eventType="valueChanged" id="8WE-K6-9PZ"/>
                     </connections>
                 </slider>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="この画面では、コントローラで操作を行うcubeのスピード設定を行います。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP6-cs-cU4">
-                    <rect key="frame" x="649" y="42" width="194" height="81.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="この画面では、コントローラで操作を行うcubeのスピード設定が可能です。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP6-cs-cU4">
+                    <rect key="frame" x="657" y="42" width="177" height="81.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-fg-zh0" customClass="SearchButton" customModule="ToioController" customModuleProvider="target">
-                    <rect key="frame" x="686.5" y="203.5" width="119" height="60"/>
+                    <rect key="frame" x="686" y="203.5" width="119" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="dkF-pg-Buu"/>
                     </constraints>
@@ -144,7 +144,7 @@
                 <constraint firstItem="KdW-GB-wyd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="Hd0-db-bsx"/>
                 <constraint firstItem="Eaz-K5-3cn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="IOR-rL-A3N"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="38C-ne-bDb" secondAttribute="bottom" constant="6" id="KCd-fJ-24O"/>
-                <constraint firstItem="AP6-cs-cU4" firstAttribute="leading" secondItem="38C-ne-bDb" secondAttribute="trailing" constant="8" id="M0d-bd-Ahq"/>
+                <constraint firstItem="AP6-cs-cU4" firstAttribute="leading" secondItem="38C-ne-bDb" secondAttribute="trailing" constant="16" id="M0d-bd-Ahq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AP6-cs-cU4" secondAttribute="trailing" constant="8" id="NNd-rz-tQT"/>
                 <constraint firstItem="C5c-R0-0GC" firstAttribute="leading" secondItem="pAc-0s-5Mj" secondAttribute="trailing" constant="38" id="Scg-lc-TCJ"/>
                 <constraint firstItem="Eaz-K5-3cn" firstAttribute="top" secondItem="7cX-Pv-pQV" secondAttribute="bottom" constant="16" id="T3r-31-erD"/>
