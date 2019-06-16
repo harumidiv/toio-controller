@@ -12,6 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControlViewController" customModule="ToioController" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="a7N-60-52b" id="i0b-Xd-Gys"/>
+                <outlet property="downButton" destination="KRc-iS-Gre" id="EPY-qx-SKZ"/>
+                <outlet property="honeButton" destination="ahh-nD-716" id="yqw-GK-Zi7"/>
+                <outlet property="leftButton" destination="gXE-iN-Xbz" id="Mt4-ae-9Zu"/>
+                <outlet property="rightButton" destination="6yH-t4-5J7" id="ohX-Va-6Yq"/>
+                <outlet property="upButton" destination="yiL-t0-rG8" id="B9O-fj-BHR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
