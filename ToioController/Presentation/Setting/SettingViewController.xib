@@ -12,7 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="ToioController" customModuleProvider="target">
             <connections>
+                <outlet property="downLabel" destination="BQ9-dG-Ihx" id="knT-6K-nfU"/>
+                <outlet property="leftLabel" destination="xJ3-4d-dv6" id="vLu-FJ-2Co"/>
+                <outlet property="rightLabel" destination="MYd-jq-YQp" id="vWC-Yq-BCh"/>
                 <outlet property="saveButton" destination="oUe-fg-zh0" id="CDz-Jb-K4P"/>
+                <outlet property="upLabel" destination="h3s-91-aZL" id="Wkg-4p-FBQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -62,15 +66,27 @@
                 </view>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.59999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iVP-F7-yge">
                     <rect key="frame" x="156" y="42" width="419" height="31"/>
+                    <connections>
+                        <action selector="upSlider:" destination="-1" eventType="valueChanged" id="uEL-zC-L39"/>
+                    </connections>
                 </slider>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.59999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-3E-4md">
                     <rect key="frame" x="156" y="113" width="419" height="31"/>
+                    <connections>
+                        <action selector="leftSlider:" destination="-1" eventType="valueChanged" id="TfT-28-H6o"/>
+                    </connections>
                 </slider>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.59999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MpT-I4-NBH">
                     <rect key="frame" x="156" y="170" width="419" height="31"/>
+                    <connections>
+                        <action selector="rightSlider:" destination="-1" eventType="valueChanged" id="PNj-aI-uUE"/>
+                    </connections>
                 </slider>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.59999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C5c-R0-0GC">
                     <rect key="frame" x="156" y="253" width="419" height="31"/>
+                    <connections>
+                        <action selector="downSlider:" destination="-1" eventType="valueChanged" id="8WE-K6-9PZ"/>
+                    </connections>
                 </slider>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="この画面では、コントローラで操作を行うcubeのスピード設定を行います。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP6-cs-cU4">
                     <rect key="frame" x="649" y="42" width="194" height="81.5"/>

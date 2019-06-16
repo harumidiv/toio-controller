@@ -11,6 +11,10 @@ import UIKit
 class SettingViewController: UIViewController {
     let titleText: String
 
+    @IBOutlet weak var upLabel: UILabel!
+    @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var rightLabel: UILabel!
+    @IBOutlet weak var downLabel: UILabel!
     @IBOutlet weak var saveButton: SearchButton! {
         didSet {
             saveButton.setTitle("設定を保存する", for: .normal)
@@ -32,13 +36,21 @@ class SettingViewController: UIViewController {
         title = titleText
     }
 
-    /*
-     // MARK: - Navigation
+    // MARK: - Event
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func upSlider(_ sender: UISlider) {
+        upLabel.text = String(Int(sender.value * 100)) + "%"
+    }
+
+    @IBAction func leftSlider(_ sender: UISlider) {
+        leftLabel.text = String(Int(sender.value * 100)) + "%"
+    }
+
+    @IBAction func rightSlider(_ sender: UISlider) {
+        rightLabel.text = String(Int(sender.value * 100)) + "%"
+    }
+
+    @IBAction func downSlider(_ sender: UISlider) {
+        downLabel.text = String(Int(sender.value * 100)) + "%"
+    }
 }
