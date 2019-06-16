@@ -12,14 +12,26 @@ import WebKit
 class WebViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView! {
         didSet {
-            let urlRequest = URLRequest(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)
+            let urlRequest = URLRequest(url: url)
             webView.load(urlRequest)
         }
     }
 
+    let url: URL
+    let titleText: String
+
+    init(url: URL, titleText: String) {
+        self.url = url
+        self.titleText = titleText
+        super.init(nibName: String(describing: WebViewController.self), bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "プライバシーポリシー"
+        title = titleText
     }
 }
