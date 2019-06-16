@@ -100,6 +100,9 @@
                         <constraint firstAttribute="height" constant="60" id="dkF-pg-Buu"/>
                     </constraints>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="saveTaped:" destination="-1" eventType="touchUpInside" id="57W-jT-eW2"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYd-jq-YQp">
                     <rect key="frame" x="589" y="175" width="35" height="21"/>
