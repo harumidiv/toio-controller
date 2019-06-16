@@ -13,8 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        window?.rootViewController = UINavigationController(rootViewController: ConnectViewController())
-        window?.rootViewController = UINavigationController(rootViewController: WebViewController())
+        window?.rootViewController = UINavigationController(rootViewController: ConnectViewController())
 
         // DI
         OtherInjector.register()
