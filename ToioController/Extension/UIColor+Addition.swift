@@ -19,7 +19,7 @@ extension UIColor {
             case .theme:
                 return "#00c8f4"
             case .again:
-                return "#F7F7F7"
+                return "#828282"
             case .search:
                 return "#98ba42"
             }

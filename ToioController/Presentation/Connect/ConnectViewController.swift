@@ -63,6 +63,8 @@ extension ConnectViewController: ConnectPresenterOutput {
 
     func showTimeout() {
         searchButton.isHidden = false
+        searchButton.setTitle("もう一度探す", for: .normal)
+        searchButton.backgroundColor = UIColor(appColor: .again)
         descriptionLabel.text = "cubeの電源を入れて\n探すボタンを押してください"
     }
 }
