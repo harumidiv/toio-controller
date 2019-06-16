@@ -46,7 +46,9 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
         let data = informationData[indexPath.row]
         switch data.type {
         case .normal:
-            break
+            let toVC = SettingViewController(titleText: data.title)
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            navigationController?.pushViewController(toVC, animated: true)
         case let .webView(url):
             let toVC = WebViewController(url: url, titleText: data.title)
             navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
