@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConnectViewController" customModule="ToioController" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionLabel" destination="O4t-nB-ER3" id="ifh-ou-Egi"/>
                 <outlet property="indicator" destination="sk7-WC-fZ3" id="WXS-JI-jUB"/>
+                <outlet property="searchButton" destination="vcg-tc-t4f" id="bfK-ML-BvU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,6 +39,9 @@
                         <constraint firstAttribute="width" constant="200" id="uZZ-st-fy1"/>
                     </constraints>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="searchStart:" destination="-1" eventType="touchUpInside" id="Vi3-ug-XnI"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

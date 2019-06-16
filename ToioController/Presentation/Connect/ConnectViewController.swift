@@ -15,6 +15,9 @@ class ConnectViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var descriptionLabel: UILabel!
+
+    @IBOutlet weak var searchButton: SearchButton!
     lazy var presenter: ConnectPresenter = {
         let presenter = ConnectInjector.container.resolve(ConnectPresenter.self, argument: self as ConnectPresenterOutput)!
         return presenter
@@ -28,11 +31,16 @@ class ConnectViewController: UIViewController {
 
         let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
-        presenter.checkPhoneState()
     }
 
     @objc func showInformation(_ sender: UIBarButtonItem) {
         wireframe.showInformation(vc: self)
+    }
+
+    @IBAction func searchStart(_ sender: UIButton) {
+        searchButton.isHidden = true
+        descriptionLabel.text = "近くにあるcubeを検索中です"
+        presenter.checkPhoneState()
     }
 }
 
@@ -51,5 +59,10 @@ extension ConnectViewController: ConnectPresenterOutput {
 
     func showDevice() {
         presenter.loadDevice()
+    }
+
+    func showTimeout() {
+        searchButton.isHidden = false
+        descriptionLabel.text = "cubeの電源を入れて\n探すボタンを押してください"
     }
 }

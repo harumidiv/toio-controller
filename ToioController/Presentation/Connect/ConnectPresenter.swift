@@ -17,8 +17,9 @@ protocol ConnectPresenter: AnyObject {
 protocol ConnectPresenterOutput: AnyObject {
     func showBatteryError()
     func showBluetoothError()
-    func showDevice()
     func showController(cube: CubeModel)
+    func showDevice()
+    func showTimeout()
 }
 
 class ConnectPresenterImpl: ConnectPresenter {
@@ -70,14 +71,16 @@ class ConnectPresenterImpl: ConnectPresenter {
 
     private func subscribeTargetDevice() {
         usecase.targetDevice.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] result in
-            self?.usecase.loadStop()
+            guard let self = self else {
+                return
+            }
+            self.usecase.loadStop()
             switch result {
             case let .success(model):
-                self?.output?.showController(cube: model)
-                print("接続成功")
+                self.output?.showController(cube: model)
+                self.output?.showDevice()
             case .error:
-                // TODO: タイムアウト
-                break
+                self.output?.showTimeout()
             }
         }).disposed(by: disposeBag)
     }
