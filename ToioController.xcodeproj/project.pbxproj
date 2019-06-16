@@ -21,6 +21,7 @@
 		0D9E325022B5E894007B97D7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E324E22B5E894007B97D7 /* SettingViewController.swift */; };
 		0D9E325122B5E894007B97D7 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E324F22B5E894007B97D7 /* SettingViewController.xib */; };
 		0D9E325322B61779007B97D7 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E325222B61779007B97D7 /* SearchButton.swift */; };
+		0D9E325722B6746E007B97D7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E325622B6746E007B97D7 /* RoundButton.swift */; };
 		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
 		0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */; };
 		0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */; };
@@ -85,6 +86,8 @@
 		0D9E324F22B5E894007B97D7 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		0D9E325222B61779007B97D7 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		0D9E325422B61796007B97D7 /* SearchButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchButton.xib; sourceTree = "<group>"; };
+		0D9E325622B6746E007B97D7 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		0D9E325822B6747A007B97D7 /* RoundButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundButton.xib; sourceTree = "<group>"; };
 		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 				0DEB0FA822B3E472009E9D9C /* DirectionalPadButton */,
 				0D9E325222B61779007B97D7 /* SearchButton.swift */,
 				0D9E325422B61796007B97D7 /* SearchButton.xib */,
+				0D9E325622B6746E007B97D7 /* RoundButton.swift */,
+				0D9E325822B6747A007B97D7 /* RoundButton.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,
 				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,
 				0D37740222B4E212000EFCCC /* Cube.swift in Sources */,
+				0D9E325722B6746E007B97D7 /* RoundButton.swift in Sources */,
 				0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */,
 				0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */,
 				0D37740022B4D9AE000EFCCC /* Result.swift in Sources */,

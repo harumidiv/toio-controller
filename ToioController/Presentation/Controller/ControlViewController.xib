@@ -12,6 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControlViewController" customModule="ToioController" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="a7N-60-52b" id="i0b-Xd-Gys"/>
+                <outlet property="downButton" destination="KRc-iS-Gre" id="EPY-qx-SKZ"/>
+                <outlet property="honeButton" destination="ahh-nD-716" id="yqw-GK-Zi7"/>
+                <outlet property="leftButton" destination="gXE-iN-Xbz" id="Mt4-ae-9Zu"/>
+                <outlet property="rightButton" destination="6yH-t4-5J7" id="ohX-Va-6Yq"/>
+                <outlet property="upButton" destination="yiL-t0-rG8" id="B9O-fj-BHR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,9 +30,9 @@
                     <rect key="frame" x="60" y="82" width="250" height="250"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-iN-Xbz" customClass="DirectionalPadLeftButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="85" width="100" height="80"/>
+                            <rect key="frame" x="0.0" y="75" width="100" height="100"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="80" id="weo-YT-uDg"/>
+                                <constraint firstAttribute="height" constant="100" id="weo-YT-uDg"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <connections>
@@ -35,9 +41,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-iS-Gre" customClass="DirectionalPadDownButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="85" y="150" width="80" height="100"/>
+                            <rect key="frame" x="75" y="150" width="100" height="100"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="80" id="63q-Wq-JMf"/>
+                                <constraint firstAttribute="width" constant="100" id="63q-Wq-JMf"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <connections>
@@ -46,9 +52,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-t4-5J7" customClass="DirectionalPadRightButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="150" y="85" width="100" height="80"/>
+                            <rect key="frame" x="150" y="75" width="100" height="100"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="80" id="t95-K4-fnQ"/>
+                                <constraint firstAttribute="height" constant="100" id="t95-K4-fnQ"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <connections>
@@ -57,9 +63,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiL-t0-rG8" customClass="DirectionalPadUpButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="85" y="0.0" width="80" height="100"/>
+                            <rect key="frame" x="75" y="0.0" width="100" height="100"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="80" id="apA-wp-NAt"/>
+                                <constraint firstAttribute="width" constant="100" id="apA-wp-NAt"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <connections>
@@ -90,6 +96,44 @@
                     <rect key="frame" x="160" y="182" width="50" height="50"/>
                     <color key="backgroundColor" red="1" green="0.68465769649999997" blue="0.092690850340000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-kR-iSj">
+                    <rect key="frame" x="586" y="82" width="250" height="250"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7N-60-52b" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
+                            <rect key="frame" x="8" y="132" width="110" height="110"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="TdQ-oD-3B6"/>
+                                <constraint firstAttribute="height" constant="110" id="V56-py-60x"/>
+                            </constraints>
+                            <state key="normal" title="🔙"/>
+                            <connections>
+                                <action selector="backStart:" destination="-1" eventType="touchDown" id="XOq-S8-PUA"/>
+                                <action selector="backStop:" destination="-1" eventType="touchUpInside" id="0fW-6M-3eU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-nD-716" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
+                            <rect key="frame" x="132" y="8" width="110" height="110"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="110" id="Z6L-xE-4jk"/>
+                                <constraint firstAttribute="width" constant="110" id="i4C-GN-saj"/>
+                            </constraints>
+                            <state key="normal" title="📯"/>
+                            <connections>
+                                <action selector="honeStart:" destination="-1" eventType="touchDown" id="qf8-Tq-s5L"/>
+                                <action selector="honeStop:" destination="-1" eventType="touchUpInside" id="tNn-xU-og9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ahh-nD-716" secondAttribute="trailing" constant="8" id="VMg-Rx-jX1"/>
+                        <constraint firstItem="ahh-nD-716" firstAttribute="top" secondItem="MEr-kR-iSj" secondAttribute="top" constant="8" id="Ysc-gO-nRR"/>
+                        <constraint firstAttribute="height" constant="250" id="Yu6-3M-CkO"/>
+                        <constraint firstAttribute="bottom" secondItem="a7N-60-52b" secondAttribute="bottom" constant="8" id="aHK-Ne-Mta"/>
+                        <constraint firstItem="a7N-60-52b" firstAttribute="leading" secondItem="MEr-kR-iSj" secondAttribute="leading" constant="8" id="gb2-FQ-gHm"/>
+                        <constraint firstAttribute="width" constant="250" id="r2v-s3-0aW"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -97,7 +141,9 @@
                 <constraint firstItem="lgS-FF-s8U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9xN-p7-PTs"/>
                 <constraint firstItem="6yH-t4-5J7" firstAttribute="leading" secondItem="8pw-oQ-3iM" secondAttribute="trailing" id="Gwb-6d-DyK"/>
                 <constraint firstItem="lgS-FF-s8U" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="cMs-gP-AJF"/>
+                <constraint firstItem="MEr-kR-iSj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dK6-bn-xKg"/>
                 <constraint firstItem="KRc-iS-Gre" firstAttribute="top" secondItem="8pw-oQ-3iM" secondAttribute="bottom" id="fHN-jY-JtR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MEr-kR-iSj" secondAttribute="trailing" constant="16" id="vxg-3W-xjc"/>
                 <constraint firstItem="8pw-oQ-3iM" firstAttribute="top" secondItem="yiL-t0-rG8" secondAttribute="bottom" id="wiP-K2-Fz9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

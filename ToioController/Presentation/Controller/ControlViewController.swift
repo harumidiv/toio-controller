@@ -15,6 +15,13 @@ class ControlViewController: UIViewController {
     let cubeModel: CubeModel
     let userDefault = UserDefaults.standard
 
+    @IBOutlet weak var upButton: DirectionalPadUpButton!
+    @IBOutlet weak var downButton: DirectionalPadDownButton!
+    @IBOutlet weak var rightButton: DirectionalPadRightButton!
+    @IBOutlet weak var leftButton: DirectionalPadLeftButton!
+    @IBOutlet weak var honeButton: RoundButton!
+    @IBOutlet weak var backButton: RoundButton!
+
     // MARK: - Initializer
 
     init(cubeModel: CubeModel) {
@@ -132,6 +139,53 @@ class ControlViewController: UIViewController {
 
     @IBAction func leftStop(_ sender: Any) {
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+    }
+
+    @IBAction func backStart(_ sender: UIButton) {
+        // moter
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x02, 0x20, 0x02, 0x02, 0x20]))
+
+        // light
+        writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x03, 0x00, 0x01, 0x01, 0xFF, 0x00, 0x00]))
+
+        // sound
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x03, 0x3F, 0x40, 0x7F, 0x3F, 0xFF, 0x1E, 0x01, 0xFF, 0x7F]))
+        upButton.isEnabled = false
+        downButton.isEnabled = false
+        leftButton.isEnabled = false
+        rightButton.isEnabled = false
+        honeButton.isEnabled = false
+    }
+
+    @IBAction func backStop(_ sender: UIButton) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x02, 0x00, 0x02, 0x02, 0x00]))
+        writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+        
+        upButton.isEnabled = true
+        downButton.isEnabled = true
+        leftButton.isEnabled = true
+        rightButton.isEnabled = true
+        honeButton.isEnabled = true
+    }
+
+    @IBAction func honeStart(_ sender: UIButton) {
+        // TODO: 長いブザーのがなるようにする
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x03, 0x3F, 0x40, 0x7F, 0x3F, 0xFF, 0x1E, 0x01, 0xFF, 0x7F]))
+        upButton.isEnabled = false
+        downButton.isEnabled = false
+        leftButton.isEnabled = false
+        rightButton.isEnabled = false
+        backButton.isEnabled = false
+    }
+
+    @IBAction func honeStop(_ sender: UIButton) {
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+        upButton.isEnabled = true
+        downButton.isEnabled = true
+        leftButton.isEnabled = true
+        rightButton.isEnabled = true
+        backButton.isEnabled = true
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
