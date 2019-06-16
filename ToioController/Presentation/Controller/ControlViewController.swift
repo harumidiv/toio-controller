@@ -161,7 +161,7 @@ class ControlViewController: UIViewController {
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x02, 0x00, 0x02, 0x02, 0x00]))
         writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
         writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
-        
+
         upButton.isEnabled = true
         downButton.isEnabled = true
         leftButton.isEnabled = true
