@@ -20,6 +20,7 @@
 		0D9E324C22B5E362007B97D7 /* InformationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E324B22B5E362007B97D7 /* InformationData.swift */; };
 		0D9E325022B5E894007B97D7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E324E22B5E894007B97D7 /* SettingViewController.swift */; };
 		0D9E325122B5E894007B97D7 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E324F22B5E894007B97D7 /* SettingViewController.xib */; };
+		0D9E325322B61779007B97D7 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E325222B61779007B97D7 /* SearchButton.swift */; };
 		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
 		0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */; };
 		0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */; };
@@ -82,6 +83,8 @@
 		0D9E324B22B5E362007B97D7 /* InformationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationData.swift; sourceTree = "<group>"; };
 		0D9E324E22B5E894007B97D7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0D9E324F22B5E894007B97D7 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		0D9E325222B61779007B97D7 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		0D9E325422B61796007B97D7 /* SearchButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchButton.xib; sourceTree = "<group>"; };
 		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				0DEB0FA822B3E472009E9D9C /* DirectionalPadButton */,
+				0D9E325222B61779007B97D7 /* SearchButton.swift */,
+				0D9E325422B61796007B97D7 /* SearchButton.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -678,6 +683,7 @@
 				0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */,
 				0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */,
 				0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */,
+				0D9E325322B61779007B97D7 /* SearchButton.swift in Sources */,
 				0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */,
 				0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */,
 				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,

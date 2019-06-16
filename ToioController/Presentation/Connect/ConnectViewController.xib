@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConnectViewController" customModule="ToioController" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionLabel" destination="O4t-nB-ER3" id="ifh-ou-Egi"/>
                 <outlet property="indicator" destination="sk7-WC-fZ3" id="WXS-JI-jUB"/>
+                <outlet property="searchButton" destination="vcg-tc-t4f" id="bfK-ML-BvU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,23 +26,37 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sk7-WC-fZ3">
                     <rect key="frame" x="438" y="177" width="20" height="20"/>
                 </activityIndicatorView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="近くにあるcubeを検索中です cubeの電源を入れてください" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4t-nB-ER3">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cubeの電源を入れて 探すボタンを押してください" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4t-nB-ER3">
                     <rect key="frame" x="60" y="233" width="776" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcg-tc-t4f" customClass="SearchButton" customModule="ToioController" customModuleProvider="target">
+                    <rect key="frame" x="348" y="162" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="1BV-qY-gy0"/>
+                        <constraint firstAttribute="width" constant="200" id="uZZ-st-fy1"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="searchStart:" destination="-1" eventType="touchUpInside" id="Vi3-ug-XnI"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vcg-tc-t4f" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3K3-Lf-yny"/>
                 <constraint firstItem="sk7-WC-fZ3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-20" id="4oi-h7-yoI"/>
                 <constraint firstItem="O4t-nB-ER3" firstAttribute="top" secondItem="sk7-WC-fZ3" secondAttribute="bottom" constant="36" id="A0f-CV-HN1"/>
+                <constraint firstItem="vcg-tc-t4f" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-20" id="CbX-x8-6Cd"/>
                 <constraint firstItem="O4t-nB-ER3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Fsu-o3-9PP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O4t-nB-ER3" secondAttribute="trailing" constant="16" id="OYt-ff-eUg"/>
                 <constraint firstItem="O4t-nB-ER3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="c18-J4-Rt2"/>
                 <constraint firstItem="sk7-WC-fZ3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qsf-y7-PRW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="91.741071428571431" y="153.62318840579712"/>
         </view>
     </objects>
 </document>

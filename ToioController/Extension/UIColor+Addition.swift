@@ -11,14 +11,17 @@ import UIKit
 extension UIColor {
     enum AppColor: String {
         case theme
-        case background
+        case again
+        case search
 
         var hex: String {
             switch self {
             case .theme:
                 return "#00c8f4"
-            case .background:
-                return "#F7F7F7"
+            case .again:
+                return "#828282"
+            case .search:
+                return "#98ba42"
             }
         }
     }
