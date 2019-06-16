@@ -10,6 +10,150 @@ import UIKit
 
 class SettingViewController: UIViewController {
     let titleText: String
+    let userDefault = UserDefaults.standard
+
+    lazy var upValue: Int = {
+        let value: Int
+        if userDefault.object(forKey: "up") != nil {
+            value = userDefault.integer(forKey: "up")
+        } else {
+            value = 60
+        }
+        return value
+    }()
+
+    lazy var leftValue: Int = {
+        let value: Int
+        if userDefault.object(forKey: "left") != nil {
+            value = userDefault.integer(forKey: "left")
+        } else {
+            value = 60
+        }
+        return value
+    }()
+
+    lazy var rightValue: Int = {
+        let value: Int
+        if userDefault.object(forKey: "right") != nil {
+            value = userDefault.integer(forKey: "right")
+        } else {
+            value = 60
+        }
+        return value
+    }()
+
+    lazy var downValue: Int = {
+        let value: Int
+        if userDefault.object(forKey: "down") != nil {
+            value = userDefault.integer(forKey: "down")
+        } else {
+            value = 60
+        }
+        return value
+    }()
+
+    @IBOutlet weak var upSlider: UISlider! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "up") != nil {
+                value = userDefault.integer(forKey: "up")
+            } else {
+                value = 60
+            }
+            upSlider.value = Float(value) / 100
+        }
+    }
+
+    @IBOutlet weak var leftSlider: UISlider! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "left") != nil {
+                value = userDefault.integer(forKey: "left")
+            } else {
+                value = 60
+            }
+            leftSlider.value = Float(value) / 100
+        }
+    }
+
+    @IBOutlet weak var rightSlider: UISlider! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "right") != nil {
+                value = userDefault.integer(forKey: "right")
+            } else {
+                value = 60
+            }
+            rightSlider.value = Float(value) / 100
+        }
+    }
+
+    @IBOutlet weak var downSlider: UISlider! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "down") != nil {
+                value = userDefault.integer(forKey: "down")
+            } else {
+                value = 60
+            }
+            downSlider.value = Float(value) / 100
+        }
+    }
+
+    @IBOutlet weak var upLabel: UILabel! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "up") != nil {
+                value = userDefault.integer(forKey: "up")
+            } else {
+                value = 60
+            }
+            upLabel.text = value.description
+        }
+    }
+
+    @IBOutlet weak var leftLabel: UILabel! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "left") != nil {
+                value = userDefault.integer(forKey: "left")
+            } else {
+                value = 60
+            }
+            leftLabel.text = value.description
+        }
+    }
+
+    @IBOutlet weak var rightLabel: UILabel! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "right") != nil {
+                value = userDefault.integer(forKey: "right")
+            } else {
+                value = 60
+            }
+            rightLabel.text = value.description
+        }
+    }
+
+    @IBOutlet weak var downLabel: UILabel! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "down") != nil {
+                value = userDefault.integer(forKey: "down")
+            } else {
+                value = 60
+            }
+            downLabel.text = value.description
+        }
+    }
+
+    @IBOutlet weak var saveButton: SearchButton! {
+        didSet {
+            saveButton.setTitle("設定を保存する", for: .normal)
+        }
+    }
+
     init(titleText: String) {
         self.titleText = titleText
         super.init(nibName: String(describing: SettingViewController.self), bundle: nil)
@@ -25,13 +169,32 @@ class SettingViewController: UIViewController {
         title = titleText
     }
 
-    /*
-     // MARK: - Navigation
+    // MARK: - Event
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func upSlider(_ sender: UISlider) {
+        upLabel.text = String(Int(sender.value * 100)) + "%"
+        upValue = Int(sender.value * 100)
+    }
+
+    @IBAction func leftSlider(_ sender: UISlider) {
+        leftLabel.text = String(Int(sender.value * 100)) + "%"
+        leftValue = Int(sender.value * 100)
+    }
+
+    @IBAction func rightSlider(_ sender: UISlider) {
+        rightLabel.text = String(Int(sender.value * 100)) + "%"
+        rightValue = Int(sender.value * 100)
+    }
+
+    @IBAction func downSlider(_ sender: UISlider) {
+        downLabel.text = String(Int(sender.value * 100)) + "%"
+        downValue = Int(sender.value * 100)
+    }
+
+    @IBAction func saveTaped(_ sender: Any) {
+        userDefault.set(upValue, forKey: "up")
+        userDefault.set(downValue, forKey: "down")
+        userDefault.set(leftValue, forKey: "left")
+        userDefault.set(rightValue, forKey: "right")
+    }
 }

@@ -13,6 +13,7 @@ import UIKit
 
 class ControlViewController: UIViewController {
     let cubeModel: CubeModel
+    let userDefault = UserDefaults.standard
 
     // MARK: - Initializer
 
@@ -26,7 +27,6 @@ class ControlViewController: UIViewController {
     }
 
     deinit {
-        print("削除されたよ")
         cubeModel.peripheral.disconnect()
     }
 
@@ -46,7 +46,22 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func upStart(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.up)
+        if userDefault.object(forKey: "up") != nil {
+            var writeData: [UInt8] = [0x01, 0x01, 0x01]
+            var speed = userDefault.integer(forKey: "up")
+            if speed <= 10 {
+                speed = 11
+            }
+            let data = UInt8(String(speed))!
+            writeData += [data]
+            writeData += [0x02]
+            writeData += [0x01]
+            writeData += [data]
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
+
+        } else {
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.up)
+        }
     }
 
     @IBAction func upStop(_ sender: Any) {
@@ -54,7 +69,21 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func downStart(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.down)
+        if userDefault.object(forKey: "down") != nil {
+            var writeData: [UInt8] = [0x01, 0x01, 0x02]
+            var speed = userDefault.integer(forKey: "down")
+            if speed <= 10 {
+                speed = 11
+            }
+            let data = UInt8(String(speed))!
+            writeData += [data]
+            writeData += [0x02]
+            writeData += [0x02]
+            writeData += [data]
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
+        } else {
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.down)
+        }
     }
 
     @IBAction func downStop(_ sender: Any) {
@@ -62,7 +91,21 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func rightStart(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.right)
+        if userDefault.object(forKey: "down") != nil {
+            var writeData: [UInt8] = [0x01, 0x01, 0x01]
+            var speed = userDefault.integer(forKey: "down")
+            if speed <= 10 {
+                speed = 11
+            }
+            let data = UInt8(String(speed))!
+            writeData += [data]
+            writeData += [0x02]
+            writeData += [0x01]
+            writeData += [0x00]
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
+        } else {
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.right)
+        }
     }
 
     @IBAction func rightStop(_ sender: Any) {
@@ -70,7 +113,21 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func leftStart(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.left)
+        if userDefault.object(forKey: "down") != nil {
+            var writeData: [UInt8] = [0x01, 0x01, 0x01]
+            var speed = userDefault.integer(forKey: "down")
+            if speed <= 10 {
+                speed = 11
+            }
+            let data = UInt8(String(speed))!
+            writeData += [0x00]
+            writeData += [0x02]
+            writeData += [0x01]
+            writeData += [data]
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
+        } else {
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.left)
+        }
     }
 
     @IBAction func leftStop(_ sender: Any) {
