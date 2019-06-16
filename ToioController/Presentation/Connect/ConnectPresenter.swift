@@ -76,7 +76,7 @@ class ConnectPresenterImpl: ConnectPresenter {
                 self?.output?.showController(cube: model)
                 print("接続成功")
             case .error:
-                // self?.output?.showSearchAgain()
+                // TODO: タイムアウト
                 break
             }
         }).disposed(by: disposeBag)
