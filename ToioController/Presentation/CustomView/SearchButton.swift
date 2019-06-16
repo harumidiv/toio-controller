@@ -32,5 +32,7 @@ class SearchButton: UIButton {
         backgroundColor = UIColor(appColor: .search)
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
+        // 余白
+        contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
