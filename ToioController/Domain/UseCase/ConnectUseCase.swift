@@ -64,5 +64,7 @@ class ConnectUseCaseImpl: ConnectUseCase {
         BluetoothService.shared.startScaning(serviceUUIDs: [CBUUID(string: "10B20100-5B3B-4571-9508-CF3EFCD7BBAE".uppercased())], duration: 15)
     }
 
-    func loadStop() {}
+    func loadStop() {
+        BluetoothService.shared.stopScaning()
+    }
 }
