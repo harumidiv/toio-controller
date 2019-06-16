@@ -134,6 +134,30 @@ class ControlViewController: UIViewController {
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
     }
 
+    @IBAction func backStart(_ sender: UIButton) {
+        // moter
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x02, 0x20, 0x02, 0x02, 0x20]))
+        // light
+        writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x03, 0x00, 0x01, 0x01, 0xFF, 0x00, 0x00]))
+        // sound
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x03, 0x3F, 0x40, 0x7F, 0x3F, 0xFF, 0x1E, 0x01, 0xFF, 0x7F]))
+    }
+
+    @IBAction func backStop(_ sender: UIButton) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x02, 0x00, 0x02, 0x02, 0x00]))
+        writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+    }
+
+    @IBAction func honeStart(_ sender: UIButton) {
+        // TODO: 長いブザーのがなるようにする
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x03, 0x3F, 0x40, 0x7F, 0x3F, 0xFF, 0x1E, 0x01, 0xFF, 0x7F]))
+    }
+
+    @IBAction func honeStop(_ sender: UIButton) {
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+    }
+
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
         _ = cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
     }
