@@ -137,16 +137,24 @@ class ControlViewController: UIViewController {
     @IBAction func backStart(_ sender: UIButton) {
         // moter
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x02, 0x20, 0x02, 0x02, 0x20]))
-        // light
-        writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x03, 0x00, 0x01, 0x01, 0xFF, 0x00, 0x00]))
-        // sound
-        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x03, 0x3F, 0x40, 0x7F, 0x3F, 0xFF, 0x1E, 0x01, 0xFF, 0x7F]))
+        Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { _ in
+            // light
+            self.writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x03, 0x00, 0x01, 0x01, 0xFF, 0x00, 0x00]))
+        })
+        Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { _ in
+            // sound
+            self.writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x03, 0x3F, 0x40, 0x7F, 0x3F, 0xFF, 0x1E, 0x01, 0xFF, 0x7F]))
+        })
     }
 
     @IBAction func backStop(_ sender: UIButton) {
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x02, 0x00, 0x02, 0x02, 0x00]))
-        writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
-        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+        Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { _ in
+            self.writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
+        })
+        Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { _ in
+            self.writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+        })
     }
 
     @IBAction func honeStart(_ sender: UIButton) {
