@@ -10,6 +10,13 @@ import UIKit
 
 class SettingViewController: UIViewController {
     let titleText: String
+
+    @IBOutlet weak var saveButton: SearchButton! {
+        didSet {
+            saveButton.setTitle("設定を保存する", for: .normal)
+        }
+    }
+
     init(titleText: String) {
         self.titleText = titleText
         super.init(nibName: String(describing: SettingViewController.self), bundle: nil)
