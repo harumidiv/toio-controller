@@ -14,6 +14,12 @@
 		0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */; };
 		0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A75E22B4F3C800304AB7 /* Constant.swift */; };
 		0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */; };
+		0D9E320A22B5CE66007B97D7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E320822B5CE66007B97D7 /* WebViewController.swift */; };
+		0D9E320B22B5CE66007B97D7 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E320922B5CE66007B97D7 /* WebViewController.xib */; };
+		0D9E324A22B5E263007B97D7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9E324922B5E263007B97D7 /* WebKit.framework */; };
+		0D9E324C22B5E362007B97D7 /* InformationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E324B22B5E362007B97D7 /* InformationData.swift */; };
+		0D9E325022B5E894007B97D7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E324E22B5E894007B97D7 /* SettingViewController.swift */; };
+		0D9E325122B5E894007B97D7 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E324F22B5E894007B97D7 /* SettingViewController.xib */; };
 		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
 		0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */; };
 		0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */; };
@@ -70,6 +76,12 @@
 		0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Addition.swift"; sourceTree = "<group>"; };
 		0D94A75E22B4F3C800304AB7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
+		0D9E320822B5CE66007B97D7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0D9E320922B5CE66007B97D7 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		0D9E324922B5E263007B97D7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0D9E324B22B5E362007B97D7 /* InformationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationData.swift; sourceTree = "<group>"; };
+		0D9E324E22B5E894007B97D7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		0D9E324F22B5E894007B97D7 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9E324A22B5E263007B97D7 /* WebKit.framework in Frameworks */,
 				BD443728345BE94FE3227864 /* Pods_ToioController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +173,24 @@
 				0D94A75E22B4F3C800304AB7 /* Constant.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		0D9E320722B5CE4C007B97D7 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				0D9E320822B5CE66007B97D7 /* WebViewController.swift */,
+				0D9E320922B5CE66007B97D7 /* WebViewController.xib */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		0D9E324D22B5E875007B97D7 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				0D9E324E22B5E894007B97D7 /* SettingViewController.swift */,
+				0D9E324F22B5E894007B97D7 /* SettingViewController.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		0DA8BC3E22B4976B009AEB5A /* Connect */ = {
@@ -282,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				0DEB0FA322B3E39C009E9D9C /* CustomView */,
+				0D9E324D22B5E875007B97D7 /* Setting */,
+				0D9E320722B5CE4C007B97D7 /* Web */,
 				0DEB0FB922B49559009E9D9C /* Information */,
 				0DEB0FA222B3E388009E9D9C /* Controller */,
 				0DA8BC3E22B4976B009AEB5A /* Connect */,
@@ -336,6 +369,7 @@
 			children = (
 				0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */,
 				0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */,
+				0D9E324B22B5E362007B97D7 /* InformationData.swift */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -356,6 +390,7 @@
 		7906129FA4D20DBECF0CCC97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D9E324922B5E263007B97D7 /* WebKit.framework */,
 				E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */,
 				FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */,
 				379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */,
@@ -476,9 +511,11 @@
 				0DC6BCE422B3D02E00792ABB /* LaunchScreen.storyboard in Resources */,
 				0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */,
 				0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */,
+				0D9E320B22B5CE66007B97D7 /* WebViewController.xib in Resources */,
 				0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */,
 				0DC6BD0C22B3D6F000792ABB /* ControlViewController.xib in Resources */,
 				0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */,
+				0D9E325122B5E894007B97D7 /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +673,7 @@
 				0D37740022B4D9AE000EFCCC /* Result.swift in Sources */,
 				0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */,
 				0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */,
+				0D9E320A22B5CE66007B97D7 /* WebViewController.swift in Sources */,
 				0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */,
 				0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */,
 				0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */,
@@ -643,9 +681,11 @@
 				0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */,
 				0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */,
 				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,
+				0D9E325022B5E894007B97D7 /* SettingViewController.swift in Sources */,
 				0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */,
 				0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */,
 				0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */,
+				0D9E324C22B5E362007B97D7 /* InformationData.swift in Sources */,
 				0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */,
 				0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */,
 				0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */,
