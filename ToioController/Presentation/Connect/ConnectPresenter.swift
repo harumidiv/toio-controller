@@ -78,9 +78,10 @@ class ConnectPresenterImpl: ConnectPresenter {
             switch result {
             case let .success(model):
                 self.output?.showController(cube: model)
-                self.output?.showDevice()
-            case .error:
-                self.output?.showTimeout()
+            case let .error(e):
+                if e.type == .scanTimeout {
+                    self.output?.showTimeout()
+                }
             }
         }).disposed(by: disposeBag)
     }

@@ -60,6 +60,10 @@ class Cube: ToioPeripheral {
         }
     }
 
+    func disconnect() {
+        connection?.dispose()
+    }
+
     private func getCharacteristic(type: CubeCharacteristic) -> Observable<Characteristic> {
         let innerGetCharacteristic = { (type: CubeCharacteristic, service: Service) -> Observable<Characteristic> in
             self.discoveryCharacterstic(type: type, service: service).asObservable().flatMap { value -> Observable<Characteristic> in

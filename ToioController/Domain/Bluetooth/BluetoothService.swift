@@ -76,7 +76,7 @@ final class BluetoothService {
             })
     }
 
-    func stopScaning() {}
-
-    func getPeripheral() {}
+    func stopScaning() {
+        scannningDisposable?.dispose()
+    }
 }

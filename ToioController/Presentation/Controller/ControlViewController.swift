@@ -25,6 +25,11 @@ class ControlViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    deinit {
+        print("削除されたよ")
+        cubeModel.peripheral.disconnect()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
