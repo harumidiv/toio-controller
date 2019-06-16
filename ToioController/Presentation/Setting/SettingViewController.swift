@@ -24,7 +24,7 @@ class SettingViewController: UIViewController {
 
     lazy var leftValue: Int = {
         let value: Int
-        if userDefault.object(forKey: "up") != nil {
+        if userDefault.object(forKey: "left") != nil {
             value = userDefault.integer(forKey: "left")
         } else {
             value = 60
@@ -34,7 +34,7 @@ class SettingViewController: UIViewController {
 
     lazy var rightValue: Int = {
         let value: Int
-        if userDefault.object(forKey: "up") != nil {
+        if userDefault.object(forKey: "right") != nil {
             value = userDefault.integer(forKey: "right")
         } else {
             value = 60
@@ -44,7 +44,7 @@ class SettingViewController: UIViewController {
 
     lazy var downValue: Int = {
         let value: Int
-        if userDefault.object(forKey: "up") != nil {
+        if userDefault.object(forKey: "down") != nil {
             value = userDefault.integer(forKey: "down")
         } else {
             value = 60
@@ -52,10 +52,102 @@ class SettingViewController: UIViewController {
         return value
     }()
 
-    @IBOutlet weak var upLabel: UILabel!
-    @IBOutlet weak var leftLabel: UILabel!
-    @IBOutlet weak var rightLabel: UILabel!
-    @IBOutlet weak var downLabel: UILabel!
+    @IBOutlet weak var upSlider: UISlider! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "up") != nil {
+                value = userDefault.integer(forKey: "up")
+            } else {
+                value = 60
+            }
+            upSlider.value = Float(value) / 100
+        }
+    }
+
+    @IBOutlet weak var leftSlider: UISlider! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "left") != nil {
+                value = userDefault.integer(forKey: "left")
+            } else {
+                value = 60
+            }
+            leftSlider.value = Float(value) / 100
+        }
+    }
+
+    @IBOutlet weak var rightSlider: UISlider! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "right") != nil {
+                value = userDefault.integer(forKey: "right")
+            } else {
+                value = 60
+            }
+            rightSlider.value = Float(value) / 100
+        }
+    }
+
+    @IBOutlet weak var downSlider: UISlider! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "down") != nil {
+                value = userDefault.integer(forKey: "down")
+            } else {
+                value = 60
+            }
+            downSlider.value = Float(value) / 100
+        }
+    }
+
+    @IBOutlet weak var upLabel: UILabel! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "up") != nil {
+                value = userDefault.integer(forKey: "up")
+            } else {
+                value = 60
+            }
+            upLabel.text = value.description
+        }
+    }
+
+    @IBOutlet weak var leftLabel: UILabel! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "left") != nil {
+                value = userDefault.integer(forKey: "left")
+            } else {
+                value = 60
+            }
+            leftLabel.text = value.description
+        }
+    }
+
+    @IBOutlet weak var rightLabel: UILabel! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "right") != nil {
+                value = userDefault.integer(forKey: "right")
+            } else {
+                value = 60
+            }
+            rightLabel.text = value.description
+        }
+    }
+
+    @IBOutlet weak var downLabel: UILabel! {
+        didSet {
+            let value: Int
+            if userDefault.object(forKey: "down") != nil {
+                value = userDefault.integer(forKey: "down")
+            } else {
+                value = 60
+            }
+            downLabel.text = value.description
+        }
+    }
+
     @IBOutlet weak var saveButton: SearchButton! {
         didSet {
             saveButton.setTitle("設定を保存する", for: .normal)

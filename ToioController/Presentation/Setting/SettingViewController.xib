@@ -13,10 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="ToioController" customModuleProvider="target">
             <connections>
                 <outlet property="downLabel" destination="BQ9-dG-Ihx" id="knT-6K-nfU"/>
+                <outlet property="downSlider" destination="C5c-R0-0GC" id="cIM-zD-gH1"/>
                 <outlet property="leftLabel" destination="xJ3-4d-dv6" id="vLu-FJ-2Co"/>
+                <outlet property="leftSlider" destination="xZL-3E-4md" id="po0-ny-PGt"/>
                 <outlet property="rightLabel" destination="MYd-jq-YQp" id="vWC-Yq-BCh"/>
+                <outlet property="rightSlider" destination="MpT-I4-NBH" id="nDl-2b-g0d"/>
                 <outlet property="saveButton" destination="oUe-fg-zh0" id="CDz-Jb-K4P"/>
                 <outlet property="upLabel" destination="h3s-91-aZL" id="Wkg-4p-FBQ"/>
+                <outlet property="upSlider" destination="iVP-F7-yge" id="S9b-sH-bpp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
