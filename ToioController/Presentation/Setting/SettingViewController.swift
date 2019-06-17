@@ -196,5 +196,10 @@ class SettingViewController: UIViewController {
         userDefault.set(downValue, forKey: "down")
         userDefault.set(leftValue, forKey: "left")
         userDefault.set(rightValue, forKey: "right")
+        let saveAlert = UIAlertController(title: "設定を保存しました", message: "", preferredStyle: UIAlertController.Style.alert)
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+            saveAlert.dismiss(animated: true, completion: nil)
+        })
+        present(saveAlert, animated: true, completion: nil)
     }
 }
