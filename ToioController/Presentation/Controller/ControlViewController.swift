@@ -170,7 +170,7 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func honeStart(_ sender: UIButton) {
-        writeValue(characteristics: .sound, writeType: .withResponse, value: Data(Data([0x03, 0x00, 0x01, 0xFF, 0x15, 0xFF]))
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x01, 0xFF, 0x14, 0xFF]))
         upButton.isEnabled = false
         downButton.isEnabled = false
         leftButton.isEnabled = false
