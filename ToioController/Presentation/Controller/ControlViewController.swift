@@ -170,8 +170,7 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func honeStart(_ sender: UIButton) {
-        // TODO: 長いブザーのがなるようにする
-        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x03, 0x3F, 0x40, 0x7F, 0x3F, 0xFF, 0x1E, 0x01, 0xFF, 0x7F]))
+        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x03, 0x00, 0x01, 0xFF, 0x14, 0xFF]))
         upButton.isEnabled = false
         downButton.isEnabled = false
         leftButton.isEnabled = false
