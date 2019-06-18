@@ -140,6 +140,9 @@
                         <constraint firstAttribute="height" constant="30" id="1M0-vz-Fcd"/>
                         <constraint firstAttribute="width" constant="60" id="nyi-kV-qbE"/>
                     </constraints>
+                    <connections>
+                        <action selector="optionTapped:" destination="-1" eventType="touchUpInside" id="ORT-UH-BD5"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -187,6 +187,10 @@ class ControlViewController: UIViewController {
         backButton.isEnabled = true
     }
 
+    @IBAction func optionTapped(_ sender: UIButton) {
+        navigationController?.pushViewController(SettingViewController(titleText: "設定"), animated: true)
+    }
+
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
         _ = cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
     }
