@@ -21,6 +21,17 @@ class ControlViewController: UIViewController {
     @IBOutlet weak var leftButton: DirectionalPadLeftButton!
     @IBOutlet weak var honeButton: RoundButton!
     @IBOutlet weak var backButton: RoundButton!
+    @IBOutlet weak var buttonBackgroundView: UIView! {
+        didSet {
+            buttonBackgroundView.layer.cornerRadius = buttonBackgroundView.frame.width / 2
+        }
+    }
+
+    @IBOutlet weak var controlBackgroundView: UIView! {
+        didSet {
+            controlBackgroundView.layer.cornerRadius = controlBackgroundView.frame.width / 2
+        }
+    }
 
     // MARK: - Initializer
 
@@ -185,6 +196,10 @@ class ControlViewController: UIViewController {
         leftButton.isEnabled = true
         rightButton.isEnabled = true
         backButton.isEnabled = true
+    }
+
+    @IBAction func optionTapped(_ sender: UIButton) {
+        navigationController?.pushViewController(SettingViewController(titleText: "設定"), animated: true)
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {

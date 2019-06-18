@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape">
+    <device id="retina6_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControlViewController" customModule="ToioController" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="a7N-60-52b" id="i0b-Xd-Gys"/>
+                <outlet property="buttonBackgroundView" destination="MEr-kR-iSj" id="pfH-Ph-h5U"/>
+                <outlet property="controlBackgroundView" destination="lgS-FF-s8U" id="qqw-Jb-sJe"/>
                 <outlet property="downButton" destination="KRc-iS-Gre" id="EPY-qx-SKZ"/>
                 <outlet property="honeButton" destination="ahh-nD-716" id="yqw-GK-Zi7"/>
                 <outlet property="leftButton" destination="gXE-iN-Xbz" id="Mt4-ae-9Zu"/>
@@ -26,11 +28,19 @@
             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgS-FF-s8U" customClass="DirectionalPadView" customModule="ToioController" customModuleProvider="target">
-                    <rect key="frame" x="60" y="82" width="250" height="250"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMy-f1-16Q">
+                    <rect key="frame" x="223" y="132" width="450" height="150"/>
+                    <color key="backgroundColor" red="0.21568627450980393" green="0.25490196078431371" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="YSo-eH-xRw"/>
+                        <constraint firstAttribute="width" constant="450" id="azb-YF-k9r"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgS-FF-s8U">
+                    <rect key="frame" x="48" y="82" width="280" height="280"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-iN-Xbz" customClass="DirectionalPadLeftButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="75" width="100" height="100"/>
+                            <rect key="frame" x="20" y="90" width="112" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="weo-YT-uDg"/>
                             </constraints>
@@ -41,7 +51,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-iS-Gre" customClass="DirectionalPadDownButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="75" y="150" width="100" height="100"/>
+                            <rect key="frame" x="90" y="148" width="100" height="112"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="63q-Wq-JMf"/>
                             </constraints>
@@ -52,7 +62,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-t4-5J7" customClass="DirectionalPadRightButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="150" y="75" width="100" height="100"/>
+                            <rect key="frame" x="148" y="90" width="112" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="t95-K4-fnQ"/>
                             </constraints>
@@ -63,7 +73,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiL-t0-rG8" customClass="DirectionalPadUpButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="75" y="0.0" width="100" height="100"/>
+                            <rect key="frame" x="90" y="20" width="100" height="112"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="apA-wp-NAt"/>
                             </constraints>
@@ -74,33 +84,33 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.21568627450980393" green="0.25490196078431371" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="gXE-iN-Xbz" firstAttribute="leading" secondItem="lgS-FF-s8U" secondAttribute="leading" id="HKx-iR-Qdq"/>
-                        <constraint firstAttribute="height" constant="250" id="HpM-gN-LN3"/>
+                        <constraint firstItem="gXE-iN-Xbz" firstAttribute="leading" secondItem="lgS-FF-s8U" secondAttribute="leading" constant="20" id="HKx-iR-Qdq"/>
+                        <constraint firstAttribute="height" constant="280" id="HpM-gN-LN3"/>
                         <constraint firstItem="gXE-iN-Xbz" firstAttribute="centerY" secondItem="lgS-FF-s8U" secondAttribute="centerY" id="I7I-sT-JVf"/>
-                        <constraint firstItem="yiL-t0-rG8" firstAttribute="top" secondItem="lgS-FF-s8U" secondAttribute="top" id="JFR-2Q-TzN"/>
+                        <constraint firstItem="yiL-t0-rG8" firstAttribute="top" secondItem="lgS-FF-s8U" secondAttribute="top" constant="20" id="JFR-2Q-TzN"/>
                         <constraint firstItem="6yH-t4-5J7" firstAttribute="width" secondItem="lgS-FF-s8U" secondAttribute="width" multiplier="0.4" id="JFe-yV-cK5"/>
-                        <constraint firstAttribute="trailing" secondItem="6yH-t4-5J7" secondAttribute="trailing" id="X5x-DD-die"/>
-                        <constraint firstAttribute="width" constant="250" id="boE-bo-xOc"/>
+                        <constraint firstAttribute="trailing" secondItem="6yH-t4-5J7" secondAttribute="trailing" constant="20" id="X5x-DD-die"/>
+                        <constraint firstAttribute="width" constant="280" id="boE-bo-xOc"/>
                         <constraint firstItem="yiL-t0-rG8" firstAttribute="height" secondItem="lgS-FF-s8U" secondAttribute="height" multiplier="0.4" id="f0P-vk-6Gv"/>
                         <constraint firstItem="gXE-iN-Xbz" firstAttribute="baseline" secondItem="6yH-t4-5J7" secondAttribute="baseline" id="g7e-UW-M2i"/>
                         <constraint firstItem="gXE-iN-Xbz" firstAttribute="width" secondItem="lgS-FF-s8U" secondAttribute="width" multiplier="0.4" id="ku1-yO-Qbv"/>
                         <constraint firstItem="yiL-t0-rG8" firstAttribute="leading" secondItem="KRc-iS-Gre" secondAttribute="leading" id="lfB-zf-D2D"/>
                         <constraint firstItem="KRc-iS-Gre" firstAttribute="centerX" secondItem="lgS-FF-s8U" secondAttribute="centerX" id="sf1-fn-Ibo"/>
                         <constraint firstItem="KRc-iS-Gre" firstAttribute="height" secondItem="lgS-FF-s8U" secondAttribute="height" multiplier="0.4" id="tKg-A0-5jR"/>
-                        <constraint firstAttribute="bottom" secondItem="KRc-iS-Gre" secondAttribute="bottom" id="vs2-yb-2pb"/>
+                        <constraint firstAttribute="bottom" secondItem="KRc-iS-Gre" secondAttribute="bottom" constant="20" id="vs2-yb-2pb"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pw-oQ-3iM">
-                    <rect key="frame" x="160" y="182" width="50" height="50"/>
+                    <rect key="frame" x="180" y="214" width="16" height="16"/>
                     <color key="backgroundColor" red="1" green="0.68465769649999997" blue="0.092690850340000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-kR-iSj">
-                    <rect key="frame" x="586" y="82" width="250" height="250"/>
+                    <rect key="frame" x="568" y="82" width="280" height="280"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7N-60-52b" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="8" y="132" width="110" height="110"/>
+                            <rect key="frame" x="36" y="134" width="110" height="110"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="110" id="TdQ-oD-3B6"/>
                                 <constraint firstAttribute="height" constant="110" id="V56-py-60x"/>
@@ -112,7 +122,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-nD-716" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="132" y="8" width="110" height="110"/>
+                            <rect key="frame" x="134" y="36" width="110" height="110"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="110" id="Z6L-xE-4jk"/>
                                 <constraint firstAttribute="width" constant="110" id="i4C-GN-saj"/>
@@ -124,30 +134,44 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.21568627450980393" green="0.25490196078431371" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="ahh-nD-716" secondAttribute="trailing" constant="8" id="VMg-Rx-jX1"/>
-                        <constraint firstItem="ahh-nD-716" firstAttribute="top" secondItem="MEr-kR-iSj" secondAttribute="top" constant="8" id="Ysc-gO-nRR"/>
-                        <constraint firstAttribute="height" constant="250" id="Yu6-3M-CkO"/>
-                        <constraint firstAttribute="bottom" secondItem="a7N-60-52b" secondAttribute="bottom" constant="8" id="aHK-Ne-Mta"/>
-                        <constraint firstItem="a7N-60-52b" firstAttribute="leading" secondItem="MEr-kR-iSj" secondAttribute="leading" constant="8" id="gb2-FQ-gHm"/>
-                        <constraint firstAttribute="width" constant="250" id="r2v-s3-0aW"/>
+                        <constraint firstAttribute="trailing" secondItem="ahh-nD-716" secondAttribute="trailing" constant="36" id="VMg-Rx-jX1"/>
+                        <constraint firstItem="ahh-nD-716" firstAttribute="top" secondItem="MEr-kR-iSj" secondAttribute="top" constant="36" id="Ysc-gO-nRR"/>
+                        <constraint firstAttribute="height" constant="280" id="Yu6-3M-CkO"/>
+                        <constraint firstAttribute="bottom" secondItem="a7N-60-52b" secondAttribute="bottom" constant="36" id="aHK-Ne-Mta"/>
+                        <constraint firstItem="a7N-60-52b" firstAttribute="leading" secondItem="MEr-kR-iSj" secondAttribute="leading" constant="36" id="gb2-FQ-gHm"/>
+                        <constraint firstAttribute="width" constant="280" id="r2v-s3-0aW"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZC-fN-29E" customClass="OptionButton" customModule="ToioController" customModuleProvider="target">
+                    <rect key="frame" x="428" y="247" width="40" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="1M0-vz-Fcd"/>
+                        <constraint firstAttribute="width" constant="40" id="nyi-kV-qbE"/>
+                    </constraints>
+                    <connections>
+                        <action selector="optionTapped:" destination="-1" eventType="touchUpInside" id="ORT-UH-BD5"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="mMy-f1-16Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2yB-mA-zlm"/>
                 <constraint firstItem="8pw-oQ-3iM" firstAttribute="leading" secondItem="gXE-iN-Xbz" secondAttribute="trailing" id="6iK-gl-tAB"/>
-                <constraint firstItem="lgS-FF-s8U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9xN-p7-PTs"/>
+                <constraint firstItem="lgS-FF-s8U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="9xN-p7-PTs"/>
                 <constraint firstItem="6yH-t4-5J7" firstAttribute="leading" secondItem="8pw-oQ-3iM" secondAttribute="trailing" id="Gwb-6d-DyK"/>
-                <constraint firstItem="lgS-FF-s8U" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="cMs-gP-AJF"/>
-                <constraint firstItem="MEr-kR-iSj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dK6-bn-xKg"/>
+                <constraint firstItem="mMy-f1-16Q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NUF-EP-0C3"/>
+                <constraint firstItem="6ZC-fN-29E" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="50" id="WQX-UH-FWO"/>
+                <constraint firstItem="lgS-FF-s8U" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="15" id="cMs-gP-AJF"/>
+                <constraint firstItem="MEr-kR-iSj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="15" id="dK6-bn-xKg"/>
                 <constraint firstItem="KRc-iS-Gre" firstAttribute="top" secondItem="8pw-oQ-3iM" secondAttribute="bottom" id="fHN-jY-JtR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MEr-kR-iSj" secondAttribute="trailing" constant="16" id="vxg-3W-xjc"/>
+                <constraint firstItem="6ZC-fN-29E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gy8-2F-5ef"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MEr-kR-iSj" secondAttribute="trailing" constant="4" id="vxg-3W-xjc"/>
                 <constraint firstItem="8pw-oQ-3iM" firstAttribute="top" secondItem="yiL-t0-rG8" secondAttribute="bottom" id="wiP-K2-Fz9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="22.767857142857142" y="118.84057971014494"/>
+            <point key="canvasLocation" x="22.167487684729064" y="117.59999999999999"/>
         </view>
     </objects>
 </document>
