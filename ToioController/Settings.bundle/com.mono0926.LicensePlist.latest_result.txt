@@ -1,0 +1,32 @@
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.5.0
+
+name: RxBluetoothKit, nameSpecified: 
+body:                     …
+version: 5.2.1
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.0.0
+
+name: SwiftFormat, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 0.40.9
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.32.0
+
+name: Swinject, nameSpecified: 
+body: The MIT License (MIT…
+version: 2.6.1
+
+add-version-numbers: false
+
+LicensePlist Version: 1.8.3

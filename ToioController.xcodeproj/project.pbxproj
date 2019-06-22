@@ -13,6 +13,7 @@
 		0D37740222B4E212000EFCCC /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740122B4E212000EFCCC /* Cube.swift */; };
 		0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740322B4E247000EFCCC /* ToioPeripheral.swift */; };
 		0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */; };
+		0D68C30722BDC86400FD6CA9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C30622BDC86400FD6CA9 /* Settings.bundle */; };
 		0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A75E22B4F3C800304AB7 /* Constant.swift */; };
 		0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */; };
 		0D9E320A22B5CE66007B97D7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E320822B5CE66007B97D7 /* WebViewController.swift */; };
@@ -79,6 +80,7 @@
 		0D37740122B4E212000EFCCC /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		0D37740322B4E247000EFCCC /* ToioPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToioPeripheral.swift; sourceTree = "<group>"; };
 		0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Addition.swift"; sourceTree = "<group>"; };
+		0D68C30622BDC86400FD6CA9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ToioController/Settings.bundle; sourceTree = "<group>"; };
 		0D94A75E22B4F3C800304AB7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		0D9E320822B5CE66007B97D7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		0DC6BCCD22B3D02D00792ABB = {
 			isa = PBXGroup;
 			children = (
+				0D68C30622BDC86400FD6CA9 /* Settings.bundle */,
 				0DC6BCD822B3D02D00792ABB /* ToioController */,
 				0DC6BCED22B3D02E00792ABB /* ToioControllerTests */,
 				0DC6BCF822B3D02E00792ABB /* ToioControllerUITests */,
@@ -427,6 +430,7 @@
 				72A5B101E781758E8F377FE4 /* [CP] Embed Pods Frameworks */,
 				0DC6BD0722B3D57400792ABB /* SwiftFormat */,
 				0DC6BD0822B3D57600792ABB /* SwiftLint */,
+				0D68C30322BDC7DD00FD6CA9 /* LicensePlist */,
 			);
 			buildRules = (
 			);
@@ -525,6 +529,7 @@
 			files = (
 				0DC6BCE422B3D02E00792ABB /* LaunchScreen.storyboard in Resources */,
 				0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */,
+				0D68C30722BDC86400FD6CA9 /* Settings.bundle in Resources */,
 				0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */,
 				0D9E320B22B5CE66007B97D7 /* WebViewController.xib in Resources */,
 				0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */,
@@ -551,6 +556,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D68C30322BDC7DD00FD6CA9 /* LicensePlist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LicensePlist;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\nfi\n";
+		};
 		0DC6BD0722B3D57400792ABB /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
