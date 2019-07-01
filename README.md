@@ -2,7 +2,7 @@
 
 ## Requirements
 
-![OS](https://img.shields.io/badge/target-iOS%2012.2-orange.svg) [![Editor](https://img.shields.io/badge/editor-Xcode%2010.2-orange.svg)](https://developer.apple.com/jp/xcode/) [![Language](https://img.shields.io/badge/language-Swift%205.0+-green.svg)](https://swift.org) [![Ruby](https://img.shields.io/badge/Ruby-2.5.0+-red.svg?style=flat)](https://swift.org) [![gem version](https://img.shields.io/badge/gem%20version-%20Bundler%201.17.0+-red.svg?style=flat)](https://swift.org)
+![OS](https://img.shields.io/badge/target-iOS%2012.2-orange.svg) [![Editor](https://img.shields.io/badge/editor-Xcode%2010.2-orange.svg)](https://developer.apple.com/jp/xcode/) [![Language](https://img.shields.io/badge/language-Swift%205.0+-green.svg)](https://swift.org) [![Ruby](https://img.shields.io/badge/Ruby-2.5.0+-red.svg?style=flat)](https://www.ruby-lang.org/ja/) [![gem version](https://img.shields.io/badge/gem%20version-%20Bundler%201.17.0+-red.svg?style=flat)](https://swift.org)
 
 ## Description
 
