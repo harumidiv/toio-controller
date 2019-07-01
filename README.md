@@ -28,6 +28,10 @@ bundle exec fastlane -v
 bundle exec pod install
 ```
 
+## License
+toio controller is licensed under the MIT license.<br>
+Copylight ©2019 Harumi Sagawa<br>
 
-
+The license of toio is referred from the following link<br>
+[https://toio.io/news/2019/20190320-1.html](https://toio.io/news/2019/20190320-1.html)
 
