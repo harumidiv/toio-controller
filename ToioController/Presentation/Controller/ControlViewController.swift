@@ -109,9 +109,9 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func rightStart(_ sender: Any) {
-        if userDefault.object(forKey: "down") != nil {
+        if userDefault.object(forKey: "right") != nil {
             var writeData: [UInt8] = [0x01, 0x01, 0x01]
-            var speed = userDefault.integer(forKey: "down")
+            var speed = userDefault.integer(forKey: "right")
             if speed <= 10 {
                 speed = 11
             }
@@ -119,7 +119,7 @@ class ControlViewController: UIViewController {
             writeData += [data]
             writeData += [0x02]
             writeData += [0x01]
-            writeData += [0x00]
+            writeData += [data / 2]
             writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
         } else {
             writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.right)
@@ -131,14 +131,14 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func leftStart(_ sender: Any) {
-        if userDefault.object(forKey: "down") != nil {
+        if userDefault.object(forKey: "left") != nil {
             var writeData: [UInt8] = [0x01, 0x01, 0x01]
-            var speed = userDefault.integer(forKey: "down")
+            var speed = userDefault.integer(forKey: "left")
             if speed <= 10 {
                 speed = 11
             }
             let data = UInt8(String(speed))!
-            writeData += [0x00]
+            writeData += [data / 2]
             writeData += [0x02]
             writeData += [0x01]
             writeData += [data]
