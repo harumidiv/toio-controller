@@ -119,7 +119,7 @@ class ControlViewController: UIViewController {
             writeData += [data]
             writeData += [0x02]
             writeData += [0x01]
-            writeData += [0x00]
+            writeData += [data / 2]
             writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
         } else {
             writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.right)
@@ -138,7 +138,7 @@ class ControlViewController: UIViewController {
                 speed = 11
             }
             let data = UInt8(String(speed))!
-            writeData += [0x00]
+            writeData += [data / 2]
             writeData += [0x02]
             writeData += [0x01]
             writeData += [data]
