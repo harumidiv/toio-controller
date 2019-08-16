@@ -109,9 +109,9 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func rightStart(_ sender: Any) {
-        if userDefault.object(forKey: "down") != nil {
+        if userDefault.object(forKey: "right") != nil {
             var writeData: [UInt8] = [0x01, 0x01, 0x01]
-            var speed = userDefault.integer(forKey: "down")
+            var speed = userDefault.integer(forKey: "right")
             if speed <= 10 {
                 speed = 11
             }
@@ -131,9 +131,9 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func leftStart(_ sender: Any) {
-        if userDefault.object(forKey: "down") != nil {
+        if userDefault.object(forKey: "left") != nil {
             var writeData: [UInt8] = [0x01, 0x01, 0x01]
-            var speed = userDefault.integer(forKey: "down")
+            var speed = userDefault.integer(forKey: "left")
             if speed <= 10 {
                 speed = 11
             }
