@@ -13,6 +13,7 @@
 		0D37740222B4E212000EFCCC /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740122B4E212000EFCCC /* Cube.swift */; };
 		0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740322B4E247000EFCCC /* ToioPeripheral.swift */; };
 		0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */; };
+		0D42C4F9230ECF4A0083856A /* ConnectMockPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D42C4F8230ECF4A0083856A /* ConnectMockPresenterImpl.swift */; };
 		0D68C30722BDC86400FD6CA9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C30622BDC86400FD6CA9 /* Settings.bundle */; };
 		0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A75E22B4F3C800304AB7 /* Constant.swift */; };
 		0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */; };
@@ -80,6 +81,7 @@
 		0D37740122B4E212000EFCCC /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		0D37740322B4E247000EFCCC /* ToioPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToioPeripheral.swift; sourceTree = "<group>"; };
 		0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Addition.swift"; sourceTree = "<group>"; };
+		0D42C4F8230ECF4A0083856A /* ConnectMockPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectMockPresenterImpl.swift; sourceTree = "<group>"; };
 		0D68C30622BDC86400FD6CA9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ToioController/Settings.bundle; sourceTree = "<group>"; };
 		0D94A75E22B4F3C800304AB7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 				0D94A75E22B4F3C800304AB7 /* Constant.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		0D42C4F7230ECF310083856A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0D42C4F8230ECF4A0083856A /* ConnectMockPresenterImpl.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		0D9E320722B5CE4C007B97D7 /* Web */ = {
@@ -332,6 +342,7 @@
 				0D9E320722B5CE4C007B97D7 /* Web */,
 				0DEB0FB922B49559009E9D9C /* Information */,
 				0DEB0FA222B3E388009E9D9C /* Controller */,
+				0D42C4F7230ECF310083856A /* Mock */,
 				0DA8BC3E22B4976B009AEB5A /* Connect */,
 			);
 			path = Presentation;
@@ -707,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DA8BC5922B4ABF9009AEB5A /* OtherInjector.swift in Sources */,
+				0D42C4F9230ECF4A0083856A /* ConnectMockPresenterImpl.swift in Sources */,
 				0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */,
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,

@@ -66,11 +66,6 @@ class ConnectPresenterImpl: ConnectPresenter {
     }
 
     func loadDevice() {
-        #if DEVELOP
-            output?.showController(cube: nil)
-            return
-        #endif
-
         usecase.loadDevice()
     }
 

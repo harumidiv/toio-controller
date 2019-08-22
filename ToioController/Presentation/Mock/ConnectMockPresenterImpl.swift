@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class ConnectMockPresenterImpl: ConnectPresenter {
+    weak var output: ConnectPresenterOutput?
+
+    init(output: ConnectPresenterOutput) {
+        self.output = output
+    }
+
+    func checkPhoneState() {
+        output?.showController(cube: nil)
+    }
+
+    func loadDevice() {}
+}
