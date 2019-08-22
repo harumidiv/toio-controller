@@ -12,7 +12,7 @@ import RxSwift
 import UIKit
 
 class ControlViewController: UIViewController {
-    let cubeModel: CubeModel
+    let cubeModel: CubeModel?
     let userDefault = UserDefaults.standard
 
     @IBOutlet weak var upButton: DirectionalPadUpButton!
@@ -35,7 +35,7 @@ class ControlViewController: UIViewController {
 
     // MARK: - Initializer
 
-    init(cubeModel: CubeModel) {
+    init(cubeModel: CubeModel?) {
         self.cubeModel = cubeModel
         super.init(nibName: String(describing: ControlViewController.self), bundle: nil)
     }
@@ -45,7 +45,7 @@ class ControlViewController: UIViewController {
     }
 
     deinit {
-        cubeModel.peripheral.disconnect()
+        cubeModel?.peripheral.disconnect()
     }
 
     override func viewDidLoad() {
@@ -203,6 +203,6 @@ class ControlViewController: UIViewController {
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
-        _ = cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+        _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
     }
 }

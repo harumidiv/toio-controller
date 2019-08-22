@@ -21,5 +21,10 @@ final class ConnectInjector: Injector {
         container.register(ConnectWireframe.self) { _ in
             ConnectWireframeImpl()
         }
+        #if DEVELOP
+            container.register(ConnectPresenter.self) { _, output in
+                ConnectMockPresenterImpl(output: output)
+            }
+        #endif
     }
 }

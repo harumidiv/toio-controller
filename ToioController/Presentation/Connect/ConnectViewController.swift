@@ -45,11 +45,13 @@ class ConnectViewController: UIViewController {
 }
 
 extension ConnectViewController: ConnectPresenterOutput {
-    func showController(cube: CubeModel) {
-        searchButton.isHidden = false
-        searchButton.setTitle("cubeを探す", for: .normal)
-        searchButton.backgroundColor = UIColor(appColor: .search)
-        wireframe.showController(vc: self, model: cube)
+    func showController(cube: CubeModel?) {
+        DispatchQueue.main.async {
+            self.searchButton.isHidden = false
+            self.searchButton.setTitle("cubeを探す", for: .normal)
+            self.searchButton.backgroundColor = UIColor(appColor: .search)
+            self.wireframe.showController(vc: self, model: cube)
+        }
     }
 
     func showBatteryError() {
