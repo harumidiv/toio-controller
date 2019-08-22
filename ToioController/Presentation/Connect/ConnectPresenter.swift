@@ -17,7 +17,7 @@ protocol ConnectPresenter: AnyObject {
 protocol ConnectPresenterOutput: AnyObject {
     func showBatteryError()
     func showBluetoothError()
-    func showController(cube: CubeModel)
+    func showController(cube: CubeModel?)
     func showDevice()
     func showTimeout()
 }
@@ -66,6 +66,11 @@ class ConnectPresenterImpl: ConnectPresenter {
     }
 
     func loadDevice() {
+        #if DEVELOP
+            output?.showController(cube: nil)
+            return
+        #endif
+
         usecase.loadDevice()
     }
 

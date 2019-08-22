@@ -10,7 +10,7 @@ import UIKit
 
 protocol ConnectWireframe: AnyObject {
     func showInformation(vc: UIViewController)
-    func showController(vc: UIViewController, model: CubeModel)
+    func showController(vc: UIViewController, model: CubeModel?)
 }
 
 class ConnectWireframeImpl: ConnectWireframe {
@@ -20,7 +20,7 @@ class ConnectWireframeImpl: ConnectWireframe {
         vc.navigationController?.pushViewController(toVC, animated: true)
     }
 
-    func showController(vc: UIViewController, model: CubeModel) {
+    func showController(vc: UIViewController, model: CubeModel?) {
         let toVC = ControlViewController(cubeModel: model)
         vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         vc.navigationController?.pushViewController(toVC, animated: true)
