@@ -110,10 +110,10 @@
                     <rect key="frame" x="568" y="82" width="280" height="280"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7N-60-52b" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="36" y="134" width="110" height="110"/>
+                            <rect key="frame" x="20" y="90" width="90" height="90"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="110" id="TdQ-oD-3B6"/>
-                                <constraint firstAttribute="height" constant="110" id="V56-py-60x"/>
+                                <constraint firstAttribute="width" constant="90" id="TdQ-oD-3B6"/>
+                                <constraint firstAttribute="height" constant="90" id="V56-py-60x"/>
                             </constraints>
                             <state key="normal" title="🔙"/>
                             <connections>
@@ -122,10 +122,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-nD-716" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
-                            <rect key="frame" x="134" y="36" width="110" height="110"/>
+                            <rect key="frame" x="170" y="100" width="90" height="90"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="110" id="Z6L-xE-4jk"/>
-                                <constraint firstAttribute="width" constant="110" id="i4C-GN-saj"/>
+                                <constraint firstAttribute="height" constant="90" id="Z6L-xE-4jk"/>
+                                <constraint firstAttribute="width" constant="90" id="i4C-GN-saj"/>
                             </constraints>
                             <state key="normal" title="📯"/>
                             <connections>
@@ -133,14 +133,34 @@
                                 <action selector="honeStop:" destination="-1" eventType="touchUpInside" id="tNn-xU-og9"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FV-cw-FIt" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
+                            <rect key="frame" x="100" y="20" width="90" height="90"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="90" id="DaK-63-FKf"/>
+                                <constraint firstAttribute="width" constant="90" id="qmn-td-Xn3"/>
+                            </constraints>
+                            <state key="normal" title="🌀"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuM-zy-DRb" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
+                            <rect key="frame" x="90" y="170" width="90" height="90"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="Z4J-5N-pL1"/>
+                                <constraint firstAttribute="height" constant="90" id="m32-O9-rKo"/>
+                            </constraints>
+                            <state key="normal" title="🏁"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.21568627450980393" green="0.25490196078431371" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="ahh-nD-716" secondAttribute="trailing" constant="36" id="VMg-Rx-jX1"/>
-                        <constraint firstItem="ahh-nD-716" firstAttribute="top" secondItem="MEr-kR-iSj" secondAttribute="top" constant="36" id="Ysc-gO-nRR"/>
+                        <constraint firstItem="3FV-cw-FIt" firstAttribute="leading" secondItem="MEr-kR-iSj" secondAttribute="leading" constant="100" id="BUU-t8-MTj"/>
+                        <constraint firstAttribute="bottom" secondItem="vuM-zy-DRb" secondAttribute="bottom" constant="20" id="PGA-of-tow"/>
+                        <constraint firstAttribute="trailing" secondItem="vuM-zy-DRb" secondAttribute="trailing" constant="100" id="Utb-2j-EHY"/>
+                        <constraint firstAttribute="trailing" secondItem="ahh-nD-716" secondAttribute="trailing" constant="20" id="VMg-Rx-jX1"/>
+                        <constraint firstItem="3FV-cw-FIt" firstAttribute="top" secondItem="MEr-kR-iSj" secondAttribute="top" constant="20" id="XUQ-GJ-GsA"/>
+                        <constraint firstItem="ahh-nD-716" firstAttribute="top" secondItem="MEr-kR-iSj" secondAttribute="top" constant="100" id="Ysc-gO-nRR"/>
                         <constraint firstAttribute="height" constant="280" id="Yu6-3M-CkO"/>
-                        <constraint firstAttribute="bottom" secondItem="a7N-60-52b" secondAttribute="bottom" constant="36" id="aHK-Ne-Mta"/>
-                        <constraint firstItem="a7N-60-52b" firstAttribute="leading" secondItem="MEr-kR-iSj" secondAttribute="leading" constant="36" id="gb2-FQ-gHm"/>
+                        <constraint firstAttribute="bottom" secondItem="a7N-60-52b" secondAttribute="bottom" constant="100" id="aHK-Ne-Mta"/>
+                        <constraint firstItem="a7N-60-52b" firstAttribute="leading" secondItem="MEr-kR-iSj" secondAttribute="leading" constant="20" id="gb2-FQ-gHm"/>
                         <constraint firstAttribute="width" constant="280" id="r2v-s3-0aW"/>
                     </constraints>
                 </view>
@@ -171,7 +191,7 @@
                 <constraint firstItem="8pw-oQ-3iM" firstAttribute="top" secondItem="yiL-t0-rG8" secondAttribute="bottom" id="wiP-K2-Fz9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="22.167487684729064" y="117.59999999999999"/>
+            <point key="canvasLocation" x="22.098214285714285" y="117.39130434782609"/>
         </view>
     </objects>
 </document>
