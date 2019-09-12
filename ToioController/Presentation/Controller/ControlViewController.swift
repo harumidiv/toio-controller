@@ -202,10 +202,12 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func rotateStart(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.rotate)
         print("start")
     }
 
     @IBAction func rotateStop(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
         print("stop")
     }
 
