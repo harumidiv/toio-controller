@@ -14,6 +14,7 @@ import UIKit
 class ControlViewController: UIViewController {
     let cubeModel: CubeModel?
     let userDefault = UserDefaults.standard
+    var zigzagTimer: Timer!
 
     @IBOutlet weak var upButton: DirectionalPadUpButton!
     @IBOutlet weak var downButton: DirectionalPadDownButton!
@@ -231,7 +232,19 @@ class ControlViewController: UIViewController {
         zigzagButton.isEnabled = true
     }
 
+    var zigzagFlug = false
     @IBAction func zigzagStart(_ sender: Any) {
+        zigzagTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { _ in
+            print("呼ばれたよ")
+            if self.zigzagFlug {
+                self.zigzagFlug = false
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
+            } else {
+                self.zigzagFlug = true
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.left)
+            }
+        })
+
         print("start")
         upButton.isEnabled = false
         downButton.isEnabled = false
@@ -243,6 +256,9 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func zigzagStop(_ sender: Any) {
+        zigzagTimer.invalidate()
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+
         print("stop")
         upButton.isEnabled = true
         downButton.isEnabled = true
