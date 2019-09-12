@@ -21,6 +21,9 @@ class ControlViewController: UIViewController {
     @IBOutlet weak var leftButton: DirectionalPadLeftButton!
     @IBOutlet weak var honeButton: RoundButton!
     @IBOutlet weak var backButton: RoundButton!
+    @IBOutlet weak var rotateButton: RoundButton!
+    @IBOutlet weak var zigzagButton: RoundButton!
+
     @IBOutlet weak var buttonBackgroundView: UIView! {
         didSet {
             buttonBackgroundView.layer.cornerRadius = buttonBackgroundView.frame.width / 2
@@ -196,6 +199,22 @@ class ControlViewController: UIViewController {
         leftButton.isEnabled = true
         rightButton.isEnabled = true
         backButton.isEnabled = true
+    }
+
+    @IBAction func rotateStart(_ sender: Any) {
+        print("start")
+    }
+
+    @IBAction func rotateStop(_ sender: Any) {
+        print("stop")
+    }
+
+    @IBAction func zigzagStart(_ sender: Any) {
+        print("start")
+    }
+
+    @IBAction func zigzagStop(_ sender: Any) {
+        print("stop")
     }
 
     @IBAction func optionTapped(_ sender: UIButton) {
