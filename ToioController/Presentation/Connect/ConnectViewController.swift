@@ -6,12 +6,14 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import Lottie
 import UIKit
 
 class ConnectViewController: UIViewController {
-    @IBOutlet weak var indicator: UIActivityIndicatorView! {
+    @IBOutlet weak var animationView: AnimationView! {
         didSet {
-            indicator.startAnimating()
+            animationView.animation = Animation.named("448-ripple-loading-animation")
+            animationView.loopMode = .loop
         }
     }
 
@@ -39,6 +41,8 @@ class ConnectViewController: UIViewController {
 
     @IBAction func searchStart(_ sender: UIButton) {
         searchButton.isHidden = true
+        animationView.play()
+        animationView.isHidden = false
         descriptionLabel.text = "近くにあるcubeを検索中です"
         presenter.checkPhoneState()
     }
@@ -48,6 +52,8 @@ extension ConnectViewController: ConnectPresenterOutput {
     func showController(cube: CubeModel?) {
         DispatchQueue.main.async {
             self.searchButton.isHidden = false
+            self.animationView.stop()
+            self.animationView.isHidden = true
             self.searchButton.setTitle("cubeを探す", for: .normal)
             self.searchButton.backgroundColor = UIColor(appColor: .search)
             self.wireframe.showController(vc: self, model: cube)
@@ -68,6 +74,8 @@ extension ConnectViewController: ConnectPresenterOutput {
 
     func showTimeout() {
         searchButton.isHidden = false
+        animationView.stop()
+        animationView.isHidden = true
         searchButton.setTitle("もう一度探す", for: .normal)
         searchButton.backgroundColor = UIColor(appColor: .again)
         descriptionLabel.text = "cubeの電源を入れて\n探すボタンを押してください"

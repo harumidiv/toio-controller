@@ -4,6 +4,10 @@ body: MIT License
 Copyrig…
 version: 2.5.0
 
+name: lottie-ios, nameSpecified: 
+body:                     …
+version: 3.1.0
+
 name: RxBluetoothKit, nameSpecified: 
 body:                     …
 version: 5.2.1

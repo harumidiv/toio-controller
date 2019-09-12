@@ -8,6 +8,7 @@ target 'ToioController' do
   pod 'LicensePlist'
   pod 'RxBluetoothKit'
   pod 'Swinject'
+  pod 'lottie-ios'
 
   ## test ----------------------------------
   
