@@ -14,6 +14,7 @@ import UIKit
 class ControlViewController: UIViewController {
     let cubeModel: CubeModel?
     let userDefault = UserDefaults.standard
+    var zigzagTimer: Timer!
 
     @IBOutlet weak var upButton: DirectionalPadUpButton!
     @IBOutlet weak var downButton: DirectionalPadDownButton!
@@ -21,6 +22,9 @@ class ControlViewController: UIViewController {
     @IBOutlet weak var leftButton: DirectionalPadLeftButton!
     @IBOutlet weak var honeButton: RoundButton!
     @IBOutlet weak var backButton: RoundButton!
+    @IBOutlet weak var rotateButton: RoundButton!
+    @IBOutlet weak var zigzagButton: RoundButton!
+
     @IBOutlet weak var buttonBackgroundView: UIView! {
         didSet {
             buttonBackgroundView.layer.cornerRadius = buttonBackgroundView.frame.width / 2
@@ -166,6 +170,8 @@ class ControlViewController: UIViewController {
         leftButton.isEnabled = false
         rightButton.isEnabled = false
         honeButton.isEnabled = false
+        rotateButton.isEnabled = false
+        zigzagButton.isEnabled = false
     }
 
     @IBAction func backStop(_ sender: UIButton) {
@@ -178,6 +184,8 @@ class ControlViewController: UIViewController {
         leftButton.isEnabled = true
         rightButton.isEnabled = true
         honeButton.isEnabled = true
+        rotateButton.isEnabled = true
+        zigzagButton.isEnabled = true
     }
 
     @IBAction func honeStart(_ sender: UIButton) {
@@ -187,6 +195,8 @@ class ControlViewController: UIViewController {
         leftButton.isEnabled = false
         rightButton.isEnabled = false
         backButton.isEnabled = false
+        rotateButton.isEnabled = false
+        zigzagButton.isEnabled = false
     }
 
     @IBAction func honeStop(_ sender: UIButton) {
@@ -196,6 +206,67 @@ class ControlViewController: UIViewController {
         leftButton.isEnabled = true
         rightButton.isEnabled = true
         backButton.isEnabled = true
+        rotateButton.isEnabled = true
+        zigzagButton.isEnabled = true
+    }
+
+    @IBAction func rotateStart(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.rotate)
+        upButton.isEnabled = false
+        downButton.isEnabled = false
+        leftButton.isEnabled = false
+        rightButton.isEnabled = false
+        backButton.isEnabled = false
+        honeButton.isEnabled = false
+        zigzagButton.isEnabled = false
+    }
+
+    @IBAction func rotateStop(_ sender: Any) {
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+        upButton.isEnabled = true
+        downButton.isEnabled = true
+        leftButton.isEnabled = true
+        rightButton.isEnabled = true
+        backButton.isEnabled = true
+        honeButton.isEnabled = true
+        zigzagButton.isEnabled = true
+    }
+
+    var zigzagFlug = false
+    @IBAction func zigzagStart(_ sender: Any) {
+        zigzagTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { _ in
+            print("呼ばれたよ")
+            if self.zigzagFlug {
+                self.zigzagFlug = false
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
+            } else {
+                self.zigzagFlug = true
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.left)
+            }
+        })
+
+        print("start")
+        upButton.isEnabled = false
+        downButton.isEnabled = false
+        leftButton.isEnabled = false
+        rightButton.isEnabled = false
+        backButton.isEnabled = false
+        honeButton.isEnabled = false
+        rotateButton.isEnabled = false
+    }
+
+    @IBAction func zigzagStop(_ sender: Any) {
+        zigzagTimer.invalidate()
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+
+        print("stop")
+        upButton.isEnabled = true
+        downButton.isEnabled = true
+        leftButton.isEnabled = true
+        rightButton.isEnabled = true
+        backButton.isEnabled = true
+        honeButton.isEnabled = true
+        rotateButton.isEnabled = true
     }
 
     @IBAction func optionTapped(_ sender: UIButton) {
