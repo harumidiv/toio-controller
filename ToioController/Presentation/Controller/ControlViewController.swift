@@ -16,6 +16,8 @@ class ControlViewController: UIViewController {
     let userDefault = UserDefaults.standard
     var zigzagTimer: Timer!
 
+    private var isFirstZigZag: Bool = true
+
     @IBOutlet weak var upButton: DirectionalPadUpButton!
     @IBOutlet weak var downButton: DirectionalPadDownButton!
     @IBOutlet weak var rightButton: DirectionalPadRightButton!
@@ -234,6 +236,12 @@ class ControlViewController: UIViewController {
 
     var zigzagFlug = false
     @IBAction func zigzagStart(_ sender: Any) {
+        // タップしてから0.3秒開いてしまうので調整用
+        if isFirstZigZag {
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
+            isFirstZigZag = false
+        }
+
         zigzagTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { _ in
             print("呼ばれたよ")
             if self.zigzagFlug {
@@ -257,6 +265,8 @@ class ControlViewController: UIViewController {
 
     @IBAction func zigzagStop(_ sender: Any) {
         zigzagTimer.invalidate()
+        isFirstZigZag = true
+        zigzagFlug = false
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
 
         print("stop")

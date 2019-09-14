@@ -875,8 +875,9 @@
 			baseConfigurationReference = FD7A9B524A48A6BD571672C0 /* Pods-ToioController.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24BSY9Z4H5;
+				DEVELOPMENT_TEAM = SJ6H3ZPYB5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEVELOP=1",
 					"COCOAPODS=1",
@@ -889,6 +890,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEVELOP";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1058,8 +1060,9 @@
 			baseConfigurationReference = 67F182DFFC13D927644E1204 /* Pods-ToioController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24BSY9Z4H5;
+				DEVELOPMENT_TEAM = SJ6H3ZPYB5;
 				INFOPLIST_FILE = ToioController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1068,6 +1071,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1078,8 +1082,9 @@
 			baseConfigurationReference = D57281A910749A9154FB1B1A /* Pods-ToioController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24BSY9Z4H5;
+				DEVELOPMENT_TEAM = SJ6H3ZPYB5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
 					"COCOAPODS=1",
@@ -1092,6 +1097,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
