@@ -27,6 +27,15 @@ class ConnectViewController: UIViewController {
 
     private lazy var wireframe: ConnectWireframe = ConnectInjector.container.resolve(ConnectWireframe.self)!
 
+    // MARK: - LifeCycle
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(viewWillEnterForeground(
+            notification:
+        )), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "探索中..."
@@ -35,8 +44,18 @@ class ConnectViewController: UIViewController {
         navigationItem.rightBarButtonItem = informationButton
     }
 
+    // MARK: - Event
+
     @objc func showInformation(_ sender: UIBarButtonItem) {
         wireframe.showInformation(vc: self)
+    }
+
+    @objc func viewWillEnterForeground(notification: Notification) {
+        showInformation(title: "Bluetooth Permission", message: "コントローラを使用するにはBluetoothの許可が必要です", buttonText: "許可する") {
+            if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
     }
 
     @IBAction func searchStart(_ sender: UIButton) {
@@ -49,6 +68,16 @@ class ConnectViewController: UIViewController {
 }
 
 extension ConnectViewController: ConnectPresenterOutput {
+    func showBluetoothPermissionAlert() {
+        DispatchQueue.main.async {
+            self.showInformation(title: "Bluetooth Permission", message: "コントローラを使用するにはBluetoothの許可が必要です", buttonText: "設定に移動") {
+                if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+        }
+    }
+
     func showController(cube: CubeModel?) {
         DispatchQueue.main.async {
             self.searchButton.isHidden = false
