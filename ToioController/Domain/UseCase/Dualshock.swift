@@ -6,11 +6,21 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import CoreBluetooth
 import Foundation
 import GameController
 
 class Dualshock {
-    init() {
+    let cubeModel: CubeModel
+
+    var zigzagTimer: Timer!
+    var zigzagFlug = false
+    var isFirstZigZag = true
+
+    // MARK: - Initializer
+
+    init(cubeModel: CubeModel) {
+        self.cubeModel = cubeModel
         setupGameController()
     }
 
@@ -24,9 +34,7 @@ class Dualshock {
             self, selector: #selector(handleControllerDidDisconnect),
             name: NSNotification.Name.GCControllerDidDisconnect, object: nil
         )
-        let controllers: [GCController] = GCController.controllers()
-
-        guard let controller: GCController = controllers.first else {
+        guard let controller = GCController.controllers().first else {
             return
         }
         registerGameController(controller)
@@ -54,10 +62,86 @@ class Dualshock {
         }
     }
 
-    func registerGameController(_ gameController: GCController) {}
+    func registerGameController(_ gameController: GCController) {
+        if let gamepad = gameController.extendedGamepad {
+            rightButtonControl(gamepad: gamepad)
+        }
+    }
+
+    // MARK: - Button ▲ ▫️ ✖︎ ●
+
+    private func rightButtonControl(gamepad: GCExtendedGamepad) {
+        let triangleButton: GCControllerButtonInput = gamepad.buttonY
+        let circleButton: GCControllerButtonInput = gamepad.buttonB
+        let crossButton: GCControllerButtonInput = gamepad.buttonA
+        let rectButton: GCControllerButtonInput = gamepad.buttonX
+
+        triangleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if pressed {
+                print("▲")
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.rotate)
+            } else {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+            }
+        }
+        rectButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if pressed {
+                print("■")
+                // moter
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.BackData.moter)
+
+                // light
+                self.writeValue(characteristics: .light, writeType: .withResponse, value: Constant.BackData.light)
+
+                // sound
+                self.writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.BackData.sound)
+            } else {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+                self.writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
+                self.writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+            }
+        }
+
+        crossButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if pressed {
+                print("✖︎")
+                if self.isFirstZigZag {
+                    self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
+                    self.isFirstZigZag = false
+                }
+                self.zigzagTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { _ in
+                    print("呼ばれたよ")
+                    if self.zigzagFlug {
+                        self.zigzagFlug = false
+                        self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
+                    } else {
+                        self.zigzagFlug = true
+                        self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.left)
+                    }
+                })
+            } else {
+                self.isFirstZigZag = true
+                self.zigzagTimer.invalidate()
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+            }
+        }
+
+        circleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if pressed {
+                print("●")
+                self.writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.WriteData.hone)
+            } else {
+                self.writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+            }
+        }
+    }
 
     func unregisterGameController() {
         // TODO: Controllerがdisconnectされた時にAlertを表示する
         print("disconnect")
+    }
+
+    private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
+        _ = cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
     }
 }

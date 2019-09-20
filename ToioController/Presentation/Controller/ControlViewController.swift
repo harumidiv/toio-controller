@@ -15,6 +15,7 @@ class ControlViewController: UIViewController {
     let cubeModel: CubeModel?
     let userDefault = UserDefaults.standard
     var zigzagTimer: Timer!
+    var controller: Dualshock?
 
     @IBOutlet weak var upButton: DirectionalPadUpButton!
     @IBOutlet weak var downButton: DirectionalPadDownButton!
@@ -54,6 +55,8 @@ class ControlViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        controller = Dualshock(cubeModel: cubeModel!)
 
         title = "toio controller"
 
