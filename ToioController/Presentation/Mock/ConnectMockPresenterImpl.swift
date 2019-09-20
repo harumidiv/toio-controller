@@ -9,6 +9,10 @@
 import Foundation
 
 class ConnectMockPresenterImpl: ConnectPresenter {
+    func checkBluetoothAuthorization() -> Bool {
+        return true
+    }
+
     weak var output: ConnectPresenterOutput?
 
     init(output: ConnectPresenterOutput) {

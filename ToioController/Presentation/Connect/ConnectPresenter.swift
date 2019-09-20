@@ -12,6 +12,7 @@ import RxSwift
 protocol ConnectPresenter: AnyObject {
     func checkPhoneState()
     func loadDevice()
+    func checkBluetoothAuthorization() -> Bool
 }
 
 protocol ConnectPresenterOutput: AnyObject {
@@ -39,6 +40,11 @@ class ConnectPresenterImpl: ConnectPresenter {
     }
 
     // MAKR: - Public methods
+
+    func checkBluetoothAuthorization() -> Bool {
+        return phoneDeviceUseCase.checkBluetoothAuthorization()
+    }
+
     func checkPhoneState() {
         phoneDeviceUseCase.getBattery()
             .take(1)

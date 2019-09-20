@@ -53,6 +53,10 @@ class ConnectViewController: UIViewController {
     }
 
     @objc func viewWillEnterForeground(notification: Notification) {
+        if presenter.checkBluetoothAuthorization() {
+            return
+        }
+
         showInformation(title: "Bluetooth Permission", message: "コントローラを使用するにはBluetoothの許可が必要です", buttonText: "許可する") {
             if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
