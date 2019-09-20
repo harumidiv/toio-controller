@@ -27,6 +27,8 @@ class ConnectViewController: UIViewController {
 
     private lazy var wireframe: ConnectWireframe = ConnectInjector.container.resolve(ConnectWireframe.self)!
 
+    var controller: Dualshock!
+
     // MARK: - LifeCycle
 
     override func viewWillAppear(_ animated: Bool) {

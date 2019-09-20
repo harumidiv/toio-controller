@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0548AB5722B8EBE00003A2B1 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548AB5622B8EBE00003A2B1 /* OptionButton.swift */; };
+		057DFD8223350FB100E9FB32 /* Dualshock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFD8123350FB100E9FB32 /* Dualshock.swift */; };
 		0D0483DA232A487800CBBF3E /* 448-ripple-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D0483D9232A487700CBBF3E /* 448-ripple-loading-animation.json */; };
 		0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */; };
 		0D37740022B4D9AE000EFCCC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FF22B4D9AE000EFCCC /* Result.swift */; };
@@ -77,6 +78,7 @@
 /* Begin PBXFileReference section */
 		0548AB5622B8EBE00003A2B1 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		0548AB5822B8EBF20003A2B1 /* OptionButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionButton.xib; sourceTree = "<group>"; };
+		057DFD8123350FB100E9FB32 /* Dualshock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dualshock.swift; sourceTree = "<group>"; };
 		0D0483D9232A487700CBBF3E /* 448-ripple-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "448-ripple-loading-animation.json"; sourceTree = "<group>"; };
 		0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeModel.swift; sourceTree = "<group>"; };
 		0D3773FF22B4D9AE000EFCCC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */,
 				0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */,
+				057DFD8123350FB100E9FB32 /* Dualshock.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				0D37740222B4E212000EFCCC /* Cube.swift in Sources */,
 				0D9E325722B6746E007B97D7 /* RoundButton.swift in Sources */,
 				0548AB5722B8EBE00003A2B1 /* OptionButton.swift in Sources */,
+				057DFD8223350FB100E9FB32 /* Dualshock.swift in Sources */,
 				0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */,
 				0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */,
 				0D37740022B4D9AE000EFCCC /* Result.swift in Sources */,
