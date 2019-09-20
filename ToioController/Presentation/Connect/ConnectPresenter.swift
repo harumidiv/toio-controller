@@ -18,6 +18,7 @@ protocol ConnectPresenterOutput: AnyObject {
     func showBatteryError()
     func showBluetoothError()
     func showController(cube: CubeModel?)
+    func showBluetoothPermissionAlert()
     func showDevice()
     func showTimeout()
 }
@@ -59,6 +60,8 @@ class ConnectPresenterImpl: ConnectPresenter {
                 switch state {
                 case .poweredOn:
                     self.output?.showDevice()
+                case .unauthorized:
+                    self.output?.showBluetoothPermissionAlert()
                 default:
                     self.output?.showBluetoothError()
                 }
