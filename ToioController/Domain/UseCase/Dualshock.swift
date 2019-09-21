@@ -28,6 +28,7 @@ class Dualshock {
     var modeBTimer: Timer?
 
     let controlType: ControlType
+    var isButtonEvent: Bool = false
 
     // MARK: - Initializer
 
@@ -68,10 +69,16 @@ class Dualshock {
     }
 
     @objc func writeDirectionMoterControl(_ timer: Timer!) {
+        if isButtonEvent {
+            return
+        }
         modeA.writeAndleBytes()
     }
 
     @objc func writeSteeringMoterControl(_ timer: Timer!) {
+        if isButtonEvent {
+            return
+        }
         modeB.writeSteeringBytes()
     }
 
@@ -116,8 +123,10 @@ class Dualshock {
         triangleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
             if pressed {
                 print("▲")
+                self.isButtonEvent = true
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.rotate)
             } else {
+                self.isButtonEvent = false
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
             }
         }
@@ -125,6 +134,7 @@ class Dualshock {
         rectButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
             if pressed {
                 print("■")
+                self.isButtonEvent = true
                 // moter
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.BackData.moter)
 
@@ -134,6 +144,7 @@ class Dualshock {
                 // sound
                 self.writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.BackData.sound)
             } else {
+                self.isButtonEvent = false
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
                 self.writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
                 self.writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
@@ -143,6 +154,7 @@ class Dualshock {
         crossButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
             if pressed {
                 print("✖︎")
+                self.isButtonEvent = true
                 if self.isFirstZigZag {
                     self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
                     self.isFirstZigZag = false
@@ -157,6 +169,7 @@ class Dualshock {
                     }
                 })
             } else {
+                self.isButtonEvent = false
                 self.isFirstZigZag = true
                 self.zigzagTimer.invalidate()
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
@@ -166,8 +179,10 @@ class Dualshock {
         circleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
             if pressed {
                 print("●")
+                self.isButtonEvent = true
                 self.writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.WriteData.hone)
             } else {
+                self.isButtonEvent = false
                 self.writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
             }
         }
@@ -198,9 +213,10 @@ class Dualshock {
         directionPad.valueChangedHandler = { (_: GCControllerDirectionPad, _ x: Float, _ y: Float) -> Void in
             if x == 0, y == 0 {
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.stop)
+                self.isButtonEvent = false
                 return
             }
-            // 斜め
+            self.isButtonEvent = true
 
             if x == 1.0, y == 1.0 {
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.upperRigit)
