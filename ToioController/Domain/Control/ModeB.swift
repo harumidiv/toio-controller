@@ -27,7 +27,7 @@ class ModeB: Control {
     }
 
     func steeringControl(x: Float) {
-        steeringAngle = x
+        steeringAngle = x / 2.5
     }
 
     func writeSteeringBytes() {
