@@ -10,6 +10,12 @@ import CoreBluetooth
 import Foundation
 import GameController
 
+enum ControlType {
+    case modeA
+    case modeB
+    case modeC
+}
+
 class Dualshock {
     let cubeModel: CubeModel
 
@@ -17,14 +23,20 @@ class Dualshock {
     var zigzagFlug = false
     var isFirstZigZag = true
     let modeA: ModeA
-    var directionTimer: Timer?
+    let modeB: ModeB
+    var modeATimer: Timer?
+    var modeBTimer: Timer?
+
+    let controlType: ControlType
 
     // MARK: - Initializer
 
     init(cubeModel: CubeModel) {
         self.cubeModel = cubeModel
+        controlType = .modeB
 
         modeA = ModeA(cubeModel: cubeModel)
+        modeB = ModeB(cubeModel: cubeModel)
         setupGameController()
     }
 
@@ -41,13 +53,26 @@ class Dualshock {
         guard let controller = GCController.controllers().first else {
             return
         }
-        directionTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeDirectionMoterControl(_:)), userInfo: nil, repeats: true)
+
+        switch controlType {
+        case .modeA:
+            modeATimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeDirectionMoterControl(_:)), userInfo: nil, repeats: true)
+        case .modeB:
+            modeBTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeSteeringMoterControl(_:)), userInfo: nil, repeats: true)
+        case .modeC:
+            // TODO:
+            break
+        }
 
         registerGameController(controller)
     }
 
     @objc func writeDirectionMoterControl(_ timer: Timer!) {
         modeA.writeAndleBytes()
+    }
+
+    @objc func writeSteeringMoterControl(_ timer: Timer!) {
+        modeB.writeSteeringBytes()
     }
 
     // アプリ起動中に新規でコントローラが接続された際に飛んでくる
@@ -154,22 +179,14 @@ class Dualshock {
         let leftThumbstick = gamepad.leftThumbstick
         let rightThumbstick = gamepad.rightThumbstick
 
-        leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, x: Float, y: Float) -> Void in
-            print("a")
-            self.modeA.leftJoyStickDirectionControl(x: x, y: y)
+        leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, y: Float) -> Void in
+//            self.modeA.leftJoyStickDirectionControl(x: x, y: y)
+
+            self.modeB.speedControl(y: y)
         }
 
-        rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, _: Float) -> Void in
-            print("vb")
-
-//             switch self.controlType {
-//             case .modeA:
-//                 self.modeA.LeftJoyStickDirectionControl(x: x, y: y, service: service, count: count)
-//             case .modeB:
-//                 self.modeB.steeringControl(x: x, count: count)
-//             case .modeC:
-//                 self.modeC.LeftJoyStickOnkycontrol(x: x, y: y, service: service, count: count)
-//             }
+        rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, x: Float, _: Float) -> Void in
+            self.modeB.steeringControl(x: x)
         }
     }
 

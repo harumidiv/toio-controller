@@ -11,6 +11,7 @@
 		057DFD8223350FB100E9FB32 /* Dualshock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFD8123350FB100E9FB32 /* Dualshock.swift */; };
 		057DFDC12335A46700E9FB32 /* ModeA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC02335A46700E9FB32 /* ModeA.swift */; };
 		057DFDC32335A48B00E9FB32 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC22335A48B00E9FB32 /* Control.swift */; };
+		057DFDC52335BCA000E9FB32 /* ModeB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC42335BCA000E9FB32 /* ModeB.swift */; };
 		0D0483DA232A487800CBBF3E /* 448-ripple-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D0483D9232A487700CBBF3E /* 448-ripple-loading-animation.json */; };
 		0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */; };
 		0D37740022B4D9AE000EFCCC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FF22B4D9AE000EFCCC /* Result.swift */; };
@@ -83,6 +84,7 @@
 		057DFD8123350FB100E9FB32 /* Dualshock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dualshock.swift; sourceTree = "<group>"; };
 		057DFDC02335A46700E9FB32 /* ModeA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeA.swift; sourceTree = "<group>"; };
 		057DFDC22335A48B00E9FB32 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
+		057DFDC42335BCA000E9FB32 /* ModeB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeB.swift; sourceTree = "<group>"; };
 		0D0483D9232A487700CBBF3E /* 448-ripple-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "448-ripple-loading-animation.json"; sourceTree = "<group>"; };
 		0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeModel.swift; sourceTree = "<group>"; };
 		0D3773FF22B4D9AE000EFCCC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				057DFDC22335A48B00E9FB32 /* Control.swift */,
 				057DFDC02335A46700E9FB32 /* ModeA.swift */,
+				057DFDC42335BCA000E9FB32 /* ModeB.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				057DFDC32335A48B00E9FB32 /* Control.swift in Sources */,
 				0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */,
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
+				057DFDC52335BCA000E9FB32 /* ModeB.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,
 				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,
 				0D37740222B4E212000EFCCC /* Cube.swift in Sources */,
