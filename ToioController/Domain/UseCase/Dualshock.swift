@@ -65,6 +65,8 @@ class Dualshock {
     func registerGameController(_ gameController: GCController) {
         if let gamepad = gameController.extendedGamepad {
             rightButtonControl(gamepad: gamepad)
+            thumbstick(gamepad: gamepad)
+            directionPad(gamepad: gamepad)
         }
     }
 
@@ -84,6 +86,7 @@ class Dualshock {
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
             }
         }
+
         rectButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
             if pressed {
                 print("■")
@@ -110,7 +113,6 @@ class Dualshock {
                     self.isFirstZigZag = false
                 }
                 self.zigzagTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { _ in
-                    print("呼ばれたよ")
                     if self.zigzagFlug {
                         self.zigzagFlug = false
                         self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
@@ -132,6 +134,73 @@ class Dualshock {
                 self.writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.WriteData.hone)
             } else {
                 self.writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+            }
+        }
+    }
+
+    // MARK: - 🕹 Thumbstick 🕹
+
+    private func thumbstick(gamepad: GCExtendedGamepad) {
+        let leftThumbstick = gamepad.leftThumbstick
+        let rightThumbstick = gamepad.rightThumbstick
+
+        leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, _: Float) -> Void in
+            print("a")
+        }
+
+        rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, _: Float) -> Void in
+            print("vb")
+
+//             switch self.controlType {
+//             case .modeA:
+//                 self.modeA.LeftJoyStickDirectionControl(x: x, y: y, service: service, count: count)
+//             case .modeB:
+//                 self.modeB.steeringControl(x: x, count: count)
+//             case .modeC:
+//                 self.modeC.LeftJoyStickOnkycontrol(x: x, y: y, service: service, count: count)
+//             }
+        }
+    }
+
+    // MARK: - ⬆️⬇️➡️⬅️
+
+    private func directionPad(gamepad: GCExtendedGamepad) {
+        let directionPad = gamepad.dpad
+
+        directionPad.valueChangedHandler = { (_: GCControllerDirectionPad, _ x: Float, _ y: Float) -> Void in
+            if x == 0, y == 0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.stop)
+                return
+            }
+            // 斜め
+
+            if x == 1.0, y == 1.0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.upperRigit)
+                return
+            } else if x == -1.0, y == -1.0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.bottomLeft)
+                return
+            } else if x == 1.0, y == -1.0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.bottomRight)
+                return
+            } else if x == -1.0, y == 1.0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.upperLeft)
+                return
+            }
+
+            // 上下左右
+
+            if x == 1.0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.right)
+            }
+            if x == -1.0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.left)
+            }
+            if y == 1.0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.up)
+            }
+            if y == -1.0 {
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.down)
             }
         }
     }
