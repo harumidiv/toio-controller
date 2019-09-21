@@ -16,11 +16,15 @@ class Dualshock {
     var zigzagTimer: Timer!
     var zigzagFlug = false
     var isFirstZigZag = true
+    let modeA: ModeA
+    var directionTimer: Timer?
 
     // MARK: - Initializer
 
     init(cubeModel: CubeModel) {
         self.cubeModel = cubeModel
+
+        modeA = ModeA(cubeModel: cubeModel)
         setupGameController()
     }
 
@@ -37,7 +41,13 @@ class Dualshock {
         guard let controller = GCController.controllers().first else {
             return
         }
+        directionTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeDirectionMoterControl(_:)), userInfo: nil, repeats: true)
+
         registerGameController(controller)
+    }
+
+    @objc func writeDirectionMoterControl(_ timer: Timer!) {
+        modeA.writeAndleBytes()
     }
 
     // アプリ起動中に新規でコントローラが接続された際に飛んでくる
@@ -144,8 +154,9 @@ class Dualshock {
         let leftThumbstick = gamepad.leftThumbstick
         let rightThumbstick = gamepad.rightThumbstick
 
-        leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, _: Float) -> Void in
+        leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, x: Float, y: Float) -> Void in
             print("a")
+            self.modeA.leftJoyStickDirectionControl(x: x, y: y)
         }
 
         rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, _: Float) -> Void in
