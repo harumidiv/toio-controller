@@ -16,6 +16,10 @@ enum ControlType {
     case modeC
 }
 
+protocol DualshockOutput: AnyObject {
+    func showSettingScreen()
+}
+
 class Dualshock {
     let cubeModel: CubeModel
 
@@ -30,11 +34,14 @@ class Dualshock {
     let controlType: ControlType
     var isButtonEvent: Bool = false
 
+    weak var output: DualshockOutput?
+
     // MARK: - Initializer
 
-    init(cubeModel: CubeModel) {
+    init(cubeModel: CubeModel, output: DualshockOutput) {
         self.cubeModel = cubeModel
         controlType = .modeB
+        self.output = output
 
         modeA = ModeA(cubeModel: cubeModel)
         modeB = ModeB(cubeModel: cubeModel)
@@ -109,6 +116,7 @@ class Dualshock {
             rightButtonControl(gamepad: gamepad)
             thumbstick(gamepad: gamepad)
             directionPad(gamepad: gamepad)
+            settingButton(gamepad: gamepad)
         }
     }
 
@@ -245,6 +253,27 @@ class Dualshock {
             }
             if y == -1.0 {
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.down)
+            }
+        }
+    }
+
+    private func settingButton(gamepad: GCExtendedGamepad) {
+        if #available(iOS 13.0, *) {
+            let menuButton = gamepad.buttonMenu
+            menuButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+                if pressed {
+                    print("pressed")
+                    // TODO: Thumsthickのコントロール方法を制御できるようにする
+                    // 設定用の新規画面を作成
+                }
+            }
+        }
+        if #available(iOS 13.0, *) {
+            let shareButton = gamepad.buttonOptions
+            shareButton?.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+                if pressed {
+                    self.output?.showSettingScreen()
+                }
             }
         }
     }

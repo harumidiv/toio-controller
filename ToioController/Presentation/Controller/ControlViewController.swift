@@ -56,7 +56,7 @@ class ControlViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        controller = Dualshock(cubeModel: cubeModel!)
+        controller = Dualshock(cubeModel: cubeModel!, output: self)
 
         title = "toio controller"
 
@@ -248,7 +248,6 @@ class ControlViewController: UIViewController {
             }
         })
 
-        print("start")
         upButton.isEnabled = false
         downButton.isEnabled = false
         leftButton.isEnabled = false
@@ -261,8 +260,6 @@ class ControlViewController: UIViewController {
     @IBAction func zigzagStop(_ sender: Any) {
         zigzagTimer.invalidate()
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
-
-        print("stop")
         upButton.isEnabled = true
         downButton.isEnabled = true
         leftButton.isEnabled = true
@@ -278,5 +275,15 @@ class ControlViewController: UIViewController {
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
         _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+    }
+}
+
+extension ControlViewController: DualshockOutput {
+    func showSettingScreen() {
+        if let topController = UIApplication.topViewController() {
+            if topController.className == "ControlViewController" {
+                navigationController?.pushViewController(SettingViewController(titleText: "設定"), animated: true)
+            }
+        }
     }
 }
