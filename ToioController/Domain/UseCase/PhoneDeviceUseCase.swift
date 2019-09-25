@@ -6,6 +6,7 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import CoreBluetooth
 import Foundation
 import RxBluetoothKit
 import RxSwift
@@ -13,9 +14,19 @@ import RxSwift
 protocol PhoneDeviceUsecase: AnyObject {
     func getBattery() -> Observable<Float>
     func getBluetoothState() -> Observable<BluetoothState>
+    func checkBluetoothAuthorization() -> Bool
 }
 
 class PhoneDeviceUsecaseImpl: PhoneDeviceUsecase {
+    func checkBluetoothAuthorization() -> Bool {
+        let manager = CBCentralManager()
+        if manager.authorization == .allowedAlways {
+            return true
+        } else {
+            return false
+        }
+    }
+
     func getBattery() -> Observable<Float> {
         defer {
             // メソッドを抜けた時にバッテリーモニタリングを不可に戻す
