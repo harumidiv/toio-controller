@@ -48,6 +48,27 @@ class Dualshock {
         setupGameController()
     }
 
+    // MARK: - PublicMethod
+
+    func removeTimer() {
+        modeATimer?.invalidate()
+        modeBTimer?.invalidate()
+    }
+
+    func setTimer() {
+        switch controlType {
+        case .modeA:
+            modeATimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeDirectionMoterControl(_:)), userInfo: nil, repeats: true)
+        case .modeB:
+            modeBTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeSteeringMoterControl(_:)), userInfo: nil, repeats: true)
+        case .modeC:
+            // TODO:
+            break
+        }
+    }
+
+    // MARK: - PrivateMethod
+
     private func setupGameController() {
         NotificationCenter.default.addObserver(
             self, selector: #selector(handleControllerDidConnect),
@@ -94,7 +115,6 @@ class Dualshock {
         guard let gameController = notification.object as? GCController else {
             return
         }
-
         registerGameController(gameController)
     }
 
