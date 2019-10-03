@@ -18,6 +18,11 @@ target 'ToioController' do
 
   target 'ToioControllerUITests' do
     inherit! :search_paths
+        pod 'SwiftLint'
+        pod 'SwiftFormat/CLI'
+        pod 'LicensePlist'
+        pod 'RxBluetoothKit'
+        pod 'Swinject'
+        pod 'lottie-ios'
       end
-
 end

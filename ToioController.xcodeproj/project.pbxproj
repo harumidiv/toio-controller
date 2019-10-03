@@ -516,6 +516,7 @@
 				0DC6BCF122B3D02E00792ABB /* Sources */,
 				0DC6BCF222B3D02E00792ABB /* Frameworks */,
 				0DC6BCF322B3D02E00792ABB /* Resources */,
+				DB93F1CABB9EC433D8842EE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -718,6 +719,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ToioController/Pods-ToioController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB93F1CABB9EC433D8842EE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EFE3A80E960B94A174A5DF25 /* [CP] Check Pods Manifest.lock */ = {
