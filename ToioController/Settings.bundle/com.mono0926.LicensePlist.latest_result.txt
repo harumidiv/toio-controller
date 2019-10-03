@@ -4,6 +4,16 @@ body: MIT License
 Copyrig…
 version: 2.5.0
 
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.5.0
+
+name: lottie-ios, nameSpecified: 
+body:                     …
+version: 3.1.0
+
 name: lottie-ios, nameSpecified: 
 body:                     …
 version: 3.1.0
@@ -11,6 +21,15 @@ version: 3.1.0
 name: RxBluetoothKit, nameSpecified: 
 body:                     …
 version: 5.2.1
+
+name: RxBluetoothKit, nameSpecified: 
+body:                     …
+version: 5.2.1
+
+name: RxSwift, nameSpecified: 
+body: **The MIT License**
+…
+version: 5.0.0
 
 name: RxSwift, nameSpecified: 
 body: **The MIT License**
@@ -23,9 +42,23 @@ body: MIT License
 Copyrig…
 version: 0.40.9
 
+name: SwiftFormat, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 0.40.9
+
 name: SwiftLint, nameSpecified: 
 body: The MIT License (MIT…
 version: 0.32.0
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.32.0
+
+name: Swinject, nameSpecified: 
+body: The MIT License (MIT…
+version: 2.6.1
 
 name: Swinject, nameSpecified: 
 body: The MIT License (MIT…
