@@ -1121,6 +1121,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "\"-D\" \"COCOAPODS\" -D MOCK";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.ToioControllerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
