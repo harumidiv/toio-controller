@@ -29,6 +29,12 @@ bundle exec fastlane -v
 bundle exec pod install
 ```
 
+## snapshot
+
+```
+bundle exec fastlane screenshots
+```
+
 ## License
 toio controller is licensed under the MIT license.<br>
 Copylight ©2019 Harumi Sagawa<br>

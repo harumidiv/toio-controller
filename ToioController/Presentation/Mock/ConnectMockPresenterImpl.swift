@@ -9,6 +9,7 @@
 import Foundation
 
 class ConnectMockPresenterImpl: ConnectPresenter {
+    let phoneUseCase = PhoneDeviceMockUsecase()
     func checkBluetoothAuthorization() -> Bool {
         return true
     }
