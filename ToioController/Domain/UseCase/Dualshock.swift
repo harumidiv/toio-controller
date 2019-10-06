@@ -21,7 +21,7 @@ protocol DualshockOutput: AnyObject {
 }
 
 class Dualshock {
-    let cubeModel: CubeModel
+    let cubeModel: CubeModel?
 
     var zigzagTimer: Timer!
     var zigzagFlug = false
@@ -38,7 +38,7 @@ class Dualshock {
 
     // MARK: - Initializer
 
-    init(cubeModel: CubeModel, output: DualshockOutput) {
+    init(cubeModel: CubeModel?, output: DualshockOutput) {
         self.cubeModel = cubeModel
         controlType = .modeB
         self.output = output
@@ -304,6 +304,6 @@ class Dualshock {
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
-        _ = cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+        _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
     }
 }

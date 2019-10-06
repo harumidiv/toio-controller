@@ -15,9 +15,9 @@ class ModeB: Control {
     var steeringAngle: Float = 0
     var speedValue: Int = 0
     var alreadyStopWrite: Bool = false
-    let cubeModel: CubeModel
+    let cubeModel: CubeModel?
 
-    init(cubeModel: CubeModel) {
+    init(cubeModel: CubeModel?) {
         self.cubeModel = cubeModel
     }
 
@@ -84,6 +84,6 @@ class ModeB: Control {
     }
 
     override func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
-        _ = cubeModel.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+        _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
     }
 }

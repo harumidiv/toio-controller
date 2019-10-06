@@ -69,7 +69,7 @@ class ControlViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        controller = Dualshock(cubeModel: cubeModel!, output: self)
+        controller = Dualshock(cubeModel: cubeModel, output: self)
 
         title = "toio controller"
 
