@@ -26,5 +26,11 @@ final class ConnectInjector: Injector {
                 ConnectMockPresenterImpl(output: output)
             }
         #endif
+
+        #if MOCK
+            container.register(ConnectPresenter.self) { _, output in
+                ConnectMockPresenterImpl(output: output)
+            }
+        #endif
     }
 }

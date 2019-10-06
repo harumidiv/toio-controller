@@ -13,6 +13,7 @@
 		057DFDC32335A48B00E9FB32 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC22335A48B00E9FB32 /* Control.swift */; };
 		057DFDC52335BCA000E9FB32 /* ModeB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC42335BCA000E9FB32 /* ModeB.swift */; };
 		057DFDC72335E30C00E9FB32 /* UIApplication+ Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC62335E30C00E9FB32 /* UIApplication+ Addition.swift */; };
+		0D02BF352349D2F30095F910 /* PhoneDeviceMockUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02BF342349D2F30095F910 /* PhoneDeviceMockUsecase.swift */; };
 		0D0483DA232A487800CBBF3E /* 448-ripple-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D0483D9232A487700CBBF3E /* 448-ripple-loading-animation.json */; };
 		0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */; };
 		0D37740022B4D9AE000EFCCC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FF22B4D9AE000EFCCC /* Result.swift */; };
@@ -88,6 +89,8 @@
 		057DFDC22335A48B00E9FB32 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		057DFDC42335BCA000E9FB32 /* ModeB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeB.swift; sourceTree = "<group>"; };
 		057DFDC62335E30C00E9FB32 /* UIApplication+ Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+ Addition.swift"; sourceTree = "<group>"; };
+		0AD86F339A78D48C0504658E /* Pods-ToioControllerTests.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.mock.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.mock.xcconfig"; sourceTree = "<group>"; };
+		0D02BF342349D2F30095F910 /* PhoneDeviceMockUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDeviceMockUsecase.swift; sourceTree = "<group>"; };
 		0D0483D9232A487700CBBF3E /* 448-ripple-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "448-ripple-loading-animation.json"; sourceTree = "<group>"; };
 		0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeModel.swift; sourceTree = "<group>"; };
 		0D3773FF22B4D9AE000EFCCC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -153,9 +156,11 @@
 		67F182DFFC13D927644E1204 /* Pods-ToioController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.debug.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.debug.xcconfig"; sourceTree = "<group>"; };
 		7782BF6CE8F1AF580464C5D5 /* Pods-ToioControllerTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.develop.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.develop.xcconfig"; sourceTree = "<group>"; };
 		94BA855DB60634604DA0BA35 /* Pods-ToioControllerUITests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.develop.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.develop.xcconfig"; sourceTree = "<group>"; };
+		B4F7B68A9982E8C09CF480EF /* Pods-ToioController.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.mock.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.mock.xcconfig"; sourceTree = "<group>"; };
 		D383107B99481EF468C9BE40 /* Pods-ToioControllerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.debug.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D57281A910749A9154FB1B1A /* Pods-ToioController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.release.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.release.xcconfig"; sourceTree = "<group>"; };
 		E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F828F57590C94174DD2BBB /* Pods-ToioControllerUITests.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.mock.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.mock.xcconfig"; sourceTree = "<group>"; };
 		FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7A9B524A48A6BD571672C0 /* Pods-ToioController.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.develop.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.develop.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				0D42C4F8230ECF4A0083856A /* ConnectMockPresenterImpl.swift */,
+				0D02BF342349D2F30095F910 /* PhoneDeviceMockUsecase.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -449,6 +455,9 @@
 				FD7A9B524A48A6BD571672C0 /* Pods-ToioController.develop.xcconfig */,
 				7782BF6CE8F1AF580464C5D5 /* Pods-ToioControllerTests.develop.xcconfig */,
 				94BA855DB60634604DA0BA35 /* Pods-ToioControllerUITests.develop.xcconfig */,
+				B4F7B68A9982E8C09CF480EF /* Pods-ToioController.mock.xcconfig */,
+				0AD86F339A78D48C0504658E /* Pods-ToioControllerTests.mock.xcconfig */,
+				F3F828F57590C94174DD2BBB /* Pods-ToioControllerUITests.mock.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -789,6 +798,7 @@
 				0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */,
 				0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */,
 				0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */,
+				0D02BF352349D2F30095F910 /* PhoneDeviceMockUsecase.swift in Sources */,
 				0D9E325322B61779007B97D7 /* SearchButton.swift in Sources */,
 				0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */,
 				0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */,
@@ -990,6 +1000,139 @@
 				TEST_TARGET_NAME = ToioController;
 			};
 			name = Develop;
+		};
+		0D8C7B1D2349C5EF0036B7C2 /* Mock */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Mock;
+		};
+		0D8C7B1E2349C5EF0036B7C2 /* Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F7B68A9982E8C09CF480EF /* Pods-ToioController.mock.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 24BSY9Z4H5;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"MOCK=1",
+					"COCOAPODS=1",
+				);
+				INFOPLIST_FILE = ToioController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.1;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D MOCK";
+				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Mock;
+		};
+		0D8C7B1F2349C5EF0036B7C2 /* Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AD86F339A78D48C0504658E /* Pods-ToioControllerTests.mock.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24BSY9Z4H5;
+				INFOPLIST_FILE = ToioControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.ToioControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToioController.app/ToioController";
+			};
+			name = Mock;
+		};
+		0D8C7B202349C5EF0036B7C2 /* Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F828F57590C94174DD2BBB /* Pods-ToioControllerUITests.mock.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24BSY9Z4H5;
+				INFOPLIST_FILE = ToioControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "\"-D\" \"COCOAPODS\" -D MOCK";
+				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.ToioControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ToioController;
+			};
+			name = Mock;
 		};
 		0DC6BCFC22B3D02E00792ABB /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1252,6 +1395,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DC6BCFC22B3D02E00792ABB /* Debug */,
+				0D8C7B1D2349C5EF0036B7C2 /* Mock */,
 				0D42C4F3230820C30083856A /* Develop */,
 				0DC6BCFD22B3D02E00792ABB /* Release */,
 			);
@@ -1262,6 +1406,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DC6BCFF22B3D02E00792ABB /* Debug */,
+				0D8C7B1E2349C5EF0036B7C2 /* Mock */,
 				0D42C4F4230820C30083856A /* Develop */,
 				0DC6BD0022B3D02E00792ABB /* Release */,
 			);
@@ -1272,6 +1417,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DC6BD0222B3D02E00792ABB /* Debug */,
+				0D8C7B1F2349C5EF0036B7C2 /* Mock */,
 				0D42C4F5230820C30083856A /* Develop */,
 				0DC6BD0322B3D02E00792ABB /* Release */,
 			);
@@ -1282,6 +1428,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DC6BD0522B3D02E00792ABB /* Debug */,
+				0D8C7B202349C5EF0036B7C2 /* Mock */,
 				0D42C4F6230820C30083856A /* Develop */,
 				0DC6BD0622B3D02E00792ABB /* Release */,
 			);
