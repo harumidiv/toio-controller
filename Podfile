@@ -9,6 +9,7 @@ target 'ToioController' do
   pod 'RxBluetoothKit'
   pod 'Swinject'
   pod 'lottie-ios'
+  pod 'R.swift'
 
   ## test ----------------------------------
   
