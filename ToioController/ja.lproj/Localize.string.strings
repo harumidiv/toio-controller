@@ -5,4 +5,26 @@
   Created by 佐川晴海 on 2019/10/08.
   Copyright © 2019 佐川晴海. All rights reserved.
 */
-"HOGE" = "ほげ";
+
+//NavigationBar
+"navigationbar.connection"  = "探索中...";
+
+
+//ConnectionView
+"connection.searchbutton" = "cubeを探す";
+"connection.alert.bluetooth" = "Bluetooth Permission";
+"connection.alert.message" = "コントローラを使用するにはBluetoothの許可が必要です";
+"connection.alert.button" = "設定に移動";
+
+"connection.description.prev" = "cubeの電源を入れて\n探すボタンを押してください";
+"connection.descriotion.scanning" = "近くにあるcubeを検索中です";
+
+"connection.alert.lessbattery.message" = "iPhoneの充電が少なくなっています\n充電してから遊んでください";
+"connection.alert.lessbattery.close" = "閉じる";
+
+"connection.alert.bluetooth.message" = "bluetoothの設定がoffになっています\nonに切り替えてください";
+"connection.alert.bluetooth.close" = "閉じる";
+
+
+"connection.button.rescan" = "もう一度探す";
+

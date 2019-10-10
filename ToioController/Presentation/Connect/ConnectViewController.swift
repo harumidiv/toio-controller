@@ -40,7 +40,7 @@ class ConnectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "探索中..."
+        title = R.string.localizeString.navigationbarConnection()
 
         let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
@@ -57,7 +57,7 @@ class ConnectViewController: UIViewController {
             return
         }
 
-        showInformation(title: "Bluetooth Permission", message: "コントローラを使用するにはBluetoothの許可が必要です", buttonText: "許可する") {
+        showInformation(title: R.string.localizeString.connectionAlertBluetooth(), message: R.string.localizeString.connectionAlertBluetoothMessage(), buttonText: R.string.localizeString.connectionAlertButton()) {
             if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
@@ -68,7 +68,7 @@ class ConnectViewController: UIViewController {
         searchButton.isHidden = true
         animationView.play()
         animationView.isHidden = false
-        descriptionLabel.text = "近くにあるcubeを検索中です"
+        descriptionLabel.text = R.string.localizeString.connectionDescriotionScanning()
         presenter.checkPhoneState()
     }
 }
@@ -76,7 +76,7 @@ class ConnectViewController: UIViewController {
 extension ConnectViewController: ConnectPresenterOutput {
     func showBluetoothPermissionAlert() {
         DispatchQueue.main.async {
-            self.showInformation(title: "Bluetooth Permission", message: "コントローラを使用するにはBluetoothの許可が必要です", buttonText: "設定に移動") {
+            self.showInformation(title: R.string.localizeString.connectionAlertBluetooth(), message: R.string.localizeString.connectionAlertBluetoothMessage(), buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
                 if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
@@ -89,18 +89,18 @@ extension ConnectViewController: ConnectPresenterOutput {
             self.searchButton.isHidden = false
             self.animationView.stop()
             self.animationView.isHidden = true
-            self.searchButton.setTitle("cubeを探す", for: .normal)
+            self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
             self.searchButton.backgroundColor = UIColor(appColor: .search)
             self.wireframe.showController(vc: self, model: cube)
         }
     }
 
     func showBatteryError() {
-        showInformation(message: "iPhoneの充電が少なくなっています\n充電してから遊んでください", buttonText: "閉じる")
+        showInformation(message: R.string.localizeString.connectionAlertLessbatteryMessage(), buttonText: R.string.localizeString.connectionAlertLessbatteryClose())
     }
 
     func showBluetoothError() {
-        showInformation(message: "bluetoothの設定がoffになっています\nonに切り替えてください", buttonText: "閉じる")
+        showInformation(message: R.string.localizeString.connectionAlertBluetoothMessage(), buttonText: R.string.localizeString.connectionAlertBluetoothClose())
     }
 
     func showDevice() {
@@ -111,8 +111,8 @@ extension ConnectViewController: ConnectPresenterOutput {
         searchButton.isHidden = false
         animationView.stop()
         animationView.isHidden = true
-        searchButton.setTitle("もう一度探す", for: .normal)
+        searchButton.setTitle(R.string.localizeString.connectionButtonRescan(), for: .normal)
         searchButton.backgroundColor = UIColor(appColor: .again)
-        descriptionLabel.text = "cubeの電源を入れて\n探すボタンを押してください"
+        descriptionLabel.text = R.string.localizeString.connectionDescriptionPrev()
     }
 }

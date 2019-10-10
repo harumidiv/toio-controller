@@ -144,18 +144,139 @@ struct R: Rswift.Validatable {
             fileprivate init() {}
         }
 
-        /// This `R.string.localizeString` struct is generated, and contains static references to 1 localization keys.
+        /// This `R.string.localizeString` struct is generated, and contains static references to 12 localization keys.
         struct localizeString {
-            /// en translation: hoge
+            /// en translation: Bluetooth Permission
             ///
             /// Locales: en, ja
-            static let hogE = Rswift.StringResource(key: "HOGE", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            static let connectionAlertBluetooth = Rswift.StringResource(key: "connection.alert.bluetooth", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Bluetooth permission is required to use the controller
+            ///
+            /// Locales: en, ja
+            static let connectionAlertMessage = Rswift.StringResource(key: "connection.alert.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Find cube
+            ///
+            /// Locales: en, ja
+            static let connectionSearchbutton = Rswift.StringResource(key: "connection.searchbutton", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Go to settings
+            ///
+            /// Locales: en, ja
+            static let connectionAlertButton = Rswift.StringResource(key: "connection.alert.button", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Scanning...
+            ///
+            /// Locales: en, ja
+            static let navigationbarConnection = Rswift.StringResource(key: "navigationbar.connection", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Search again
+            ///
+            /// Locales: en, ja
+            static let connectionButtonRescan = Rswift.StringResource(key: "connection.button.rescan", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Searching for nearby cubes
+            ///
+            /// Locales: en, ja
+            static let connectionDescriotionScanning = Rswift.StringResource(key: "connection.descriotion.scanning", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: The bluetooth setting is off  Switch to non
+            ///
+            /// Locales: en, ja
+            static let connectionAlertBluetoothMessage = Rswift.StringResource(key: "connection.alert.bluetooth.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Turn on the cube  and press search button
+            ///
+            /// Locales: en, ja
+            static let connectionDescriptionPrev = Rswift.StringResource(key: "connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: close
+            ///
+            /// Locales: en, ja
+            static let connectionAlertBluetoothClose = Rswift.StringResource(key: "connection.alert.bluetooth.close", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: close
+            ///
+            /// Locales: en, ja
+            static let connectionAlertLessbatteryClose = Rswift.StringResource(key: "connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: iPhone is low on charge  nPlease charge before playing
+            ///
+            /// Locales: en, ja
+            static let connectionAlertLessbatteryMessage = Rswift.StringResource(key: "connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
 
-            /// en translation: hoge
+            /// en translation: Bluetooth Permission
             ///
             /// Locales: en, ja
-            static func hogE(_: Void = ()) -> String {
-                return NSLocalizedString("HOGE", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            static func connectionAlertBluetooth(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.bluetooth", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Bluetooth permission is required to use the controller
+            ///
+            /// Locales: en, ja
+            static func connectionAlertMessage(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Find cube
+            ///
+            /// Locales: en, ja
+            static func connectionSearchbutton(_: Void = ()) -> String {
+                return NSLocalizedString("connection.searchbutton", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Go to settings
+            ///
+            /// Locales: en, ja
+            static func connectionAlertButton(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.button", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Scanning...
+            ///
+            /// Locales: en, ja
+            static func navigationbarConnection(_: Void = ()) -> String {
+                return NSLocalizedString("navigationbar.connection", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Search again
+            ///
+            /// Locales: en, ja
+            static func connectionButtonRescan(_: Void = ()) -> String {
+                return NSLocalizedString("connection.button.rescan", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Searching for nearby cubes
+            ///
+            /// Locales: en, ja
+            static func connectionDescriotionScanning(_: Void = ()) -> String {
+                return NSLocalizedString("connection.descriotion.scanning", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: The bluetooth setting is off  Switch to non
+            ///
+            /// Locales: en, ja
+            static func connectionAlertBluetoothMessage(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.bluetooth.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Turn on the cube  and press search button
+            ///
+            /// Locales: en, ja
+            static func connectionDescriptionPrev(_: Void = ()) -> String {
+                return NSLocalizedString("connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: close
+            ///
+            /// Locales: en, ja
+            static func connectionAlertBluetoothClose(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.bluetooth.close", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: close
+            ///
+            /// Locales: en, ja
+            static func connectionAlertLessbatteryClose(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: iPhone is low on charge  nPlease charge before playing
+            ///
+            /// Locales: en, ja
+            static func connectionAlertLessbatteryMessage(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
             fileprivate init() {}
