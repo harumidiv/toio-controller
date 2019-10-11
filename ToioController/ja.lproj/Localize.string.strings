@@ -37,6 +37,7 @@
 "information.list.controllerSetting" = "コントローラ設定";
 "information.list.privacypolicy" = "プライバシーポリシー";
 "information.list.aboutToio" = "toioについて";
+"imformation.list.abountDualshock" = "dualshock4について";
 
 //Setting
 "setting.description" = "この画面では、コントローラで操作を行うcubeのスピード設定が可能です。";
