@@ -144,7 +144,7 @@ struct R: Rswift.Validatable {
             fileprivate init() {}
         }
 
-        /// This `R.string.localizeString` struct is generated, and contains static references to 12 localization keys.
+        /// This `R.string.localizeString` struct is generated, and contains static references to 19 localization keys.
         struct localizeString {
             /// en translation: Bluetooth Permission
             ///
@@ -162,6 +162,14 @@ struct R: Rswift.Validatable {
             ///
             /// Locales: en, ja
             static let connectionAlertButton = Rswift.StringResource(key: "connection.alert.button", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Information
+            ///
+            /// Locales: en, ja
+            static let navigationInformation = Rswift.StringResource(key: "navigation.information", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Privacypolicy
+            ///
+            /// Locales: en, ja
+            static let navigationPrivacypolicy = Rswift.StringResource(key: "navigation.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: Scanning...
             ///
             /// Locales: en, ja
@@ -174,6 +182,10 @@ struct R: Rswift.Validatable {
             ///
             /// Locales: en, ja
             static let connectionDescriotionScanning = Rswift.StringResource(key: "connection.descriotion.scanning", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Setting
+            ///
+            /// Locales: en, ja
+            static let navigationSetting = Rswift.StringResource(key: "navigation.setting", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: The bluetooth setting is off  Switch to non
             ///
             /// Locales: en, ja
@@ -182,6 +194,10 @@ struct R: Rswift.Validatable {
             ///
             /// Locales: en, ja
             static let connectionDescriptionPrev = Rswift.StringResource(key: "connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: about toio
+            ///
+            /// Locales: en, ja
+            static let informationListAboutToio = Rswift.StringResource(key: "information.list.aboutToio", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: close
             ///
             /// Locales: en, ja
@@ -190,10 +206,22 @@ struct R: Rswift.Validatable {
             ///
             /// Locales: en, ja
             static let connectionAlertLessbatteryClose = Rswift.StringResource(key: "connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: controller setting
+            ///
+            /// Locales: en, ja
+            static let informationListControllerSetting = Rswift.StringResource(key: "information.list.controllerSetting", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: iPhone is low on charge  nPlease charge before playing
             ///
             /// Locales: en, ja
             static let connectionAlertLessbatteryMessage = Rswift.StringResource(key: "connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: privacypolisy
+            ///
+            /// Locales: en, ja
+            static let informationListPrivacypolicy = Rswift.StringResource(key: "information.list.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: toio
+            ///
+            /// Locales: en, ja
+            static let navigationAbountToio = Rswift.StringResource(key: "navigation.abountToio", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
 
             /// en translation: Bluetooth Permission
             ///
@@ -223,6 +251,20 @@ struct R: Rswift.Validatable {
                 return NSLocalizedString("connection.alert.button", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
+            /// en translation: Information
+            ///
+            /// Locales: en, ja
+            static func navigationInformation(_: Void = ()) -> String {
+                return NSLocalizedString("navigation.information", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Privacypolicy
+            ///
+            /// Locales: en, ja
+            static func navigationPrivacypolicy(_: Void = ()) -> String {
+                return NSLocalizedString("navigation.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
             /// en translation: Scanning...
             ///
             /// Locales: en, ja
@@ -244,6 +286,13 @@ struct R: Rswift.Validatable {
                 return NSLocalizedString("connection.descriotion.scanning", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
+            /// en translation: Setting
+            ///
+            /// Locales: en, ja
+            static func navigationSetting(_: Void = ()) -> String {
+                return NSLocalizedString("navigation.setting", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
             /// en translation: The bluetooth setting is off  Switch to non
             ///
             /// Locales: en, ja
@@ -256,6 +305,13 @@ struct R: Rswift.Validatable {
             /// Locales: en, ja
             static func connectionDescriptionPrev(_: Void = ()) -> String {
                 return NSLocalizedString("connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: about toio
+            ///
+            /// Locales: en, ja
+            static func informationListAboutToio(_: Void = ()) -> String {
+                return NSLocalizedString("information.list.aboutToio", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
             /// en translation: close
@@ -272,11 +328,32 @@ struct R: Rswift.Validatable {
                 return NSLocalizedString("connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
+            /// en translation: controller setting
+            ///
+            /// Locales: en, ja
+            static func informationListControllerSetting(_: Void = ()) -> String {
+                return NSLocalizedString("information.list.controllerSetting", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
             /// en translation: iPhone is low on charge  nPlease charge before playing
             ///
             /// Locales: en, ja
             static func connectionAlertLessbatteryMessage(_: Void = ()) -> String {
                 return NSLocalizedString("connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: privacypolisy
+            ///
+            /// Locales: en, ja
+            static func informationListPrivacypolicy(_: Void = ()) -> String {
+                return NSLocalizedString("information.list.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: toio
+            ///
+            /// Locales: en, ja
+            static func navigationAbountToio(_: Void = ()) -> String {
+                return NSLocalizedString("navigation.abountToio", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
             fileprivate init() {}

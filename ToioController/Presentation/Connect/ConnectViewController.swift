@@ -17,7 +17,11 @@ class ConnectViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.text = R.string.localizeString.connectionDescriptionPrev()
+        }
+    }
 
     @IBOutlet weak var searchButton: SearchButton!
     lazy var presenter: ConnectPresenter = {
