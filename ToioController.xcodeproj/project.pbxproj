@@ -45,6 +45,8 @@
 		0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */; };
 		0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */; };
 		0DA8BC5922B4ABF9009AEB5A /* OtherInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5822B4ABF9009AEB5A /* OtherInjector.swift */; };
+		0DBC0198234CD66F00C04E76 /* Localize.string.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC019A234CD66F00C04E76 /* Localize.string.strings */; };
+		0DBC01A1234E297D00C04E76 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC01A0234E297D00C04E76 /* R.generated.swift */; };
 		0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */; };
 		0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCDD22B3D02D00792ABB /* Main.storyboard */; };
 		0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BCE022B3D02E00792ABB /* Assets.xcassets */; };
@@ -124,6 +126,11 @@
 		0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
 		0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothError.swift; sourceTree = "<group>"; };
 		0DA8BC5822B4ABF9009AEB5A /* OtherInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInjector.swift; sourceTree = "<group>"; };
+		0DBC0194234CD35900C04E76 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		0DBC0195234CD35A00C04E76 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0DBC0199234CD66F00C04E76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localize.string.strings; sourceTree = "<group>"; };
+		0DBC019B234CD67E00C04E76 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localize.string.strings; sourceTree = "<group>"; };
+		0DBC01A0234E297D00C04E76 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		0DC30A38232A45EC00A67C9F /* search.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
 		0DC6BCD622B3D02D00792ABB /* ToioController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToioController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -311,6 +318,7 @@
 		0DC6BCCD22B3D02D00792ABB = {
 			isa = PBXGroup;
 			children = (
+				0DBC01A0234E297D00C04E76 /* R.generated.swift */,
 				0D68C30622BDC86400FD6CA9 /* Settings.bundle */,
 				0DC6BCD822B3D02D00792ABB /* ToioController */,
 				0DC6BCED22B3D02E00792ABB /* ToioControllerTests */,
@@ -347,6 +355,7 @@
 				0DC6BCDD22B3D02D00792ABB /* Main.storyboard */,
 				0DC6BCE222B3D02E00792ABB /* LaunchScreen.storyboard */,
 				0DC6BCE522B3D02E00792ABB /* Info.plist */,
+				0DBC019A234CD66F00C04E76 /* Localize.string.strings */,
 			);
 			path = ToioController;
 			sourceTree = "<group>";
@@ -481,6 +490,7 @@
 			buildConfigurationList = 0DC6BCFE22B3D02E00792ABB /* Build configuration list for PBXNativeTarget "ToioController" */;
 			buildPhases = (
 				54B4F53740CC9110D7408548 /* [CP] Check Pods Manifest.lock */,
+				0DBC019F234E28F100C04E76 /* R swift */,
 				0DC6BCD222B3D02D00792ABB /* Sources */,
 				0DC6BCD322B3D02D00792ABB /* Frameworks */,
 				0DC6BCD422B3D02D00792ABB /* Resources */,
@@ -567,6 +577,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 0DC6BCCD22B3D02D00792ABB;
 			productRefGroup = 0DC6BCD722B3D02D00792ABB /* Products */;
@@ -587,6 +598,7 @@
 			files = (
 				0DC6BCE422B3D02E00792ABB /* LaunchScreen.storyboard in Resources */,
 				0D0483DA232A487800CBBF3E /* 448-ripple-loading-animation.json in Resources */,
+				0DBC0198234CD66F00C04E76 /* Localize.string.strings in Resources */,
 				0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */,
 				0D68C30722BDC86400FD6CA9 /* Settings.bundle in Resources */,
 				0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */,
@@ -632,6 +644,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\nfi\n";
+		};
+		0DBC019F234E28F100C04E76 /* R swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "R swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 		0DC6BD0722B3D57400792ABB /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -808,6 +840,7 @@
 				0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */,
 				0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */,
 				057DFDC72335E30C00E9FB32 /* UIApplication+ Addition.swift in Sources */,
+				0DBC01A1234E297D00C04E76 /* R.generated.swift in Sources */,
 				0D9E324C22B5E362007B97D7 /* InformationData.swift in Sources */,
 				0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */,
 				057DFDC12335A46700E9FB32 /* ModeA.swift in Sources */,
@@ -850,10 +883,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0DBC019A234CD66F00C04E76 /* Localize.string.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DBC0199234CD66F00C04E76 /* en */,
+				0DBC019B234CD67E00C04E76 /* ja */,
+			);
+			name = Localize.string.strings;
+			sourceTree = "<group>";
+		};
 		0DC6BCDD22B3D02D00792ABB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0DC6BCDE22B3D02D00792ABB /* Base */,
+				0DBC0194234CD35900C04E76 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -862,6 +905,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0DC6BCE322B3D02E00792ABB /* Base */,
+				0DBC0195234CD35A00C04E76 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -873,6 +917,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1005,6 +1050,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1138,6 +1184,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1199,6 +1246,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
