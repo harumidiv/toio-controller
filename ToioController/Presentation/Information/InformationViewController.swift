@@ -21,7 +21,8 @@ class InformationViewController: UIViewController {
         [
             InformationData(label: R.string.localizeString.informationListControllerSetting(), title: R.string.localizeString.navigationSetting(), type: .normal),
             InformationData(label: R.string.localizeString.informationListPrivacypolicy(), title: R.string.localizeString.navigationPrivacypolicy(), type: .webView(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)),
-            InformationData(label: R.string.localizeString.informationListAboutToio(), title: R.string.localizeString.navigationAbountToio(), type: .webView(url: URL(string: "https://toio.io/")!))
+            InformationData(label: R.string.localizeString.informationListAboutToio(), title: R.string.localizeString.navigationAbountToio(), type: .webView(url: URL(string: "https://toio.io/")!)),
+            InformationData(label: R.string.localizeString.imformationListAbountDualshock(), title: "dualshock4", type: .webView(url: URL(string: "https://www.jp.playstation.com/accessories/dualshock4/")!))
         ]
     }()
 

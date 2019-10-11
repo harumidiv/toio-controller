@@ -23,7 +23,12 @@ class ConnectViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var searchButton: SearchButton!
+    @IBOutlet weak var searchButton: SearchButton! {
+        didSet {
+            searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
+        }
+    }
+
     lazy var presenter: ConnectPresenter = {
         let presenter = ConnectInjector.container.resolve(ConnectPresenter.self, argument: self as ConnectPresenterOutput)!
         return presenter

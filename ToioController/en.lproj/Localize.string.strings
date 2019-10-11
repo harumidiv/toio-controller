@@ -32,6 +32,7 @@
 "information.list.controllerSetting" = "Controller setting";
 "information.list.privacypolicy" = "Privacypolisy";
 "information.list.aboutToio" = "About toio";
+"imformation.list.abountDualshock" = "About dualshock4";
 
 //Setting
 "setting.description" = "This screen allows you to set the speed of the cube that is operated by the controller.";
