@@ -8,6 +8,10 @@
 
 //NavigationBar
 "navigationbar.connection"  = "Scanning...";
+"navigation.information" = "Information";
+"navigation.setting" = "Setting";
+"navigation.privacypolicy" = "Privacypolicy";
+"navigation.abountToio" = "toio";
 
 
 //ConnectionView
@@ -28,3 +32,7 @@
 
 "connection.button.rescan" = "Search again";
 
+//information
+"information.list.controllerSetting" = "controller setting";
+"information.list.privacypolicy" = "privacypolisy";
+"information.list.aboutToio" = "about toio";

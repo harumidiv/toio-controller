@@ -19,15 +19,15 @@ class InformationViewController: UIViewController {
 
     lazy var informationData: [InformationData] = {
         [
-            InformationData(label: "コントローラ設定", title: "設定", type: .normal),
-            InformationData(label: "プライバシーポリシー", title: "プライバシーポリシー", type: .webView(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)),
-            InformationData(label: "toioについて", title: "toio", type: .webView(url: URL(string: "https://toio.io/")!))
+            InformationData(label: R.string.localizeString.informationListControllerSetting(), title: R.string.localizeString.navigationSetting(), type: .normal),
+            InformationData(label: R.string.localizeString.informationListPrivacypolicy(), title: R.string.localizeString.navigationPrivacypolicy(), type: .webView(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)),
+            InformationData(label: R.string.localizeString.informationListAboutToio(), title: R.string.localizeString.navigationAbountToio(), type: .webView(url: URL(string: "https://toio.io/")!))
         ]
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "情報"
+        title = R.string.localizeString.navigationInformation()
     }
 }
 

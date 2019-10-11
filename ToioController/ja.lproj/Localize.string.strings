@@ -8,6 +8,10 @@
 
 //NavigationBar
 "navigationbar.connection"  = "探索中...";
+"navigation.information" = "情報";
+"navigation.setting" = "設定";
+"navigation.privacypolicy" = "プライバシーポリシー";
+"navigation.abountToio" = "toio";
 
 
 //ConnectionView
@@ -28,3 +32,8 @@
 
 "connection.button.rescan" = "もう一度探す";
 
+
+//information
+"information.list.controllerSetting" = "コントローラ設定";
+"information.list.privacypolicy" = "プライバシーポリシー";
+"information.list.aboutToio" = "toioについて";
