@@ -9,6 +9,12 @@
 import UIKit
 
 class SettingViewController: UIViewController {
+    @IBOutlet weak var informationLabel: UILabel! {
+        didSet {
+            informationLabel.text = R.string.localizeString.settingDescription()
+        }
+    }
+
     let titleText: String
     let userDefault = UserDefaults.standard
 

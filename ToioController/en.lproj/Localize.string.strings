@@ -19,20 +19,19 @@
 "connection.alert.bluetooth" = "Bluetooth Permission";
 "connection.alert.message" = "Bluetooth permission is required to use the controller";
 "connection.alert.button" = "Go to settings";
-
 "connection.description.prev" = "Turn on the cube \nand press search button";
 "connection.descriotion.scanning" = "Searching for nearby cubes";
 
 "connection.alert.lessbattery.message" = "iPhone is low on charge \ nPlease charge before playing";
 "connection.alert.lessbattery.close" = "close";
-
 "connection.alert.bluetooth.message" = "The bluetooth setting is off \ Switch to non";
 "connection.alert.bluetooth.close" = "close";
-
-
 "connection.button.rescan" = "Search again";
 
 //information
-"information.list.controllerSetting" = "controller setting";
-"information.list.privacypolicy" = "privacypolisy";
-"information.list.aboutToio" = "about toio";
+"information.list.controllerSetting" = "Controller setting";
+"information.list.privacypolicy" = "Privacypolisy";
+"information.list.aboutToio" = "About toio";
+
+//Setting
+"setting.description" = "This screen allows you to set the speed of the cube that is operated by the controller.";

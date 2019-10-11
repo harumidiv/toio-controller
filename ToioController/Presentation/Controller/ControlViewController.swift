@@ -315,7 +315,7 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func optionTapped(_ sender: UIButton) {
-        navigationController?.pushViewController(SettingViewController(titleText: "設定"), animated: true)
+        navigationController?.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: true)
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
@@ -327,7 +327,7 @@ extension ControlViewController: DualshockOutput {
     func showSettingScreen() {
         if let topController = UIApplication.topViewController() {
             if topController.className == "ControlViewController" {
-                navigationController?.pushViewController(SettingViewController(titleText: "設定"), animated: true)
+                navigationController?.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: true)
             }
         }
     }

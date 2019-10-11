@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +12,7 @@
             <connections>
                 <outlet property="downLabel" destination="BQ9-dG-Ihx" id="knT-6K-nfU"/>
                 <outlet property="downSlider" destination="C5c-R0-0GC" id="cIM-zD-gH1"/>
+                <outlet property="informationLabel" destination="AP6-cs-cU4" id="0In-I0-k19"/>
                 <outlet property="leftLabel" destination="xJ3-4d-dv6" id="vLu-FJ-2Co"/>
                 <outlet property="leftSlider" destination="xZL-3E-4md" id="po0-ny-PGt"/>
                 <outlet property="rightLabel" destination="MYd-jq-YQp" id="vWC-Yq-BCh"/>
@@ -26,7 +25,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="896" height="333"/>
+            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-Pv-pQV" customClass="DirectionalPadLeftButton" customModule="ToioController" customModuleProvider="target">
@@ -62,7 +61,7 @@
                     <state key="normal" title="Button"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38C-ne-bDb">
-                    <rect key="frame" x="640" y="26" width="1" height="280"/>
+                    <rect key="frame" x="640" y="26" width="1" height="361"/>
                     <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1" id="lUL-Nj-XNW"/>
@@ -99,7 +98,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-fg-zh0" customClass="SearchButton" customModule="ToioController" customModuleProvider="target">
-                    <rect key="frame" x="686" y="203.5" width="119" height="60"/>
+                    <rect key="frame" x="722.5" y="203.5" width="46" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="dkF-pg-Buu"/>
                     </constraints>
