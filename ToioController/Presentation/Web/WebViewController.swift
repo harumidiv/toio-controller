@@ -23,6 +23,7 @@ class WebViewController: UIViewController {
     init(url: URL, titleText: String) {
         self.url = url
         self.titleText = titleText
+
         super.init(nibName: String(describing: WebViewController.self), bundle: nil)
     }
 
