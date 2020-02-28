@@ -58,10 +58,12 @@ class ConnectViewController: UIViewController {
     // MARK: - Event
 
     @objc func showInformation(_ sender: UIBarButtonItem) {
+        showTimeout()
         wireframe.showInformation(vc: self)
     }
 
     @objc func viewWillEnterForeground(notification: Notification) {
+        showTimeout()
         if presenter.checkBluetoothAuthorization() {
             return
         }
@@ -105,6 +107,7 @@ extension ConnectViewController: ConnectPresenterOutput {
     }
 
     func showBatteryError() {
+        showTimeout()
         showInformation(message: R.string.localizeString.connectionAlertLessbatteryMessage(), buttonText: R.string.localizeString.connectionAlertLessbatteryClose())
     }
 
