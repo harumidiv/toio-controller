@@ -320,7 +320,12 @@ class ControlViewController: UIViewController {
 
     @IBAction func dualshockControlTapped(_ sender: Any) {
         // TODO　繋がっていたら遷移未接続だったらダイアログ
-        present(DualshockViewController(), animated: true, completion: nil)
+        if controller?.isConnect ?? false {
+            present(DualshockViewController(), animated: true, completion: nil)
+        } else {
+            showInformation(message: "コントローラが端末に接続されていません\n設定からbluetooth接続を確認してください", buttonText: "閉じる")
+//            present(DualshockViewController(), animated: true, completion: nil)
+        }
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {

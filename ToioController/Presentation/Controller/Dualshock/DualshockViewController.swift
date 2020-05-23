@@ -16,7 +16,7 @@ class DualshockViewController: UIViewController {
     }
 
     @IBAction func appControllerTapped(_ sender: Any) {
-        //TODO タイマーを止める必要がある
+        // TODO: タイマーを止める必要がある
         dismiss(animated: true, completion: nil)
     }
 }
