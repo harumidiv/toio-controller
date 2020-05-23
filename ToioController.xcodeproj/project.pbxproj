@@ -61,6 +61,8 @@
 		0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAD22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift */; };
 		0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAF22B3E4C4009E9D9C /* DirectionalPadRightButton.swift */; };
 		39BE09520250B2AE175FAB59 /* Pods_ToioControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */; };
+		498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724ED2479892700F09A9E /* DualshockViewController.swift */; };
+		498724F02479892700F09A9E /* DualshockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724EE2479892700F09A9E /* DualshockViewController.xib */; };
 		49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF05A62345A80800EA6550 /* SnapshotHelper.swift */; };
 		BD443728345BE94FE3227864 /* Pods_ToioController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */; };
 		DFDE8266E2028DD25630D9C2 /* Pods_ToioControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */; };
@@ -159,6 +161,8 @@
 		379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DF927A28704A064FE75567 /* Pods-ToioControllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.debug.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3881D1C7933616D0B9A1A87A /* Pods-ToioControllerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.release.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		498724ED2479892700F09A9E /* DualshockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualshockViewController.swift; sourceTree = "<group>"; };
+		498724EE2479892700F09A9E /* DualshockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DualshockViewController.xib; sourceTree = "<group>"; };
 		49FF05A62345A80800EA6550 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		67F182DFFC13D927644E1204 /* Pods-ToioController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.debug.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.debug.xcconfig"; sourceTree = "<group>"; };
 		7782BF6CE8F1AF580464C5D5 /* Pods-ToioControllerTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.develop.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.develop.xcconfig"; sourceTree = "<group>"; };
@@ -386,9 +390,9 @@
 				0D9E324D22B5E875007B97D7 /* Setting */,
 				0D9E320722B5CE4C007B97D7 /* Web */,
 				0DEB0FB922B49559009E9D9C /* Information */,
-				0DEB0FA222B3E388009E9D9C /* Controller */,
 				0D42C4F7230ECF310083856A /* Mock */,
 				0DA8BC3E22B4976B009AEB5A /* Connect */,
+				0DEB0FA222B3E388009E9D9C /* Controller */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -409,6 +413,7 @@
 			children = (
 				0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */,
 				0DC6BD0A22B3D6F000792ABB /* ControlViewController.xib */,
+				498724EC2479890E00F09A9E /* Dualshock */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -450,6 +455,15 @@
 				0D9E324B22B5E362007B97D7 /* InformationData.swift */,
 			);
 			path = Information;
+			sourceTree = "<group>";
+		};
+		498724EC2479890E00F09A9E /* Dualshock */ = {
+			isa = PBXGroup;
+			children = (
+				498724ED2479892700F09A9E /* DualshockViewController.swift */,
+				498724EE2479892700F09A9E /* DualshockViewController.xib */,
+			);
+			path = Dualshock;
 			sourceTree = "<group>";
 		};
 		73AF7AED384F3509C41B2FD0 /* Pods */ = {
@@ -601,6 +615,7 @@
 				0DBC0198234CD66F00C04E76 /* Localize.string.strings in Resources */,
 				0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */,
 				0D68C30722BDC86400FD6CA9 /* Settings.bundle in Resources */,
+				498724F02479892700F09A9E /* DualshockViewController.xib in Resources */,
 				0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */,
 				0D9E320B22B5CE66007B97D7 /* WebViewController.xib in Resources */,
 				0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */,
@@ -837,6 +852,7 @@
 				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,
 				0D9E325022B5E894007B97D7 /* SettingViewController.swift in Sources */,
 				0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */,
+				498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */,
 				0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */,
 				0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */,
 				057DFDC72335E30C00E9FB32 /* UIApplication+ Addition.swift in Sources */,

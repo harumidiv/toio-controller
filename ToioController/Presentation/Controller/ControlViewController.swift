@@ -318,6 +318,11 @@ class ControlViewController: UIViewController {
         navigationController?.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: true)
     }
 
+    @IBAction func dualshockControlTapped(_ sender: Any) {
+        // TODO　繋がっていたら遷移未接続だったらダイアログ
+        present(DualshockViewController(), animated: true, completion: nil)
+    }
+
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
         _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
     }
