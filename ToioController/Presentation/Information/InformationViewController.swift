@@ -7,9 +7,10 @@
 //
 
 import Rswift
+import StoreKit
 import UIKit
 
-class InformationViewController: UIViewController {
+class InformationViewController: UIViewController, SKStoreProductViewControllerDelegate {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -31,6 +32,8 @@ class InformationViewController: UIViewController {
         ]
     }()
 
+    private var isNotStoreOpen: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = R.string.localizeString.navigationInformation()
@@ -47,7 +50,13 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
         switch data.type {
         case .download:
             let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.storeDownloadCell, for: indexPath)!
-            cell.setup(title: data.title, description: data.label)
+            cell.setup(title: data.title, description: data.label, buttonAction: { () -> Void in
+
+                guard let url = URL(string: "https://itunes.apple.com/app/id1455128254?") else {
+                    return
+                }
+                UIApplication.shared.open(url)
+            })
             cell.selectionStyle = .none
             return cell
 
@@ -74,5 +83,9 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
             // NOP:
             break
         }
+    }
+
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        isNotStoreOpen = true
     }
 }

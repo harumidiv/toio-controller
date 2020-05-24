@@ -42,10 +42,13 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-OY-YZd">
-                        <rect key="frame" x="16" y="140" width="480" height="41"/>
+                        <rect key="frame" x="16" y="140" width="480" height="17"/>
                         <state key="normal" title="ダウンロード" image="square.and.arrow.down" catalog="system">
                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="downloadDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Kpu-uV-EH3"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="toioのソフトウェアをアップデートして頂くことにより、toioに新しい機能が追加されたり、安定性が向上します。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sk-lk-r4l">
                         <rect key="frame" x="160" y="45.5" width="320" height="61"/>
@@ -60,7 +63,7 @@
                     <constraint firstItem="ZhP-k0-uEp" firstAttribute="top" secondItem="iej-Hq-b86" secondAttribute="bottom" id="5EW-CN-Cry"/>
                     <constraint firstItem="m5w-OY-YZd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5lT-9D-9AG"/>
                     <constraint firstItem="7Sk-lk-r4l" firstAttribute="top" secondItem="ZhP-k0-uEp" secondAttribute="bottom" constant="4" id="6Ql-xs-qWS"/>
-                    <constraint firstAttribute="bottom" secondItem="m5w-OY-YZd" secondAttribute="bottom" constant="8" id="7Ff-IF-B6s"/>
+                    <constraint firstAttribute="bottom" secondItem="m5w-OY-YZd" secondAttribute="bottom" constant="32" id="7Ff-IF-B6s"/>
                     <constraint firstItem="7Sk-lk-r4l" firstAttribute="leading" secondItem="3q3-O2-VCD" secondAttribute="trailing" constant="16" id="9KE-bX-9wZ"/>
                     <constraint firstAttribute="trailing" secondItem="m5w-OY-YZd" secondAttribute="trailing" constant="16" id="Hzi-Zi-tWE"/>
                     <constraint firstItem="m5w-OY-YZd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7Sk-lk-r4l" secondAttribute="bottom" constant="4" id="IlM-Pv-U9K"/>
