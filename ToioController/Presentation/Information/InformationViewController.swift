@@ -6,6 +6,7 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import Rswift
 import UIKit
 
 class InformationViewController: UIViewController {
@@ -14,6 +15,7 @@ class InformationViewController: UIViewController {
             tableView.delegate = self
             tableView.dataSource = self
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "information")
+            tableView.register(R.nib.storeDownloadCell)
         }
     }
 
@@ -22,7 +24,10 @@ class InformationViewController: UIViewController {
             InformationData(label: R.string.localizeString.informationListControllerSetting(), title: R.string.localizeString.navigationSetting(), type: .normal),
             InformationData(label: R.string.localizeString.informationListPrivacypolicy(), title: R.string.localizeString.navigationPrivacypolicy(), type: .webView(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)),
             InformationData(label: R.string.localizeString.informationListAboutToio(), title: R.string.localizeString.navigationAbountToio(), type: .webView(url: URL(string: "https://toio.io/")!)),
-            InformationData(label: R.string.localizeString.imformationListAbountDualshock(), title: "dualshock4", type: .webView(url: URL(string: "https://www.jp.playstation.com/accessories/dualshock4/")!))
+            InformationData(label: R.string.localizeString.imformationListAbountDualshock(), title: "dualshock4", type: .webView(url: URL(string: "https://www.jp.playstation.com/accessories/dualshock4/")!)),
+            InformationData(label: "toio コンソール/toio コア キューブのソフトウェアをアップデートして頂くことにより、toioに新しい機能が追加されたり、安定性が向上します。",
+                            title: "toio アップデートアプリ",
+                            type: .download)
         ]
     }()
 
@@ -38,9 +43,20 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "information", for: indexPath)
-        cell.textLabel?.text = informationData[indexPath.row].label
-        return cell
+        let data = informationData[indexPath.row]
+        switch data.type {
+        case .download:
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.storeDownloadCell, for: indexPath)!
+            cell.setup(title: data.title, description: data.label)
+            cell.selectionStyle = .none
+            return cell
+
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "information", for: indexPath)
+            cell.textLabel?.text = informationData[indexPath.row].label
+
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -54,6 +70,9 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
             let toVC = WebViewController(url: url, titleText: data.title)
             navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             navigationController?.pushViewController(toVC, animated: true)
+        case .download:
+            // NOP:
+            break
         }
     }
 }

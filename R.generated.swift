@@ -38,7 +38,7 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
     }
 
-    /// This `R.image` struct is generated, and contains static references to 5 images.
+    /// This `R.image` struct is generated, and contains static references to 6 images.
     struct image {
         /// Image `appControllerIcon`.
         static let appControllerIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "appControllerIcon")
@@ -50,6 +50,8 @@ struct R: Rswift.Validatable {
         static let gameController = Rswift.ImageResource(bundle: R.hostingBundle, name: "gameController")
         /// Image `setting`.
         static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
+        /// Image `toio_update`.
+        static let toio_update = Rswift.ImageResource(bundle: R.hostingBundle, name: "toio_update")
 
         /// `UIImage(named: "appControllerIcon", bundle: ..., traitCollection: ...)`
         static func appControllerIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -76,10 +78,15 @@ struct R: Rswift.Validatable {
             return UIKit.UIImage(resource: R.image.setting, compatibleWith: traitCollection)
         }
 
+        /// `UIImage(named: "toio_update", bundle: ..., traitCollection: ...)`
+        static func toio_update(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.toio_update, compatibleWith: traitCollection)
+        }
+
         fileprivate init() {}
     }
 
-    /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+    /// This `R.nib` struct is generated, and contains static references to 7 nibs.
     struct nib {
         /// Nib `ConnectViewController`.
         static let connectViewController = _R.nib._ConnectViewController()
@@ -91,6 +98,8 @@ struct R: Rswift.Validatable {
         static let informationViewController = _R.nib._InformationViewController()
         /// Nib `SettingViewController`.
         static let settingViewController = _R.nib._SettingViewController()
+        /// Nib `StoreDownloadCell`.
+        static let storeDownloadCell = _R.nib._StoreDownloadCell()
         /// Nib `WebViewController`.
         static let webViewController = _R.nib._WebViewController()
 
@@ -124,6 +133,12 @@ struct R: Rswift.Validatable {
             return UIKit.UINib(resource: R.nib.settingViewController)
         }
 
+        /// `UINib(name: "StoreDownloadCell", in: bundle)`
+        @available(*, deprecated, message: "Use UINib(resource: R.nib.storeDownloadCell) instead")
+        static func storeDownloadCell(_: Void = ()) -> UIKit.UINib {
+            return UIKit.UINib(resource: R.nib.storeDownloadCell)
+        }
+
         /// `UINib(name: "WebViewController", in: bundle)`
         @available(*, deprecated, message: "Use UINib(resource: R.nib.webViewController) instead")
         static func webViewController(_: Void = ()) -> UIKit.UINib {
@@ -150,9 +165,21 @@ struct R: Rswift.Validatable {
             return R.nib.settingViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
         }
 
+        static func storeDownloadCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> StoreDownloadCell? {
+            return R.nib.storeDownloadCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StoreDownloadCell
+        }
+
         static func webViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
             return R.nib.webViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
         }
+
+        fileprivate init() {}
+    }
+
+    /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+    struct reuseIdentifier {
+        /// Reuse identifier `storeDownloadCell`.
+        static let storeDownloadCell: Rswift.ReuseIdentifier<StoreDownloadCell> = Rswift.ReuseIdentifier(identifier: "storeDownloadCell")
 
         fileprivate init() {}
     }
@@ -452,6 +479,7 @@ struct _R: Rswift.Validatable {
         static func validate() throws {
             try _ControlViewController.validate()
             try _DualshockViewController.validate()
+            try _StoreDownloadCell.validate()
         }
 
         struct _ConnectViewController: Rswift.NibResourceType {
@@ -515,6 +543,26 @@ struct _R: Rswift.Validatable {
 
             func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
                 return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+            }
+
+            fileprivate init() {}
+        }
+
+        struct _StoreDownloadCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+            typealias ReusableType = StoreDownloadCell
+
+            let bundle = R.hostingBundle
+            let identifier = "storeDownloadCell"
+            let name = "StoreDownloadCell"
+
+            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> StoreDownloadCell? {
+                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StoreDownloadCell
+            }
+
+            static func validate() throws {
+                if UIKit.UIImage(named: "square.and.arrow.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'square.and.arrow.down' is used in nib 'StoreDownloadCell', but couldn't be loaded.") }
+                if UIKit.UIImage(named: "toio_update", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'toio_update' is used in nib 'StoreDownloadCell', but couldn't be loaded.") }
+                if #available(iOS 11.0, *) {}
             }
 
             fileprivate init() {}

@@ -17,4 +17,5 @@ struct InformationData {
 enum PageType {
     case webView(url: URL)
     case normal
+    case download
 }
