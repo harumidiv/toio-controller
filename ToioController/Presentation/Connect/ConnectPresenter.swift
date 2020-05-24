@@ -22,6 +22,7 @@ protocol ConnectPresenterOutput: AnyObject {
     func showBluetoothPermissionAlert()
     func showDevice()
     func showTimeout()
+    func showErrorDialog()
 }
 
 class ConnectPresenterImpl: ConnectPresenter {
@@ -90,6 +91,8 @@ class ConnectPresenterImpl: ConnectPresenter {
             case let .error(e):
                 if e.type == .scanTimeout {
                     self.output?.showTimeout()
+                } else {
+                    self.output?.showErrorDialog()
                 }
             }
         }).disposed(by: disposeBag)

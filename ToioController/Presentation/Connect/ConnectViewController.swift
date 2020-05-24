@@ -85,6 +85,22 @@ class ConnectViewController: UIViewController {
 }
 
 extension ConnectViewController: ConnectPresenterOutput {
+    func showErrorDialog() {
+        DispatchQueue.main.async {
+            self.showInformation(title: "⚠️エラー",
+                                 message: "bluetoothのキャッシュが残っていますiPhoneを再起動してください",
+                                 buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
+                self.searchButton.isHidden = false
+                self.animationView.stop()
+                self.animationView.isHidden = true
+                self.searchButton.setTitle(R.string.localizeString.connectionButtonRescan(), for: .normal)
+                self.searchButton.backgroundColor = UIColor(appColor: .again)
+                self.descriptionLabel.text = R.string.localizeString.connectionDescriptionPrev()
+                self
+            }
+        }
+    }
+
     func showBluetoothPermissionAlert() {
         DispatchQueue.main.async {
             self.showInformation(title: R.string.localizeString.connectionAlertBluetooth(), message: R.string.localizeString.connectionAlertBluetoothMessage(), buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
