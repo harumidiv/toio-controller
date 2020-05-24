@@ -14,10 +14,23 @@ class DualshockViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        controller.setTimer()
         controller.isOperationPossible = true
+
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(handleControllerDidDisconnect),
+            name: NSNotification.Name.GCControllerDidDisconnect, object: nil
+        )
     }
 
     @IBAction func appControllerTapped(_ sender: Any) {
+        controller.removeTimer()
+        dismissAction?()
+        dismiss(animated: true, completion: nil)
+    }
+
+    // コントローラとの接続が解除された場合
+    @objc func handleControllerDidDisconnect(_ notification: Notification) {
         controller.removeTimer()
         dismissAction?()
         dismiss(animated: true, completion: nil)
@@ -26,10 +39,6 @@ class DualshockViewController: UIViewController {
 
 extension DualshockViewController: DualshockOutput {
     func showSettingScreen() {
-        if let topController = UIApplication.topViewController() {
-            if topController.className == "ControlViewController" {
-                navigationController?.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: true)
-            }
-        }
+        // Nop
     }
 }

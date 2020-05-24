@@ -85,16 +85,6 @@ class Dualshock {
             return
         }
 
-        switch controlType {
-        case .modeA:
-            modeATimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeDirectionMoterControl(_:)), userInfo: nil, repeats: true)
-        case .modeB:
-            modeBTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeSteeringMoterControl(_:)), userInfo: nil, repeats: true)
-        case .modeC:
-            // TODO:
-            break
-        }
-
         registerGameController(controller)
     }
 
