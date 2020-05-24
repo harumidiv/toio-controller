@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FirmwareVersion: Equatable {
+struct FirmwareVersion: Equatable, Comparable {
     let major: Int
     let minor: Int
     var patch: Int?
@@ -56,6 +56,16 @@ struct FirmwareVersion: Equatable {
 
     static func == (lhs: FirmwareVersion, rhs: FirmwareVersion) -> Bool {
         return lhs.major == rhs.major && lhs.minor == rhs.minor && lhs.patch == rhs.patch
+    }
+
+    static func < (lhs: FirmwareVersion, rhs: FirmwareVersion) -> Bool {
+        if lhs.major < rhs.major {
+            return true
+        } else if lhs.minor < rhs.minor {
+            return true
+        } else {
+            return false
+        }
     }
 }
 

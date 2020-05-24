@@ -15,6 +15,7 @@ class Cube: ToioPeripheral {
     private var connection: Disposable?
 
     var peripheral: Peripheral!
+    var firmwareVersion: FirmwareVersion = FirmwareVersion(major: 0, minor: 0, patch: 0)
     typealias ServiceType = CubeService
 
     required init(peripheral: Peripheral) {

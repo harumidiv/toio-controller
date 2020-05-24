@@ -30,7 +30,6 @@ class ConnectUseCaseImpl: ConnectUseCase {
     func loadDevice() {
         let scheduler = CurrentThreadScheduler.instance
         var retDevice: Cube?
-        var retFirmwareVersion = FirmwareVersion(major: 0, minor: 0, patch: 0)
         BluetoothService.shared
             .scanningOutput
             .subscribeOn(scheduler)
@@ -58,7 +57,7 @@ class ConnectUseCaseImpl: ConnectUseCase {
                 cube.getFirmwareVersion()
             }
             .flatMap { (version) -> Observable<Cube> in
-                retFirmwareVersion = version
+                retDevice?.firmwareVersion = version
                 return Observable.from(optional: retDevice)
             }
             .subscribe(

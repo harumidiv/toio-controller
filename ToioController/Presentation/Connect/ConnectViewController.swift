@@ -96,7 +96,6 @@ extension ConnectViewController: ConnectPresenterOutput {
                 self.searchButton.setTitle(R.string.localizeString.connectionButtonRescan(), for: .normal)
                 self.searchButton.backgroundColor = UIColor(appColor: .again)
                 self.descriptionLabel.text = R.string.localizeString.connectionDescriptionPrev()
-                self
             }
         }
     }
@@ -113,12 +112,17 @@ extension ConnectViewController: ConnectPresenterOutput {
 
     func showController(cube: CubeModel?) {
         DispatchQueue.main.async {
-            self.searchButton.isHidden = false
-            self.animationView.stop()
-            self.animationView.isHidden = true
-            self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
-            self.searchButton.backgroundColor = UIColor(appColor: .search)
-            self.wireframe.showController(vc: self, model: cube)
+            if (cube?.peripheral.firmwareVersion)! > FirmwareVersion(major: 2, minor: 2, patch: 0) {
+                self.searchButton.isHidden = false
+                self.animationView.stop()
+                self.animationView.isHidden = true
+                self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
+                self.searchButton.backgroundColor = UIColor(appColor: .search)
+                self.wireframe.showController(vc: self, model: cube)
+            } else {
+                //TODO ダイアログを表示する
+                print("NG")
+            }
         }
     }
 
