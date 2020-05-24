@@ -9,12 +9,27 @@
 import UIKit
 
 class DualshockViewController: UIViewController {
+    var controller: Dualshock!
+    var dismissAction: (() -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        controller.isOperationPossible = true
     }
 
     @IBAction func appControllerTapped(_ sender: Any) {
-        // TODO: タイマーを止める必要がある
+        controller.removeTimer()
+        dismissAction?()
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension DualshockViewController: DualshockOutput {
+    func showSettingScreen() {
+        if let topController = UIApplication.topViewController() {
+            if topController.className == "ControlViewController" {
+                navigationController?.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: true)
+            }
+        }
     }
 }

@@ -23,6 +23,8 @@ protocol DualshockOutput: AnyObject {
 class Dualshock {
     let cubeModel: CubeModel?
 
+    var isOperationPossible: Bool = false
+
     var zigzagTimer: Timer!
     var zigzagFlug = false
     var isFirstZigZag = true
@@ -149,6 +151,7 @@ class Dualshock {
         let rectButton: GCControllerButtonInput = gamepad.buttonX
 
         triangleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if !self.isOperationPossible { return }
             if pressed {
                 print("▲")
                 self.isButtonEvent = true
@@ -160,6 +163,7 @@ class Dualshock {
         }
 
         rectButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if !self.isOperationPossible { return }
             if pressed {
                 print("■")
                 self.isButtonEvent = true
@@ -180,6 +184,7 @@ class Dualshock {
         }
 
         crossButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if !self.isOperationPossible { return }
             if pressed {
                 print("✖︎")
                 self.isButtonEvent = true
@@ -205,6 +210,7 @@ class Dualshock {
         }
 
         circleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if !self.isOperationPossible { return }
             if pressed {
                 print("●")
                 self.isButtonEvent = true
@@ -223,12 +229,14 @@ class Dualshock {
         let rightThumbstick = gamepad.rightThumbstick
 
         leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, y: Float) -> Void in
+            if !self.isOperationPossible { return }
 //            self.modeA.leftJoyStickDirectionControl(x: x, y: y)
 
             self.modeB.speedControl(y: y)
         }
 
         rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, x: Float, _: Float) -> Void in
+            if !self.isOperationPossible { return }
             self.modeB.steeringControl(x: x)
         }
     }
@@ -239,6 +247,7 @@ class Dualshock {
         let directionPad = gamepad.dpad
 
         directionPad.valueChangedHandler = { (_: GCControllerDirectionPad, _ x: Float, _ y: Float) -> Void in
+            if !self.isOperationPossible { return }
             if x == 0, y == 0 {
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.stop)
                 self.isButtonEvent = false
