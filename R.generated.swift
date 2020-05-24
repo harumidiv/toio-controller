@@ -38,10 +38,38 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
     }
 
-    /// This `R.image` struct is generated, and contains static references to 1 images.
+    /// This `R.image` struct is generated, and contains static references to 5 images.
     struct image {
+        /// Image `appControllerIcon`.
+        static let appControllerIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "appControllerIcon")
+        /// Image `controllerOFF`.
+        static let controllerOFF = Rswift.ImageResource(bundle: R.hostingBundle, name: "controllerOFF")
+        /// Image `controllerON`.
+        static let controllerON = Rswift.ImageResource(bundle: R.hostingBundle, name: "controllerON")
+        /// Image `gameController`.
+        static let gameController = Rswift.ImageResource(bundle: R.hostingBundle, name: "gameController")
         /// Image `setting`.
         static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
+
+        /// `UIImage(named: "appControllerIcon", bundle: ..., traitCollection: ...)`
+        static func appControllerIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.appControllerIcon, compatibleWith: traitCollection)
+        }
+
+        /// `UIImage(named: "controllerOFF", bundle: ..., traitCollection: ...)`
+        static func controllerOFF(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.controllerOFF, compatibleWith: traitCollection)
+        }
+
+        /// `UIImage(named: "controllerON", bundle: ..., traitCollection: ...)`
+        static func controllerON(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.controllerON, compatibleWith: traitCollection)
+        }
+
+        /// `UIImage(named: "gameController", bundle: ..., traitCollection: ...)`
+        static func gameController(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.gameController, compatibleWith: traitCollection)
+        }
 
         /// `UIImage(named: "setting", bundle: ..., traitCollection: ...)`
         static func setting(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -51,12 +79,14 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
     }
 
-    /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+    /// This `R.nib` struct is generated, and contains static references to 6 nibs.
     struct nib {
         /// Nib `ConnectViewController`.
         static let connectViewController = _R.nib._ConnectViewController()
         /// Nib `ControlViewController`.
         static let controlViewController = _R.nib._ControlViewController()
+        /// Nib `DualshockViewController`.
+        static let dualshockViewController = _R.nib._DualshockViewController()
         /// Nib `InformationViewController`.
         static let informationViewController = _R.nib._InformationViewController()
         /// Nib `SettingViewController`.
@@ -74,6 +104,12 @@ struct R: Rswift.Validatable {
         @available(*, deprecated, message: "Use UINib(resource: R.nib.controlViewController) instead")
         static func controlViewController(_: Void = ()) -> UIKit.UINib {
             return UIKit.UINib(resource: R.nib.controlViewController)
+        }
+
+        /// `UINib(name: "DualshockViewController", in: bundle)`
+        @available(*, deprecated, message: "Use UINib(resource: R.nib.dualshockViewController) instead")
+        static func dualshockViewController(_: Void = ()) -> UIKit.UINib {
+            return UIKit.UINib(resource: R.nib.dualshockViewController)
         }
 
         /// `UINib(name: "InformationViewController", in: bundle)`
@@ -100,6 +136,10 @@ struct R: Rswift.Validatable {
 
         static func controlViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
             return R.nib.controlViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+        }
+
+        static func dualshockViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
+            return R.nib.dualshockViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
         }
 
         static func informationViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
@@ -405,9 +445,15 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
     static func validate() throws {
         try storyboard.validate()
+        try nib.validate()
     }
 
-    struct nib {
+    struct nib: Rswift.Validatable {
+        static func validate() throws {
+            try _ControlViewController.validate()
+            try _DualshockViewController.validate()
+        }
+
         struct _ConnectViewController: Rswift.NibResourceType {
             let bundle = R.hostingBundle
             let name = "ConnectViewController"
@@ -419,12 +465,34 @@ struct _R: Rswift.Validatable {
             fileprivate init() {}
         }
 
-        struct _ControlViewController: Rswift.NibResourceType {
+        struct _ControlViewController: Rswift.NibResourceType, Rswift.Validatable {
             let bundle = R.hostingBundle
             let name = "ControlViewController"
 
             func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
                 return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+            }
+
+            static func validate() throws {
+                if UIKit.UIImage(named: "controllerOFF", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'controllerOFF' is used in nib 'ControlViewController', but couldn't be loaded.") }
+                if #available(iOS 11.0, *) {}
+            }
+
+            fileprivate init() {}
+        }
+
+        struct _DualshockViewController: Rswift.NibResourceType, Rswift.Validatable {
+            let bundle = R.hostingBundle
+            let name = "DualshockViewController"
+
+            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
+                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+            }
+
+            static func validate() throws {
+                if UIKit.UIImage(named: "appControllerIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'appControllerIcon' is used in nib 'DualshockViewController', but couldn't be loaded.") }
+                if UIKit.UIImage(named: "gameController", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gameController' is used in nib 'DualshockViewController', but couldn't be loaded.") }
+                if #available(iOS 11.0, *) {}
             }
 
             fileprivate init() {}

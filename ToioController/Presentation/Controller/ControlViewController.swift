@@ -15,10 +15,11 @@ class ControlViewController: UIViewController {
     let cubeModel: CubeModel?
     let userDefault = UserDefaults.standard
     var zigzagTimer: Timer!
-    var controller: Dualshock?
+    var dualshock: Dualshock?
 
     private var isFirstZigZag: Bool = true
 
+    @IBOutlet weak var controllerInfo: UIButton!
     @IBOutlet weak var upButton: DirectionalPadUpButton!
     @IBOutlet weak var downButton: DirectionalPadDownButton!
     @IBOutlet weak var rightButton: DirectionalPadRightButton!
@@ -69,22 +70,21 @@ class ControlViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        controller = Dualshock(cubeModel: cubeModel, output: self)
+        dualshock = Dualshock(cubeModel: cubeModel, output: self)
 
         title = "toio controller"
 
         let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
+        updateControllerInfo()
     }
 
     // MARK: - Event
 
-    @objc func viewDidEnterBackground(_ notification: Notification) {
-        controller?.removeTimer()
-    }
+    @objc func viewDidEnterBackground(_ notification: Notification) {}
 
     @objc func viewDidEnterForground(_ notification: Notification) {
-        controller?.setTimer()
+        updateControllerInfo()
     }
 
     @objc func showInformation(_ sender: UIBarButtonItem) {
@@ -92,7 +92,6 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func upStart(_ sender: Any) {
-        controller?.removeTimer()
         if userDefault.object(forKey: "up") != nil {
             var writeData: [UInt8] = [0x01, 0x01, 0x01]
             var speed = userDefault.integer(forKey: "up")
@@ -112,12 +111,10 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func upStop(_ sender: Any) {
-        controller?.setTimer()
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
     }
 
     @IBAction func downStart(_ sender: Any) {
-        controller?.removeTimer()
         if userDefault.object(forKey: "down") != nil {
             var writeData: [UInt8] = [0x01, 0x01, 0x02]
             var speed = userDefault.integer(forKey: "down")
@@ -137,12 +134,10 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func downStop(_ sender: Any) {
-        controller?.setTimer()
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
     }
 
     @IBAction func rightStart(_ sender: Any) {
-        controller?.removeTimer()
         if userDefault.object(forKey: "right") != nil {
             var writeData: [UInt8] = [0x01, 0x01, 0x01]
             var speed = userDefault.integer(forKey: "right")
@@ -162,12 +157,10 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func rightStop(_ sender: Any) {
-        controller?.setTimer()
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
     }
 
     @IBAction func leftStart(_ sender: Any) {
-        controller?.removeTimer()
         if userDefault.object(forKey: "left") != nil {
             var writeData: [UInt8] = [0x01, 0x01, 0x01]
             var speed = userDefault.integer(forKey: "left")
@@ -186,12 +179,10 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func leftStop(_ sender: Any) {
-        controller?.setTimer()
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
     }
 
     @IBAction func backStart(_ sender: UIButton) {
-        controller?.removeTimer()
         // moter
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.BackData.moter)
 
@@ -210,7 +201,6 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func backStop(_ sender: UIButton) {
-        controller?.setTimer()
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
         writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
         writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
@@ -247,7 +237,6 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func rotateStart(_ sender: Any) {
-        controller?.removeTimer()
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.rotate)
         upButton.isEnabled = false
         downButton.isEnabled = false
@@ -259,7 +248,6 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func rotateStop(_ sender: Any) {
-        controller?.setTimer()
         writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
         upButton.isEnabled = true
         downButton.isEnabled = true
@@ -272,7 +260,6 @@ class ControlViewController: UIViewController {
 
     var zigzagFlug = false
     @IBAction func zigzagStart(_ sender: Any) {
-        controller?.removeTimer()
         // タップしてから0.3秒開いてしまうので調整用
         if isFirstZigZag {
             writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
@@ -300,7 +287,6 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func zigzagStop(_ sender: Any) {
-        controller?.setTimer()
         zigzagTimer.invalidate()
         isFirstZigZag = true
         zigzagFlug = false
@@ -318,8 +304,29 @@ class ControlViewController: UIViewController {
         navigationController?.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: true)
     }
 
+    @IBAction func dualshockControlTapped(_ sender: Any) {
+        if dualshock?.hasconnectionDevice() ?? false {
+            let dualshockVC = DualshockViewController()
+            dualshockVC.controller = dualshock
+            dualshockVC.dismissAction = { [weak self] in
+                self?.dualshock?.isOperationPossible = false
+            }
+            present(dualshockVC, animated: true, completion: nil)
+        } else {
+            showInformation(message: "コントローラが端末に接続されていません\n設定からbluetooth接続を確認してください", buttonText: "閉じる")
+        }
+    }
+
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
         _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+    }
+
+    private func updateControllerInfo() {
+        if dualshock?.hasconnectionDevice() ?? false {
+            controllerInfo.setImage(R.image.controllerON(), for: .normal)
+        } else {
+            controllerInfo.setImage(R.image.controllerOFF(), for: .normal)
+        }
     }
 }
 

@@ -23,6 +23,8 @@ protocol DualshockOutput: AnyObject {
 class Dualshock {
     let cubeModel: CubeModel?
 
+    var isOperationPossible: Bool = false
+
     var zigzagTimer: Timer!
     var zigzagFlug = false
     var isFirstZigZag = true
@@ -83,16 +85,6 @@ class Dualshock {
             return
         }
 
-        switch controlType {
-        case .modeA:
-            modeATimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeDirectionMoterControl(_:)), userInfo: nil, repeats: true)
-        case .modeB:
-            modeBTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(writeSteeringMoterControl(_:)), userInfo: nil, repeats: true)
-        case .modeC:
-            // TODO:
-            break
-        }
-
         registerGameController(controller)
     }
 
@@ -115,6 +107,7 @@ class Dualshock {
         guard let gameController = notification.object as? GCController else {
             return
         }
+
         registerGameController(gameController)
     }
 
@@ -123,7 +116,6 @@ class Dualshock {
         guard let gameController = notification.object as? GCController else {
             return
         }
-
         unregisterGameController()
 
         for controller: GCController in GCController.controllers() where gameController != controller {
@@ -149,6 +141,7 @@ class Dualshock {
         let rectButton: GCControllerButtonInput = gamepad.buttonX
 
         triangleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if !self.isOperationPossible { return }
             if pressed {
                 print("▲")
                 self.isButtonEvent = true
@@ -160,6 +153,7 @@ class Dualshock {
         }
 
         rectButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if !self.isOperationPossible { return }
             if pressed {
                 print("■")
                 self.isButtonEvent = true
@@ -180,6 +174,7 @@ class Dualshock {
         }
 
         crossButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if !self.isOperationPossible { return }
             if pressed {
                 print("✖︎")
                 self.isButtonEvent = true
@@ -205,6 +200,7 @@ class Dualshock {
         }
 
         circleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            if !self.isOperationPossible { return }
             if pressed {
                 print("●")
                 self.isButtonEvent = true
@@ -223,12 +219,14 @@ class Dualshock {
         let rightThumbstick = gamepad.rightThumbstick
 
         leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, y: Float) -> Void in
+            if !self.isOperationPossible { return }
 //            self.modeA.leftJoyStickDirectionControl(x: x, y: y)
 
             self.modeB.speedControl(y: y)
         }
 
         rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, x: Float, _: Float) -> Void in
+            if !self.isOperationPossible { return }
             self.modeB.steeringControl(x: x)
         }
     }
@@ -239,6 +237,7 @@ class Dualshock {
         let directionPad = gamepad.dpad
 
         directionPad.valueChangedHandler = { (_: GCControllerDirectionPad, _ x: Float, _ y: Float) -> Void in
+            if !self.isOperationPossible { return }
             if x == 0, y == 0 {
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.stop)
                 self.isButtonEvent = false
@@ -301,6 +300,13 @@ class Dualshock {
     func unregisterGameController() {
         // TODO: Controllerがdisconnectされた時にAlertを表示する
         print("disconnect")
+    }
+
+    func hasconnectionDevice() -> Bool {
+        guard let _ = GCController.controllers().first else {
+            return false
+        }
+        return true
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {

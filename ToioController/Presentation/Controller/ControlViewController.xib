@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +12,7 @@
                 <outlet property="backButton" destination="a7N-60-52b" id="i0b-Xd-Gys"/>
                 <outlet property="buttonBackgroundView" destination="MEr-kR-iSj" id="pfH-Ph-h5U"/>
                 <outlet property="controlBackgroundView" destination="lgS-FF-s8U" id="qqw-Jb-sJe"/>
+                <outlet property="controllerInfo" destination="gON-qY-yTW" id="qoc-Ct-llQ"/>
                 <outlet property="downButton" destination="KRc-iS-Gre" id="EPY-qx-SKZ"/>
                 <outlet property="honeButton" destination="ahh-nD-716" id="yqw-GK-Zi7"/>
                 <outlet property="leftButton" destination="gXE-iN-Xbz" id="Mt4-ae-9Zu"/>
@@ -184,13 +182,26 @@
                         <action selector="optionTapped:" destination="-1" eventType="touchUpInside" id="ORT-UH-BD5"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gON-qY-yTW">
+                    <rect key="frame" x="830" y="16" width="50" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZVC-Pr-KKP"/>
+                        <constraint firstAttribute="width" constant="50" id="dpq-Q0-8Ny"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="controllerOFF"/>
+                    <connections>
+                        <action selector="dualshockControlTapped:" destination="-1" eventType="touchUpInside" id="i1t-Rz-jHN"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mMy-f1-16Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2yB-mA-zlm"/>
                 <constraint firstItem="8pw-oQ-3iM" firstAttribute="leading" secondItem="gXE-iN-Xbz" secondAttribute="trailing" id="6iK-gl-tAB"/>
                 <constraint firstItem="lgS-FF-s8U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="9xN-p7-PTs"/>
+                <constraint firstAttribute="trailing" secondItem="gON-qY-yTW" secondAttribute="trailing" constant="16" id="Cl5-7w-EZ4"/>
                 <constraint firstItem="6yH-t4-5J7" firstAttribute="leading" secondItem="8pw-oQ-3iM" secondAttribute="trailing" id="Gwb-6d-DyK"/>
+                <constraint firstItem="gON-qY-yTW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="IhV-zx-zen"/>
                 <constraint firstItem="mMy-f1-16Q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NUF-EP-0C3"/>
                 <constraint firstItem="6ZC-fN-29E" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="50" id="WQX-UH-FWO"/>
                 <constraint firstItem="lgS-FF-s8U" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="15" id="cMs-gP-AJF"/>
@@ -204,4 +215,7 @@
             <point key="canvasLocation" x="22.098214285714285" y="117.39130434782609"/>
         </view>
     </objects>
+    <resources>
+        <image name="controllerOFF" width="2748" height="1602"/>
+    </resources>
 </document>
