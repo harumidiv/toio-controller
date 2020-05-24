@@ -38,7 +38,7 @@ struct R: Rswift.Validatable {
         fileprivate init() {}
     }
 
-    /// This `R.image` struct is generated, and contains static references to 4 images.
+    /// This `R.image` struct is generated, and contains static references to 5 images.
     struct image {
         /// Image `appControllerIcon`.
         static let appControllerIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "appControllerIcon")
@@ -46,6 +46,8 @@ struct R: Rswift.Validatable {
         static let controllerOFF = Rswift.ImageResource(bundle: R.hostingBundle, name: "controllerOFF")
         /// Image `controllerON`.
         static let controllerON = Rswift.ImageResource(bundle: R.hostingBundle, name: "controllerON")
+        /// Image `gameController`.
+        static let gameController = Rswift.ImageResource(bundle: R.hostingBundle, name: "gameController")
         /// Image `setting`.
         static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
 
@@ -62,6 +64,11 @@ struct R: Rswift.Validatable {
         /// `UIImage(named: "controllerON", bundle: ..., traitCollection: ...)`
         static func controllerON(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
             return UIKit.UIImage(resource: R.image.controllerON, compatibleWith: traitCollection)
+        }
+
+        /// `UIImage(named: "gameController", bundle: ..., traitCollection: ...)`
+        static func gameController(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+            return UIKit.UIImage(resource: R.image.gameController, compatibleWith: traitCollection)
         }
 
         /// `UIImage(named: "setting", bundle: ..., traitCollection: ...)`
@@ -484,6 +491,7 @@ struct _R: Rswift.Validatable {
 
             static func validate() throws {
                 if UIKit.UIImage(named: "appControllerIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'appControllerIcon' is used in nib 'DualshockViewController', but couldn't be loaded.") }
+                if UIKit.UIImage(named: "gameController", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gameController' is used in nib 'DualshockViewController', but couldn't be loaded.") }
                 if #available(iOS 11.0, *) {}
             }
 

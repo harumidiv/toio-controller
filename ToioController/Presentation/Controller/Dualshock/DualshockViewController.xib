@@ -18,20 +18,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-Jf-wfY">
-                    <rect key="frame" x="805" y="50" width="75" height="35"/>
+                    <rect key="frame" x="815" y="45" width="65" height="45"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="75" id="0nC-hu-7dB"/>
-                        <constraint firstAttribute="height" constant="35" id="FLN-Ec-PJQ"/>
+                        <constraint firstAttribute="width" constant="65" id="0nC-hu-7dB"/>
+                        <constraint firstAttribute="height" constant="45" id="FLN-Ec-PJQ"/>
                     </constraints>
                     <state key="normal" title="Button" image="appControllerIcon"/>
                     <connections>
                         <action selector="appControllerTapped:" destination="-1" eventType="touchUpInside" id="NpA-Pq-mFv"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameController" translatesAutoresizingMaskIntoConstraints="NO" id="AsE-Cz-GeV">
+                    <rect key="frame" x="198" y="57" width="500" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="500" id="17S-n7-ZYH"/>
+                        <constraint firstAttribute="height" constant="300" id="cup-qa-sf2"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="gfF-Jf-wfY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Sbm-bx-tHU"/>
+                <constraint firstItem="AsE-Cz-GeV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Fy2-8e-YJn"/>
+                <constraint firstItem="gfF-Jf-wfY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="45" id="Sbm-bx-tHU"/>
+                <constraint firstItem="AsE-Cz-GeV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kRr-31-Wnj"/>
                 <constraint firstAttribute="trailing" secondItem="gfF-Jf-wfY" secondAttribute="trailing" constant="16" id="t7b-iY-9hV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -40,5 +49,6 @@
     </objects>
     <resources>
         <image name="appControllerIcon" width="1500" height="700"/>
+        <image name="gameController" width="2748" height="1602"/>
     </resources>
 </document>

@@ -19,6 +19,7 @@ class ControlViewController: UIViewController {
 
     private var isFirstZigZag: Bool = true
 
+    @IBOutlet weak var controllerInfo: UIButton!
     @IBOutlet weak var upButton: DirectionalPadUpButton!
     @IBOutlet weak var downButton: DirectionalPadDownButton!
     @IBOutlet weak var rightButton: DirectionalPadRightButton!
@@ -75,6 +76,7 @@ class ControlViewController: UIViewController {
 
         let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
+        updateControllerInfo()
     }
 
     // MARK: - Event
@@ -84,6 +86,7 @@ class ControlViewController: UIViewController {
     }
 
     @objc func viewDidEnterForground(_ notification: Notification) {
+        updateControllerInfo()
         controller?.setTimer()
     }
 
@@ -320,16 +323,23 @@ class ControlViewController: UIViewController {
 
     @IBAction func dualshockControlTapped(_ sender: Any) {
         // TODO　繋がっていたら遷移未接続だったらダイアログ
-        if controller?.isConnect ?? false {
+        if controller?.hasconnectionDevice() ?? false {
             present(DualshockViewController(), animated: true, completion: nil)
         } else {
             showInformation(message: "コントローラが端末に接続されていません\n設定からbluetooth接続を確認してください", buttonText: "閉じる")
-//            present(DualshockViewController(), animated: true, completion: nil)
         }
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
         _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+    }
+
+    private func updateControllerInfo() {
+        if controller?.hasconnectionDevice() ?? false {
+            controllerInfo.setImage(R.image.controllerON(), for: .normal)
+        } else {
+            controllerInfo.setImage(R.image.controllerOFF(), for: .normal)
+        }
     }
 }
 

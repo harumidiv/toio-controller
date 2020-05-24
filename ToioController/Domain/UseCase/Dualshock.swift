@@ -23,8 +23,6 @@ protocol DualshockOutput: AnyObject {
 class Dualshock {
     let cubeModel: CubeModel?
 
-    var isConnect: Bool = false
-
     var zigzagTimer: Timer!
     var zigzagFlug = false
     var isFirstZigZag = true
@@ -117,7 +115,7 @@ class Dualshock {
         guard let gameController = notification.object as? GCController else {
             return
         }
-        isConnect = true
+
         registerGameController(gameController)
     }
 
@@ -126,7 +124,6 @@ class Dualshock {
         guard let gameController = notification.object as? GCController else {
             return
         }
-        isConnect = false
         unregisterGameController()
 
         for controller: GCController in GCController.controllers() where gameController != controller {
@@ -304,6 +301,13 @@ class Dualshock {
     func unregisterGameController() {
         // TODO: Controllerがdisconnectされた時にAlertを表示する
         print("disconnect")
+    }
+
+    func hasconnectionDevice() -> Bool {
+        guard let _ = GCController.controllers().first else {
+            return false
+        }
+        return true
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {

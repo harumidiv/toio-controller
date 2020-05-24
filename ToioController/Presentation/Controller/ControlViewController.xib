@@ -12,6 +12,7 @@
                 <outlet property="backButton" destination="a7N-60-52b" id="i0b-Xd-Gys"/>
                 <outlet property="buttonBackgroundView" destination="MEr-kR-iSj" id="pfH-Ph-h5U"/>
                 <outlet property="controlBackgroundView" destination="lgS-FF-s8U" id="qqw-Jb-sJe"/>
+                <outlet property="controllerInfo" destination="gON-qY-yTW" id="qoc-Ct-llQ"/>
                 <outlet property="downButton" destination="KRc-iS-Gre" id="EPY-qx-SKZ"/>
                 <outlet property="honeButton" destination="ahh-nD-716" id="yqw-GK-Zi7"/>
                 <outlet property="leftButton" destination="gXE-iN-Xbz" id="Mt4-ae-9Zu"/>
