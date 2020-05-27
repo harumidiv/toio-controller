@@ -120,8 +120,17 @@ extension ConnectViewController: ConnectPresenterOutput {
                 self.searchButton.backgroundColor = UIColor(appColor: .search)
                 self.wireframe.showController(vc: self, model: cube)
             } else {
-                //TODO ダイアログを表示する
-                print("NG")
+                // TODO: ダイアログを表示する
+                self.showInformation(title: "toioが最新ではありません",
+                                     message: "アップデートをするとパフォーマンスが上がる可能性があります",
+                                     buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
+                    self.searchButton.isHidden = false
+                    self.animationView.stop()
+                    self.animationView.isHidden = true
+                    self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
+                    self.searchButton.backgroundColor = UIColor(appColor: .search)
+                    self.wireframe.showController(vc: self, model: cube)
+                }
             }
         }
     }
