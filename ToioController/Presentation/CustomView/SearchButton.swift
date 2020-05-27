@@ -28,7 +28,7 @@ class SearchButton: UIButton {
     private func setupAttribute() {
         layer.cornerRadius = frame.height / 6
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        setTitle("cubeを探す", for: .normal)
+        setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
         backgroundColor = UIColor(appColor: .search)
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)

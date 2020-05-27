@@ -15,4 +15,5 @@ struct ToioBluetoothError: Error {
 enum ToioBluetoothErrorType: Int {
     case scanTimeout
     case unknown
+    case firmwareVersionFaild
 }

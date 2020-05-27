@@ -85,6 +85,21 @@ class ConnectViewController: UIViewController {
 }
 
 extension ConnectViewController: ConnectPresenterOutput {
+    func showErrorDialog() {
+        DispatchQueue.main.async {
+            self.showInformation(title: R.string.localizeString.connectionAlertBluetoothCatheTitle(),
+                                 message: R.string.localizeString.connectionAlertBluetoothCatheMessage(),
+                                 buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
+                self.searchButton.isHidden = false
+                self.animationView.stop()
+                self.animationView.isHidden = true
+                self.searchButton.setTitle(R.string.localizeString.connectionButtonRescan(), for: .normal)
+                self.searchButton.backgroundColor = UIColor(appColor: .again)
+                self.descriptionLabel.text = R.string.localizeString.connectionDescriptionPrev()
+            }
+        }
+    }
+
     func showBluetoothPermissionAlert() {
         DispatchQueue.main.async {
             self.showInformation(title: R.string.localizeString.connectionAlertBluetooth(), message: R.string.localizeString.connectionAlertBluetoothMessage(), buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
@@ -97,12 +112,26 @@ extension ConnectViewController: ConnectPresenterOutput {
 
     func showController(cube: CubeModel?) {
         DispatchQueue.main.async {
-            self.searchButton.isHidden = false
-            self.animationView.stop()
-            self.animationView.isHidden = true
-            self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
-            self.searchButton.backgroundColor = UIColor(appColor: .search)
-            self.wireframe.showController(vc: self, model: cube)
+            if (cube?.peripheral.firmwareVersion)! > FirmwareVersion(major: 2, minor: 2, patch: 0) {
+                self.searchButton.isHidden = false
+                self.animationView.stop()
+                self.animationView.isHidden = true
+                self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
+                self.searchButton.backgroundColor = UIColor(appColor: .search)
+                self.wireframe.showController(vc: self, model: cube)
+            } else {
+                // TODO: ダイアログを表示する
+                self.showInformation(title: R.string.localizeString.connectionAlertLowVersionTitle(),
+                                     message: R.string.localizeString.connectionAlertLowVersionMessage(),
+                                     buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
+                    self.searchButton.isHidden = false
+                    self.animationView.stop()
+                    self.animationView.isHidden = true
+                    self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
+                    self.searchButton.backgroundColor = UIColor(appColor: .search)
+                    self.wireframe.showController(vc: self, model: cube)
+                }
+            }
         }
     }
 

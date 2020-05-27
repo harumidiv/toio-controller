@@ -63,6 +63,11 @@
 		39BE09520250B2AE175FAB59 /* Pods_ToioControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */; };
 		498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724ED2479892700F09A9E /* DualshockViewController.swift */; };
 		498724F02479892700F09A9E /* DualshockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724EE2479892700F09A9E /* DualshockViewController.xib */; };
+		498724F4247A46EA00F09A9E /* StoreDownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */; };
+		498724F7247A4C0A00F09A9E /* StoreDownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724F6247A4C0A00F09A9E /* StoreDownloadCell.swift */; };
+		498724F9247A781E00F09A9E /* FirmwareVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724F8247A781E00F09A9E /* FirmwareVersion.swift */; };
+		498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FA247A7C0B00F09A9E /* Data+Addition.swift */; };
+		498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FC247A7C4D00F09A9E /* String+Addition.swift */; };
 		49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF05A62345A80800EA6550 /* SnapshotHelper.swift */; };
 		BD443728345BE94FE3227864 /* Pods_ToioController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */; };
 		DFDE8266E2028DD25630D9C2 /* Pods_ToioControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */; };
@@ -163,6 +168,11 @@
 		3881D1C7933616D0B9A1A87A /* Pods-ToioControllerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.release.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		498724ED2479892700F09A9E /* DualshockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualshockViewController.swift; sourceTree = "<group>"; };
 		498724EE2479892700F09A9E /* DualshockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DualshockViewController.xib; sourceTree = "<group>"; };
+		498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDownloadCell.xib; sourceTree = "<group>"; };
+		498724F6247A4C0A00F09A9E /* StoreDownloadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDownloadCell.swift; sourceTree = "<group>"; };
+		498724F8247A781E00F09A9E /* FirmwareVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareVersion.swift; sourceTree = "<group>"; };
+		498724FA247A7C0B00F09A9E /* Data+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Addition.swift"; sourceTree = "<group>"; };
+		498724FC247A7C4D00F09A9E /* String+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Addition.swift"; sourceTree = "<group>"; };
 		49FF05A62345A80800EA6550 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		67F182DFFC13D927644E1204 /* Pods-ToioController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.debug.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.debug.xcconfig"; sourceTree = "<group>"; };
 		7782BF6CE8F1AF580464C5D5 /* Pods-ToioControllerTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.develop.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.develop.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */,
+				498724F8247A781E00F09A9E /* FirmwareVersion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,6 +415,8 @@
 				0D37740522B4E3B5000EFCCC /* Collection+Addition.swift */,
 				0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */,
 				057DFDC62335E30C00E9FB32 /* UIApplication+ Addition.swift */,
+				498724FA247A7C0B00F09A9E /* Data+Addition.swift */,
+				498724FC247A7C4D00F09A9E /* String+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -453,6 +466,7 @@
 				0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */,
 				0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */,
 				0D9E324B22B5E362007B97D7 /* InformationData.swift */,
+				498724F5247A472B00F09A9E /* cell */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -464,6 +478,15 @@
 				498724EE2479892700F09A9E /* DualshockViewController.xib */,
 			);
 			path = Dualshock;
+			sourceTree = "<group>";
+		};
+		498724F5247A472B00F09A9E /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				498724F6247A4C0A00F09A9E /* StoreDownloadCell.swift */,
+				498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		73AF7AED384F3509C41B2FD0 /* Pods */ = {
@@ -617,6 +640,7 @@
 				0D68C30722BDC86400FD6CA9 /* Settings.bundle in Resources */,
 				498724F02479892700F09A9E /* DualshockViewController.xib in Resources */,
 				0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */,
+				498724F4247A46EA00F09A9E /* StoreDownloadCell.xib in Resources */,
 				0D9E320B22B5CE66007B97D7 /* WebViewController.xib in Resources */,
 				0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */,
 				0DC6BD0C22B3D6F000792ABB /* ControlViewController.xib in Resources */,
@@ -825,7 +849,9 @@
 			files = (
 				0DA8BC5922B4ABF9009AEB5A /* OtherInjector.swift in Sources */,
 				0D42C4F9230ECF4A0083856A /* ConnectMockPresenterImpl.swift in Sources */,
+				498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */,
 				057DFDC32335A48B00E9FB32 /* Control.swift in Sources */,
+				498724F7247A4C0A00F09A9E /* StoreDownloadCell.swift in Sources */,
 				0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */,
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				057DFDC52335BCA000E9FB32 /* ModeB.swift in Sources */,
@@ -841,9 +867,11 @@
 				0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */,
 				0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */,
 				0D9E320A22B5CE66007B97D7 /* WebViewController.swift in Sources */,
+				498724F9247A781E00F09A9E /* FirmwareVersion.swift in Sources */,
 				0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */,
 				0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */,
 				0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */,
+				498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */,
 				0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */,
 				0D02BF352349D2F30095F910 /* PhoneDeviceMockUsecase.swift in Sources */,
 				0D9E325322B61779007B97D7 /* SearchButton.swift in Sources */,

@@ -32,12 +32,25 @@
 
 "connection.button.rescan" = "もう一度探す";
 
+"connection.alert.lowVersion.title" = "toioが最新ではありません";
+"connection.alert.lowVersion.message" = "アップデートをするとパフォーマンスが上がる可能性があります";
+
+"connection.alert.bluetoothCathe.title" = "⚠️エラー";
+"connection.alert.bluetoothCathe.message" = "bluetoothのキャッシュが残っていますiPhoneを再起動してください";
 
 //information
 "information.list.controllerSetting" = "コントローラ設定";
 "information.list.privacypolicy" = "プライバシーポリシー";
 "information.list.aboutToio" = "toioについて";
-"imformation.list.abountDualshock" = "dualshock4について";
+"information.list.abountDualshock" = "dualshock4について";
+"information.list.toioUpdate.title" = "toio アップデートアプリ";
+"information.list.toioUpdate.message" = "toio コンソール/toio コア キューブのソフトウェアをアップデートして頂くことにより、toioに新しい機能が追加されたり、安定性が向上します。";
 
 //Setting
 "setting.description" = "この画面では、コントローラで操作を行うcubeのスピード設定が可能です。";
+"setting.dialog.save" = "設定を保存しました";
+"setting.button.title" = "設定を保存する";
+
+//controller
+"controller.dialog.message" = "コントローラが端末に接続されていません\n設定からbluetooth接続を確認してください";
+"controller.dialog.buttonText" =  "閉じる";

@@ -28,11 +28,25 @@
 "connection.alert.bluetooth.close" = "close";
 "connection.button.rescan" = "Search again";
 
+"connection.alert.lowVersion.title" = "toio is not up to date";
+"connection.alert.lowVersion.message" = "Updates may improve performance";
+
+"connection.alert.bluetoothCathe.title" = "⚠️Error";
+"connection.alert.bluetoothCathe.message" = "Bluetooth cache is left Reboot iPhone";
+
 //information
 "information.list.controllerSetting" = "Controller setting";
 "information.list.privacypolicy" = "Privacypolisy";
 "information.list.aboutToio" = "About toio";
-"imformation.list.abountDualshock" = "About dualshock4";
+"information.list.abountDualshock" = "About dualshock4";
+"information.list.toioUpdate.title" = "toio update app";
+"information.list.toioUpdate.message" = "Updates toio console / toio core cube software will add new features to toio and improve stability.";
 
 //Setting
 "setting.description" = "This screen allows you to set the speed of the cube that is operated by the controller.";
+"setting.dialog.save" = "saved the setting";
+"setting.button.title" = "Save settings";
+
+//controller
+"controller.dialog.message" = "Controller is not connected to the terminal \n Please check the bluetooth connection from the settings";
+"controller.dialog.buttonText" =  "close";
