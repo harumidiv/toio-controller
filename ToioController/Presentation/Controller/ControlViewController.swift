@@ -313,7 +313,8 @@ class ControlViewController: UIViewController {
             }
             present(dualshockVC, animated: true, completion: nil)
         } else {
-            showInformation(message: "コントローラが端末に接続されていません\n設定からbluetooth接続を確認してください", buttonText: "閉じる")
+            R.string.localizeString.controllerDialogMessage()
+            showInformation(message: R.string.localizeString.controllerDialogMessage(), buttonText: R.string.localizeString.controllerDialogButtonText())
         }
     }
 

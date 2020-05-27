@@ -211,12 +211,12 @@ struct R: Rswift.Validatable {
             fileprivate init() {}
         }
 
-        /// This `R.string.localizeString` struct is generated, and contains static references to 21 localization keys.
+        /// This `R.string.localizeString` struct is generated, and contains static references to 31 localization keys.
         struct localizeString {
             /// en translation: About dualshock4
             ///
             /// Locales: en, ja
-            static let imformationListAbountDualshock = Rswift.StringResource(key: "imformation.list.abountDualshock", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            static let informationListAbountDualshock = Rswift.StringResource(key: "information.list.abountDualshock", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: About toio
             ///
             /// Locales: en, ja
@@ -225,10 +225,18 @@ struct R: Rswift.Validatable {
             ///
             /// Locales: en, ja
             static let connectionAlertBluetooth = Rswift.StringResource(key: "connection.alert.bluetooth", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Bluetooth cache is left Reboot iPhone
+            ///
+            /// Locales: en, ja
+            static let connectionAlertBluetoothCatheMessage = Rswift.StringResource(key: "connection.alert.bluetoothCathe.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: Bluetooth permission is required to use the controller
             ///
             /// Locales: en, ja
             static let connectionAlertMessage = Rswift.StringResource(key: "connection.alert.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Controller is not connected to the terminal   Please check the bluetooth connection from the settings
+            ///
+            /// Locales: en, ja
+            static let controllerDialogMessage = Rswift.StringResource(key: "controller.dialog.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: Controller setting
             ///
             /// Locales: en, ja
@@ -253,6 +261,10 @@ struct R: Rswift.Validatable {
             ///
             /// Locales: en, ja
             static let informationListPrivacypolicy = Rswift.StringResource(key: "information.list.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Save settings
+            ///
+            /// Locales: en, ja
+            static let settingButtonTitle = Rswift.StringResource(key: "setting.button.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: Scanning...
             ///
             /// Locales: en, ja
@@ -281,6 +293,14 @@ struct R: Rswift.Validatable {
             ///
             /// Locales: en, ja
             static let connectionDescriptionPrev = Rswift.StringResource(key: "connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Updates may improve performance
+            ///
+            /// Locales: en, ja
+            static let connectionAlertLowVersionMessage = Rswift.StringResource(key: "connection.alert.lowVersion.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
+            ///
+            /// Locales: en, ja
+            static let informationListToioUpdateMessage = Rswift.StringResource(key: "information.list.toioUpdate.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: close
             ///
             /// Locales: en, ja
@@ -289,20 +309,40 @@ struct R: Rswift.Validatable {
             ///
             /// Locales: en, ja
             static let connectionAlertLessbatteryClose = Rswift.StringResource(key: "connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: close
+            ///
+            /// Locales: en, ja
+            static let controllerDialogButtonText = Rswift.StringResource(key: "controller.dialog.buttonText", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: iPhone is low on charge  nPlease charge before playing
             ///
             /// Locales: en, ja
             static let connectionAlertLessbatteryMessage = Rswift.StringResource(key: "connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: saved the setting
+            ///
+            /// Locales: en, ja
+            static let settingDialogSave = Rswift.StringResource(key: "setting.dialog.save", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
             /// en translation: toio
             ///
             /// Locales: en, ja
             static let navigationAbountToio = Rswift.StringResource(key: "navigation.abountToio", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: toio is not up to date
+            ///
+            /// Locales: en, ja
+            static let connectionAlertLowVersionTitle = Rswift.StringResource(key: "connection.alert.lowVersion.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: toio update app
+            ///
+            /// Locales: en, ja
+            static let informationListToioUpdateTitle = Rswift.StringResource(key: "information.list.toioUpdate.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+            /// en translation: ⚠️Error
+            ///
+            /// Locales: en, ja
+            static let connectionAlertBluetoothCatheTitle = Rswift.StringResource(key: "connection.alert.bluetoothCathe.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
 
             /// en translation: About dualshock4
             ///
             /// Locales: en, ja
-            static func imformationListAbountDualshock(_: Void = ()) -> String {
-                return NSLocalizedString("imformation.list.abountDualshock", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            static func informationListAbountDualshock(_: Void = ()) -> String {
+                return NSLocalizedString("information.list.abountDualshock", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
             /// en translation: About toio
@@ -319,11 +359,25 @@ struct R: Rswift.Validatable {
                 return NSLocalizedString("connection.alert.bluetooth", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
+            /// en translation: Bluetooth cache is left Reboot iPhone
+            ///
+            /// Locales: en, ja
+            static func connectionAlertBluetoothCatheMessage(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.bluetoothCathe.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
             /// en translation: Bluetooth permission is required to use the controller
             ///
             /// Locales: en, ja
             static func connectionAlertMessage(_: Void = ()) -> String {
                 return NSLocalizedString("connection.alert.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Controller is not connected to the terminal   Please check the bluetooth connection from the settings
+            ///
+            /// Locales: en, ja
+            static func controllerDialogMessage(_: Void = ()) -> String {
+                return NSLocalizedString("controller.dialog.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
             /// en translation: Controller setting
@@ -366,6 +420,13 @@ struct R: Rswift.Validatable {
             /// Locales: en, ja
             static func informationListPrivacypolicy(_: Void = ()) -> String {
                 return NSLocalizedString("information.list.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Save settings
+            ///
+            /// Locales: en, ja
+            static func settingButtonTitle(_: Void = ()) -> String {
+                return NSLocalizedString("setting.button.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
             /// en translation: Scanning...
@@ -417,6 +478,20 @@ struct R: Rswift.Validatable {
                 return NSLocalizedString("connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
+            /// en translation: Updates may improve performance
+            ///
+            /// Locales: en, ja
+            static func connectionAlertLowVersionMessage(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.lowVersion.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
+            ///
+            /// Locales: en, ja
+            static func informationListToioUpdateMessage(_: Void = ()) -> String {
+                return NSLocalizedString("information.list.toioUpdate.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
             /// en translation: close
             ///
             /// Locales: en, ja
@@ -431,6 +506,13 @@ struct R: Rswift.Validatable {
                 return NSLocalizedString("connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
+            /// en translation: close
+            ///
+            /// Locales: en, ja
+            static func controllerDialogButtonText(_: Void = ()) -> String {
+                return NSLocalizedString("controller.dialog.buttonText", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
             /// en translation: iPhone is low on charge  nPlease charge before playing
             ///
             /// Locales: en, ja
@@ -438,11 +520,39 @@ struct R: Rswift.Validatable {
                 return NSLocalizedString("connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
+            /// en translation: saved the setting
+            ///
+            /// Locales: en, ja
+            static func settingDialogSave(_: Void = ()) -> String {
+                return NSLocalizedString("setting.dialog.save", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
             /// en translation: toio
             ///
             /// Locales: en, ja
             static func navigationAbountToio(_: Void = ()) -> String {
                 return NSLocalizedString("navigation.abountToio", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: toio is not up to date
+            ///
+            /// Locales: en, ja
+            static func connectionAlertLowVersionTitle(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.lowVersion.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: toio update app
+            ///
+            /// Locales: en, ja
+            static func informationListToioUpdateTitle(_: Void = ()) -> String {
+                return NSLocalizedString("information.list.toioUpdate.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+            }
+
+            /// en translation: ⚠️Error
+            ///
+            /// Locales: en, ja
+            static func connectionAlertBluetoothCatheTitle(_: Void = ()) -> String {
+                return NSLocalizedString("connection.alert.bluetoothCathe.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
             }
 
             fileprivate init() {}

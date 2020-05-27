@@ -22,12 +22,20 @@ class InformationViewController: UIViewController, SKStoreProductViewControllerD
 
     lazy var informationData: [InformationData] = {
         [
-            InformationData(label: R.string.localizeString.informationListControllerSetting(), title: R.string.localizeString.navigationSetting(), type: .normal),
-            InformationData(label: R.string.localizeString.informationListPrivacypolicy(), title: R.string.localizeString.navigationPrivacypolicy(), type: .webView(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)),
-            InformationData(label: R.string.localizeString.informationListAboutToio(), title: R.string.localizeString.navigationAbountToio(), type: .webView(url: URL(string: "https://toio.io/")!)),
-            InformationData(label: R.string.localizeString.imformationListAbountDualshock(), title: "dualshock4", type: .webView(url: URL(string: "https://www.jp.playstation.com/accessories/dualshock4/")!)),
-            InformationData(label: "toio コンソール/toio コア キューブのソフトウェアをアップデートして頂くことにより、toioに新しい機能が追加されたり、安定性が向上します。",
-                            title: "toio アップデートアプリ",
+            InformationData(label: R.string.localizeString.informationListControllerSetting(),
+                            title: R.string.localizeString.navigationSetting(),
+                            type: .normal),
+            InformationData(label: R.string.localizeString.informationListPrivacypolicy(),
+                            title: R.string.localizeString.navigationPrivacypolicy(),
+                            type: .webView(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)),
+            InformationData(label: R.string.localizeString.informationListAboutToio(),
+                            title: R.string.localizeString.navigationAbountToio(),
+                            type: .webView(url: URL(string: "https://toio.io/")!)),
+            InformationData(label: R.string.localizeString.informationListAbountDualshock(),
+                            title: "dualshock4",
+                            type: .webView(url: URL(string: "https://www.jp.playstation.com/accessories/dualshock4/")!)),
+            InformationData(label: R.string.localizeString.informationListToioUpdateMessage(),
+                            title: R.string.localizeString.informationListToioUpdateTitle(),
                             type: .download)
         ]
     }()

@@ -87,8 +87,8 @@ class ConnectViewController: UIViewController {
 extension ConnectViewController: ConnectPresenterOutput {
     func showErrorDialog() {
         DispatchQueue.main.async {
-            self.showInformation(title: "⚠️エラー",
-                                 message: "bluetoothのキャッシュが残っていますiPhoneを再起動してください",
+            self.showInformation(title: R.string.localizeString.connectionAlertBluetoothCatheTitle(),
+                                 message: R.string.localizeString.connectionAlertBluetoothCatheMessage(),
                                  buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
                 self.searchButton.isHidden = false
                 self.animationView.stop()
@@ -121,8 +121,8 @@ extension ConnectViewController: ConnectPresenterOutput {
                 self.wireframe.showController(vc: self, model: cube)
             } else {
                 // TODO: ダイアログを表示する
-                self.showInformation(title: "toioが最新ではありません",
-                                     message: "アップデートをするとパフォーマンスが上がる可能性があります",
+                self.showInformation(title: R.string.localizeString.connectionAlertLowVersionTitle(),
+                                     message: R.string.localizeString.connectionAlertLowVersionMessage(),
                                      buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
                     self.searchButton.isHidden = false
                     self.animationView.stop()
