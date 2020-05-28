@@ -68,9 +68,7 @@ class ConnectUseCaseImpl: ConnectUseCase {
                     self.targetSubject.onNext(Result.success(CubeModel(peripheral: retDevice!)))
                 },
                 onError: { [weak self] error in
-                    // TODO: 変なエラーが来た時に落ちる気がするのでいい方法がないか考える
-                    self?.targetSubject.onNext(Result.error(error as! ToioBluetoothError))
-                    self?.targetSubject.onError(error)
+                    self?.targetSubject.onNext(Result.error(error as? ToioBluetoothError ?? ToioBluetoothError(type: .unknown)))
                 }
             ).disposed(by: disposeBag)
         BluetoothService.shared.startScaning(serviceUUIDs: [CBUUID(string: "10B20100-5B3B-4571-9508-CF3EFCD7BBAE".uppercased())], duration: 15)
