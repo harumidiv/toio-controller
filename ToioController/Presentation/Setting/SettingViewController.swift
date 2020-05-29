@@ -6,6 +6,7 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import StoreKit
 import UIKit
 
 class SettingViewController: UIViewController {
@@ -172,7 +173,15 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        openAppReviewWindow()
         title = titleText
+    }
+
+    private func openAppReviewWindow() {
+        if !UserStore.appReview {
+            SKStoreReviewController.requestReview()
+            UserStore.appReview = true
+        }
     }
 
     // MARK: - Event

@@ -27,7 +27,7 @@ final class UserStore {
             return UserDefaults.standard.bool(forKey: Key.appReview.rawValue)
         }
     }
-    
+
     // toioの操作スピード
     static var up: Int {
         set {
@@ -38,6 +38,7 @@ final class UserStore {
             return UserDefaults.standard.integer(forKey: Key.up.rawValue)
         }
     }
+
     static var down: Int {
         set {
             UserDefaults.standard.set(newValue, forKey: Key.down.rawValue)
@@ -47,6 +48,7 @@ final class UserStore {
             return UserDefaults.standard.integer(forKey: Key.down.rawValue)
         }
     }
+
     static var left: Int {
         set {
             UserDefaults.standard.set(newValue, forKey: Key.left.rawValue)
@@ -56,6 +58,7 @@ final class UserStore {
             return UserDefaults.standard.integer(forKey: Key.left.rawValue)
         }
     }
+
     static var right: Int {
         set {
             UserDefaults.standard.set(newValue, forKey: Key.right.rawValue)
