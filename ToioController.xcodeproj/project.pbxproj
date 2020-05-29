@@ -68,6 +68,7 @@
 		498724F9247A781E00F09A9E /* FirmwareVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724F8247A781E00F09A9E /* FirmwareVersion.swift */; };
 		498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FA247A7C0B00F09A9E /* Data+Addition.swift */; };
 		498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FC247A7C4D00F09A9E /* String+Addition.swift */; };
+		49D229C9248143710035CAB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D229C8248143710035CAB3 /* UserStore.swift */; };
 		49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF05A62345A80800EA6550 /* SnapshotHelper.swift */; };
 		BD443728345BE94FE3227864 /* Pods_ToioController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */; };
 		DFDE8266E2028DD25630D9C2 /* Pods_ToioControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */; };
@@ -173,6 +174,7 @@
 		498724F8247A781E00F09A9E /* FirmwareVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareVersion.swift; sourceTree = "<group>"; };
 		498724FA247A7C0B00F09A9E /* Data+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Addition.swift"; sourceTree = "<group>"; };
 		498724FC247A7C4D00F09A9E /* String+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Addition.swift"; sourceTree = "<group>"; };
+		49D229C8248143710035CAB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		49FF05A62345A80800EA6550 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		67F182DFFC13D927644E1204 /* Pods-ToioController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.debug.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.debug.xcconfig"; sourceTree = "<group>"; };
 		7782BF6CE8F1AF580464C5D5 /* Pods-ToioControllerTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.develop.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.develop.xcconfig"; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				0D3773FE22B4D99B000EFCCC /* Common */,
 				0DA8BC5722B4A8CA009AEB5A /* Error */,
 				0DA8BC4C22B49A74009AEB5A /* Domain */,
+				49D229C7248143470035CAB3 /* Store */,
 				0DA8BC4322B498C8009AEB5A /* DI */,
 				0DC6BD0E22B3D80F00792ABB /* Extension */,
 				0DC6BD0D22B3D70E00792ABB /* Presentation */,
@@ -487,6 +490,14 @@
 				498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		49D229C7248143470035CAB3 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				49D229C8248143710035CAB3 /* UserStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		73AF7AED384F3509C41B2FD0 /* Pods */ = {
@@ -853,6 +864,7 @@
 				057DFDC32335A48B00E9FB32 /* Control.swift in Sources */,
 				498724F7247A4C0A00F09A9E /* StoreDownloadCell.swift in Sources */,
 				0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */,
+				49D229C9248143710035CAB3 /* UserStore.swift in Sources */,
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				057DFDC52335BCA000E9FB32 /* ModeB.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,

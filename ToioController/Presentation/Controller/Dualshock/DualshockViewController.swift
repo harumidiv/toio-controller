@@ -6,6 +6,7 @@
 //  Copyright © 2020 佐川晴海. All rights reserved.
 //
 
+import StoreKit
 import UIKit
 
 class DualshockViewController: UIViewController {
@@ -14,6 +15,8 @@ class DualshockViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        openAppReviewWindow()
         controller.setTimer()
         controller.isOperationPossible = true
 
@@ -34,6 +37,13 @@ class DualshockViewController: UIViewController {
         controller.removeTimer()
         dismissAction?()
         dismiss(animated: true, completion: nil)
+    }
+
+    private func openAppReviewWindow() {
+        if !UserStore.appReview {
+            SKStoreReviewController.requestReview()
+            UserStore.appReview = true
+        }
     }
 }
 

@@ -13,7 +13,6 @@ import UIKit
 
 class ControlViewController: UIViewController {
     let cubeModel: CubeModel?
-    let userDefault = UserDefaults.standard
     var zigzagTimer: Timer!
     var dualshock: Dualshock?
 
@@ -92,22 +91,17 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func upStart(_ sender: Any) {
-        if userDefault.object(forKey: "up") != nil {
-            var writeData: [UInt8] = [0x01, 0x01, 0x01]
-            var speed = userDefault.integer(forKey: "up")
-            if speed <= 10 {
-                speed = 11
-            }
-            let data = UInt8(String(speed))!
-            writeData += [data]
-            writeData += [0x02]
-            writeData += [0x01]
-            writeData += [data]
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
-
-        } else {
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.up)
+        var writeData: [UInt8] = [0x01, 0x01, 0x01]
+        var speed = UserStore.up
+        if speed <= 10 {
+            speed = 11
         }
+        let data = UInt8(String(speed))!
+        writeData += [data]
+        writeData += [0x02]
+        writeData += [0x01]
+        writeData += [data]
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
     }
 
     @IBAction func upStop(_ sender: Any) {
@@ -115,22 +109,17 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func downStart(_ sender: Any) {
-        if userDefault.object(forKey: "down") != nil {
-            var writeData: [UInt8] = [0x01, 0x01, 0x02]
-            var speed = userDefault.integer(forKey: "down")
-            if speed <= 10 {
-                speed = 11
-            }
-            let data = UInt8(String(speed))!
-            writeData += [data]
-            writeData += [0x02]
-            writeData += [0x02]
-            writeData += [data]
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
-
-        } else {
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.down)
+        var writeData: [UInt8] = [0x01, 0x01, 0x02]
+        var speed = UserStore.down
+        if speed <= 10 {
+            speed = 11
         }
+        let data = UInt8(String(speed))!
+        writeData += [data]
+        writeData += [0x02]
+        writeData += [0x02]
+        writeData += [data]
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
     }
 
     @IBAction func downStop(_ sender: Any) {
@@ -138,22 +127,17 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func rightStart(_ sender: Any) {
-        if userDefault.object(forKey: "right") != nil {
-            var writeData: [UInt8] = [0x01, 0x01, 0x01]
-            var speed = userDefault.integer(forKey: "right")
-            if speed <= 10 {
-                speed = 11
-            }
-            let data = UInt8(String(speed))!
-            writeData += [data]
-            writeData += [0x02]
-            writeData += [0x01]
-            writeData += [data / 2]
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
-
-        } else {
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.right)
+        var writeData: [UInt8] = [0x01, 0x01, 0x01]
+        var speed = UserStore.right
+        if speed <= 10 {
+            speed = 11
         }
+        let data = UInt8(String(speed))!
+        writeData += [data]
+        writeData += [0x02]
+        writeData += [0x01]
+        writeData += [data / 2]
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
     }
 
     @IBAction func rightStop(_ sender: Any) {
@@ -161,21 +145,17 @@ class ControlViewController: UIViewController {
     }
 
     @IBAction func leftStart(_ sender: Any) {
-        if userDefault.object(forKey: "left") != nil {
-            var writeData: [UInt8] = [0x01, 0x01, 0x01]
-            var speed = userDefault.integer(forKey: "left")
-            if speed <= 10 {
-                speed = 11
-            }
-            let data = UInt8(String(speed))!
-            writeData += [data / 2]
-            writeData += [0x02]
-            writeData += [0x01]
-            writeData += [data]
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
-        } else {
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.left)
+        var writeData: [UInt8] = [0x01, 0x01, 0x01]
+        var speed = UserStore.left
+        if speed <= 10 {
+            speed = 11
         }
+        let data = UInt8(String(speed))!
+        writeData += [data / 2]
+        writeData += [0x02]
+        writeData += [0x01]
+        writeData += [data]
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
     }
 
     @IBAction func leftStop(_ sender: Any) {
