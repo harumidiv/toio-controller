@@ -17,141 +17,69 @@ class SettingViewController: UIViewController {
     }
 
     let titleText: String
-    let userDefault = UserDefaults.standard
 
     lazy var upValue: Int = {
-        let value: Int
-        if userDefault.object(forKey: "up") != nil {
-            value = userDefault.integer(forKey: "up")
-        } else {
-            value = 60
-        }
-        return value
+        UserStore.up
     }()
 
     lazy var leftValue: Int = {
-        let value: Int
-        if userDefault.object(forKey: "left") != nil {
-            value = userDefault.integer(forKey: "left")
-        } else {
-            value = 60
-        }
-        return value
+        UserStore.left
     }()
 
     lazy var rightValue: Int = {
-        let value: Int
-        if userDefault.object(forKey: "right") != nil {
-            value = userDefault.integer(forKey: "right")
-        } else {
-            value = 60
-        }
-        return value
+        UserStore.right
     }()
 
     lazy var downValue: Int = {
-        let value: Int
-        if userDefault.object(forKey: "down") != nil {
-            value = userDefault.integer(forKey: "down")
-        } else {
-            value = 60
-        }
-        return value
+        UserStore.down
     }()
 
+    // Slider
     @IBOutlet weak var upSlider: UISlider! {
         didSet {
-            let value: Int
-            if userDefault.object(forKey: "up") != nil {
-                value = userDefault.integer(forKey: "up")
-            } else {
-                value = 60
-            }
-            upSlider.value = Float(value) / 100
+            upSlider.value = Float(UserStore.up) / 100
         }
     }
 
     @IBOutlet weak var leftSlider: UISlider! {
         didSet {
-            let value: Int
-            if userDefault.object(forKey: "left") != nil {
-                value = userDefault.integer(forKey: "left")
-            } else {
-                value = 60
-            }
-            leftSlider.value = Float(value) / 100
+            leftSlider.value = Float(UserStore.left) / 100
         }
     }
 
     @IBOutlet weak var rightSlider: UISlider! {
         didSet {
-            let value: Int
-            if userDefault.object(forKey: "right") != nil {
-                value = userDefault.integer(forKey: "right")
-            } else {
-                value = 60
-            }
-            rightSlider.value = Float(value) / 100
+            rightSlider.value = Float(UserStore.right) / 100
         }
     }
 
     @IBOutlet weak var downSlider: UISlider! {
         didSet {
-            let value: Int
-            if userDefault.object(forKey: "down") != nil {
-                value = userDefault.integer(forKey: "down")
-            } else {
-                value = 60
-            }
-            downSlider.value = Float(value) / 100
+            downSlider.value = Float(UserStore.down) / 100
         }
     }
 
     @IBOutlet weak var upLabel: UILabel! {
         didSet {
-            let value: Int
-            if userDefault.object(forKey: "up") != nil {
-                value = userDefault.integer(forKey: "up")
-            } else {
-                value = 60
-            }
-            upLabel.text = value.description
+            upLabel.text = UserStore.up.description
         }
     }
 
     @IBOutlet weak var leftLabel: UILabel! {
         didSet {
-            let value: Int
-            if userDefault.object(forKey: "left") != nil {
-                value = userDefault.integer(forKey: "left")
-            } else {
-                value = 60
-            }
-            leftLabel.text = value.description
+            leftLabel.text = UserStore.left.description
         }
     }
 
     @IBOutlet weak var rightLabel: UILabel! {
         didSet {
-            let value: Int
-            if userDefault.object(forKey: "right") != nil {
-                value = userDefault.integer(forKey: "right")
-            } else {
-                value = 60
-            }
-            rightLabel.text = value.description
+            rightLabel.text = UserStore.right.description
         }
     }
 
     @IBOutlet weak var downLabel: UILabel! {
         didSet {
-            let value: Int
-            if userDefault.object(forKey: "down") != nil {
-                value = userDefault.integer(forKey: "down")
-            } else {
-                value = 60
-            }
-            downLabel.text = value.description
+            downLabel.text = UserStore.down.description
         }
     }
 
@@ -207,11 +135,11 @@ class SettingViewController: UIViewController {
     }
 
     @IBAction func saveTaped(_ sender: Any) {
-        userDefault.set(upValue, forKey: "up")
-        userDefault.set(downValue, forKey: "down")
-        userDefault.set(leftValue, forKey: "left")
-        userDefault.set(rightValue, forKey: "right")
-        userDefault.synchronize()
+        UserStore.up = upValue
+        UserStore.down = downValue
+        UserStore.left = leftValue
+        UserStore.right = rightValue
+
         let saveAlert = UIAlertController(title: R.string.localizeString.settingDialogSave(), message: "", preferredStyle: UIAlertController.Style.alert)
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
             saveAlert.dismiss(animated: true, completion: nil)

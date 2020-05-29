@@ -35,7 +35,11 @@ final class UserStore {
             UserDefaults.standard.synchronize()
         }
         get {
-            return UserDefaults.standard.integer(forKey: Key.up.rawValue)
+            if UserDefaults.standard.object(forKey: Key.up.rawValue) != nil {
+                return UserDefaults.standard.integer(forKey: Key.up.rawValue)
+            } else {
+                return 60
+            }
         }
     }
 
@@ -45,7 +49,11 @@ final class UserStore {
             UserDefaults.standard.synchronize()
         }
         get {
-            return UserDefaults.standard.integer(forKey: Key.down.rawValue)
+            if UserDefaults.standard.object(forKey: Key.down.rawValue) != nil {
+                return UserDefaults.standard.integer(forKey: Key.down.rawValue)
+            } else {
+                return 60
+            }
         }
     }
 
@@ -55,7 +63,11 @@ final class UserStore {
             UserDefaults.standard.synchronize()
         }
         get {
-            return UserDefaults.standard.integer(forKey: Key.left.rawValue)
+            if UserDefaults.standard.object(forKey: Key.left.rawValue) != nil {
+                return UserDefaults.standard.integer(forKey: Key.left.rawValue)
+            } else {
+                return 60
+            }
         }
     }
 
@@ -65,7 +77,11 @@ final class UserStore {
             UserDefaults.standard.synchronize()
         }
         get {
-            return UserDefaults.standard.integer(forKey: Key.right.rawValue)
+            if UserDefaults.standard.object(forKey: Key.right.rawValue) != nil {
+                return UserDefaults.standard.integer(forKey: Key.right.rawValue)
+            } else {
+                return 60
+            }
         }
     }
 }
