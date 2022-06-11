@@ -1,15 +1,15 @@
 PODS:
-  - LicensePlist (2.5.0)
-  - lottie-ios (3.1.0)
-  - R.swift (5.0.3):
-    - R.swift.Library (~> 5.0.0)
-  - R.swift.Library (5.0.1)
-  - RxBluetoothKit (5.2.1):
-    - RxSwift (~> 5.0)
-  - RxSwift (5.0.0)
-  - SwiftFormat/CLI (0.40.9)
-  - SwiftLint (0.32.0)
-  - Swinject (2.6.1)
+  - LicensePlist (3.22.0)
+  - lottie-ios (3.3.0)
+  - R.swift (6.1.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - RxBluetoothKit (6.0.0):
+    - RxSwift (~> 5.1)
+  - RxSwift (5.1.3)
+  - SwiftFormat/CLI (0.49.9)
+  - SwiftLint (0.47.1)
+  - Swinject (2.8.1)
 
 DEPENDENCIES:
   - LicensePlist
@@ -33,15 +33,15 @@ SPEC REPOS:
     - Swinject
 
 SPEC CHECKSUMS:
-  LicensePlist: e5f8f2e3465620e53ec4c669955a5a7d0692b9cb
-  lottie-ios: 9467723922dfff46f6d4e3019c32594a62440b7c
-  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
-  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
-  RxBluetoothKit: 3a4ca066d4d6e87ec5cf77a81298830a9a833bf1
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SwiftFormat: 6b67b6e7fe73d664f0cbb4f13721f130462c86a5
-  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
-  Swinject: b624462f47b635a64f89a60a247baa5fccec14e1
+  LicensePlist: be4f67fadceeba970ed2f13e198592a4f420d2be
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
+  R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  RxBluetoothKit: dad22912b15b74a40df8f60057f218d4e851746d
+  RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
+  SwiftFormat: 016c15401d06959ef9f81d7956462e91f55b8ac5
+  SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
+  Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
 
 PODFILE CHECKSUM: 39d279864ad14c15b19fd7bc1084435a17c31db4
 

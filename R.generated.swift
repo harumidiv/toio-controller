@@ -9,723 +9,728 @@ import UIKit
 
 /// This `R` struct is generated and contains references to static resources.
 struct R: Rswift.Validatable {
-    fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
-    fileprivate static let hostingBundle = Bundle(for: R.Class.self)
-
-    static func validate() throws {
-        try intern.validate()
+  fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
+  fileprivate static let hostingBundle = Bundle(for: R.Class.self)
+  
+  static func validate() throws {
+    try intern.validate()
+  }
+  
+  /// This `R.file` struct is generated, and contains static references to 2 files.
+  struct file {
+    /// Resource file `448-ripple-loading-animation.json`.
+    static let rippleLoadingAnimationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "448-ripple-loading-animation", pathExtension: "json")
+    /// Resource file `Settings.bundle`.
+    static let settingsBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "Settings", pathExtension: "bundle")
+    
+    /// `bundle.url(forResource: "448-ripple-loading-animation", withExtension: "json")`
+    static func rippleLoadingAnimationJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rippleLoadingAnimationJson
+      return fileResource.bundle.url(forResource: fileResource)
     }
-
-    /// This `R.file` struct is generated, and contains static references to 2 files.
-    struct file {
-        /// Resource file `448-ripple-loading-animation.json`.
-        static let rippleLoadingAnimationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "448-ripple-loading-animation", pathExtension: "json")
-        /// Resource file `Settings.bundle`.
-        static let settingsBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "Settings", pathExtension: "bundle")
-
-        /// `bundle.url(forResource: "448-ripple-loading-animation", withExtension: "json")`
-        static func rippleLoadingAnimationJson(_: Void = ()) -> Foundation.URL? {
-            let fileResource = R.file.rippleLoadingAnimationJson
-            return fileResource.bundle.url(forResource: fileResource)
-        }
-
-        /// `bundle.url(forResource: "Settings", withExtension: "bundle")`
-        static func settingsBundle(_: Void = ()) -> Foundation.URL? {
-            let fileResource = R.file.settingsBundle
-            return fileResource.bundle.url(forResource: fileResource)
-        }
-
-        fileprivate init() {}
+    
+    /// `bundle.url(forResource: "Settings", withExtension: "bundle")`
+    static func settingsBundle(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.settingsBundle
+      return fileResource.bundle.url(forResource: fileResource)
     }
-
-    /// This `R.image` struct is generated, and contains static references to 6 images.
-    struct image {
-        /// Image `appControllerIcon`.
-        static let appControllerIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "appControllerIcon")
-        /// Image `controllerOFF`.
-        static let controllerOFF = Rswift.ImageResource(bundle: R.hostingBundle, name: "controllerOFF")
-        /// Image `controllerON`.
-        static let controllerON = Rswift.ImageResource(bundle: R.hostingBundle, name: "controllerON")
-        /// Image `gameController`.
-        static let gameController = Rswift.ImageResource(bundle: R.hostingBundle, name: "gameController")
-        /// Image `setting`.
-        static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
-        /// Image `toio_update`.
-        static let toio_update = Rswift.ImageResource(bundle: R.hostingBundle, name: "toio_update")
-
-        /// `UIImage(named: "appControllerIcon", bundle: ..., traitCollection: ...)`
-        static func appControllerIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-            return UIKit.UIImage(resource: R.image.appControllerIcon, compatibleWith: traitCollection)
-        }
-
-        /// `UIImage(named: "controllerOFF", bundle: ..., traitCollection: ...)`
-        static func controllerOFF(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-            return UIKit.UIImage(resource: R.image.controllerOFF, compatibleWith: traitCollection)
-        }
-
-        /// `UIImage(named: "controllerON", bundle: ..., traitCollection: ...)`
-        static func controllerON(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-            return UIKit.UIImage(resource: R.image.controllerON, compatibleWith: traitCollection)
-        }
-
-        /// `UIImage(named: "gameController", bundle: ..., traitCollection: ...)`
-        static func gameController(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-            return UIKit.UIImage(resource: R.image.gameController, compatibleWith: traitCollection)
-        }
-
-        /// `UIImage(named: "setting", bundle: ..., traitCollection: ...)`
-        static func setting(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-            return UIKit.UIImage(resource: R.image.setting, compatibleWith: traitCollection)
-        }
-
-        /// `UIImage(named: "toio_update", bundle: ..., traitCollection: ...)`
-        static func toio_update(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-            return UIKit.UIImage(resource: R.image.toio_update, compatibleWith: traitCollection)
-        }
-
-        fileprivate init() {}
-    }
-
-    /// This `R.nib` struct is generated, and contains static references to 7 nibs.
-    struct nib {
-        /// Nib `ConnectViewController`.
-        static let connectViewController = _R.nib._ConnectViewController()
-        /// Nib `ControlViewController`.
-        static let controlViewController = _R.nib._ControlViewController()
-        /// Nib `DualshockViewController`.
-        static let dualshockViewController = _R.nib._DualshockViewController()
-        /// Nib `InformationViewController`.
-        static let informationViewController = _R.nib._InformationViewController()
-        /// Nib `SettingViewController`.
-        static let settingViewController = _R.nib._SettingViewController()
-        /// Nib `StoreDownloadCell`.
-        static let storeDownloadCell = _R.nib._StoreDownloadCell()
-        /// Nib `WebViewController`.
-        static let webViewController = _R.nib._WebViewController()
-
-        /// `UINib(name: "ConnectViewController", in: bundle)`
-        @available(*, deprecated, message: "Use UINib(resource: R.nib.connectViewController) instead")
-        static func connectViewController(_: Void = ()) -> UIKit.UINib {
-            return UIKit.UINib(resource: R.nib.connectViewController)
-        }
-
-        /// `UINib(name: "ControlViewController", in: bundle)`
-        @available(*, deprecated, message: "Use UINib(resource: R.nib.controlViewController) instead")
-        static func controlViewController(_: Void = ()) -> UIKit.UINib {
-            return UIKit.UINib(resource: R.nib.controlViewController)
-        }
-
-        /// `UINib(name: "DualshockViewController", in: bundle)`
-        @available(*, deprecated, message: "Use UINib(resource: R.nib.dualshockViewController) instead")
-        static func dualshockViewController(_: Void = ()) -> UIKit.UINib {
-            return UIKit.UINib(resource: R.nib.dualshockViewController)
-        }
-
-        /// `UINib(name: "InformationViewController", in: bundle)`
-        @available(*, deprecated, message: "Use UINib(resource: R.nib.informationViewController) instead")
-        static func informationViewController(_: Void = ()) -> UIKit.UINib {
-            return UIKit.UINib(resource: R.nib.informationViewController)
-        }
-
-        /// `UINib(name: "SettingViewController", in: bundle)`
-        @available(*, deprecated, message: "Use UINib(resource: R.nib.settingViewController) instead")
-        static func settingViewController(_: Void = ()) -> UIKit.UINib {
-            return UIKit.UINib(resource: R.nib.settingViewController)
-        }
-
-        /// `UINib(name: "StoreDownloadCell", in: bundle)`
-        @available(*, deprecated, message: "Use UINib(resource: R.nib.storeDownloadCell) instead")
-        static func storeDownloadCell(_: Void = ()) -> UIKit.UINib {
-            return UIKit.UINib(resource: R.nib.storeDownloadCell)
-        }
-
-        /// `UINib(name: "WebViewController", in: bundle)`
-        @available(*, deprecated, message: "Use UINib(resource: R.nib.webViewController) instead")
-        static func webViewController(_: Void = ()) -> UIKit.UINib {
-            return UIKit.UINib(resource: R.nib.webViewController)
-        }
-
-        static func connectViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-            return R.nib.connectViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-        }
-
-        static func controlViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-            return R.nib.controlViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-        }
-
-        static func dualshockViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-            return R.nib.dualshockViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-        }
-
-        static func informationViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-            return R.nib.informationViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-        }
-
-        static func settingViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-            return R.nib.settingViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-        }
-
-        static func storeDownloadCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> StoreDownloadCell? {
-            return R.nib.storeDownloadCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StoreDownloadCell
-        }
-
-        static func webViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-            return R.nib.webViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-        }
-
-        fileprivate init() {}
-    }
-
-    /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-    struct reuseIdentifier {
-        /// Reuse identifier `storeDownloadCell`.
-        static let storeDownloadCell: Rswift.ReuseIdentifier<StoreDownloadCell> = Rswift.ReuseIdentifier(identifier: "storeDownloadCell")
-
-        fileprivate init() {}
-    }
-
-    /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
-    struct storyboard {
-        /// Storyboard `LaunchScreen`.
-        static let launchScreen = _R.storyboard.launchScreen()
-        /// Storyboard `Main`.
-        static let main = _R.storyboard.main()
-
-        /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-        static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-            return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-        }
-
-        /// `UIStoryboard(name: "Main", bundle: ...)`
-        static func main(_: Void = ()) -> UIKit.UIStoryboard {
-            return UIKit.UIStoryboard(resource: R.storyboard.main)
-        }
-
-        fileprivate init() {}
-    }
-
-    /// This `R.string` struct is generated, and contains static references to 3 localization tables.
-    struct string {
-        /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
-        struct launchScreen {
-            fileprivate init() {}
-        }
-
-        /// This `R.string.localizeString` struct is generated, and contains static references to 31 localization keys.
-        struct localizeString {
-            /// en translation: About dualshock4
-            ///
-            /// Locales: en, ja
-            static let informationListAbountDualshock = Rswift.StringResource(key: "information.list.abountDualshock", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: About toio
-            ///
-            /// Locales: en, ja
-            static let informationListAboutToio = Rswift.StringResource(key: "information.list.aboutToio", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Bluetooth Permission
-            ///
-            /// Locales: en, ja
-            static let connectionAlertBluetooth = Rswift.StringResource(key: "connection.alert.bluetooth", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Bluetooth cache is left Reboot iPhone
-            ///
-            /// Locales: en, ja
-            static let connectionAlertBluetoothCatheMessage = Rswift.StringResource(key: "connection.alert.bluetoothCathe.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Bluetooth permission is required to use the controller
-            ///
-            /// Locales: en, ja
-            static let connectionAlertMessage = Rswift.StringResource(key: "connection.alert.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Controller is not connected to the terminal   Please check the bluetooth connection from the settings
-            ///
-            /// Locales: en, ja
-            static let controllerDialogMessage = Rswift.StringResource(key: "controller.dialog.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Controller setting
-            ///
-            /// Locales: en, ja
-            static let informationListControllerSetting = Rswift.StringResource(key: "information.list.controllerSetting", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Find cube
-            ///
-            /// Locales: en, ja
-            static let connectionSearchbutton = Rswift.StringResource(key: "connection.searchbutton", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Go to settings
-            ///
-            /// Locales: en, ja
-            static let connectionAlertButton = Rswift.StringResource(key: "connection.alert.button", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Information
-            ///
-            /// Locales: en, ja
-            static let navigationInformation = Rswift.StringResource(key: "navigation.information", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Privacypolicy
-            ///
-            /// Locales: en, ja
-            static let navigationPrivacypolicy = Rswift.StringResource(key: "navigation.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Privacypolisy
-            ///
-            /// Locales: en, ja
-            static let informationListPrivacypolicy = Rswift.StringResource(key: "information.list.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Save settings
-            ///
-            /// Locales: en, ja
-            static let settingButtonTitle = Rswift.StringResource(key: "setting.button.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Scanning...
-            ///
-            /// Locales: en, ja
-            static let navigationbarConnection = Rswift.StringResource(key: "navigationbar.connection", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Search again
-            ///
-            /// Locales: en, ja
-            static let connectionButtonRescan = Rswift.StringResource(key: "connection.button.rescan", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Searching for nearby cubes
-            ///
-            /// Locales: en, ja
-            static let connectionDescriotionScanning = Rswift.StringResource(key: "connection.descriotion.scanning", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Setting
-            ///
-            /// Locales: en, ja
-            static let navigationSetting = Rswift.StringResource(key: "navigation.setting", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: The bluetooth setting is off  Switch to non
-            ///
-            /// Locales: en, ja
-            static let connectionAlertBluetoothMessage = Rswift.StringResource(key: "connection.alert.bluetooth.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: This screen allows you to set the speed of the cube that is operated by the controller.
-            ///
-            /// Locales: en, ja
-            static let settingDescription = Rswift.StringResource(key: "setting.description", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Turn on the cube  and press search button
-            ///
-            /// Locales: en, ja
-            static let connectionDescriptionPrev = Rswift.StringResource(key: "connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Updates may improve performance
-            ///
-            /// Locales: en, ja
-            static let connectionAlertLowVersionMessage = Rswift.StringResource(key: "connection.alert.lowVersion.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
-            ///
-            /// Locales: en, ja
-            static let informationListToioUpdateMessage = Rswift.StringResource(key: "information.list.toioUpdate.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: close
-            ///
-            /// Locales: en, ja
-            static let connectionAlertBluetoothClose = Rswift.StringResource(key: "connection.alert.bluetooth.close", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: close
-            ///
-            /// Locales: en, ja
-            static let connectionAlertLessbatteryClose = Rswift.StringResource(key: "connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: close
-            ///
-            /// Locales: en, ja
-            static let controllerDialogButtonText = Rswift.StringResource(key: "controller.dialog.buttonText", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: iPhone is low on charge  nPlease charge before playing
-            ///
-            /// Locales: en, ja
-            static let connectionAlertLessbatteryMessage = Rswift.StringResource(key: "connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: saved the setting
-            ///
-            /// Locales: en, ja
-            static let settingDialogSave = Rswift.StringResource(key: "setting.dialog.save", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: toio
-            ///
-            /// Locales: en, ja
-            static let navigationAbountToio = Rswift.StringResource(key: "navigation.abountToio", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: toio is not up to date
-            ///
-            /// Locales: en, ja
-            static let connectionAlertLowVersionTitle = Rswift.StringResource(key: "connection.alert.lowVersion.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: toio update app
-            ///
-            /// Locales: en, ja
-            static let informationListToioUpdateTitle = Rswift.StringResource(key: "information.list.toioUpdate.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-            /// en translation: ⚠️Error
-            ///
-            /// Locales: en, ja
-            static let connectionAlertBluetoothCatheTitle = Rswift.StringResource(key: "connection.alert.bluetoothCathe.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
-
-            /// en translation: About dualshock4
-            ///
-            /// Locales: en, ja
-            static func informationListAbountDualshock(_: Void = ()) -> String {
-                return NSLocalizedString("information.list.abountDualshock", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: About toio
-            ///
-            /// Locales: en, ja
-            static func informationListAboutToio(_: Void = ()) -> String {
-                return NSLocalizedString("information.list.aboutToio", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Bluetooth Permission
-            ///
-            /// Locales: en, ja
-            static func connectionAlertBluetooth(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.bluetooth", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Bluetooth cache is left Reboot iPhone
-            ///
-            /// Locales: en, ja
-            static func connectionAlertBluetoothCatheMessage(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.bluetoothCathe.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Bluetooth permission is required to use the controller
-            ///
-            /// Locales: en, ja
-            static func connectionAlertMessage(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Controller is not connected to the terminal   Please check the bluetooth connection from the settings
-            ///
-            /// Locales: en, ja
-            static func controllerDialogMessage(_: Void = ()) -> String {
-                return NSLocalizedString("controller.dialog.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Controller setting
-            ///
-            /// Locales: en, ja
-            static func informationListControllerSetting(_: Void = ()) -> String {
-                return NSLocalizedString("information.list.controllerSetting", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Find cube
-            ///
-            /// Locales: en, ja
-            static func connectionSearchbutton(_: Void = ()) -> String {
-                return NSLocalizedString("connection.searchbutton", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Go to settings
-            ///
-            /// Locales: en, ja
-            static func connectionAlertButton(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.button", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Information
-            ///
-            /// Locales: en, ja
-            static func navigationInformation(_: Void = ()) -> String {
-                return NSLocalizedString("navigation.information", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Privacypolicy
-            ///
-            /// Locales: en, ja
-            static func navigationPrivacypolicy(_: Void = ()) -> String {
-                return NSLocalizedString("navigation.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Privacypolisy
-            ///
-            /// Locales: en, ja
-            static func informationListPrivacypolicy(_: Void = ()) -> String {
-                return NSLocalizedString("information.list.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Save settings
-            ///
-            /// Locales: en, ja
-            static func settingButtonTitle(_: Void = ()) -> String {
-                return NSLocalizedString("setting.button.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Scanning...
-            ///
-            /// Locales: en, ja
-            static func navigationbarConnection(_: Void = ()) -> String {
-                return NSLocalizedString("navigationbar.connection", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Search again
-            ///
-            /// Locales: en, ja
-            static func connectionButtonRescan(_: Void = ()) -> String {
-                return NSLocalizedString("connection.button.rescan", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Searching for nearby cubes
-            ///
-            /// Locales: en, ja
-            static func connectionDescriotionScanning(_: Void = ()) -> String {
-                return NSLocalizedString("connection.descriotion.scanning", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Setting
-            ///
-            /// Locales: en, ja
-            static func navigationSetting(_: Void = ()) -> String {
-                return NSLocalizedString("navigation.setting", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: The bluetooth setting is off  Switch to non
-            ///
-            /// Locales: en, ja
-            static func connectionAlertBluetoothMessage(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.bluetooth.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: This screen allows you to set the speed of the cube that is operated by the controller.
-            ///
-            /// Locales: en, ja
-            static func settingDescription(_: Void = ()) -> String {
-                return NSLocalizedString("setting.description", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Turn on the cube  and press search button
-            ///
-            /// Locales: en, ja
-            static func connectionDescriptionPrev(_: Void = ()) -> String {
-                return NSLocalizedString("connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Updates may improve performance
-            ///
-            /// Locales: en, ja
-            static func connectionAlertLowVersionMessage(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.lowVersion.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
-            ///
-            /// Locales: en, ja
-            static func informationListToioUpdateMessage(_: Void = ()) -> String {
-                return NSLocalizedString("information.list.toioUpdate.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: close
-            ///
-            /// Locales: en, ja
-            static func connectionAlertBluetoothClose(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.bluetooth.close", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: close
-            ///
-            /// Locales: en, ja
-            static func connectionAlertLessbatteryClose(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: close
-            ///
-            /// Locales: en, ja
-            static func controllerDialogButtonText(_: Void = ()) -> String {
-                return NSLocalizedString("controller.dialog.buttonText", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: iPhone is low on charge  nPlease charge before playing
-            ///
-            /// Locales: en, ja
-            static func connectionAlertLessbatteryMessage(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: saved the setting
-            ///
-            /// Locales: en, ja
-            static func settingDialogSave(_: Void = ()) -> String {
-                return NSLocalizedString("setting.dialog.save", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: toio
-            ///
-            /// Locales: en, ja
-            static func navigationAbountToio(_: Void = ()) -> String {
-                return NSLocalizedString("navigation.abountToio", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: toio is not up to date
-            ///
-            /// Locales: en, ja
-            static func connectionAlertLowVersionTitle(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.lowVersion.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: toio update app
-            ///
-            /// Locales: en, ja
-            static func informationListToioUpdateTitle(_: Void = ()) -> String {
-                return NSLocalizedString("information.list.toioUpdate.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            /// en translation: ⚠️Error
-            ///
-            /// Locales: en, ja
-            static func connectionAlertBluetoothCatheTitle(_: Void = ()) -> String {
-                return NSLocalizedString("connection.alert.bluetoothCathe.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
-            }
-
-            fileprivate init() {}
-        }
-
-        /// This `R.string.main` struct is generated, and contains static references to 0 localization keys.
-        struct main {
-            fileprivate init() {}
-        }
-
-        fileprivate init() {}
-    }
-
-    fileprivate struct intern: Rswift.Validatable {
-        fileprivate static func validate() throws {
-            try _R.validate()
-        }
-
-        fileprivate init() {}
-    }
-
-    fileprivate class Class {}
-
+    
     fileprivate init() {}
+  }
+  
+  /// This `R.image` struct is generated, and contains static references to 6 images.
+  struct image {
+    /// Image `appControllerIcon`.
+    static let appControllerIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "appControllerIcon")
+    /// Image `controllerOFF`.
+    static let controllerOFF = Rswift.ImageResource(bundle: R.hostingBundle, name: "controllerOFF")
+    /// Image `controllerON`.
+    static let controllerON = Rswift.ImageResource(bundle: R.hostingBundle, name: "controllerON")
+    /// Image `gameController`.
+    static let gameController = Rswift.ImageResource(bundle: R.hostingBundle, name: "gameController")
+    /// Image `setting`.
+    static let setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting")
+    /// Image `toio_update`.
+    static let toio_update = Rswift.ImageResource(bundle: R.hostingBundle, name: "toio_update")
+    
+    /// `UIImage(named: "appControllerIcon", bundle: ..., traitCollection: ...)`
+    static func appControllerIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.appControllerIcon, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "controllerOFF", bundle: ..., traitCollection: ...)`
+    static func controllerOFF(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.controllerOFF, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "controllerON", bundle: ..., traitCollection: ...)`
+    static func controllerON(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.controllerON, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "gameController", bundle: ..., traitCollection: ...)`
+    static func gameController(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gameController, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "setting", bundle: ..., traitCollection: ...)`
+    static func setting(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.setting, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "toio_update", bundle: ..., traitCollection: ...)`
+    static func toio_update(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.toio_update, compatibleWith: traitCollection)
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  struct nib {
+    /// Nib `ConnectViewController`.
+    static let connectViewController = _R.nib._ConnectViewController()
+    /// Nib `ControlViewController`.
+    static let controlViewController = _R.nib._ControlViewController()
+    /// Nib `DualshockViewController`.
+    static let dualshockViewController = _R.nib._DualshockViewController()
+    /// Nib `InformationViewController`.
+    static let informationViewController = _R.nib._InformationViewController()
+    /// Nib `SettingViewController`.
+    static let settingViewController = _R.nib._SettingViewController()
+    /// Nib `StoreDownloadCell`.
+    static let storeDownloadCell = _R.nib._StoreDownloadCell()
+    /// Nib `WebViewController`.
+    static let webViewController = _R.nib._WebViewController()
+    
+    /// `UINib(name: "ConnectViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.connectViewController) instead")
+    static func connectViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.connectViewController)
+    }
+    
+    /// `UINib(name: "ControlViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.controlViewController) instead")
+    static func controlViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.controlViewController)
+    }
+    
+    /// `UINib(name: "DualshockViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.dualshockViewController) instead")
+    static func dualshockViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dualshockViewController)
+    }
+    
+    /// `UINib(name: "InformationViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.informationViewController) instead")
+    static func informationViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.informationViewController)
+    }
+    
+    /// `UINib(name: "SettingViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.settingViewController) instead")
+    static func settingViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.settingViewController)
+    }
+    
+    /// `UINib(name: "StoreDownloadCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.storeDownloadCell) instead")
+    static func storeDownloadCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.storeDownloadCell)
+    }
+    
+    /// `UINib(name: "WebViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.webViewController) instead")
+    static func webViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.webViewController)
+    }
+    
+    static func connectViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.connectViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func controlViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.controlViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func dualshockViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.dualshockViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func informationViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.informationViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func settingViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.settingViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func storeDownloadCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StoreDownloadCell? {
+      return R.nib.storeDownloadCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StoreDownloadCell
+    }
+    
+    static func webViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.webViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `storeDownloadCell`.
+    static let storeDownloadCell: Rswift.ReuseIdentifier<StoreDownloadCell> = Rswift.ReuseIdentifier(identifier: "storeDownloadCell")
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  struct storyboard {
+    /// Storyboard `LaunchScreen`.
+    static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Main`.
+    static let main = _R.storyboard.main()
+    
+    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
+    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "Main", bundle: ...)`
+    static func main(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
+  struct string {
+    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      fileprivate init() {}
+    }
+    
+    /// This `R.string.localizeString` struct is generated, and contains static references to 31 localization keys.
+    struct localizeString {
+      /// en translation: About dualshock4
+      /// 
+      /// Locales: en, ja
+      static let informationListAbountDualshock = Rswift.StringResource(key: "information.list.abountDualshock", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: About toio
+      /// 
+      /// Locales: en, ja
+      static let informationListAboutToio = Rswift.StringResource(key: "information.list.aboutToio", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Bluetooth Permission
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertBluetooth = Rswift.StringResource(key: "connection.alert.bluetooth", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Bluetooth cache is left Reboot iPhone
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertBluetoothCatheMessage = Rswift.StringResource(key: "connection.alert.bluetoothCathe.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Bluetooth permission is required to use the controller
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertMessage = Rswift.StringResource(key: "connection.alert.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Controller is not connected to the terminal   Please check the bluetooth connection from the settings
+      /// 
+      /// Locales: en, ja
+      static let controllerDialogMessage = Rswift.StringResource(key: "controller.dialog.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Controller setting
+      /// 
+      /// Locales: en, ja
+      static let informationListControllerSetting = Rswift.StringResource(key: "information.list.controllerSetting", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Find cube
+      /// 
+      /// Locales: en, ja
+      static let connectionSearchbutton = Rswift.StringResource(key: "connection.searchbutton", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Go to settings
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertButton = Rswift.StringResource(key: "connection.alert.button", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Information
+      /// 
+      /// Locales: en, ja
+      static let navigationInformation = Rswift.StringResource(key: "navigation.information", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Privacypolicy
+      /// 
+      /// Locales: en, ja
+      static let navigationPrivacypolicy = Rswift.StringResource(key: "navigation.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Privacypolisy
+      /// 
+      /// Locales: en, ja
+      static let informationListPrivacypolicy = Rswift.StringResource(key: "information.list.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Save settings
+      /// 
+      /// Locales: en, ja
+      static let settingButtonTitle = Rswift.StringResource(key: "setting.button.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Scanning...
+      /// 
+      /// Locales: en, ja
+      static let navigationbarConnection = Rswift.StringResource(key: "navigationbar.connection", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Search again
+      /// 
+      /// Locales: en, ja
+      static let connectionButtonRescan = Rswift.StringResource(key: "connection.button.rescan", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Searching for nearby cubes
+      /// 
+      /// Locales: en, ja
+      static let connectionDescriotionScanning = Rswift.StringResource(key: "connection.descriotion.scanning", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Setting
+      /// 
+      /// Locales: en, ja
+      static let navigationSetting = Rswift.StringResource(key: "navigation.setting", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: The bluetooth setting is off  Switch to non
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertBluetoothMessage = Rswift.StringResource(key: "connection.alert.bluetooth.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: This screen allows you to set the speed of the cube that is operated by the controller.
+      /// 
+      /// Locales: en, ja
+      static let settingDescription = Rswift.StringResource(key: "setting.description", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Turn on the cube  and press search button
+      /// 
+      /// Locales: en, ja
+      static let connectionDescriptionPrev = Rswift.StringResource(key: "connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Updates may improve performance
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertLowVersionMessage = Rswift.StringResource(key: "connection.alert.lowVersion.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
+      /// 
+      /// Locales: en, ja
+      static let informationListToioUpdateMessage = Rswift.StringResource(key: "information.list.toioUpdate.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: close
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertBluetoothClose = Rswift.StringResource(key: "connection.alert.bluetooth.close", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: close
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertLessbatteryClose = Rswift.StringResource(key: "connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: close
+      /// 
+      /// Locales: en, ja
+      static let controllerDialogButtonText = Rswift.StringResource(key: "controller.dialog.buttonText", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: iPhone is low on charge  nPlease charge before playing
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertLessbatteryMessage = Rswift.StringResource(key: "connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: saved the setting
+      /// 
+      /// Locales: en, ja
+      static let settingDialogSave = Rswift.StringResource(key: "setting.dialog.save", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: toio
+      /// 
+      /// Locales: en, ja
+      static let navigationAbountToio = Rswift.StringResource(key: "navigation.abountToio", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: toio is not up to date
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertLowVersionTitle = Rswift.StringResource(key: "connection.alert.lowVersion.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: toio update app
+      /// 
+      /// Locales: en, ja
+      static let informationListToioUpdateTitle = Rswift.StringResource(key: "information.list.toioUpdate.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: ⚠️Error
+      /// 
+      /// Locales: en, ja
+      static let connectionAlertBluetoothCatheTitle = Rswift.StringResource(key: "connection.alert.bluetoothCathe.title", tableName: "Localize.string", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      
+      /// en translation: About dualshock4
+      /// 
+      /// Locales: en, ja
+      static func informationListAbountDualshock(_: Void = ()) -> String {
+        return NSLocalizedString("information.list.abountDualshock", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: About toio
+      /// 
+      /// Locales: en, ja
+      static func informationListAboutToio(_: Void = ()) -> String {
+        return NSLocalizedString("information.list.aboutToio", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Bluetooth Permission
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertBluetooth(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.bluetooth", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Bluetooth cache is left Reboot iPhone
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertBluetoothCatheMessage(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.bluetoothCathe.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Bluetooth permission is required to use the controller
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertMessage(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Controller is not connected to the terminal   Please check the bluetooth connection from the settings
+      /// 
+      /// Locales: en, ja
+      static func controllerDialogMessage(_: Void = ()) -> String {
+        return NSLocalizedString("controller.dialog.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Controller setting
+      /// 
+      /// Locales: en, ja
+      static func informationListControllerSetting(_: Void = ()) -> String {
+        return NSLocalizedString("information.list.controllerSetting", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Find cube
+      /// 
+      /// Locales: en, ja
+      static func connectionSearchbutton(_: Void = ()) -> String {
+        return NSLocalizedString("connection.searchbutton", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Go to settings
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertButton(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.button", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Information
+      /// 
+      /// Locales: en, ja
+      static func navigationInformation(_: Void = ()) -> String {
+        return NSLocalizedString("navigation.information", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Privacypolicy
+      /// 
+      /// Locales: en, ja
+      static func navigationPrivacypolicy(_: Void = ()) -> String {
+        return NSLocalizedString("navigation.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Privacypolisy
+      /// 
+      /// Locales: en, ja
+      static func informationListPrivacypolicy(_: Void = ()) -> String {
+        return NSLocalizedString("information.list.privacypolicy", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Save settings
+      /// 
+      /// Locales: en, ja
+      static func settingButtonTitle(_: Void = ()) -> String {
+        return NSLocalizedString("setting.button.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Scanning...
+      /// 
+      /// Locales: en, ja
+      static func navigationbarConnection(_: Void = ()) -> String {
+        return NSLocalizedString("navigationbar.connection", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Search again
+      /// 
+      /// Locales: en, ja
+      static func connectionButtonRescan(_: Void = ()) -> String {
+        return NSLocalizedString("connection.button.rescan", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Searching for nearby cubes
+      /// 
+      /// Locales: en, ja
+      static func connectionDescriotionScanning(_: Void = ()) -> String {
+        return NSLocalizedString("connection.descriotion.scanning", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Setting
+      /// 
+      /// Locales: en, ja
+      static func navigationSetting(_: Void = ()) -> String {
+        return NSLocalizedString("navigation.setting", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: The bluetooth setting is off  Switch to non
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertBluetoothMessage(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.bluetooth.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: This screen allows you to set the speed of the cube that is operated by the controller.
+      /// 
+      /// Locales: en, ja
+      static func settingDescription(_: Void = ()) -> String {
+        return NSLocalizedString("setting.description", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Turn on the cube  and press search button
+      /// 
+      /// Locales: en, ja
+      static func connectionDescriptionPrev(_: Void = ()) -> String {
+        return NSLocalizedString("connection.description.prev", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Updates may improve performance
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertLowVersionMessage(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.lowVersion.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
+      /// 
+      /// Locales: en, ja
+      static func informationListToioUpdateMessage(_: Void = ()) -> String {
+        return NSLocalizedString("information.list.toioUpdate.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: close
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertBluetoothClose(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.bluetooth.close", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: close
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertLessbatteryClose(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.lessbattery.close", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: close
+      /// 
+      /// Locales: en, ja
+      static func controllerDialogButtonText(_: Void = ()) -> String {
+        return NSLocalizedString("controller.dialog.buttonText", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: iPhone is low on charge  nPlease charge before playing
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertLessbatteryMessage(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.lessbattery.message", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: saved the setting
+      /// 
+      /// Locales: en, ja
+      static func settingDialogSave(_: Void = ()) -> String {
+        return NSLocalizedString("setting.dialog.save", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: toio
+      /// 
+      /// Locales: en, ja
+      static func navigationAbountToio(_: Void = ()) -> String {
+        return NSLocalizedString("navigation.abountToio", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: toio is not up to date
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertLowVersionTitle(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.lowVersion.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: toio update app
+      /// 
+      /// Locales: en, ja
+      static func informationListToioUpdateTitle(_: Void = ()) -> String {
+        return NSLocalizedString("information.list.toioUpdate.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: ⚠️Error
+      /// 
+      /// Locales: en, ja
+      static func connectionAlertBluetoothCatheTitle(_: Void = ()) -> String {
+        return NSLocalizedString("connection.alert.bluetoothCathe.title", tableName: "Localize.string", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This `R.string.main` struct is generated, and contains static references to 0 localization keys.
+    struct main {
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
+  }
+  
+  fileprivate struct intern: Rswift.Validatable {
+    fileprivate static func validate() throws {
+      try _R.validate()
+    }
+    
+    fileprivate init() {}
+  }
+  
+  fileprivate class Class {}
+  
+  fileprivate init() {}
 }
 
 struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try storyboard.validate()
+    try nib.validate()
+  }
+  
+  struct nib: Rswift.Validatable {
     static func validate() throws {
-        try storyboard.validate()
-        try nib.validate()
+      try _ControlViewController.validate()
+      try _DualshockViewController.validate()
+      try _StoreDownloadCell.validate()
     }
-
-    struct nib: Rswift.Validatable {
-        static func validate() throws {
-            try _ControlViewController.validate()
-            try _DualshockViewController.validate()
-            try _StoreDownloadCell.validate()
-        }
-
-        struct _ConnectViewController: Rswift.NibResourceType {
-            let bundle = R.hostingBundle
-            let name = "ConnectViewController"
-
-            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-            }
-
-            fileprivate init() {}
-        }
-
-        struct _ControlViewController: Rswift.NibResourceType, Rswift.Validatable {
-            let bundle = R.hostingBundle
-            let name = "ControlViewController"
-
-            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-            }
-
-            static func validate() throws {
-                if UIKit.UIImage(named: "controllerOFF", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'controllerOFF' is used in nib 'ControlViewController', but couldn't be loaded.") }
-                if #available(iOS 11.0, *) {}
-            }
-
-            fileprivate init() {}
-        }
-
-        struct _DualshockViewController: Rswift.NibResourceType, Rswift.Validatable {
-            let bundle = R.hostingBundle
-            let name = "DualshockViewController"
-
-            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-            }
-
-            static func validate() throws {
-                if UIKit.UIImage(named: "appControllerIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'appControllerIcon' is used in nib 'DualshockViewController', but couldn't be loaded.") }
-                if UIKit.UIImage(named: "gameController", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gameController' is used in nib 'DualshockViewController', but couldn't be loaded.") }
-                if #available(iOS 11.0, *) {}
-            }
-
-            fileprivate init() {}
-        }
-
-        struct _InformationViewController: Rswift.NibResourceType {
-            let bundle = R.hostingBundle
-            let name = "InformationViewController"
-
-            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-            }
-
-            fileprivate init() {}
-        }
-
-        struct _SettingViewController: Rswift.NibResourceType {
-            let bundle = R.hostingBundle
-            let name = "SettingViewController"
-
-            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-            }
-
-            fileprivate init() {}
-        }
-
-        struct _StoreDownloadCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
-            typealias ReusableType = StoreDownloadCell
-
-            let bundle = R.hostingBundle
-            let identifier = "storeDownloadCell"
-            let name = "StoreDownloadCell"
-
-            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> StoreDownloadCell? {
-                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StoreDownloadCell
-            }
-
-            static func validate() throws {
-                if UIKit.UIImage(named: "square.and.arrow.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'square.and.arrow.down' is used in nib 'StoreDownloadCell', but couldn't be loaded.") }
-                if UIKit.UIImage(named: "toio_update", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'toio_update' is used in nib 'StoreDownloadCell', but couldn't be loaded.") }
-                if #available(iOS 11.0, *) {}
-            }
-
-            fileprivate init() {}
-        }
-
-        struct _WebViewController: Rswift.NibResourceType {
-            let bundle = R.hostingBundle
-            let name = "WebViewController"
-
-            func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> UIKit.UIView? {
-                return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-            }
-
-            fileprivate init() {}
-        }
-
-        fileprivate init() {}
+    
+    struct _ConnectViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ConnectViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
     }
-
-    struct storyboard: Rswift.Validatable {
-        static func validate() throws {
-            try launchScreen.validate()
-            try main.validate()
+    
+    struct _ControlViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ControlViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "controllerOFF", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'controllerOFF' is used in nib 'ControlViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
         }
-
-        struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-            typealias InitialController = UIKit.UIViewController
-
-            let bundle = R.hostingBundle
-            let name = "LaunchScreen"
-
-            static func validate() throws {
-                if #available(iOS 11.0, *) {}
-            }
-
-            fileprivate init() {}
-        }
-
-        struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-            typealias InitialController = UIKit.UIViewController
-
-            let bundle = R.hostingBundle
-            let name = "Main"
-
-            static func validate() throws {
-                if #available(iOS 11.0, *) {}
-            }
-
-            fileprivate init() {}
-        }
-
-        fileprivate init() {}
+      }
+      
+      fileprivate init() {}
     }
-
+    
+    struct _DualshockViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "DualshockViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "appControllerIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'appControllerIcon' is used in nib 'DualshockViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "gameController", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gameController' is used in nib 'DualshockViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _InformationViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "InformationViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _SettingViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SettingViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _StoreDownloadCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = StoreDownloadCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "storeDownloadCell"
+      let name = "StoreDownloadCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> StoreDownloadCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? StoreDownloadCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "square.and.arrow.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'square.and.arrow.down' is used in nib 'StoreDownloadCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "toio_update", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'toio_update' is used in nib 'StoreDownloadCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _WebViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "WebViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
+  }
+  
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try launchScreen.validate()
+      try main.validate()
+    }
+    
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UIViewController
+      
+      let bundle = R.hostingBundle
+      let name = "LaunchScreen"
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UIViewController
+      
+      let bundle = R.hostingBundle
+      let name = "Main"
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
+  }
+  
+  fileprivate init() {}
 }
