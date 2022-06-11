@@ -17,8 +17,6 @@ protocol ConnectUseCase {
 }
 
 class ConnectUseCaseImpl: ConnectUseCase {
-    private static let CubeName = ["toio Core Cube"]
-
     fileprivate var manager: CBCentralManager?
     private let disposeBag = DisposeBag()
     private var targetSubject = PublishSubject<Result<CubeModel, ToioBluetoothError>>()
@@ -46,7 +44,8 @@ class ConnectUseCaseImpl: ConnectUseCase {
                 guard let name = device.peripheral.name else {
                     return false
                 }
-                return ConnectUseCaseImpl.CubeName.contains(name)
+                // 接続するデバイスがtoioか判定する
+                return name.contains("toio")
             }
             .take(1)
             .flatMap { scanned -> Observable<Cube> in
