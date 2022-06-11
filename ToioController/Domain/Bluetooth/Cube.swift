@@ -15,7 +15,7 @@ class Cube: ToioPeripheral {
     private var connection: Disposable?
 
     var peripheral: Peripheral!
-    var firmwareVersion: FirmwareVersion = FirmwareVersion(major: 0, minor: 0, patch: 0)
+    var firmwareVersion: FirmwareVersion = .init(major: 0, minor: 0, patch: 0)
     typealias ServiceType = CubeService
 
     required init(peripheral: Peripheral) {
@@ -123,8 +123,8 @@ class Cube: ToioPeripheral {
         guard let hex = data?.hexEncodedString() else {
             return nil
         }
-        let idBytes: Int = 2
-        let sequenceBytes: Int = 2
+        let idBytes = 2
+        let sequenceBytes = 2
         return (id: String(hex.prefix(idBytes)), value: String(hex.suffix(hex.count - (idBytes + sequenceBytes))))
     }
 }

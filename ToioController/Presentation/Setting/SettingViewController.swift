@@ -18,21 +18,13 @@ class SettingViewController: UIViewController {
 
     let titleText: String
 
-    lazy var upValue: Int = {
-        UserStore.up
-    }()
+    lazy var upValue: Int = UserStore.up
 
-    lazy var leftValue: Int = {
-        UserStore.left
-    }()
+    lazy var leftValue: Int = UserStore.left
 
-    lazy var rightValue: Int = {
-        UserStore.right
-    }()
+    lazy var rightValue: Int = UserStore.right
 
-    lazy var downValue: Int = {
-        UserStore.down
-    }()
+    lazy var downValue: Int = UserStore.down
 
     // Slider
     @IBOutlet weak var upSlider: UISlider! {
@@ -94,6 +86,7 @@ class SettingViewController: UIViewController {
         super.init(nibName: String(describing: SettingViewController.self), bundle: nil)
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -140,7 +140,7 @@ class Dualshock {
         let crossButton: GCControllerButtonInput = gamepad.buttonA
         let rectButton: GCControllerButtonInput = gamepad.buttonX
 
-        triangleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+        triangleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
             if !self.isOperationPossible { return }
             if pressed {
                 print("▲")
@@ -152,7 +152,7 @@ class Dualshock {
             }
         }
 
-        rectButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+        rectButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
             if !self.isOperationPossible { return }
             if pressed {
                 print("■")
@@ -173,7 +173,7 @@ class Dualshock {
             }
         }
 
-        crossButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+        crossButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
             if !self.isOperationPossible { return }
             if pressed {
                 print("✖︎")
@@ -199,7 +199,7 @@ class Dualshock {
             }
         }
 
-        circleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+        circleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
             if !self.isOperationPossible { return }
             if pressed {
                 print("●")
@@ -218,14 +218,14 @@ class Dualshock {
         let leftThumbstick = gamepad.leftThumbstick
         let rightThumbstick = gamepad.rightThumbstick
 
-        leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, y: Float) -> Void in
+        leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, y: Float) in
             if !self.isOperationPossible { return }
 //            self.modeA.leftJoyStickDirectionControl(x: x, y: y)
 
             self.modeB.speedControl(y: y)
         }
 
-        rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, x: Float, _: Float) -> Void in
+        rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, x: Float, _: Float) in
             if !self.isOperationPossible { return }
             self.modeB.steeringControl(x: x)
         }
@@ -236,7 +236,7 @@ class Dualshock {
     private func directionPad(gamepad: GCExtendedGamepad) {
         let directionPad = gamepad.dpad
 
-        directionPad.valueChangedHandler = { (_: GCControllerDirectionPad, _ x: Float, _ y: Float) -> Void in
+        directionPad.valueChangedHandler = { (_: GCControllerDirectionPad, _ x: Float, _ y: Float) in
             if !self.isOperationPossible { return }
             if x == 0, y == 0 {
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.stop)
@@ -279,7 +279,7 @@ class Dualshock {
     private func settingButton(gamepad: GCExtendedGamepad) {
         if #available(iOS 13.0, *) {
             let menuButton = gamepad.buttonMenu
-            menuButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            menuButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
                 if pressed {
                     print("pressed")
                     // TODO: Thumsthickのコントロール方法を制御できるようにする
@@ -289,7 +289,7 @@ class Dualshock {
         }
         if #available(iOS 13.0, *) {
             let shareButton = gamepad.buttonOptions
-            shareButton?.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) -> Void in
+            shareButton?.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
                 if pressed {
                     self.output?.showSettingScreen()
                 }
