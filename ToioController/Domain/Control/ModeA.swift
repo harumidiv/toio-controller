@@ -27,7 +27,7 @@ class ModeA: Control {
             isStop = false
         }
 
-        var r: Double = Double(atan2(0.0 - x, 0.0 - y))
+        var r = Double(atan2(0.0 - x, 0.0 - y))
         if r < 0 {
             r += 2 * Double.pi
         }

@@ -28,9 +28,7 @@ protocol ConnectPresenterOutput: AnyObject {
 class ConnectPresenterImpl: ConnectPresenter {
     private let phoneDeviceUseCase: PhoneDeviceUsecase = OtherInjector.container.resolve(PhoneDeviceUsecase.self)!
 
-    private lazy var usecase: ConnectUseCase = {
-        ConnectInjector.container.resolve(ConnectUseCase.self)!
-    }()
+    private lazy var usecase: ConnectUseCase = ConnectInjector.container.resolve(ConnectUseCase.self)!
 
     private weak var output: ConnectPresenterOutput?
     private let disposeBag = DisposeBag()
@@ -50,7 +48,7 @@ class ConnectPresenterImpl: ConnectPresenter {
         phoneDeviceUseCase.getBattery()
             .take(1)
             .observeOn(MainScheduler.instance)
-            .flatMap { [weak self] (battery) -> Observable<BluetoothState> in
+            .flatMap { [weak self] battery -> Observable<BluetoothState> in
                 guard let self = self else {
                     return Observable.empty()
                 }

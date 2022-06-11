@@ -20,9 +20,7 @@ final class BluetoothService {
     private let disposeBag = DisposeBag()
 
     private let queue = DispatchQueue(label: "harumidiv.ToioController", qos: .userInitiated)
-    private lazy var centralManager: CentralManager = {
-        CentralManager(queue: queue)
-    }()
+    private lazy var centralManager: CentralManager = .init(queue: queue)
 
     // MARK: - Public outputs
 

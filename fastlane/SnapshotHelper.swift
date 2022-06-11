@@ -85,7 +85,7 @@ open class Snapshot: NSObject {
     }
 
     class func setLanguage(_ app: XCUIApplication) {
-        guard let cacheDirectory = self.cacheDirectory else {
+        guard let cacheDirectory = cacheDirectory else {
             print("CacheDirectory is not set - probably running on a physical device?")
             return
         }
@@ -102,7 +102,7 @@ open class Snapshot: NSObject {
     }
 
     class func setLocale(_ app: XCUIApplication) {
-        guard let cacheDirectory = self.cacheDirectory else {
+        guard let cacheDirectory = cacheDirectory else {
             print("CacheDirectory is not set - probably running on a physical device?")
             return
         }
@@ -126,7 +126,7 @@ open class Snapshot: NSObject {
     }
 
     class func setLaunchArguments(_ app: XCUIApplication) {
-        guard let cacheDirectory = self.cacheDirectory else {
+        guard let cacheDirectory = cacheDirectory else {
             print("CacheDirectory is not set - probably running on a physical device?")
             return
         }
@@ -159,7 +159,7 @@ open class Snapshot: NSObject {
         }
 
         #if os(OSX)
-            guard let app = self.app else {
+            guard let app = app else {
                 print("XCUIApplication is not set. Please call setupSnapshot(app) before snapshot().")
                 return
             }
@@ -190,7 +190,7 @@ open class Snapshot: NSObject {
             return
         #endif
 
-        guard let app = self.app else {
+        guard let app = app else {
             print("XCUIApplication is not set. Please call setupSnapshot(app) before snapshot().")
             return
         }

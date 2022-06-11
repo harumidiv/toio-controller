@@ -51,7 +51,7 @@ class ConnectViewController: UIViewController {
         super.viewDidLoad()
         title = R.string.localizeString.navigationbarConnection()
 
-        let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
+        let informationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
     }
 
@@ -89,7 +89,8 @@ extension ConnectViewController: ConnectPresenterOutput {
         DispatchQueue.main.async {
             self.showInformation(title: R.string.localizeString.connectionAlertBluetoothCatheTitle(),
                                  message: R.string.localizeString.connectionAlertBluetoothCatheMessage(),
-                                 buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
+                                 buttonText: R.string.localizeString.connectionAlertBluetoothClose())
+            {
                 self.searchButton.isHidden = false
                 self.animationView.stop()
                 self.animationView.isHidden = true
@@ -123,7 +124,8 @@ extension ConnectViewController: ConnectPresenterOutput {
                 // TODO: ダイアログを表示する
                 self.showInformation(title: R.string.localizeString.connectionAlertLowVersionTitle(),
                                      message: R.string.localizeString.connectionAlertLowVersionMessage(),
-                                     buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
+                                     buttonText: R.string.localizeString.connectionAlertBluetoothClose())
+                {
                     self.searchButton.isHidden = false
                     self.animationView.stop()
                     self.animationView.isHidden = true

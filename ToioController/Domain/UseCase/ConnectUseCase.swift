@@ -42,21 +42,21 @@ class ConnectUseCaseImpl: ConnectUseCase {
                     return Observable.empty()
                 }
             }
-            .filter { (device) -> Bool in
+            .filter { device -> Bool in
                 guard let name = device.peripheral.name else {
                     return false
                 }
                 return ConnectUseCaseImpl.CubeName.contains(name)
             }
             .take(1)
-            .flatMap { (scanned) -> Observable<Cube> in
+            .flatMap { scanned -> Observable<Cube> in
                 retDevice = Cube(peripheral: scanned.peripheral)
                 return retDevice!.connect()
             }
             .flatMap { cube -> Observable<FirmwareVersion> in
                 cube.getFirmwareVersion()
             }
-            .flatMap { (version) -> Observable<Cube> in
+            .flatMap { version -> Observable<Cube> in
                 retDevice?.firmwareVersion = version
                 return Observable.from(optional: retDevice)
             }

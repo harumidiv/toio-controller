@@ -58,7 +58,7 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
         switch data.type {
         case .download:
             let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.storeDownloadCell, for: indexPath)!
-            cell.setup(title: data.title, description: data.label, buttonAction: { () -> Void in
+            cell.setup(title: data.title, description: data.label, buttonAction: { () in
 
                 guard let url = URL(string: "https://itunes.apple.com/app/id1455128254?") else {
                     return

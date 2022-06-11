@@ -47,6 +47,7 @@ class ControlViewController: UIViewController {
         super.init(nibName: String(describing: ControlViewController.self), bundle: nil)
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -73,7 +74,7 @@ class ControlViewController: UIViewController {
 
         title = "toio controller"
 
-        let informationButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
+        let informationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
         updateControllerInfo()
     }
