@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +40,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgS-FF-s8U">
                     <rect key="frame" x="48" y="82" width="280" height="280"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-iN-Xbz" customClass="DirectionalPadLeftButton" customModule="ToioController" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-iN-Xbz" customClass="DirectionalPadLeftButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="20" y="90" width="112" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="weo-YT-uDg"/>
@@ -50,7 +51,7 @@
                                 <action selector="leftStop:" destination="-1" eventType="touchUpInside" id="9zH-Nb-oM0"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-iS-Gre" customClass="DirectionalPadDownButton" customModule="ToioController" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-iS-Gre" customClass="DirectionalPadDownButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="90" y="148" width="100" height="112"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="63q-Wq-JMf"/>
@@ -61,7 +62,7 @@
                                 <action selector="downStop:" destination="-1" eventType="touchUpInside" id="QWO-Ew-8CD"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-t4-5J7" customClass="DirectionalPadRightButton" customModule="ToioController" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yH-t4-5J7" customClass="DirectionalPadRightButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="148" y="90" width="112" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="t95-K4-fnQ"/>
@@ -72,7 +73,7 @@
                                 <action selector="rightStop:" destination="-1" eventType="touchUpInside" id="x6u-XY-kij"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiL-t0-rG8" customClass="DirectionalPadUpButton" customModule="ToioController" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiL-t0-rG8" customClass="DirectionalPadUpButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="90" y="20" width="100" height="112"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="apA-wp-NAt"/>
@@ -109,7 +110,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-kR-iSj">
                     <rect key="frame" x="568" y="82" width="280" height="280"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7N-60-52b" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7N-60-52b" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="20" y="90" width="90" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="TdQ-oD-3B6"/>
@@ -121,7 +122,7 @@
                                 <action selector="backStop:" destination="-1" eventType="touchUpInside" id="0fW-6M-3eU"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-nD-716" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahh-nD-716" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="170" y="100" width="90" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="Z6L-xE-4jk"/>
@@ -133,7 +134,7 @@
                                 <action selector="honeStop:" destination="-1" eventType="touchUpInside" id="tNn-xU-og9"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FV-cw-FIt" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FV-cw-FIt" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="100" y="20" width="90" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="DaK-63-FKf"/>
@@ -145,7 +146,7 @@
                                 <action selector="rotateStop:" destination="-1" eventType="touchUpInside" id="cHr-8W-bB8"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuM-zy-DRb" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuM-zy-DRb" customClass="RoundButton" customModule="ToioController" customModuleProvider="target">
                             <rect key="frame" x="90" y="170" width="90" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="Z4J-5N-pL1"/>
@@ -172,7 +173,7 @@
                         <constraint firstAttribute="width" constant="280" id="r2v-s3-0aW"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZC-fN-29E" customClass="OptionButton" customModule="ToioController" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZC-fN-29E" customClass="OptionButton" customModule="ToioController" customModuleProvider="target">
                     <rect key="frame" x="428" y="247" width="40" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="1M0-vz-Fcd"/>
@@ -194,6 +195,7 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mMy-f1-16Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2yB-mA-zlm"/>
@@ -211,10 +213,38 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MEr-kR-iSj" secondAttribute="trailing" constant="4" id="vxg-3W-xjc"/>
                 <constraint firstItem="8pw-oQ-3iM" firstAttribute="top" secondItem="yiL-t0-rG8" secondAttribute="bottom" id="wiP-K2-Fz9"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="22.098214285714285" y="117.39130434782609"/>
         </view>
     </objects>
+    <designables>
+        <designable name="3FV-cw-FIt">
+            <size key="intrinsicContentSize" width="54" height="72"/>
+        </designable>
+        <designable name="6ZC-fN-29E">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="6yH-t4-5J7">
+            <size key="intrinsicContentSize" width="33" height="60"/>
+        </designable>
+        <designable name="KRc-iS-Gre">
+            <size key="intrinsicContentSize" width="32" height="60"/>
+        </designable>
+        <designable name="a7N-60-52b">
+            <size key="intrinsicContentSize" width="54" height="72"/>
+        </designable>
+        <designable name="ahh-nD-716">
+            <size key="intrinsicContentSize" width="54" height="72"/>
+        </designable>
+        <designable name="gXE-iN-Xbz">
+            <size key="intrinsicContentSize" width="33" height="60"/>
+        </designable>
+        <designable name="vuM-zy-DRb">
+            <size key="intrinsicContentSize" width="54" height="72"/>
+        </designable>
+        <designable name="yiL-t0-rG8">
+            <size key="intrinsicContentSize" width="32" height="60"/>
+        </designable>
+    </designables>
     <resources>
         <image name="controllerOFF" width="2748" height="1602"/>
     </resources>

@@ -61,10 +61,16 @@ class ControlViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(viewDidEnterBackground(
-            _:
-        )), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(viewDidEnterForground(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(viewDidEnterBackground(_:)),
+                                               name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(viewDidEnterForground(_:)),
+                                               name: UIApplication.didBecomeActiveNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(cubeDissconect(_:)),
+                                               name: .cubeDissconect,
+                                               object: nil)
     }
 
     override func viewDidLoad() {
@@ -80,6 +86,14 @@ class ControlViewController: UIViewController {
     }
 
     // MARK: - Event
+
+    @objc func cubeDissconect(_ notification: Notification) {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+
+        print("cubeとの接続が切れました")
+    }
 
     @objc func viewDidEnterBackground(_ notification: Notification) {}
 
