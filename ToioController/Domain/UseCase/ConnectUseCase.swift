@@ -67,8 +67,12 @@ class ConnectUseCaseImpl: ConnectUseCase {
                     self.targetSubject.onNext(Result.success(CubeModel(peripheral: retDevice!)))
                 },
                 onError: { [weak self] error in
-                    // TODO: 変なエラーが来た時に落ちる気がするのでいい方法がないか考える
-                    self?.targetSubject.onNext(Result.error(error as! ToioBluetoothError))
+                    if error is ToioBluetoothError {
+                        self?.targetSubject.onNext(Result.error(error as! ToioBluetoothError))
+                    } else {
+                        // cubeの接続が切れたらNotificationを飛ばす
+                        NotificationCenter.default.post(name: .cubeDissconect, object: nil)
+                    }
                     self?.targetSubject.onError(error)
                 }
             ).disposed(by: disposeBag)
@@ -78,4 +82,8 @@ class ConnectUseCaseImpl: ConnectUseCase {
     func loadStop() {
         BluetoothService.shared.stopScaning()
     }
+}
+
+extension Notification.Name {
+    static var cubeDissconect = Notification.Name("cubeDissconect")
 }

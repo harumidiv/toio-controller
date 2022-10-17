@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +27,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcg-tc-t4f" customClass="SearchButton" customModule="ToioController" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcg-tc-t4f" customClass="SearchButton" customModule="ToioController" customModuleProvider="target">
                     <rect key="frame" x="348" y="162" width="200" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="1BV-qY-gy0"/>
@@ -47,6 +47,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vcg-tc-t4f" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3K3-Lf-yny"/>
@@ -58,8 +59,13 @@
                 <constraint firstItem="O4t-nB-ER3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="c18-J4-Rt2"/>
                 <constraint firstItem="27b-HH-Rx5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dNu-Wc-evi"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="91.741071428571431" y="153.62318840579712"/>
         </view>
     </objects>
+    <designables>
+        <designable name="27b-HH-Rx5"/>
+        <designable name="vcg-tc-t4f">
+            <size key="intrinsicContentSize" width="106" height="20"/>
+        </designable>
+    </designables>
 </document>
