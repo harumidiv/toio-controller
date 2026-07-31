@@ -10,6 +10,7 @@ import CoreBluetooth
 import Foundation
 import RxBluetoothKit
 import RxSwift
+import UIKit
 
 protocol PhoneDeviceUsecase: AnyObject {
     func getBattery() -> Observable<Float>

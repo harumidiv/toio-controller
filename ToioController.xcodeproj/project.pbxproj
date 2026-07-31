@@ -14,6 +14,7 @@
 		057DFDC52335BCA000E9FB32 /* ModeB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC42335BCA000E9FB32 /* ModeB.swift */; };
 		057DFDC72335E30C00E9FB32 /* UIApplication+ Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC62335E30C00E9FB32 /* UIApplication+ Addition.swift */; };
 		0D02BF352349D2F30095F910 /* PhoneDeviceMockUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02BF342349D2F30095F910 /* PhoneDeviceMockUsecase.swift */; };
+		0D03F4D8A6016880E349C915 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DB47E389849AE75041AED97A /* Lottie */; };
 		0D0483DA232A487800CBBF3E /* 448-ripple-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D0483D9232A487700CBBF3E /* 448-ripple-loading-animation.json */; };
 		0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */; };
 		0D37740022B4D9AE000EFCCC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3773FF22B4D9AE000EFCCC /* Result.swift */; };
@@ -60,7 +61,10 @@
 		0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAB22B3E4A8009E9D9C /* DirectionalPadDownButton.swift */; };
 		0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAD22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift */; };
 		0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAF22B3E4C4009E9D9C /* DirectionalPadRightButton.swift */; };
+		0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3A4A1BFB91076D124FFF7D49 /* Swinject */; };
+		346159030AF3E59572974CD3 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3818E2769EAF60C7E31C2FCB /* Swinject */; };
 		39BE09520250B2AE175FAB59 /* Pods_ToioControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */; };
+		3F53B0459120D8F2361C733F /* RxBluetoothKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C84B3A1778865FB7455B3DF /* RxBluetoothKit */; };
 		498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724ED2479892700F09A9E /* DualshockViewController.swift */; };
 		498724F02479892700F09A9E /* DualshockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724EE2479892700F09A9E /* DualshockViewController.xib */; };
 		498724F4247A46EA00F09A9E /* StoreDownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */; };
@@ -70,8 +74,13 @@
 		498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FC247A7C4D00F09A9E /* String+Addition.swift */; };
 		49D229C9248143710035CAB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D229C8248143710035CAB3 /* UserStore.swift */; };
 		49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF05A62345A80800EA6550 /* SnapshotHelper.swift */; };
+		79DFAFE1E7D3E31239EF73A7 /* RswiftResources in Frameworks */ = {isa = PBXBuildFile; productRef = E27CD49A0B029740D72B2926 /* RswiftResources */; };
+		84D3A8F710ECF28453120366 /* RxBluetoothKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9D27EF33E097A47D4594D8 /* RxBluetoothKit */; };
+		B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EED383C97B342524F62812CF /* Lottie */; };
 		BD443728345BE94FE3227864 /* Pods_ToioController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */; };
+		D5A7A789D0181A9FB558FEEE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4602ABC770A53FD42B74FA92 /* RxSwift */; };
 		DFDE8266E2028DD25630D9C2 /* Pods_ToioControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */; };
+		EB68D165DE2CC35B6A6199A7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F465D06621E2F2905254227 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +108,6 @@
 		057DFDC22335A48B00E9FB32 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		057DFDC42335BCA000E9FB32 /* ModeB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeB.swift; sourceTree = "<group>"; };
 		057DFDC62335E30C00E9FB32 /* UIApplication+ Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+ Addition.swift"; sourceTree = "<group>"; };
-		0AD86F339A78D48C0504658E /* Pods-ToioControllerTests.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.mock.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.mock.xcconfig"; sourceTree = "<group>"; };
 		0D02BF342349D2F30095F910 /* PhoneDeviceMockUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDeviceMockUsecase.swift; sourceTree = "<group>"; };
 		0D0483D9232A487700CBBF3E /* 448-ripple-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "448-ripple-loading-animation.json"; sourceTree = "<group>"; };
 		0D3773FC22B4D3FE000EFCCC /* CubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeModel.swift; sourceTree = "<group>"; };
@@ -163,10 +171,7 @@
 		0DEB0FB322B3E4E8009E9D9C /* DirectionalPadDownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionalPadDownButton.xib; sourceTree = "<group>"; };
 		0DEB0FB522B3E4FB009E9D9C /* DirectionalPadLeftbutton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionalPadLeftbutton.xib; sourceTree = "<group>"; };
 		0DEB0FB722B3E510009E9D9C /* DirectionalPadRightButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionalPadRightButton.xib; sourceTree = "<group>"; };
-		30FD08D7F2E8917429E005F9 /* Pods-ToioControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.release.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.release.xcconfig"; sourceTree = "<group>"; };
 		379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37DF927A28704A064FE75567 /* Pods-ToioControllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.debug.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3881D1C7933616D0B9A1A87A /* Pods-ToioControllerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.release.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		498724ED2479892700F09A9E /* DualshockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualshockViewController.swift; sourceTree = "<group>"; };
 		498724EE2479892700F09A9E /* DualshockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DualshockViewController.xib; sourceTree = "<group>"; };
 		498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDownloadCell.xib; sourceTree = "<group>"; };
@@ -176,16 +181,8 @@
 		498724FC247A7C4D00F09A9E /* String+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Addition.swift"; sourceTree = "<group>"; };
 		49D229C8248143710035CAB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		49FF05A62345A80800EA6550 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
-		67F182DFFC13D927644E1204 /* Pods-ToioController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.debug.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.debug.xcconfig"; sourceTree = "<group>"; };
-		7782BF6CE8F1AF580464C5D5 /* Pods-ToioControllerTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerTests.develop.xcconfig"; path = "Target Support Files/Pods-ToioControllerTests/Pods-ToioControllerTests.develop.xcconfig"; sourceTree = "<group>"; };
-		94BA855DB60634604DA0BA35 /* Pods-ToioControllerUITests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.develop.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.develop.xcconfig"; sourceTree = "<group>"; };
-		B4F7B68A9982E8C09CF480EF /* Pods-ToioController.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.mock.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.mock.xcconfig"; sourceTree = "<group>"; };
-		D383107B99481EF468C9BE40 /* Pods-ToioControllerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.debug.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D57281A910749A9154FB1B1A /* Pods-ToioController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.release.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.release.xcconfig"; sourceTree = "<group>"; };
 		E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F828F57590C94174DD2BBB /* Pods-ToioControllerUITests.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioControllerUITests.mock.xcconfig"; path = "Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests.mock.xcconfig"; sourceTree = "<group>"; };
 		FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD7A9B524A48A6BD571672C0 /* Pods-ToioController.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToioController.develop.xcconfig"; path = "Target Support Files/Pods-ToioController/Pods-ToioController.develop.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D9E324A22B5E263007B97D7 /* WebKit.framework in Frameworks */,
-				BD443728345BE94FE3227864 /* Pods_ToioController.framework in Frameworks */,
+				0D03F4D8A6016880E349C915 /* Lottie in Frameworks */,
+				0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */,
+				EB68D165DE2CC35B6A6199A7 /* RxSwift in Frameworks */,
+				84D3A8F710ECF28453120366 /* RxBluetoothKit in Frameworks */,
+				79DFAFE1E7D3E31239EF73A7 /* RswiftResources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +203,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFDE8266E2028DD25630D9C2 /* Pods_ToioControllerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +210,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39BE09520250B2AE175FAB59 /* Pods_ToioControllerUITests.framework in Frameworks */,
+				B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */,
+				346159030AF3E59572974CD3 /* Swinject in Frameworks */,
+				D5A7A789D0181A9FB558FEEE /* RxSwift in Frameworks */,
+				3F53B0459120D8F2361C733F /* RxBluetoothKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +344,6 @@
 				0DC6BCED22B3D02E00792ABB /* ToioControllerTests */,
 				0DC6BCF822B3D02E00792ABB /* ToioControllerUITests */,
 				0DC6BCD722B3D02D00792ABB /* Products */,
-				73AF7AED384F3509C41B2FD0 /* Pods */,
 				7906129FA4D20DBECF0CCC97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -500,25 +502,6 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
-		73AF7AED384F3509C41B2FD0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				67F182DFFC13D927644E1204 /* Pods-ToioController.debug.xcconfig */,
-				D57281A910749A9154FB1B1A /* Pods-ToioController.release.xcconfig */,
-				37DF927A28704A064FE75567 /* Pods-ToioControllerTests.debug.xcconfig */,
-				30FD08D7F2E8917429E005F9 /* Pods-ToioControllerTests.release.xcconfig */,
-				D383107B99481EF468C9BE40 /* Pods-ToioControllerUITests.debug.xcconfig */,
-				3881D1C7933616D0B9A1A87A /* Pods-ToioControllerUITests.release.xcconfig */,
-				FD7A9B524A48A6BD571672C0 /* Pods-ToioController.develop.xcconfig */,
-				7782BF6CE8F1AF580464C5D5 /* Pods-ToioControllerTests.develop.xcconfig */,
-				94BA855DB60634604DA0BA35 /* Pods-ToioControllerUITests.develop.xcconfig */,
-				B4F7B68A9982E8C09CF480EF /* Pods-ToioController.mock.xcconfig */,
-				0AD86F339A78D48C0504658E /* Pods-ToioControllerTests.mock.xcconfig */,
-				F3F828F57590C94174DD2BBB /* Pods-ToioControllerUITests.mock.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		7906129FA4D20DBECF0CCC97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,12 +520,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DC6BCFE22B3D02E00792ABB /* Build configuration list for PBXNativeTarget "ToioController" */;
 			buildPhases = (
-				54B4F53740CC9110D7408548 /* [CP] Check Pods Manifest.lock */,
+				FF001122334455667788AABB /* Patch SPM Packages */,
 				0DBC019F234E28F100C04E76 /* R swift */,
 				0DC6BCD222B3D02D00792ABB /* Sources */,
 				0DC6BCD322B3D02D00792ABB /* Frameworks */,
 				0DC6BCD422B3D02D00792ABB /* Resources */,
-				72A5B101E781758E8F377FE4 /* [CP] Embed Pods Frameworks */,
 				0DC6BD0722B3D57400792ABB /* SwiftFormat */,
 				0DC6BD0822B3D57600792ABB /* SwiftLint */,
 				0D68C30322BDC7DD00FD6CA9 /* LicensePlist */,
@@ -552,6 +534,13 @@
 			dependencies = (
 			);
 			name = ToioController;
+			packageProductDependencies = (
+				DB47E389849AE75041AED97A /* Lottie */,
+				3A4A1BFB91076D124FFF7D49 /* Swinject */,
+				4F465D06621E2F2905254227 /* RxSwift */,
+				2C9D27EF33E097A47D4594D8 /* RxBluetoothKit */,
+				E27CD49A0B029740D72B2926 /* RswiftResources */,
+			);
 			productName = ToioController;
 			productReference = 0DC6BCD622B3D02D00792ABB /* ToioController.app */;
 			productType = "com.apple.product-type.application";
@@ -560,7 +549,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DC6BD0122B3D02E00792ABB /* Build configuration list for PBXNativeTarget "ToioControllerTests" */;
 			buildPhases = (
-				2E60A7C7937883981A9286C7 /* [CP] Check Pods Manifest.lock */,
 				0DC6BCE622B3D02E00792ABB /* Sources */,
 				0DC6BCE722B3D02E00792ABB /* Frameworks */,
 				0DC6BCE822B3D02E00792ABB /* Resources */,
@@ -579,11 +567,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DC6BD0422B3D02E00792ABB /* Build configuration list for PBXNativeTarget "ToioControllerUITests" */;
 			buildPhases = (
-				EFE3A80E960B94A174A5DF25 /* [CP] Check Pods Manifest.lock */,
 				0DC6BCF122B3D02E00792ABB /* Sources */,
 				0DC6BCF222B3D02E00792ABB /* Frameworks */,
 				0DC6BCF322B3D02E00792ABB /* Resources */,
-				DB93F1CABB9EC433D8842EE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -591,6 +577,12 @@
 				0DC6BCF722B3D02E00792ABB /* PBXTargetDependency */,
 			);
 			name = ToioControllerUITests;
+			packageProductDependencies = (
+				EED383C97B342524F62812CF /* Lottie */,
+				3818E2769EAF60C7E31C2FCB /* Swinject */,
+				4602ABC770A53FD42B74FA92 /* RxSwift */,
+				0C84B3A1778865FB7455B3DF /* RxBluetoothKit */,
+			);
 			productName = ToioControllerUITests;
 			productReference = 0DC6BCF522B3D02E00792ABB /* ToioControllerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -629,6 +621,14 @@
 				ja,
 			);
 			mainGroup = 0DC6BCCD22B3D02D00792ABB;
+			packageReferences = (
+				9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */,
+				5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */,
+				2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R.swift" */,
+				3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = 0DC6BCD722B3D02D00792ABB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -694,7 +694,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\nfi\n";
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n  if which license-plist >/dev/null 2>&1; then\n    license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  elif [ -f /opt/homebrew/bin/license-plist ]; then\n    /opt/homebrew/bin/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  else\n    echo \"warning: LicensePlist not installed. Run: brew install licenseplist\"\n  fi\nfi\n";
 		};
 		0DBC019F234E28F100C04E76 /* R swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -715,7 +715,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate --xcodeproj \"$PROJECT_FILE_PATH\" --target \"$TARGET_NAME\" \"$SRCROOT/R.generated.swift\"\n";
+			shellScript = "# rswift を SPM チェックアウトからビルドして実行\nSPM_CHECKOUTS=\"$BUILD_DIR/../../SourcePackages/checkouts\"\nRSWIFT_CACHE=\"$BUILD_DIR/../../SourcePackages/.rswift-cache\"\nRSWIFT_BIN=\"$RSWIFT_CACHE/rswift\"\nRSWIFT_SRC=\"$SPM_CHECKOUTS/R.swift\"\n\nif [ ! -d \"$RSWIFT_SRC\" ]; then\n  echo \"warning: R.swift SPM checkout not found. Run package resolution first.\"\n  exit 0\nfi\n\nif [ ! -f \"$RSWIFT_BIN\" ] || [ \"$RSWIFT_SRC/Package.swift\" -nt \"$RSWIFT_BIN\" ]; then\n  echo \"Building rswift from SPM source...\"\n  mkdir -p \"$RSWIFT_CACHE\"\n  TMPBUILD=\"/tmp/rswift-build-$$\"\n  cp -r \"$RSWIFT_SRC\" \"$TMPBUILD\"\n  rm -f \"$TMPBUILD/Package.resolved\"\n  # SDKROOT/PLATFORM_NAME をリセットしてmacOS向けにビルド\n  env -i HOME=\"$HOME\" PATH=\"/usr/bin:/bin:/usr/sbin:/sbin\" \\\n    DEVELOPER_DIR=\"$DEVELOPER_DIR\" \\\n    xcrun swift build --package-path \"$TMPBUILD\" -c release --product rswift 2>/dev/null\n  cp \"$TMPBUILD/.build/release/rswift\" \"$RSWIFT_BIN\" 2>/dev/null || true\n  rm -rf \"$TMPBUILD\"\nfi\n\nif [ -f \"$RSWIFT_BIN\" ]; then\n  \"$RSWIFT_BIN\" generate --xcodeproj \"$PROJECT_FILE_PATH\" --target \"$TARGET_NAME\" \"$SRCROOT/R.generated.swift\" 2>&1 | grep -v \"^warning: \\[R.swift\\] project.pbxproj is internally inconsistent\" | grep -v \" is not used$\" || true\nelse\n  echo \"warning: rswift binary could not be built. Using existing R.generated.swift.\"\nfi\n";
 		};
 		0DC6BD0722B3D57400792ABB /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -733,7 +733,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\n\n";
+			shellScript = "if which swiftformat >/dev/null 2>&1; then\n  swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelif [ -f /opt/homebrew/bin/swiftformat ]; then\n  /opt/homebrew/bin/swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelse\n  echo \"warning: SwiftFormat not installed. Run: brew install swiftformat\"\nfi\n";
 		};
 		0DC6BD0822B3D57600792ABB /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -751,9 +751,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if [ -f /opt/homebrew/bin/swiftlint ]; then\n  /opt/homebrew/bin/swiftlint lint --quiet\nelif which swiftlint >/dev/null 2>&1; then\n  swiftlint lint --quiet\nelse\n  echo \"warning: SwiftLint not installed. Run: brew install swiftlint\"\nfi\n";
 		};
-		2E60A7C7937883981A9286C7 /* [CP] Check Pods Manifest.lock */ = {
+
+		FF001122334455667788AABB /* Patch SPM Packages */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -761,97 +762,15 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "Patch SPM Packages";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ToioControllerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		54B4F53740CC9110D7408548 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ToioController-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72A5B101E781758E8F377FE4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ToioController/Pods-ToioController-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ToioController/Pods-ToioController-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ToioController/Pods-ToioController-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB93F1CABB9EC433D8842EE3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ToioControllerUITests/Pods-ToioControllerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EFE3A80E960B94A174A5DF25 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ToioControllerUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# RxBluetoothKit の CoreBluetooth nullability パッチ（Xcode 15+ 対応）\nRXTK=\"$BUILD_DIR/../../SourcePackages/checkouts/RxBluetoothKit/Source\"\n\nif [ ! -d \"$RXTK\" ]; then\n  exit 0\nfi\n\n# Characteristic.swift: characteristic.service → characteristic.service!\nsed -i '' 's/Service(peripheral: peripheral, service: characteristic\\.service)/Service(peripheral: peripheral, service: characteristic.service!)/g' \"$RXTK/Characteristic.swift\" 2>/dev/null || true\n\n# Descriptor.swift: descriptor.characteristic → descriptor.characteristic!\nsed -i '' 's/Service(peripheral: peripheral, service: descriptor\\.characteristic\\.service)/Service(peripheral: peripheral, service: descriptor.characteristic!.service!)/g' \"$RXTK/Descriptor.swift\" 2>/dev/null || true\nsed -i '' 's/Characteristic(characteristic: descriptor\\.characteristic, service: service)/Characteristic(characteristic: descriptor.characteristic!, service: service)/g' \"$RXTK/Descriptor.swift\" 2>/dev/null || true\n\n# CentralManagerRestoredState.swift: $0.peripheral → $0.peripheral!\nsed -i '' 's/retrievePeripheral(for: \\$0\\.peripheral)/retrievePeripheral(for: $0.peripheral!)/g' \"$RXTK/CentralManagerRestoredState.swift\" 2>/dev/null || true\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1038,7 +957,6 @@
 		};
 		0D42C4F4230820C30083856A /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD7A9B524A48A6BD571672C0 /* Pods-ToioController.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1066,7 +984,6 @@
 		};
 		0D42C4F5230820C30083856A /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7782BF6CE8F1AF580464C5D5 /* Pods-ToioControllerTests.develop.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1087,7 +1004,6 @@
 		};
 		0D42C4F6230820C30083856A /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94BA855DB60634604DA0BA35 /* Pods-ToioControllerUITests.develop.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
@@ -1172,7 +1088,6 @@
 		};
 		0D8C7B1E2349C5EF0036B7C2 /* Mock */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4F7B68A9982E8C09CF480EF /* Pods-ToioController.mock.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1200,7 +1115,6 @@
 		};
 		0D8C7B1F2349C5EF0036B7C2 /* Mock */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AD86F339A78D48C0504658E /* Pods-ToioControllerTests.mock.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1221,7 +1135,6 @@
 		};
 		0D8C7B202349C5EF0036B7C2 /* Mock */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3F828F57590C94174DD2BBB /* Pods-ToioControllerUITests.mock.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
@@ -1366,7 +1279,6 @@
 		};
 		0DC6BCFF22B3D02E00792ABB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67F182DFFC13D927644E1204 /* Pods-ToioController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1390,7 +1302,6 @@
 		};
 		0DC6BD0022B3D02E00792ABB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D57281A910749A9154FB1B1A /* Pods-ToioController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1418,7 +1329,6 @@
 		};
 		0DC6BD0222B3D02E00792ABB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37DF927A28704A064FE75567 /* Pods-ToioControllerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1439,7 +1349,6 @@
 		};
 		0DC6BD0322B3D02E00792ABB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30FD08D7F2E8917429E005F9 /* Pods-ToioControllerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1460,7 +1369,6 @@
 		};
 		0DC6BD0522B3D02E00792ABB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D383107B99481EF468C9BE40 /* Pods-ToioControllerUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
@@ -1480,7 +1388,6 @@
 		};
 		0DC6BD0622B3D02E00792ABB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3881D1C7933616D0B9A1A87A /* Pods-ToioControllerUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
@@ -1546,6 +1453,105 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.50.0;
+			};
+		};
+		5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
+		9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+		F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Polidea/RxBluetoothKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C84B3A1778865FB7455B3DF /* RxBluetoothKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */;
+			productName = RxBluetoothKit;
+		};
+		2C9D27EF33E097A47D4594D8 /* RxBluetoothKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */;
+			productName = RxBluetoothKit;
+		};
+		3818E2769EAF60C7E31C2FCB /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		3A4A1BFB91076D124FFF7D49 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		4602ABC770A53FD42B74FA92 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		4F465D06621E2F2905254227 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		DB47E389849AE75041AED97A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		E27CD49A0B029740D72B2926 /* RswiftResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
+		EED383C97B342524F62812CF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0DC6BCCE22B3D02D00792ABB /* Project object */;
 }
