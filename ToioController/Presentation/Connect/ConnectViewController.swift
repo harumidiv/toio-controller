@@ -10,9 +10,9 @@ import Lottie
 import UIKit
 
 class ConnectViewController: UIViewController {
-    @IBOutlet weak var animationView: AnimationView! {
+    @IBOutlet weak var animationView: LottieAnimationView! {
         didSet {
-            animationView.animation = Animation.named("448-ripple-loading-animation")
+            animationView.animation = LottieAnimation.named("448-ripple-loading-animation")
             animationView.loopMode = .loop
         }
     }
@@ -29,10 +29,7 @@ class ConnectViewController: UIViewController {
         }
     }
 
-    lazy var presenter: ConnectPresenter = {
-        let presenter = ConnectInjector.container.resolve(ConnectPresenter.self, argument: self as ConnectPresenterOutput)!
-        return presenter
-    }()
+    lazy var presenter: ConnectPresenter = ConnectInjector.container.resolve(ConnectPresenter.self, argument: self as ConnectPresenterOutput)!
 
     private lazy var wireframe: ConnectWireframe = ConnectInjector.container.resolve(ConnectWireframe.self)!
 

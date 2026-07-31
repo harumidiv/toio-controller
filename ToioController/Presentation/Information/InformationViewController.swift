@@ -6,7 +6,7 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
-import Rswift
+import RswiftResources
 import StoreKit
 import UIKit
 
@@ -20,25 +20,23 @@ class InformationViewController: UIViewController, SKStoreProductViewControllerD
         }
     }
 
-    lazy var informationData: [InformationData] = {
-        [
-            InformationData(label: R.string.localizeString.informationListControllerSetting(),
-                            title: R.string.localizeString.navigationSetting(),
-                            type: .normal),
-            InformationData(label: R.string.localizeString.informationListPrivacypolicy(),
-                            title: R.string.localizeString.navigationPrivacypolicy(),
-                            type: .webView(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)),
-            InformationData(label: R.string.localizeString.informationListAboutToio(),
-                            title: R.string.localizeString.navigationAbountToio(),
-                            type: .webView(url: URL(string: "https://toio.io/")!)),
-            InformationData(label: R.string.localizeString.informationListAbountDualshock(),
-                            title: "dualshock4",
-                            type: .webView(url: URL(string: "https://www.jp.playstation.com/accessories/dualshock4/")!)),
-            InformationData(label: R.string.localizeString.informationListToioUpdateMessage(),
-                            title: R.string.localizeString.informationListToioUpdateTitle(),
-                            type: .download)
-        ]
-    }()
+    lazy var informationData: [InformationData] = [
+        InformationData(label: R.string.localizeString.informationListControllerSetting(),
+                        title: R.string.localizeString.navigationSetting(),
+                        type: .normal),
+        InformationData(label: R.string.localizeString.informationListPrivacypolicy(),
+                        title: R.string.localizeString.navigationPrivacypolicy(),
+                        type: .webView(url: URL(string: "https://harumidiv.github.io/toio-controller/")!)),
+        InformationData(label: R.string.localizeString.informationListAboutToio(),
+                        title: R.string.localizeString.navigationAbountToio(),
+                        type: .webView(url: URL(string: "https://toio.io/")!)),
+        InformationData(label: R.string.localizeString.informationListAbountDualshock(),
+                        title: "dualshock4",
+                        type: .webView(url: URL(string: "https://www.jp.playstation.com/accessories/dualshock4/")!)),
+        InformationData(label: R.string.localizeString.informationListToioUpdateMessage(),
+                        title: R.string.localizeString.informationListToioUpdateTitle(),
+                        type: .download)
+    ]
 
     private var isNotStoreOpen: Bool = true
 
@@ -59,7 +57,6 @@ extension InformationViewController: UITableViewDataSource, UITableViewDelegate 
         case .download:
             let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.storeDownloadCell, for: indexPath)!
             cell.setup(title: data.title, description: data.label, buttonAction: { () in
-
                 guard let url = URL(string: "https://itunes.apple.com/app/id1455128254?") else {
                     return
                 }

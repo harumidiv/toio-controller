@@ -26,7 +26,7 @@ class SettingViewController: UIViewController {
 
     lazy var downValue: Int = UserStore.down
 
-    // Slider
+    /// Slider
     @IBOutlet weak var upSlider: UISlider! {
         didSet {
             upSlider.value = Float(UserStore.up) / 100

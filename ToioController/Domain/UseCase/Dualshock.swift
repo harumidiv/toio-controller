@@ -102,7 +102,7 @@ class Dualshock {
         modeB.writeSteeringBytes()
     }
 
-    // アプリ起動中に新規でコントローラが接続された際に飛んでくる
+    /// アプリ起動中に新規でコントローラが接続された際に飛んでくる
     @objc func handleControllerDidConnect(_ notification: Notification) {
         guard let gameController = notification.object as? GCController else {
             return
@@ -111,7 +111,7 @@ class Dualshock {
         registerGameController(gameController)
     }
 
-    // アプリ起動中にコントローラとの接続が切れると呼ばれる
+    /// アプリ起動中にコントローラとの接続が切れると呼ばれる
     @objc func handleControllerDidDisconnect(_ notification: Notification) {
         guard let gameController = notification.object as? GCController else {
             return
@@ -141,7 +141,9 @@ class Dualshock {
         let rectButton: GCControllerButtonInput = gamepad.buttonX
 
         triangleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
-            if !self.isOperationPossible { return }
+            if !self.isOperationPossible {
+                return
+            }
             if pressed {
                 print("▲")
                 self.isButtonEvent = true
@@ -153,7 +155,9 @@ class Dualshock {
         }
 
         rectButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
-            if !self.isOperationPossible { return }
+            if !self.isOperationPossible {
+                return
+            }
             if pressed {
                 print("■")
                 self.isButtonEvent = true
@@ -174,7 +178,9 @@ class Dualshock {
         }
 
         crossButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
-            if !self.isOperationPossible { return }
+            if !self.isOperationPossible {
+                return
+            }
             if pressed {
                 print("✖︎")
                 self.isButtonEvent = true
@@ -200,7 +206,9 @@ class Dualshock {
         }
 
         circleButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
-            if !self.isOperationPossible { return }
+            if !self.isOperationPossible {
+                return
+            }
             if pressed {
                 print("●")
                 self.isButtonEvent = true
@@ -219,14 +227,18 @@ class Dualshock {
         let rightThumbstick = gamepad.rightThumbstick
 
         leftThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, _: Float, y: Float) in
-            if !self.isOperationPossible { return }
+            if !self.isOperationPossible {
+                return
+            }
 //            self.modeA.leftJoyStickDirectionControl(x: x, y: y)
 
             self.modeB.speedControl(y: y)
         }
 
         rightThumbstick.valueChangedHandler = { (_: GCControllerDirectionPad, x: Float, _: Float) in
-            if !self.isOperationPossible { return }
+            if !self.isOperationPossible {
+                return
+            }
             self.modeB.steeringControl(x: x)
         }
     }
@@ -237,7 +249,9 @@ class Dualshock {
         let directionPad = gamepad.dpad
 
         directionPad.valueChangedHandler = { (_: GCControllerDirectionPad, _ x: Float, _ y: Float) in
-            if !self.isOperationPossible { return }
+            if !self.isOperationPossible {
+                return
+            }
             if x == 0, y == 0 {
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.Direction.stop)
                 self.isButtonEvent = false

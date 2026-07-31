@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Constant {
+enum Constant {
     // MARK: - CharacteristicUUID
 
     enum CharacteristicUUID {

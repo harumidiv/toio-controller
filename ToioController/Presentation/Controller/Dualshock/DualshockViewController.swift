@@ -32,7 +32,7 @@ class DualshockViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    // コントローラとの接続が解除された場合
+    /// コントローラとの接続が解除された場合
     @objc func handleControllerDidDisconnect(_ notification: Notification) {
         controller.removeTimer()
         dismissAction?()
