@@ -19,7 +19,7 @@ protocol ToioPeripheral {
 
 extension ToioPeripheral {
     static var serviceTypes: [Self.ServiceType] {
-        return ServiceType.allCases as! [Self.ServiceType]
+        return ServiceType.allCases as! [ServiceType]
     }
 
     func discoveryServices(types: [ServiceType]) -> Observable<[Service]> {

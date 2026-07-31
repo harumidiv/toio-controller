@@ -1,5 +1,5 @@
 //
-//  ConnectMockUseCase.swift
+//  PhoneDeviceMockUsecase.swift
 //  ToioController
 //
 //  Created by 佐川晴海 on 2019/10/06.

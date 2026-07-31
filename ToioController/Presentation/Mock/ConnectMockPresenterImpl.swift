@@ -1,5 +1,5 @@
 //
-//  ConnectMockPresenter.swift
+//  ConnectMockPresenterImpl.swift
 //  ToioController
 //
 //  Created by 佐川晴海 on 2019/08/22.

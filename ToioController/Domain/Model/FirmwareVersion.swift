@@ -44,18 +44,14 @@ struct FirmwareVersion: Equatable, Comparable {
         #endif
 
         guard let major = Int(split[0]), let minor = Int(split[1]), let patch = Int(split[2]) else {
-            self.major = 0
-            self.minor = 0
-            self.patch = 0
+            major = 0
+            minor = 0
+            patch = 0
             return
         }
         self.major = major
         self.minor = minor
         self.patch = patch
-    }
-
-    static func == (lhs: FirmwareVersion, rhs: FirmwareVersion) -> Bool {
-        return lhs.major == rhs.major && lhs.minor == rhs.minor && lhs.patch == rhs.patch
     }
 
     static func < (lhs: FirmwareVersion, rhs: FirmwareVersion) -> Bool {

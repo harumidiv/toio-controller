@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class UserStore {
+enum UserStore {
     private enum Key: String {
         case appReview
         case up
@@ -17,7 +17,7 @@ final class UserStore {
         case right
     }
 
-    // アプリのレビューが表示されたかどうか（一度表示されたユーザには再度表示は行わない）
+    /// アプリのレビューが表示されたかどうか（一度表示されたユーザには再度表示は行わない）
     static var appReview: Bool {
         set {
             UserDefaults.standard.set(newValue, forKey: Key.appReview.rawValue)
@@ -28,7 +28,7 @@ final class UserStore {
         }
     }
 
-    // toioの操作スピード
+    /// toioの操作スピード
     static var up: Int {
         set {
             UserDefaults.standard.set(newValue, forKey: Key.up.rawValue)

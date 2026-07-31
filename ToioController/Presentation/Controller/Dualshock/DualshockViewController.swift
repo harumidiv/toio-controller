@@ -32,7 +32,7 @@ class DualshockViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    // コントローラとの接続が解除された場合
+    /// コントローラとの接続が解除された場合
     @objc func handleControllerDidDisconnect(_ notification: Notification) {
         controller.removeTimer()
         dismissAction?()
@@ -40,10 +40,11 @@ class DualshockViewController: UIViewController {
     }
 
     private func openAppReviewWindow() {
-        if !UserStore.appReview {
-            SKStoreReviewController.requestReview()
-            UserStore.appReview = true
+        guard !UserStore.appReview else { return }
+        if #available(iOS 16, *), let scene = view.window?.windowScene {
+            AppStore.requestReview(in: scene)
         }
+        UserStore.appReview = true
     }
 }
 

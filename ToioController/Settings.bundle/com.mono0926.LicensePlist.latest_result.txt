@@ -2,29 +2,25 @@ name: LicensePlist, nameSpecified:
 body: MIT License
 
 Copyrig…
-version: 3.22.0
+version: 3.28.0
 
 name: LicensePlist, nameSpecified: 
 body: MIT License
 
 Copyrig…
-version: 3.22.0
+version: 3.28.0
 
 name: lottie-ios, nameSpecified: 
 body:                     …
-version: 3.3.0
+version: 4.6.1
 
 name: lottie-ios, nameSpecified: 
 body:                     …
-version: 3.3.0
+version: 4.6.1
 
 name: R.swift, nameSpecified: 
 body: The MIT License (MIT…
-version: 6.1.0
-
-name: R.swift.Library, nameSpecified: 
-body: The MIT License (MIT…
-version: 5.3.0
+version: 7.8.0
 
 name: RxBluetoothKit, nameSpecified: 
 body:                     …
@@ -48,30 +44,30 @@ name: SwiftFormat, nameSpecified:
 body: MIT License
 
 Copyrig…
-version: 0.49.9
+version: 0.62.1
 
 name: SwiftFormat, nameSpecified: 
 body: MIT License
 
 Copyrig…
-version: 0.49.9
+version: 0.62.1
 
 name: SwiftLint, nameSpecified: 
 body: The MIT License (MIT…
-version: 0.47.1
+version: 0.65.0
 
 name: SwiftLint, nameSpecified: 
 body: The MIT License (MIT…
-version: 0.47.1
+version: 0.65.0
 
 name: Swinject, nameSpecified: 
 body: The MIT License (MIT…
-version: 2.8.1
+version: 2.9.1
 
 name: Swinject, nameSpecified: 
 body: The MIT License (MIT…
-version: 2.8.1
+version: 2.9.1
 
 add-version-numbers: false
 
-LicensePlist Version: 3.22.0
+LicensePlist Version: 3.28.0
