@@ -689,6 +689,7 @@
 			);
 			outputPaths = (
 			);
+			alwaysOutOfDate = 1;
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n  if which license-plist >/dev/null 2>&1; then\n    license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  elif [ -f /opt/homebrew/bin/license-plist ]; then\n    /opt/homebrew/bin/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  else\n    echo \"warning: LicensePlist not installed. Run: brew install licenseplist\"\n  fi\nfi\n";
@@ -728,6 +729,7 @@
 			);
 			outputPaths = (
 			);
+			alwaysOutOfDate = 1;
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftformat >/dev/null 2>&1; then\n  swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelif [ -f /opt/homebrew/bin/swiftformat ]; then\n  /opt/homebrew/bin/swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelse\n  echo \"warning: SwiftFormat not installed. Run: brew install swiftformat\"\nfi\n";
@@ -746,6 +748,7 @@
 			);
 			outputPaths = (
 			);
+			alwaysOutOfDate = 1;
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/swiftlint ]; then\n  /opt/homebrew/bin/swiftlint lint --quiet\nelif which swiftlint >/dev/null 2>&1; then\n  swiftlint lint --quiet\nelse\n  echo \"warning: SwiftLint not installed. Run: brew install swiftlint\"\nfi\n";
@@ -764,6 +767,7 @@
 			);
 			outputPaths = (
 			);
+			alwaysOutOfDate = 1;
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# RxBluetoothKit の CoreBluetooth nullability パッチ（Xcode 15+ 対応）\nRXTK=\"$BUILD_DIR/../../SourcePackages/checkouts/RxBluetoothKit/Source\"\n\nif [ ! -d \"$RXTK\" ]; then\n  exit 0\nfi\n\n# Characteristic.swift: characteristic.service → characteristic.service!\nsed -i '' 's/Service(peripheral: peripheral, service: characteristic\\.service)/Service(peripheral: peripheral, service: characteristic.service!)/g' \"$RXTK/Characteristic.swift\" 2>/dev/null || true\n\n# Descriptor.swift: descriptor.characteristic → descriptor.characteristic!\nsed -i '' 's/Service(peripheral: peripheral, service: descriptor\\.characteristic\\.service)/Service(peripheral: peripheral, service: descriptor.characteristic!.service!)/g' \"$RXTK/Descriptor.swift\" 2>/dev/null || true\nsed -i '' 's/Characteristic(characteristic: descriptor\\.characteristic, service: service)/Characteristic(characteristic: descriptor.characteristic!, service: service)/g' \"$RXTK/Descriptor.swift\" 2>/dev/null || true\n\n# CentralManagerRestoredState.swift: $0.peripheral → $0.peripheral!\nsed -i '' 's/retrievePeripheral(for: \\$0\\.peripheral)/retrievePeripheral(for: $0.peripheral!)/g' \"$RXTK/CentralManagerRestoredState.swift\" 2>/dev/null || true\n";

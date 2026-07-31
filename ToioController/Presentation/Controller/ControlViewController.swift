@@ -308,7 +308,6 @@ class ControlViewController: UIViewController {
             }
             present(dualshockVC, animated: true, completion: nil)
         } else {
-            R.string.localizeString.controllerDialogMessage()
             showInformation(message: R.string.localizeString.controllerDialogMessage(), buttonText: R.string.localizeString.controllerDialogButtonText())
         }
     }
