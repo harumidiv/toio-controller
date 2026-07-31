@@ -38,7 +38,7 @@
                         <action selector="searchStart:" destination="-1" eventType="touchUpInside" id="Vi3-ug-XnI"/>
                     </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27b-HH-Rx5" customClass="AnimationView" customModule="Lottie">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27b-HH-Rx5" customClass="LottieAnimationView" customModule="Lottie">
                     <rect key="frame" x="408" y="147" width="80" height="80"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
