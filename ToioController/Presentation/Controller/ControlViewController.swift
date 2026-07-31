@@ -80,7 +80,7 @@ class ControlViewController: UIViewController {
 
         title = "toio controller"
 
-        let informationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "setting"), style: .plain, target: self, action: #selector(showInformation(_:)))
+        let informationButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(showInformation(_:)))
         navigationItem.rightBarButtonItem = informationButton
         updateControllerInfo()
     }
