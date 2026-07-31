@@ -56,7 +56,7 @@ final class BluetoothService {
             .startWith(centralManager.state)
             .filter { $0 == .poweredOn }
             .subscribeOn(MainScheduler.instance)
-            .timeout(duration, scheduler: scheduler)
+            .timeout(.milliseconds(Int(duration * 1000)), scheduler: scheduler)
             .flatMap { [weak self] _ -> Observable<ScannedPeripheral> in
                 guard let self = self else {
                     return Observable.empty()

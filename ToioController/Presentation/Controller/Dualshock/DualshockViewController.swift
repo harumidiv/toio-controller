@@ -40,10 +40,11 @@ class DualshockViewController: UIViewController {
     }
 
     private func openAppReviewWindow() {
-        if !UserStore.appReview {
-            SKStoreReviewController.requestReview()
-            UserStore.appReview = true
+        guard !UserStore.appReview else { return }
+        if #available(iOS 16, *), let scene = view.window?.windowScene {
+            AppStore.requestReview(in: scene)
         }
+        UserStore.appReview = true
     }
 }
 
