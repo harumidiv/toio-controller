@@ -63,7 +63,6 @@
 		0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAF22B3E4C4009E9D9C /* DirectionalPadRightButton.swift */; };
 		0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3A4A1BFB91076D124FFF7D49 /* Swinject */; };
 		346159030AF3E59572974CD3 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3818E2769EAF60C7E31C2FCB /* Swinject */; };
-		39BE09520250B2AE175FAB59 /* Pods_ToioControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */; };
 		3F53B0459120D8F2361C733F /* RxBluetoothKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C84B3A1778865FB7455B3DF /* RxBluetoothKit */; };
 		498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724ED2479892700F09A9E /* DualshockViewController.swift */; };
 		498724F02479892700F09A9E /* DualshockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724EE2479892700F09A9E /* DualshockViewController.xib */; };
@@ -74,12 +73,10 @@
 		498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FC247A7C4D00F09A9E /* String+Addition.swift */; };
 		49D229C9248143710035CAB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D229C8248143710035CAB3 /* UserStore.swift */; };
 		49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF05A62345A80800EA6550 /* SnapshotHelper.swift */; };
-		79DFAFE1E7D3E31239EF73A7 /* RswiftResources in Frameworks */ = {isa = PBXBuildFile; productRef = E27CD49A0B029740D72B2926 /* RswiftResources */; };
+		79DFAFE1E7D3E31239EF73A7 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E27CD49A0B029740D72B2926 /* RswiftLibrary */; };
 		84D3A8F710ECF28453120366 /* RxBluetoothKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9D27EF33E097A47D4594D8 /* RxBluetoothKit */; };
 		B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EED383C97B342524F62812CF /* Lottie */; };
-		BD443728345BE94FE3227864 /* Pods_ToioController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */; };
 		D5A7A789D0181A9FB558FEEE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4602ABC770A53FD42B74FA92 /* RxSwift */; };
-		DFDE8266E2028DD25630D9C2 /* Pods_ToioControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */; };
 		EB68D165DE2CC35B6A6199A7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F465D06621E2F2905254227 /* RxSwift */; };
 /* End PBXBuildFile section */
 
@@ -195,7 +192,7 @@
 				0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */,
 				EB68D165DE2CC35B6A6199A7 /* RxSwift in Frameworks */,
 				84D3A8F710ECF28453120366 /* RxBluetoothKit in Frameworks */,
-				79DFAFE1E7D3E31239EF73A7 /* RswiftResources in Frameworks */,
+				79DFAFE1E7D3E31239EF73A7 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +536,7 @@
 				3A4A1BFB91076D124FFF7D49 /* Swinject */,
 				4F465D06621E2F2905254227 /* RxSwift */,
 				2C9D27EF33E097A47D4594D8 /* RxBluetoothKit */,
-				E27CD49A0B029740D72B2926 /* RswiftResources */,
+				E27CD49A0B029740D72B2926 /* RswiftLibrary */,
 			);
 			productName = ToioController;
 			productReference = 0DC6BCD622B3D02D00792ABB /* ToioController.app */;
@@ -626,7 +623,7 @@
 				8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */,
 				5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */,
-				2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R.swift" */,
+				2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R" */,
 				3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 0DC6BCD722B3D02D00792ABB /* Products */;
@@ -753,7 +750,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/swiftlint ]; then\n  /opt/homebrew/bin/swiftlint lint --quiet\nelif which swiftlint >/dev/null 2>&1; then\n  swiftlint lint --quiet\nelse\n  echo \"warning: SwiftLint not installed. Run: brew install swiftlint\"\nfi\n";
 		};
-
 		FF001122334455667788AABB /* Patch SPM Packages */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -961,18 +957,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEVELOP=1",
 					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = ToioController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				OTHER_SWIFT_FLAGS = "-D DEVELOP";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1092,18 +1089,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"MOCK=1",
 					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = ToioController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D MOCK";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1283,14 +1281,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = ToioController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1306,18 +1305,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
 					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = ToioController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1455,7 +1455,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+		2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift";
 			requirement = {
@@ -1541,9 +1541,9 @@
 			package = 9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
-		E27CD49A0B029740D72B2926 /* RswiftResources */ = {
+		E27CD49A0B029740D72B2926 /* RswiftLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R.swift" */;
+			package = 2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R" */;
 			productName = RswiftLibrary;
 		};
 		EED383C97B342524F62812CF /* Lottie */ = {
