@@ -20,12 +20,7 @@ protocol PhoneDeviceUsecase: AnyObject {
 
 class PhoneDeviceUsecaseImpl: PhoneDeviceUsecase {
     func checkBluetoothAuthorization() -> Bool {
-        let manager = CBCentralManager()
-        if manager.authorization == .allowedAlways {
-            return true
-        } else {
-            return false
-        }
+        return CBCentralManager.authorization == .allowedAlways
     }
 
     func getBattery() -> Observable<Float> {
