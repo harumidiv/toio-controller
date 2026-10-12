@@ -44,6 +44,13 @@ class InformationViewController: UIViewController, SKStoreProductViewControllerD
         super.viewDidLoad()
         title = R.string.localizeString.navigationInformation()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        guard let selectedRow = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedRow, animated: animated)
+    }
 }
 
 extension InformationViewController: UITableViewDataSource, UITableViewDelegate {

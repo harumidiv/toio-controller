@@ -49,6 +49,10 @@ class ConnectViewController: UIViewController {
         title = R.string.localizeString.navigationbarConnection()
 
         let informationButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(showInformation(_:)))
+        informationButton.accessibilityLabel = R.string.localizeString.navigationInformation()
+        if #available(iOS 26.0, *) {
+            informationButton.hidesSharedBackground = true
+        }
         navigationItem.rightBarButtonItem = informationButton
     }
 

@@ -258,12 +258,12 @@ struct _R {
       /// Locales: en, ja
       var navigationSetting: RswiftResources.StringResource { .init(key: "navigation.setting", tableName: "Localize.string", source: source, developmentValue: "Setting", comment: nil) }
 
-      /// en translation: Scanning...
+      /// en translation: Connect to cube
       ///
       /// Key: navigationbar.connection
       ///
       /// Locales: en, ja
-      var navigationbarConnection: RswiftResources.StringResource { .init(key: "navigationbar.connection", tableName: "Localize.string", source: source, developmentValue: "Scanning...", comment: nil) }
+      var navigationbarConnection: RswiftResources.StringResource { .init(key: "navigationbar.connection", tableName: "Localize.string", source: source, developmentValue: "Connect to cube", comment: nil) }
 
       /// en translation: Save settings
       ///

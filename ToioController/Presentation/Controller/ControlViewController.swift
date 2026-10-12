@@ -81,6 +81,10 @@ class ControlViewController: UIViewController {
         title = "toio controller"
 
         let informationButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(showInformation(_:)))
+        informationButton.accessibilityLabel = R.string.localizeString.navigationInformation()
+        if #available(iOS 26.0, *) {
+            informationButton.hidesSharedBackground = true
+        }
         navigationItem.rightBarButtonItem = informationButton
         updateControllerInfo()
     }

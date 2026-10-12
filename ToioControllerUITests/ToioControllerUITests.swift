@@ -29,10 +29,10 @@ class ToioControllerUITests: XCTestCase {
         #if MOCK
             snapshot("connect")
             let app = XCUIApplication()
-            app.navigationBars["探索中..."].children(matching: .button).element.tap()
+            app.navigationBars["cubeに接続"].children(matching: .button).element.tap()
             snapshot("Information")
             Thread.sleep(forTimeInterval: 0.3)
-            app.navigationBars["情報"].buttons["探索中..."].tap()
+            app.navigationBars["情報"].buttons["cubeに接続"].tap()
             XCUIApplication().buttons["cubeを探す"].tap()
             snapshot("Controller")
         #endif
