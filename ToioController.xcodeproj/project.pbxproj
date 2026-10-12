@@ -677,6 +677,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		0D68C30322BDC7DD00FD6CA9 /* LicensePlist */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -689,7 +690,6 @@
 			);
 			outputPaths = (
 			);
-			alwaysOutOfDate = 1;
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n  if which license-plist >/dev/null 2>&1; then\n    license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  elif [ -f /opt/homebrew/bin/license-plist ]; then\n    /opt/homebrew/bin/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  else\n    echo \"warning: LicensePlist not installed. Run: brew install licenseplist\"\n  fi\nfi\n";
@@ -717,6 +717,7 @@
 		};
 		0DC6BD0722B3D57400792ABB /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -729,13 +730,13 @@
 			);
 			outputPaths = (
 			);
-			alwaysOutOfDate = 1;
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftformat >/dev/null 2>&1; then\n  swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelif [ -f /opt/homebrew/bin/swiftformat ]; then\n  /opt/homebrew/bin/swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelse\n  echo \"warning: SwiftFormat not installed. Run: brew install swiftformat\"\nfi\n";
 		};
 		0DC6BD0822B3D57600792ABB /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -748,13 +749,13 @@
 			);
 			outputPaths = (
 			);
-			alwaysOutOfDate = 1;
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/swiftlint ]; then\n  /opt/homebrew/bin/swiftlint lint --quiet\nelif which swiftlint >/dev/null 2>&1; then\n  swiftlint lint --quiet\nelse\n  echo \"warning: SwiftLint not installed. Run: brew install swiftlint\"\nfi\n";
 		};
 		FF001122334455667788AABB /* Patch SPM Packages */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -767,7 +768,6 @@
 			);
 			outputPaths = (
 			);
-			alwaysOutOfDate = 1;
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# RxBluetoothKit の CoreBluetooth nullability パッチ（Xcode 15+ 対応）\nRXTK=\"$BUILD_DIR/../../SourcePackages/checkouts/RxBluetoothKit/Source\"\n\nif [ ! -d \"$RXTK\" ]; then\n  exit 0\nfi\n\n# Characteristic.swift: characteristic.service → characteristic.service!\nsed -i '' 's/Service(peripheral: peripheral, service: characteristic\\.service)/Service(peripheral: peripheral, service: characteristic.service!)/g' \"$RXTK/Characteristic.swift\" 2>/dev/null || true\n\n# Descriptor.swift: descriptor.characteristic → descriptor.characteristic!\nsed -i '' 's/Service(peripheral: peripheral, service: descriptor\\.characteristic\\.service)/Service(peripheral: peripheral, service: descriptor.characteristic!.service!)/g' \"$RXTK/Descriptor.swift\" 2>/dev/null || true\nsed -i '' 's/Characteristic(characteristic: descriptor\\.characteristic, service: service)/Characteristic(characteristic: descriptor.characteristic!, service: service)/g' \"$RXTK/Descriptor.swift\" 2>/dev/null || true\n\n# CentralManagerRestoredState.swift: $0.peripheral → $0.peripheral!\nsed -i '' 's/retrievePeripheral(for: \\$0\\.peripheral)/retrievePeripheral(for: $0.peripheral!)/g' \"$RXTK/CentralManagerRestoredState.swift\" 2>/dev/null || true\n";
@@ -961,7 +961,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEVELOP=1",
@@ -973,7 +973,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.4.1;
 				OTHER_SWIFT_FLAGS = "-D DEVELOP";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1093,7 +1093,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"MOCK=1",
@@ -1105,7 +1105,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.4.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D MOCK";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1285,7 +1285,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = ToioController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -1293,7 +1293,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.4.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1309,7 +1309,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -1321,7 +1321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.4.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
