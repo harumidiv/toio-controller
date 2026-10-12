@@ -7,7 +7,7 @@
 */
 
 //NavigationBar
-"navigationbar.connection"  = "探索中...";
+"navigationbar.connection"  = "cubeに接続";
 "navigation.information" = "情報";
 "navigation.setting" = "設定";
 "navigation.privacypolicy" = "プライバシーポリシー";

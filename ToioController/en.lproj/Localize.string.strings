@@ -7,7 +7,7 @@
 */
 
 //NavigationBar
-"navigationbar.connection"  = "Scanning...";
+"navigationbar.connection"  = "Connect to cube";
 "navigation.information" = "Information";
 "navigation.setting" = "Setting";
 "navigation.privacypolicy" = "Privacypolicy";
