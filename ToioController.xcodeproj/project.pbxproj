@@ -449,9 +449,6 @@
 				0DC6BCD222B3D02D00792ABB /* Sources */,
 				0DC6BCD322B3D02D00792ABB /* Frameworks */,
 				0DC6BCD422B3D02D00792ABB /* Resources */,
-				0DC6BD0722B3D57400792ABB /* SwiftFormat */,
-				0DC6BD0822B3D57600792ABB /* SwiftLint */,
-				0D68C30322BDC7DD00FD6CA9 /* LicensePlist */,
 			);
 			buildRules = (
 			);
@@ -542,7 +539,6 @@
 			packageReferences = (
 				9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R" */,
-				3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 0DC6BCD722B3D02D00792ABB /* Products */;
 			projectDirPath = "";
@@ -587,25 +583,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D68C30322BDC7DD00FD6CA9 /* LicensePlist */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = LicensePlist;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n  if which license-plist >/dev/null 2>&1; then\n    license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  elif [ -f /opt/homebrew/bin/license-plist ]; then\n    /opt/homebrew/bin/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  else\n    echo \"warning: LicensePlist not installed. Run: brew install licenseplist\"\n  fi\nfi\n";
-		};
 		0DBC019F234E28F100C04E76 /* R swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -626,44 +603,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# rswift を SPM チェックアウトからビルドして実行\nSPM_CHECKOUTS=\"$BUILD_DIR/../../SourcePackages/checkouts\"\nRSWIFT_CACHE=\"$BUILD_DIR/../../SourcePackages/.rswift-cache\"\nRSWIFT_BIN=\"$RSWIFT_CACHE/rswift\"\nRSWIFT_SRC=\"$SPM_CHECKOUTS/R.swift\"\n\nif [ ! -d \"$RSWIFT_SRC\" ]; then\n  echo \"warning: R.swift SPM checkout not found. Run package resolution first.\"\n  exit 0\nfi\n\nif [ ! -f \"$RSWIFT_BIN\" ] || [ \"$RSWIFT_SRC/Package.swift\" -nt \"$RSWIFT_BIN\" ]; then\n  echo \"Building rswift from SPM source...\"\n  mkdir -p \"$RSWIFT_CACHE\"\n  TMPBUILD=\"/tmp/rswift-build-$$\"\n  cp -r \"$RSWIFT_SRC\" \"$TMPBUILD\"\n  rm -f \"$TMPBUILD/Package.resolved\"\n  # SDKROOT/PLATFORM_NAME をリセットしてmacOS向けにビルド\n  env -i HOME=\"$HOME\" PATH=\"/usr/bin:/bin:/usr/sbin:/sbin\" \\\n    DEVELOPER_DIR=\"$DEVELOPER_DIR\" \\\n    xcrun swift build --package-path \"$TMPBUILD\" -c release --product rswift 2>/dev/null\n  cp \"$TMPBUILD/.build/release/rswift\" \"$RSWIFT_BIN\" 2>/dev/null || true\n  rm -rf \"$TMPBUILD\"\nfi\n\nif [ -f \"$RSWIFT_BIN\" ]; then\n  \"$RSWIFT_BIN\" generate --xcodeproj \"$PROJECT_FILE_PATH\" --target \"$TARGET_NAME\" \"$SRCROOT/R.generated.swift\" 2>&1 | grep -v \"^warning: \\[R.swift\\] project.pbxproj is internally inconsistent\" | grep -v \" is not used$\" || true\nelse\n  echo \"warning: rswift binary could not be built. Using existing R.generated.swift.\"\nfi\n";
-		};
-		0DC6BD0722B3D57400792ABB /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null 2>&1; then\n  swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelif [ -f /opt/homebrew/bin/swiftformat ]; then\n  /opt/homebrew/bin/swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelse\n  echo \"warning: SwiftFormat not installed. Run: brew install swiftformat\"\nfi\n";
-		};
-		0DC6BD0822B3D57600792ABB /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ -f /opt/homebrew/bin/swiftlint ]; then\n  /opt/homebrew/bin/swiftlint lint --quiet\nelif which swiftlint >/dev/null 2>&1; then\n  swiftlint lint --quiet\nelse\n  echo \"warning: SwiftLint not installed. Run: brew install swiftlint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1354,14 +1293,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.8.0;
-			};
-		};
-		3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.65.1;
 			};
 		};
 		9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {

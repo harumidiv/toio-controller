@@ -36,12 +36,6 @@ __pycache__/
 .idea/
 .vscode/
 
-# CocoaPod
-Pods/*
-
-# bandler
-vendor/*
-
 # others
 *.swp
 !.gitkeep
