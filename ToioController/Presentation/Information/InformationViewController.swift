@@ -33,6 +33,9 @@ class InformationViewController: UIViewController, SKStoreProductViewControllerD
         InformationData(label: R.string.localizeString.informationListAbountDualshock(),
                         title: "dualshock4",
                         type: .webView(url: URL(string: "https://www.jp.playstation.com/accessories/dualshock4/")!)),
+        InformationData(label: R.string.localizeString.informationListRelatedApps(),
+                        title: R.string.localizeString.informationListRelatedApps(),
+                        type: .webView(url: URL(string: "https://harumidiv.github.io/AppleStoreDevelopprSite/#apps")!)),
         InformationData(label: R.string.localizeString.informationListToioUpdateMessage(),
                         title: R.string.localizeString.informationListToioUpdateTitle(),
                         type: .download)

@@ -43,6 +43,7 @@
 "information.list.privacypolicy" = "プライバシーポリシー";
 "information.list.aboutToio" = "toioについて";
 "information.list.abountDualshock" = "dualshock4について";
+"information.list.relatedApps" = "関連アプリ";
 "information.list.toioUpdate.title" = "toio アップデートアプリ";
 "information.list.toioUpdate.message" = "toio コンソール/toio コア キューブのソフトウェアをアップデートして頂くことにより、toioに新しい機能が追加されたり、安定性が向上します。";
 

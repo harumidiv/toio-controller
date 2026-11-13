@@ -39,6 +39,7 @@
 "information.list.privacypolicy" = "Privacypolisy";
 "information.list.aboutToio" = "About toio";
 "information.list.abountDualshock" = "About dualshock4";
+"information.list.relatedApps" = "Related Apps";
 "information.list.toioUpdate.title" = "toio update app";
 "information.list.toioUpdate.message" = "Updates toio console / toio core cube software will add new features to toio and improve stability.";
 

@@ -12,6 +12,8 @@ import WebKit
 class WebViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView! {
         didSet {
+            webView.uiDelegate = self
+            webView.allowsBackForwardNavigationGestures = true
             let urlRequest = URLRequest(url: url)
             webView.load(urlRequest)
         }
@@ -35,5 +37,16 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleText
+    }
+}
+
+extension WebViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration,
+                 for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        // The app catalog opens App Store and contact links in a new window.
+        if navigationAction.targetFrame == nil, let url = navigationAction.request.url {
+            UIApplication.shared.open(url)
+        }
+        return nil
     }
 }

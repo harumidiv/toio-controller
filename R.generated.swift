@@ -65,7 +65,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizeString` struct is generated, and contains static references to 31 localization keys.
+    /// This `_R.string.localizeString` struct is generated, and contains static references to 32 localization keys.
     struct localizeString {
       let source: RswiftResources.StringResource.Source
 
@@ -215,6 +215,13 @@ struct _R {
       ///
       /// Locales: en, ja
       var informationListPrivacypolicy: RswiftResources.StringResource { .init(key: "information.list.privacypolicy", tableName: "Localize.string", source: source, developmentValue: "Privacypolisy", comment: nil) }
+
+      /// en translation: Related Apps
+      ///
+      /// Key: information.list.relatedApps
+      ///
+      /// Locales: en, ja
+      var informationListRelatedApps: RswiftResources.StringResource { .init(key: "information.list.relatedApps", tableName: "Localize.string", source: source, developmentValue: "Related Apps", comment: nil) }
 
       /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
       ///
