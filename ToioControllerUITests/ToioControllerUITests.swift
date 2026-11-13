@@ -11,9 +11,7 @@ import XCTest
 class ToioControllerUITests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
-        let app = XCUIApplication()
-        setupSnapshot(app)
-        app.launch()
+        XCUIApplication().launch()
     }
 
     override func tearDown() {
@@ -23,18 +21,5 @@ class ToioControllerUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testSnapshot() {
-        #if MOCK
-            snapshot("connect")
-            let app = XCUIApplication()
-            app.navigationBars["cubeに接続"].children(matching: .button).element.tap()
-            snapshot("Information")
-            Thread.sleep(forTimeInterval: 0.3)
-            app.navigationBars["情報"].buttons["cubeに接続"].tap()
-            XCUIApplication().buttons["cubeを探す"].tap()
-            snapshot("Controller")
-        #endif
     }
 }

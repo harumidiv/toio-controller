@@ -64,7 +64,6 @@
 		498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FA247A7C0B00F09A9E /* Data+Addition.swift */; };
 		498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FC247A7C4D00F09A9E /* String+Addition.swift */; };
 		49D229C9248143710035CAB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D229C8248143710035CAB3 /* UserStore.swift */; };
-		49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF05A62345A80800EA6550 /* SnapshotHelper.swift */; };
 		79DFAFE1E7D3E31239EF73A7 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E27CD49A0B029740D72B2926 /* RswiftLibrary */; };
 		B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EED383C97B342524F62812CF /* Lottie */; };
 /* End PBXBuildFile section */
@@ -152,7 +151,6 @@
 		498724FA247A7C0B00F09A9E /* Data+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Addition.swift"; sourceTree = "<group>"; };
 		498724FC247A7C4D00F09A9E /* String+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Addition.swift"; sourceTree = "<group>"; };
 		49D229C8248143710035CAB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
-		49FF05A62345A80800EA6550 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -370,7 +368,6 @@
 			isa = PBXGroup;
 			children = (
 				0DC6BCF922B3D02E00792ABB /* ToioControllerUITests.swift */,
-				49FF05A62345A80800EA6550 /* SnapshotHelper.swift */,
 				0DC6BCFB22B3D02E00792ABB /* Info.plist */,
 			);
 			path = ToioControllerUITests;
@@ -748,7 +745,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC6BCFA22B3D02E00792ABB /* ToioControllerUITests.swift in Sources */,
-				49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

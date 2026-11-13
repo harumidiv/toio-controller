@@ -44,12 +44,6 @@ brew install swiftlint swiftformat
 
 未インストールの場合でもビルド・実行に影響はありません（ビルド時にwarningが表示されます）。
 
-## snapshot
-
-```
-bundle exec fastlane screenshots
-```
-
 ## License
 toio controller is licensed under the MIT license.<br>
 Copylight ©2019 Harumi Sagawa<br>
