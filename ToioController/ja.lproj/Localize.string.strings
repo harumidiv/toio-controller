@@ -55,3 +55,14 @@
 //controller
 "controller.dialog.message" = "コントローラが端末に接続されていません\n設定からbluetooth接続を確認してください";
 "controller.dialog.buttonText" =  "閉じる";
+"controller.rail.back" = "接続画面に戻る";
+"controller.rail.gamepadConnected" = "ゲームコントローラ（接続中）";
+"controller.rail.gamepadDisconnected" = "ゲームコントローラ（未接続）";
+"controller.direction.up" = "前進";
+"controller.direction.down" = "後退";
+"controller.direction.left" = "左";
+"controller.direction.right" = "右";
+"controller.action.back" = "バック";
+"controller.action.horn" = "ホーン";
+"controller.action.spin" = "スピン";
+"controller.action.zigzag" = "ジグザグ";

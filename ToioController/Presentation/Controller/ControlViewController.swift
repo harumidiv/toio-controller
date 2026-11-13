@@ -7,42 +7,24 @@
 //
 
 import CoreBluetooth
+import SwiftUI
 import UIKit
 
+/// コントローラ画面。表示はSwiftUIのControlViewで行い、ここではcubeへの書き込みと画面遷移を扱う
 class ControlViewController: UIViewController {
     let cubeModel: CubeModel?
-    var zigzagTimer: Timer!
+    var zigzagTimer: Timer?
     var dualshock: Dualshock?
 
+    private let viewState = ControlViewState()
     private var isFirstZigZag: Bool = true
-
-    @IBOutlet weak var controllerInfo: UIButton!
-    @IBOutlet weak var upButton: DirectionalPadUpButton!
-    @IBOutlet weak var downButton: DirectionalPadDownButton!
-    @IBOutlet weak var rightButton: DirectionalPadRightButton!
-    @IBOutlet weak var leftButton: DirectionalPadLeftButton!
-    @IBOutlet weak var honeButton: RoundButton!
-    @IBOutlet weak var backButton: RoundButton!
-    @IBOutlet weak var rotateButton: RoundButton!
-    @IBOutlet weak var zigzagButton: RoundButton!
-
-    @IBOutlet weak var buttonBackgroundView: UIView! {
-        didSet {
-            buttonBackgroundView.layer.cornerRadius = buttonBackgroundView.frame.width / 2
-        }
-    }
-
-    @IBOutlet weak var controlBackgroundView: UIView! {
-        didSet {
-            controlBackgroundView.layer.cornerRadius = controlBackgroundView.frame.width / 2
-        }
-    }
+    private var zigzagFlug = false
 
     // MARK: - Initializer
 
     init(cubeModel: CubeModel?) {
         self.cubeModel = cubeModel
-        super.init(nibName: String(describing: ControlViewController.self), bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
 
     @available(*, unavailable)
@@ -51,6 +33,7 @@ class ControlViewController: UIViewController {
     }
 
     deinit {
+        zigzagTimer?.invalidate()
         cubeModel?.peripheral.disconnect()
     }
 
@@ -58,6 +41,10 @@ class ControlViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // この画面は左端のメニューで操作するのでナビゲーションバーを隠す
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        // 十字キーが画面の左端に近いので、操作中に誤ってスワイプで戻らないようにする
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(viewDidEnterBackground(_:)),
@@ -69,22 +56,58 @@ class ControlViewController: UIViewController {
                                                selector: #selector(cubeDissconect(_:)),
                                                name: .cubeDissconect,
                                                object: nil)
+        updateControllerInfo()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dualshock = Dualshock(cubeModel: cubeModel, output: self)
-
+        view.backgroundColor = .white
         title = "toio controller"
-
-        let informationButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(showInformation(_:)))
-        informationButton.accessibilityLabel = R.string.localizeString.navigationInformation()
-        if #available(iOS 26.0, *) {
-            informationButton.hidesSharedBackground = true
-        }
-        navigationItem.rightBarButtonItem = informationButton
+        dualshock = Dualshock(cubeModel: cubeModel, output: self)
+        embedControlView()
         updateControllerInfo()
+    }
+
+    private func embedControlView() {
+        let controlView = ControlView(
+            state: viewState,
+            onDirection: { [weak self] direction, isPressed in
+                self?.handleDirection(direction, isPressed: isPressed)
+            },
+            onAction: { [weak self] action, isPressed in
+                self?.handleAction(action, isPressed: isPressed)
+            },
+            onBack: { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            },
+            onGamepad: { [weak self] in
+                self?.showDualshock()
+            },
+            onSettings: { [weak self] in
+                self?.showSetting()
+            },
+            onInformation: { [weak self] in
+                self?.showInformation()
+            }
+        )
+        let hostingController = UIHostingController(rootView: controlView)
+        hostingController.view.backgroundColor = .clear
+        addChild(hostingController)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(hostingController.view)
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
+        hostingController.didMove(toParent: self)
     }
 
     // MARK: - Event
@@ -103,205 +126,15 @@ class ControlViewController: UIViewController {
         updateControllerInfo()
     }
 
-    @objc func showInformation(_ sender: UIBarButtonItem) {
+    private func showInformation() {
         navigationController?.pushViewController(InformationViewController(), animated: true)
     }
 
-    @IBAction func upStart(_ sender: Any) {
-        var writeData: [UInt8] = [0x01, 0x01, 0x01]
-        var speed = UserStore.up
-        if speed <= 10 {
-            speed = 11
-        }
-        let data = UInt8(String(speed))!
-        writeData += [data]
-        writeData += [0x02]
-        writeData += [0x01]
-        writeData += [data]
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
-    }
-
-    @IBAction func upStop(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
-    }
-
-    @IBAction func downStart(_ sender: Any) {
-        var writeData: [UInt8] = [0x01, 0x01, 0x02]
-        var speed = UserStore.down
-        if speed <= 10 {
-            speed = 11
-        }
-        let data = UInt8(String(speed))!
-        writeData += [data]
-        writeData += [0x02]
-        writeData += [0x02]
-        writeData += [data]
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
-    }
-
-    @IBAction func downStop(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
-    }
-
-    @IBAction func rightStart(_ sender: Any) {
-        var writeData: [UInt8] = [0x01, 0x01, 0x01]
-        var speed = UserStore.right
-        if speed <= 10 {
-            speed = 11
-        }
-        let data = UInt8(String(speed))!
-        writeData += [data]
-        writeData += [0x02]
-        writeData += [0x01]
-        writeData += [data / 2]
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
-    }
-
-    @IBAction func rightStop(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
-    }
-
-    @IBAction func leftStart(_ sender: Any) {
-        var writeData: [UInt8] = [0x01, 0x01, 0x01]
-        var speed = UserStore.left
-        if speed <= 10 {
-            speed = 11
-        }
-        let data = UInt8(String(speed))!
-        writeData += [data / 2]
-        writeData += [0x02]
-        writeData += [0x01]
-        writeData += [data]
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data(writeData))
-    }
-
-    @IBAction func leftStop(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
-    }
-
-    @IBAction func backStart(_ sender: UIButton) {
-        // moter
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.BackData.moter)
-
-        // light
-        writeValue(characteristics: .light, writeType: .withResponse, value: Constant.BackData.light)
-
-        // sound
-        writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.BackData.sound)
-        upButton.isEnabled = false
-        downButton.isEnabled = false
-        leftButton.isEnabled = false
-        rightButton.isEnabled = false
-        honeButton.isEnabled = false
-        rotateButton.isEnabled = false
-        zigzagButton.isEnabled = false
-    }
-
-    @IBAction func backStop(_ sender: UIButton) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
-        writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
-        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
-
-        upButton.isEnabled = true
-        downButton.isEnabled = true
-        leftButton.isEnabled = true
-        rightButton.isEnabled = true
-        honeButton.isEnabled = true
-        rotateButton.isEnabled = true
-        zigzagButton.isEnabled = true
-    }
-
-    @IBAction func honeStart(_ sender: UIButton) {
-        writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.WriteData.hone)
-        upButton.isEnabled = false
-        downButton.isEnabled = false
-        leftButton.isEnabled = false
-        rightButton.isEnabled = false
-        backButton.isEnabled = false
-        rotateButton.isEnabled = false
-        zigzagButton.isEnabled = false
-    }
-
-    @IBAction func honeStop(_ sender: UIButton) {
-        writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
-        upButton.isEnabled = true
-        downButton.isEnabled = true
-        leftButton.isEnabled = true
-        rightButton.isEnabled = true
-        backButton.isEnabled = true
-        rotateButton.isEnabled = true
-        zigzagButton.isEnabled = true
-    }
-
-    @IBAction func rotateStart(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.rotate)
-        upButton.isEnabled = false
-        downButton.isEnabled = false
-        leftButton.isEnabled = false
-        rightButton.isEnabled = false
-        backButton.isEnabled = false
-        honeButton.isEnabled = false
-        zigzagButton.isEnabled = false
-    }
-
-    @IBAction func rotateStop(_ sender: Any) {
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
-        upButton.isEnabled = true
-        downButton.isEnabled = true
-        leftButton.isEnabled = true
-        rightButton.isEnabled = true
-        backButton.isEnabled = true
-        honeButton.isEnabled = true
-        zigzagButton.isEnabled = true
-    }
-
-    var zigzagFlug = false
-    @IBAction func zigzagStart(_ sender: Any) {
-        // タップしてから0.3秒開いてしまうので調整用
-        if isFirstZigZag {
-            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
-            isFirstZigZag = false
-        }
-
-        zigzagTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { _ in
-            print("呼ばれたよ")
-            if self.zigzagFlug {
-                self.zigzagFlug = false
-                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
-            } else {
-                self.zigzagFlug = true
-                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.left)
-            }
-        })
-
-        upButton.isEnabled = false
-        downButton.isEnabled = false
-        leftButton.isEnabled = false
-        rightButton.isEnabled = false
-        backButton.isEnabled = false
-        honeButton.isEnabled = false
-        rotateButton.isEnabled = false
-    }
-
-    @IBAction func zigzagStop(_ sender: Any) {
-        zigzagTimer.invalidate()
-        isFirstZigZag = true
-        zigzagFlug = false
-        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
-        upButton.isEnabled = true
-        downButton.isEnabled = true
-        leftButton.isEnabled = true
-        rightButton.isEnabled = true
-        backButton.isEnabled = true
-        honeButton.isEnabled = true
-        rotateButton.isEnabled = true
-    }
-
-    @IBAction func optionTapped(_ sender: UIButton) {
+    private func showSetting() {
         navigationController?.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: true)
     }
 
-    @IBAction func dualshockControlTapped(_ sender: Any) {
+    private func showDualshock() {
         if dualshock?.hasconnectionDevice() ?? false {
             let dualshockVC = DualshockViewController()
             dualshockVC.controller = dualshock
@@ -314,16 +147,127 @@ class ControlViewController: UIViewController {
         }
     }
 
+    // MARK: - 十字キー
+
+    private func handleDirection(_ direction: ControlDirection, isPressed: Bool) {
+        guard isPressed else {
+            // アクション中はアクション側がモーターを制御するので停止を送らない
+            guard viewState.activeAction == nil else {
+                return
+            }
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+            return
+        }
+        switch direction {
+        case .up:
+            upStart()
+        case .down:
+            downStart()
+        case .right:
+            rightStart()
+        case .left:
+            leftStart()
+        }
+    }
+
+    private func upStart() {
+        let speed = speedByte(UserStore.up)
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x01, speed, 0x02, 0x01, speed]))
+    }
+
+    private func downStart() {
+        let speed = speedByte(UserStore.down)
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x02, speed, 0x02, 0x02, speed]))
+    }
+
+    private func rightStart() {
+        let speed = speedByte(UserStore.right)
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x01, speed, 0x02, 0x01, speed / 2]))
+    }
+
+    private func leftStart() {
+        let speed = speedByte(UserStore.left)
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Data([0x01, 0x01, 0x01, speed / 2, 0x02, 0x01, speed]))
+    }
+
+    /// 設定値の速度(10以下は動かないので11に補正)を書き込み用の値にする
+    private func speedByte(_ speed: Int) -> UInt8 {
+        return UInt8(String(max(speed, 11)))!
+    }
+
+    // MARK: - アクション
+
+    private func handleAction(_ action: ControlAction, isPressed: Bool) {
+        if isPressed {
+            // 押している間は他のボタンを無効にする
+            viewState.activeAction = action
+            switch action {
+            case .back:
+                writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.BackData.moter)
+                writeValue(characteristics: .light, writeType: .withResponse, value: Constant.BackData.light)
+                writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.BackData.sound)
+            case .horn:
+                writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.WriteData.hone)
+            case .spin:
+                writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.rotate)
+            case .zigzag:
+                zigzagStart()
+            }
+        } else {
+            switch action {
+            case .back:
+                writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+                writeValue(characteristics: .light, writeType: .withResponse, value: Data([0x01]))
+                writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+            case .horn:
+                writeValue(characteristics: .sound, writeType: .withResponse, value: Data([0x01]))
+            case .spin:
+                writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+            case .zigzag:
+                zigzagStop()
+            }
+            viewState.activeAction = nil
+        }
+    }
+
+    private func zigzagStart() {
+        // タップしてから0.3秒開いてしまうので調整用
+        if isFirstZigZag {
+            writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
+            isFirstZigZag = false
+        }
+
+        zigzagTimer?.invalidate()
+        zigzagTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            if self.zigzagFlug {
+                self.zigzagFlug = false
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
+            } else {
+                self.zigzagFlug = true
+                self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.left)
+            }
+        })
+    }
+
+    private func zigzagStop() {
+        zigzagTimer?.invalidate()
+        zigzagTimer = nil
+        isFirstZigZag = true
+        zigzagFlug = false
+        writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.moterStop)
+    }
+
+    // MARK: - Private
+
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
-        _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType)
+        cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType)
     }
 
     private func updateControllerInfo() {
-        if dualshock?.hasconnectionDevice() ?? false {
-            controllerInfo.setImage(R.image.controllerON(), for: .normal)
-        } else {
-            controllerInfo.setImage(R.image.controllerOFF(), for: .normal)
-        }
+        viewState.isGamepadConnected = dualshock?.hasconnectionDevice() ?? false
     }
 }
 
@@ -331,7 +275,7 @@ extension ControlViewController: DualshockOutput {
     func showSettingScreen() {
         if let topController = UIApplication.topViewController() {
             if topController.className == "ControlViewController" {
-                navigationController?.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: true)
+                showSetting()
             }
         }
     }

@@ -51,3 +51,14 @@
 //controller
 "controller.dialog.message" = "Controller is not connected to the terminal \n Please check the bluetooth connection from the settings";
 "controller.dialog.buttonText" =  "close";
+"controller.rail.back" = "Back to connection";
+"controller.rail.gamepadConnected" = "Game controller (connected)";
+"controller.rail.gamepadDisconnected" = "Game controller (not connected)";
+"controller.direction.up" = "Forward";
+"controller.direction.down" = "Backward";
+"controller.direction.left" = "Left";
+"controller.direction.right" = "Right";
+"controller.action.back" = "Back";
+"controller.action.horn" = "Horn";
+"controller.action.spin" = "Spin";
+"controller.action.zigzag" = "Zigzag";

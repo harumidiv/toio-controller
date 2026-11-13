@@ -1,0 +1,296 @@
+//
+//  ControlView.swift
+//  ToioController
+//
+
+import SwiftUI
+
+enum ControlDirection: CaseIterable {
+    case up, down, left, right
+}
+
+enum ControlAction: CaseIterable {
+    case back, horn, spin, zigzag
+}
+
+/// 画面の表示状態。ControlViewControllerが更新する
+@Observable
+final class ControlViewState {
+    /// 押している最中のアクション。押している間は他のボタンを無効にする
+    var activeAction: ControlAction?
+    /// ゲームコントローラ(Dualshock等)が端末に接続されているか
+    var isGamepadConnected = false
+}
+
+/// コントローラ画面。押した/離したタイミングをコールバックで通知する
+struct ControlView: View {
+    let state: ControlViewState
+    var onDirection: (ControlDirection, _ isPressed: Bool) -> Void = { _, _ in }
+    var onAction: (ControlAction, _ isPressed: Bool) -> Void = { _, _ in }
+    var onBack: () -> Void = {}
+    var onGamepad: () -> Void = {}
+    var onSettings: () -> Void = {}
+    var onInformation: () -> Void = {}
+
+    var body: some View {
+        HStack(spacing: 24) {
+            sideRail
+            GeometryReader { geometry in
+                let padSide = min(geometry.size.height, 300)
+                HStack {
+                    DirectionPad(side: padSide, isDisabled: state.activeAction != nil, onDirection: onDirection)
+                    Spacer(minLength: 16)
+                    actionGrid(height: padSide)
+                }
+                .frame(maxHeight: .infinity)
+            }
+        }
+        .padding(.vertical, 12)
+        .background(Color.white)
+    }
+
+    // MARK: - サイドレール
+
+    private var sideRail: some View {
+        VStack {
+            RailButton(systemImage: "chevron.left", label: R.string.localizeString.controllerRailBack(), isHighlighted: true, action: onBack)
+            Spacer()
+            VStack(spacing: 8) {
+                RailButton(systemImage: state.isGamepadConnected ? "gamecontroller.fill" : "gamecontroller",
+                           label: state.isGamepadConnected
+                               ? R.string.localizeString.controllerRailGamepadConnected()
+                               : R.string.localizeString.controllerRailGamepadDisconnected(),
+                           action: onGamepad)
+                    .overlay(alignment: .topTrailing) {
+                        Circle()
+                            .fill(state.isGamepadConnected ? ControlColor.connected : ControlColor.disconnected)
+                            .frame(width: 9, height: 9)
+                            .overlay(Circle().stroke(ControlColor.rail, lineWidth: 2))
+                            .offset(x: -8, y: 8)
+                            .accessibilityHidden(true)
+                    }
+                RailButton(systemImage: "slider.horizontal.3", label: R.string.localizeString.informationListControllerSetting(), action: onSettings)
+                RailButton(systemImage: "info.circle", label: R.string.localizeString.navigationInformation(), action: onInformation)
+            }
+        }
+        .padding(.vertical, 10)
+        .frame(width: 68)
+        .frame(maxHeight: .infinity)
+        .background(ControlColor.rail, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
+    }
+
+    // MARK: - アクションボタン
+
+    private func actionGrid(height: CGFloat) -> some View {
+        let spacing: CGFloat = 14
+        let buttonHeight = (height - spacing) / 2
+        let columns = [GridItem(.fixed(118), spacing: spacing), GridItem(.fixed(118), spacing: spacing)]
+        return LazyVGrid(columns: columns, spacing: spacing) {
+            ForEach(ControlAction.allCases, id: \.self) { action in
+                ActionButton(action: action, height: buttonHeight) { isPressed in
+                    onAction(action, isPressed)
+                }
+                .disabled(state.activeAction != nil && state.activeAction != action)
+            }
+        }
+        .frame(width: 118 * 2 + spacing)
+    }
+}
+
+// MARK: - 色
+
+enum ControlColor {
+    static let rail = Color(red: 0x00 / 255, green: 0xC8 / 255, blue: 0xF4 / 255)
+    static let railInk = Color(red: 0x06 / 255, green: 0x32 / 255, blue: 0x3D / 255)
+    static let pad = Color(red: 0xF4 / 255, green: 0xB4 / 255, blue: 0x00 / 255)
+    static let padInk = Color(red: 0x3A / 255, green: 0x2A / 255, blue: 0x00 / 255)
+    static let action = Color(red: 0x98 / 255, green: 0xBA / 255, blue: 0x42 / 255)
+    static let actionInk = Color(red: 0x1E / 255, green: 0x2A / 255, blue: 0x0C / 255)
+    static let connected = Color(red: 0x1E / 255, green: 0x9E / 255, blue: 0x5A / 255)
+    static let disconnected = Color(red: 0x8A / 255, green: 0x97 / 255, blue: 0x9C / 255)
+}
+
+// MARK: - 押している間を通知するボタンスタイル
+
+/// 指が触れた時にtrue、離れた時(ボタン外で離した・キャンセルも含む)にfalseを通知する
+struct PressReportingButtonStyle: ButtonStyle {
+    let onPressChanged: (Bool) -> Void
+
+    func makeBody(configuration: Configuration) -> some View {
+        PressReportingBody(configuration: configuration, onPressChanged: onPressChanged)
+    }
+
+    private struct PressReportingBody: View {
+        let configuration: Configuration
+        let onPressChanged: (Bool) -> Void
+        @Environment(\.isEnabled) private var isEnabled
+
+        var body: some View {
+            configuration.label
+                .scaleEffect(configuration.isPressed ? 0.95 : 1)
+                .opacity(isEnabled ? 1 : 0.4)
+                .animation(.easeOut(duration: 0.08), value: configuration.isPressed)
+                .onChange(of: configuration.isPressed) { _, isPressed in
+                    onPressChanged(isPressed)
+                }
+        }
+    }
+}
+
+// MARK: - 部品
+
+private struct RailButton: View {
+    let systemImage: String
+    let label: String
+    var isHighlighted = false
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: systemImage)
+                .font(.system(size: 22, weight: .semibold))
+                .foregroundStyle(ControlColor.railInk)
+                .frame(width: 48, height: 48)
+                .background(isHighlighted ? Color.white.opacity(0.55) : Color.clear,
+                            in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(label)
+    }
+}
+
+private struct DirectionPad: View {
+    let side: CGFloat
+    let isDisabled: Bool
+    let onDirection: (ControlDirection, Bool) -> Void
+
+    var body: some View {
+        let cell = side / 3
+        Grid(horizontalSpacing: 0, verticalSpacing: 0) {
+            GridRow {
+                Color.clear.frame(width: cell, height: cell)
+                key(.up, cell: cell)
+                Color.clear.frame(width: cell, height: cell)
+            }
+            GridRow {
+                key(.left, cell: cell)
+                ControlColor.pad.frame(width: cell, height: cell)
+                key(.right, cell: cell)
+            }
+            GridRow {
+                Color.clear.frame(width: cell, height: cell)
+                key(.down, cell: cell)
+                Color.clear.frame(width: cell, height: cell)
+            }
+        }
+        .frame(width: side, height: side)
+    }
+
+    private func key(_ direction: ControlDirection, cell: CGFloat) -> some View {
+        Button {} label: {
+            Image(systemName: direction.systemImage)
+                .font(.system(size: cell * 0.34, weight: .bold))
+                .foregroundStyle(ControlColor.padInk)
+                .frame(width: cell, height: cell)
+                .background(ControlColor.pad, in: UnevenRoundedRectangle(cornerRadii: direction.cornerRadii(cell * 0.22), style: .continuous))
+        }
+        .buttonStyle(PressReportingButtonStyle { onDirection(direction, $0) })
+        .disabled(isDisabled)
+        .accessibilityLabel(direction.label)
+    }
+}
+
+private struct ActionButton: View {
+    let action: ControlAction
+    let height: CGFloat
+    let onPressChanged: (Bool) -> Void
+
+    var body: some View {
+        Button {} label: {
+            VStack(spacing: 6) {
+                action.icon
+                    .frame(width: 34, height: 34)
+                Text(action.label)
+                    .font(.system(size: 13, weight: .heavy))
+            }
+            .foregroundStyle(ControlColor.actionInk)
+            .frame(maxWidth: .infinity)
+            .frame(height: height)
+            .background(ControlColor.action, in: Capsule())
+        }
+        .buttonStyle(PressReportingButtonStyle(onPressChanged: onPressChanged))
+    }
+}
+
+/// ジグザグのアイコン(対応するSF Symbolが無いため描画する)
+private struct ZigzagShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let points: [(CGFloat, CGFloat)] = [(3, 17), (8, 7), (12, 17), (16, 7), (21, 17)]
+        for (index, point) in points.enumerated() {
+            let p = CGPoint(x: rect.minX + rect.width * point.0 / 24, y: rect.minY + rect.height * point.1 / 24)
+            index == 0 ? path.move(to: p) : path.addLine(to: p)
+        }
+        return path
+    }
+}
+
+private extension ControlDirection {
+    var systemImage: String {
+        switch self {
+        case .up: return "arrowtriangle.up.fill"
+        case .down: return "arrowtriangle.down.fill"
+        case .left: return "arrowtriangle.left.fill"
+        case .right: return "arrowtriangle.right.fill"
+        }
+    }
+
+    var label: String {
+        switch self {
+        case .up: return R.string.localizeString.controllerDirectionUp()
+        case .down: return R.string.localizeString.controllerDirectionDown()
+        case .left: return R.string.localizeString.controllerDirectionLeft()
+        case .right: return R.string.localizeString.controllerDirectionRight()
+        }
+    }
+
+    /// 十字の外側だけ角を丸める
+    func cornerRadii(_ r: CGFloat) -> RectangleCornerRadii {
+        switch self {
+        case .up: return RectangleCornerRadii(topLeading: r, topTrailing: r)
+        case .down: return RectangleCornerRadii(bottomLeading: r, bottomTrailing: r)
+        case .left: return RectangleCornerRadii(topLeading: r, bottomLeading: r)
+        case .right: return RectangleCornerRadii(bottomTrailing: r, topTrailing: r)
+        }
+    }
+}
+
+private extension ControlAction {
+    var label: String {
+        switch self {
+        case .back: return R.string.localizeString.controllerActionBack()
+        case .horn: return R.string.localizeString.controllerActionHorn()
+        case .spin: return R.string.localizeString.controllerActionSpin()
+        case .zigzag: return R.string.localizeString.controllerActionZigzag()
+        }
+    }
+
+    @ViewBuilder var icon: some View {
+        switch self {
+        case .back:
+            Image(systemName: "arrow.uturn.backward").font(.system(size: 28, weight: .bold))
+        case .horn:
+            Image(systemName: "speaker.wave.2.fill").font(.system(size: 26, weight: .bold))
+        case .spin:
+            Image(systemName: "arrow.clockwise").font(.system(size: 28, weight: .bold))
+        case .zigzag:
+            ZigzagShape()
+                .stroke(style: StrokeStyle(lineWidth: 2.6, lineCap: .round, lineJoin: .round))
+        }
+    }
+}
+
+#Preview(traits: .landscapeRight) {
+    ControlView(state: ControlViewState())
+}

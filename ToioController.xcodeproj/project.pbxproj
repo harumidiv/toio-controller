@@ -55,7 +55,7 @@
 		0DC6BCEF22B3D02E00792ABB /* ToioControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCEE22B3D02E00792ABB /* ToioControllerTests.swift */; };
 		0DC6BCFA22B3D02E00792ABB /* ToioControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCF922B3D02E00792ABB /* ToioControllerUITests.swift */; };
 		0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */; };
-		0DC6BD0C22B3D6F000792ABB /* ControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0A22B3D6F000792ABB /* ControlViewController.xib */; };
+		A1C0DE0000000000000000A2 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE0000000000000000A1 /* ControlView.swift */; };
 		0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */; };
 		0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FA922B3E49B009E9D9C /* DirectionalPadUpButton.swift */; };
 		0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAB22B3E4A8009E9D9C /* DirectionalPadDownButton.swift */; };
@@ -154,7 +154,7 @@
 		0DC6BCF922B3D02E00792ABB /* ToioControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToioControllerUITests.swift; sourceTree = "<group>"; };
 		0DC6BCFB22B3D02E00792ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
-		0DC6BD0A22B3D6F000792ABB /* ControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlViewController.xib; sourceTree = "<group>"; };
+		A1C0DE0000000000000000A1 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Addition.swift"; sourceTree = "<group>"; };
 		0DEB0FA922B3E49B009E9D9C /* DirectionalPadUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalPadUpButton.swift; sourceTree = "<group>"; };
 		0DEB0FAB22B3E4A8009E9D9C /* DirectionalPadDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalPadDownButton.swift; sourceTree = "<group>"; };
@@ -419,7 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */,
-				0DC6BD0A22B3D6F000792ABB /* ControlViewController.xib */,
+				A1C0DE0000000000000000A1 /* ControlView.swift */,
 				498724EC2479890E00F09A9E /* Dualshock */,
 			);
 			path = Controller;
@@ -637,7 +637,6 @@
 				498724F4247A46EA00F09A9E /* StoreDownloadCell.xib in Resources */,
 				0D9E320B22B5CE66007B97D7 /* WebViewController.xib in Resources */,
 				0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */,
-				0DC6BD0C22B3D6F000792ABB /* ControlViewController.xib in Resources */,
 				0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */,
 				0D9E325122B5E894007B97D7 /* SettingViewController.xib in Resources */,
 			);
@@ -755,6 +754,7 @@
 				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				057DFDC52335BCA000E9FB32 /* ModeB.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,
+				A1C0DE0000000000000000A2 /* ControlView.swift in Sources */,
 				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,
 				0D37740222B4E212000EFCCC /* Cube.swift in Sources */,
 				0D9E325722B6746E007B97D7 /* RoundButton.swift in Sources */,

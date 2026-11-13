@@ -15,6 +15,7 @@ struct _R {
   var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
+  var info: info { .init(bundle: bundle) }
   var file: file { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
   var reuseIdentifier: reuseIdentifier { .init() }
@@ -33,6 +34,9 @@ struct _R {
     .init(bundle: bundle)
   }
   func image(bundle: Foundation.Bundle) -> image {
+    .init(bundle: bundle)
+  }
+  func info(bundle: Foundation.Bundle) -> info {
     .init(bundle: bundle)
   }
   func file(bundle: Foundation.Bundle) -> file {
@@ -65,7 +69,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizeString` struct is generated, and contains static references to 32 localization keys.
+    /// This `_R.string.localizeString` struct is generated, and contains static references to 43 localization keys.
     struct localizeString {
       let source: RswiftResources.StringResource.Source
 
@@ -174,6 +178,34 @@ struct _R {
       /// Locales: en, ja
       var connectionSearchbutton: RswiftResources.StringResource { .init(key: "connection.searchbutton", tableName: "Localize.string", source: source, developmentValue: "Find cube", comment: nil) }
 
+      /// en translation: Back
+      ///
+      /// Key: controller.action.back
+      ///
+      /// Locales: en, ja
+      var controllerActionBack: RswiftResources.StringResource { .init(key: "controller.action.back", tableName: "Localize.string", source: source, developmentValue: "Back", comment: nil) }
+
+      /// en translation: Horn
+      ///
+      /// Key: controller.action.horn
+      ///
+      /// Locales: en, ja
+      var controllerActionHorn: RswiftResources.StringResource { .init(key: "controller.action.horn", tableName: "Localize.string", source: source, developmentValue: "Horn", comment: nil) }
+
+      /// en translation: Spin
+      ///
+      /// Key: controller.action.spin
+      ///
+      /// Locales: en, ja
+      var controllerActionSpin: RswiftResources.StringResource { .init(key: "controller.action.spin", tableName: "Localize.string", source: source, developmentValue: "Spin", comment: nil) }
+
+      /// en translation: Zigzag
+      ///
+      /// Key: controller.action.zigzag
+      ///
+      /// Locales: en, ja
+      var controllerActionZigzag: RswiftResources.StringResource { .init(key: "controller.action.zigzag", tableName: "Localize.string", source: source, developmentValue: "Zigzag", comment: nil) }
+
       /// en translation: close
       ///
       /// Key: controller.dialog.buttonText
@@ -187,6 +219,55 @@ struct _R {
       ///
       /// Locales: en, ja
       var controllerDialogMessage: RswiftResources.StringResource { .init(key: "controller.dialog.message", tableName: "Localize.string", source: source, developmentValue: "Controller is not connected to the terminal \n Please check the bluetooth connection from the settings", comment: nil) }
+
+      /// en translation: Backward
+      ///
+      /// Key: controller.direction.down
+      ///
+      /// Locales: en, ja
+      var controllerDirectionDown: RswiftResources.StringResource { .init(key: "controller.direction.down", tableName: "Localize.string", source: source, developmentValue: "Backward", comment: nil) }
+
+      /// en translation: Left
+      ///
+      /// Key: controller.direction.left
+      ///
+      /// Locales: en, ja
+      var controllerDirectionLeft: RswiftResources.StringResource { .init(key: "controller.direction.left", tableName: "Localize.string", source: source, developmentValue: "Left", comment: nil) }
+
+      /// en translation: Right
+      ///
+      /// Key: controller.direction.right
+      ///
+      /// Locales: en, ja
+      var controllerDirectionRight: RswiftResources.StringResource { .init(key: "controller.direction.right", tableName: "Localize.string", source: source, developmentValue: "Right", comment: nil) }
+
+      /// en translation: Forward
+      ///
+      /// Key: controller.direction.up
+      ///
+      /// Locales: en, ja
+      var controllerDirectionUp: RswiftResources.StringResource { .init(key: "controller.direction.up", tableName: "Localize.string", source: source, developmentValue: "Forward", comment: nil) }
+
+      /// en translation: Back to connection
+      ///
+      /// Key: controller.rail.back
+      ///
+      /// Locales: en, ja
+      var controllerRailBack: RswiftResources.StringResource { .init(key: "controller.rail.back", tableName: "Localize.string", source: source, developmentValue: "Back to connection", comment: nil) }
+
+      /// en translation: Game controller (connected)
+      ///
+      /// Key: controller.rail.gamepadConnected
+      ///
+      /// Locales: en, ja
+      var controllerRailGamepadConnected: RswiftResources.StringResource { .init(key: "controller.rail.gamepadConnected", tableName: "Localize.string", source: source, developmentValue: "Game controller (connected)", comment: nil) }
+
+      /// en translation: Game controller (not connected)
+      ///
+      /// Key: controller.rail.gamepadDisconnected
+      ///
+      /// Locales: en, ja
+      var controllerRailGamepadDisconnected: RswiftResources.StringResource { .init(key: "controller.rail.gamepadDisconnected", tableName: "Localize.string", source: source, developmentValue: "Game controller (not connected)", comment: nil) }
 
       /// en translation: About dualshock4
       ///
@@ -326,6 +407,54 @@ struct _R {
     var toio_update: RswiftResources.ImageResource { .init(name: "toio_update", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
+  /// This `_R.info` struct is generated, and contains static references to 1 properties.
+  struct info {
+    let bundle: Foundation.Bundle
+    var uiApplicationSceneManifest: uiApplicationSceneManifest { .init(bundle: bundle) }
+
+    func uiApplicationSceneManifest(bundle: Foundation.Bundle) -> uiApplicationSceneManifest {
+      .init(bundle: bundle)
+    }
+
+    struct uiApplicationSceneManifest {
+      let bundle: Foundation.Bundle
+
+      let uiApplicationSupportsMultipleScenes: Bool = false
+
+      var _key: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest"], key: "_key") ?? "UIApplicationSceneManifest" }
+      var uiSceneConfigurations: uiSceneConfigurations { .init(bundle: bundle) }
+
+      func uiSceneConfigurations(bundle: Foundation.Bundle) -> uiSceneConfigurations {
+        .init(bundle: bundle)
+      }
+
+      struct uiSceneConfigurations {
+        let bundle: Foundation.Bundle
+        var _key: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations"], key: "_key") ?? "UISceneConfigurations" }
+        var uiWindowSceneSessionRoleApplication: uiWindowSceneSessionRoleApplication { .init(bundle: bundle) }
+
+        func uiWindowSceneSessionRoleApplication(bundle: Foundation.Bundle) -> uiWindowSceneSessionRoleApplication {
+          .init(bundle: bundle)
+        }
+
+        struct uiWindowSceneSessionRoleApplication {
+          let bundle: Foundation.Bundle
+          var defaultConfiguration: defaultConfiguration { .init(bundle: bundle) }
+
+          func defaultConfiguration(bundle: Foundation.Bundle) -> defaultConfiguration {
+            .init(bundle: bundle)
+          }
+
+          struct defaultConfiguration {
+            let bundle: Foundation.Bundle
+            var uiSceneConfigurationName: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneConfigurationName") ?? "Default Configuration" }
+            var uiSceneDelegateClassName: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate" }
+          }
+        }
+      }
+    }
+  }
+
   /// This `_R.file` struct is generated, and contains static references to 2 resource files.
   struct file {
     let bundle: Foundation.Bundle
@@ -337,15 +466,12 @@ struct _R {
     var settingsBundle: RswiftResources.FileResource { .init(name: "Settings", pathExtension: "bundle", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
     /// Nib `ConnectViewController`.
     var connectViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "ConnectViewController", bundle: bundle) }
-
-    /// Nib `ControlViewController`.
-    var controlViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "ControlViewController", bundle: bundle) }
 
     /// Nib `DualshockViewController`.
     var dualshockViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "DualshockViewController", bundle: bundle) }
@@ -363,7 +489,6 @@ struct _R {
     var webViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WebViewController", bundle: bundle) }
 
     func validate() throws {
-      if UIKit.UIImage(named: "controllerOFF", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'controllerOFF' is used in nib 'ControlViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "appControllerIcon", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'appControllerIcon' is used in nib 'DualshockViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "gameController", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'gameController' is used in nib 'DualshockViewController', but couldn't be loaded.") }
       if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "square.and.arrow.down") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'square.and.arrow.down' is used in nib 'StoreDownloadCell', but couldn't be loaded.") } }
