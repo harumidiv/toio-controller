@@ -25,9 +25,9 @@ protocol ConnectPresenterOutput: AnyObject {
 }
 
 class ConnectPresenterImpl: ConnectPresenter {
-    private let phoneDeviceUseCase: PhoneDeviceUsecase = OtherInjector.container.resolve(PhoneDeviceUsecase.self)!
+    private let phoneDeviceUseCase: PhoneDeviceUsecase = Dependencies.makePhoneDeviceUsecase()
 
-    private lazy var usecase: ConnectUseCase = ConnectInjector.container.resolve(ConnectUseCase.self)!
+    private lazy var usecase: ConnectUseCase = Dependencies.makeConnectUseCase()
 
     private weak var output: ConnectPresenterOutput?
 

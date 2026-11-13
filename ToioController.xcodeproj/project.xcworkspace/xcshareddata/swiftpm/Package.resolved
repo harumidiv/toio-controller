@@ -1,5 +1,5 @@
 {
-  "originHash" : "166255a7abfbf15d9f57194df5337c697bdaa790a44fc95b5e9545db5dbfd6c1",
+  "originHash" : "91b395aa6e3cc8bbdb6108582c167abb97a2c6b51ae84d30fa3118fa5bafc1dc",
   "pins" : [
     {
       "identity" : "collectionconcurrencykit",
@@ -89,15 +89,6 @@
       "state" : {
         "revision" : "c6df6cf533d120716bff38f8ff9885e1ce2a4ac3",
         "version" : "0.9.0"
-      }
-    },
-    {
-      "identity" : "swinject",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Swinject/Swinject",
-      "state" : {
-        "revision" : "b685b549fe4d8ae265fc7a2f27d0789720425d69",
-        "version" : "2.10.0"
       }
     },
     {
