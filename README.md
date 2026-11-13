@@ -3,25 +3,38 @@
 
 ## Requirements
 
-![OS](https://img.shields.io/badge/target-iOS%2013.0-orange.svg) [![Editor](https://img.shields.io/badge/editor-Xcode%2026.0+-orange.svg)](https://developer.apple.com/jp/xcode/) [![Language](https://img.shields.io/badge/language-Swift%205.0+-green.svg)](https://swift.org)
+![OS](https://img.shields.io/badge/target-iOS%2026.0+-orange.svg) [![Editor](https://img.shields.io/badge/editor-Xcode%2027.2-orange.svg)](https://developer.apple.com/jp/xcode/) [![Language](https://img.shields.io/badge/language-Swift%205-green.svg)](https://swift.org)
+
+- iOS 26.0 以降（iPhone・横向き）
+- Xcode 27.2 で動作確認しています
 
 ## Description
 
 This app is a controller app of toio core cube sold by Sony Interactive Entertainment.<br>
 You need to buy toio to use the app.
 
+主な機能
+
+- 十字キーでcubeを操作（前進・後退・左右）
+- アクションボタン（バック・ホーン・スピン・ジグザグ）
+- 方向ごとのスピード設定
+- DUALSHOCK 4などのゲームコントローラでの操作
+
+## Architecture
+
+- 画面はSwiftUIで作成し、各画面の`UIViewController`がホストとしてPresenterとの連携や画面遷移を担当しています
+- 左端のサイドレール（`Presentation/Common/SideRail.swift`）を全画面で共通して使っています
+- cubeとの通信はCoreBluetoothで直接実装しています（`Domain/Bluetooth`）
+- 依存の生成は`DI/Dependencies.swift`にまとめています。`Develop`・`Mock`ビルドではcube無しで画面を確認するためのMockに差し替わります
+
 ## Dependencies
 
 ライブラリはSwift Package Manager（SPM）で管理しています。
 
-| ライブラリ | バージョン |
-|---|---|
-| lottie-ios | 4.6.1 |
-| Swinject | 2.10.0 |
-| RxSwift | 5.1.3 |
-| RxBluetoothKit | 6.0.0 |
-| R.swift | 7.8.0 |
-| SwiftLint | 0.65.0 |
+| ライブラリ | バージョン | 用途 |
+|---|---|---|
+| [lottie-ios](https://github.com/airbnb/lottie-ios) | 4.6.1 | 接続画面の検索中アニメーション |
+| [R.swift](https://github.com/mac-cain13/R.swift) | 7.8.0 | 文字列・画像リソースの型安全なアクセス |
 
 ## Installation
 
@@ -34,25 +47,11 @@ open ToioController.xcodeproj
 
 Xcodeがパッケージを自動的に解決します。初回はパッケージのダウンロードに数分かかることがあります。
 
-### オプションツール（コード品質）
-
-SwiftLint・SwiftFormat・LicensePlistはHomebrewでインストールできます。
-
-```
-brew install swiftlint swiftformat
-```
-
-未インストールの場合でもビルド・実行に影響はありません（ビルド時にwarningが表示されます）。
-
-## snapshot
-
-```
-bundle exec fastlane screenshots
-```
+`R.generated.swift` はビルド時にR.swiftが自動で生成・更新します。
 
 ## License
 toio controller is licensed under the MIT license.<br>
-Copylight ©2019 Harumi Sagawa<br>
+Copyright ©2019 Harumi Sagawa<br>
 
 The license of toio is referred from the following link<br>
 [https://toio.io/news/2019/20190320-1.html](https://toio.io/news/2019/20190320-1.html)

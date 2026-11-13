@@ -6,21 +6,18 @@
 import SwiftUI
 import WebKit
 
+/// Webページを表示する。ページ側に見出しがあるので、画面のタイトルは出さない
 struct WebPageView: View {
-    let title: String
     let url: URL
     var onBack: () -> Void = {}
 
     var body: some View {
         RailScreen(top: .back(label: R.string.localizeString.commonBack(), action: onBack)) {
-            VStack(alignment: .leading, spacing: 10) {
-                RailTitle(text: title)
-                WebView(url: url)
-                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Palette.border, lineWidth: 1))
-            }
-            .padding(.top, 6)
-            .padding(.trailing, 4)
+            WebView(url: url)
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Palette.border, lineWidth: 1))
+                .padding(.top, 6)
+                .padding(.trailing, 4)
         }
     }
 }

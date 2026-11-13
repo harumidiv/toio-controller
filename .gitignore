@@ -36,20 +36,9 @@ __pycache__/
 .idea/
 .vscode/
 
-# CocoaPod
-Pods/*
-
-# bandler
-vendor/*
-
 # others
 *.swp
 !.gitkeep
 .DS_Store
 
-# fastlane
 build/
-fastlane/test_output/*
-fastlane/README.md
-fasten/report.xml
-screenshots/*

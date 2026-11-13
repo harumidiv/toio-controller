@@ -36,15 +36,13 @@
 		0D9E325022B5E894007B97D7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E324E22B5E894007B97D7 /* SettingViewController.swift */; };
 		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
 		0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */; };
-		0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4422B498E4009AEB5A /* ConnectInjector.swift */; };
-		0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4622B4990E009AEB5A /* Injector.swift */; };
+		0DA8BC4522B498E4009AEB5A /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4422B498E4009AEB5A /* Dependencies.swift */; };
 		0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */; };
 		0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */; };
 		0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */; };
 		0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */; };
 		0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */; };
 		0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */; };
-		0DA8BC5922B4ABF9009AEB5A /* OtherInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC5822B4ABF9009AEB5A /* OtherInjector.swift */; };
 		0DBC0198234CD66F00C04E76 /* Localize.string.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC019A234CD66F00C04E76 /* Localize.string.strings */; };
 		0DBC01A1234E297D00C04E76 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC01A0234E297D00C04E76 /* R.generated.swift */; };
 		0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCD922B3D02D00792ABB /* AppDelegate.swift */; };
@@ -56,15 +54,12 @@
 		0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */; };
 		A1C0DE0000000000000000A2 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE0000000000000000A1 /* ControlView.swift */; };
 		0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */; };
-		0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3A4A1BFB91076D124FFF7D49 /* Swinject */; };
-		346159030AF3E59572974CD3 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3818E2769EAF60C7E31C2FCB /* Swinject */; };
 		498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724ED2479892700F09A9E /* DualshockViewController.swift */; };
 		498724F02479892700F09A9E /* DualshockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724EE2479892700F09A9E /* DualshockViewController.xib */; };
 		498724F9247A781E00F09A9E /* FirmwareVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724F8247A781E00F09A9E /* FirmwareVersion.swift */; };
 		498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FA247A7C0B00F09A9E /* Data+Addition.swift */; };
 		498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FC247A7C4D00F09A9E /* String+Addition.swift */; };
 		49D229C9248143710035CAB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D229C8248143710035CAB3 /* UserStore.swift */; };
-		49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF05A62345A80800EA6550 /* SnapshotHelper.swift */; };
 		79DFAFE1E7D3E31239EF73A7 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E27CD49A0B029740D72B2926 /* RswiftLibrary */; };
 		B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EED383C97B342524F62812CF /* Lottie */; };
 /* End PBXBuildFile section */
@@ -115,15 +110,13 @@
 		0D9E324E22B5E894007B97D7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
-		0DA8BC4422B498E4009AEB5A /* ConnectInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectInjector.swift; sourceTree = "<group>"; };
-		0DA8BC4622B4990E009AEB5A /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		0DA8BC4422B498E4009AEB5A /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPresenter.swift; sourceTree = "<group>"; };
 		0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWireframe.swift; sourceTree = "<group>"; };
 		0DA8BC4E22B49AAA009AEB5A /* ConnectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectUseCase.swift; sourceTree = "<group>"; };
 		0DA8BC5122B49CBE009AEB5A /* PhoneDeviceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDeviceUseCase.swift; sourceTree = "<group>"; };
 		0DA8BC5322B49D7B009AEB5A /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
 		0DA8BC5522B4A84D009AEB5A /* BluetoothError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothError.swift; sourceTree = "<group>"; };
-		0DA8BC5822B4ABF9009AEB5A /* OtherInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInjector.swift; sourceTree = "<group>"; };
 		0DBC0194234CD35900C04E76 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		0DBC0195234CD35A00C04E76 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0DBC0199234CD66F00C04E76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localize.string.strings; sourceTree = "<group>"; };
@@ -152,7 +145,6 @@
 		498724FA247A7C0B00F09A9E /* Data+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Addition.swift"; sourceTree = "<group>"; };
 		498724FC247A7C4D00F09A9E /* String+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Addition.swift"; sourceTree = "<group>"; };
 		49D229C8248143710035CAB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
-		49FF05A62345A80800EA6550 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -164,7 +156,6 @@
 			files = (
 				0D9E324A22B5E263007B97D7 /* WebKit.framework in Frameworks */,
 				0D03F4D8A6016880E349C915 /* Lottie in Frameworks */,
-				0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */,
 				79DFAFE1E7D3E31239EF73A7 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */,
-				346159030AF3E59572974CD3 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +256,7 @@
 		0DA8BC4322B498C8009AEB5A /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				0DA8BC4622B4990E009AEB5A /* Injector.swift */,
-				0DA8BC4422B498E4009AEB5A /* ConnectInjector.swift */,
-				0DA8BC5822B4ABF9009AEB5A /* OtherInjector.swift */,
+				0DA8BC4422B498E4009AEB5A /* Dependencies.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -370,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				0DC6BCF922B3D02E00792ABB /* ToioControllerUITests.swift */,
-				49FF05A62345A80800EA6550 /* SnapshotHelper.swift */,
 				0DC6BCFB22B3D02E00792ABB /* Info.plist */,
 			);
 			path = ToioControllerUITests;
@@ -462,9 +449,6 @@
 				0DC6BCD222B3D02D00792ABB /* Sources */,
 				0DC6BCD322B3D02D00792ABB /* Frameworks */,
 				0DC6BCD422B3D02D00792ABB /* Resources */,
-				0DC6BD0722B3D57400792ABB /* SwiftFormat */,
-				0DC6BD0822B3D57600792ABB /* SwiftLint */,
-				0D68C30322BDC7DD00FD6CA9 /* LicensePlist */,
 			);
 			buildRules = (
 			);
@@ -473,7 +457,6 @@
 			name = ToioController;
 			packageProductDependencies = (
 				DB47E389849AE75041AED97A /* Lottie */,
-				3A4A1BFB91076D124FFF7D49 /* Swinject */,
 				E27CD49A0B029740D72B2926 /* RswiftLibrary */,
 			);
 			productName = ToioController;
@@ -514,7 +497,6 @@
 			name = ToioControllerUITests;
 			packageProductDependencies = (
 				EED383C97B342524F62812CF /* Lottie */,
-				3818E2769EAF60C7E31C2FCB /* Swinject */,
 			);
 			productName = ToioControllerUITests;
 			productReference = 0DC6BCF522B3D02E00792ABB /* ToioControllerUITests.xctest */;
@@ -556,9 +538,7 @@
 			mainGroup = 0DC6BCCD22B3D02D00792ABB;
 			packageReferences = (
 				9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */,
 				2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R" */,
-				3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 0DC6BCD722B3D02D00792ABB /* Products */;
 			projectDirPath = "";
@@ -603,25 +583,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D68C30322BDC7DD00FD6CA9 /* LicensePlist */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = LicensePlist;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n  if which license-plist >/dev/null 2>&1; then\n    license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  elif [ -f /opt/homebrew/bin/license-plist ]; then\n    /opt/homebrew/bin/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\n  else\n    echo \"warning: LicensePlist not installed. Run: brew install licenseplist\"\n  fi\nfi\n";
-		};
 		0DBC019F234E28F100C04E76 /* R swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,44 +604,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# rswift を SPM チェックアウトからビルドして実行\nSPM_CHECKOUTS=\"$BUILD_DIR/../../SourcePackages/checkouts\"\nRSWIFT_CACHE=\"$BUILD_DIR/../../SourcePackages/.rswift-cache\"\nRSWIFT_BIN=\"$RSWIFT_CACHE/rswift\"\nRSWIFT_SRC=\"$SPM_CHECKOUTS/R.swift\"\n\nif [ ! -d \"$RSWIFT_SRC\" ]; then\n  echo \"warning: R.swift SPM checkout not found. Run package resolution first.\"\n  exit 0\nfi\n\nif [ ! -f \"$RSWIFT_BIN\" ] || [ \"$RSWIFT_SRC/Package.swift\" -nt \"$RSWIFT_BIN\" ]; then\n  echo \"Building rswift from SPM source...\"\n  mkdir -p \"$RSWIFT_CACHE\"\n  TMPBUILD=\"/tmp/rswift-build-$$\"\n  cp -r \"$RSWIFT_SRC\" \"$TMPBUILD\"\n  rm -f \"$TMPBUILD/Package.resolved\"\n  # SDKROOT/PLATFORM_NAME をリセットしてmacOS向けにビルド\n  env -i HOME=\"$HOME\" PATH=\"/usr/bin:/bin:/usr/sbin:/sbin\" \\\n    DEVELOPER_DIR=\"$DEVELOPER_DIR\" \\\n    xcrun swift build --package-path \"$TMPBUILD\" -c release --product rswift 2>/dev/null\n  cp \"$TMPBUILD/.build/release/rswift\" \"$RSWIFT_BIN\" 2>/dev/null || true\n  rm -rf \"$TMPBUILD\"\nfi\n\nif [ -f \"$RSWIFT_BIN\" ]; then\n  \"$RSWIFT_BIN\" generate --xcodeproj \"$PROJECT_FILE_PATH\" --target \"$TARGET_NAME\" \"$SRCROOT/R.generated.swift\" 2>&1 | grep -v \"^warning: \\[R.swift\\] project.pbxproj is internally inconsistent\" | grep -v \" is not used$\" || true\nelse\n  echo \"warning: rswift binary could not be built. Using existing R.generated.swift.\"\nfi\n";
 		};
-		0DC6BD0722B3D57400792ABB /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null 2>&1; then\n  swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelif [ -f /opt/homebrew/bin/swiftformat ]; then\n  /opt/homebrew/bin/swiftformat . --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas\nelse\n  echo \"warning: SwiftFormat not installed. Run: brew install swiftformat\"\nfi\n";
-		};
-		0DC6BD0822B3D57600792ABB /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ -f /opt/homebrew/bin/swiftlint ]; then\n  /opt/homebrew/bin/swiftlint lint --quiet\nelif which swiftlint >/dev/null 2>&1; then\n  swiftlint lint --quiet\nelse\n  echo \"warning: SwiftLint not installed. Run: brew install swiftlint\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -688,7 +611,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DA8BC5922B4ABF9009AEB5A /* OtherInjector.swift in Sources */,
 				0D42C4F9230ECF4A0083856A /* ConnectMockPresenterImpl.swift in Sources */,
 				498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */,
 				057DFDC32335A48B00E9FB32 /* Control.swift in Sources */,
@@ -703,7 +625,7 @@
 				5C4C09D479CBD9D9ED17E7AF /* ConnectView.swift in Sources */,
 				79DA4266DEF301F53F29EBF9 /* RailNavigationController.swift in Sources */,
 				C5E3D0B27608246476E44DA0 /* SideRail.swift in Sources */,
-				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,
+				0DA8BC4522B498E4009AEB5A /* Dependencies.swift in Sources */,
 				0D37740222B4E212000EFCCC /* Cube.swift in Sources */,
 				057DFD8223350FB100E9FB32 /* Dualshock.swift in Sources */,
 				0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */,
@@ -714,7 +636,6 @@
 				498724F9247A781E00F09A9E /* FirmwareVersion.swift in Sources */,
 				0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */,
 				0DA8BC4B22B49980009AEB5A /* ConnectWireframe.swift in Sources */,
-				0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */,
 				498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */,
 				0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */,
 				0D02BF352349D2F30095F910 /* PhoneDeviceMockUsecase.swift in Sources */,
@@ -748,7 +669,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC6BCFA22B3D02E00792ABB /* ToioControllerUITests.swift in Sources */,
-				49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1372,23 +1292,7 @@
 			repositoryURL = "https://github.com/mac-cain13/R.swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.50.0;
-			};
-		};
-		8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.0;
+				minimumVersion = 7.8.0;
 			};
 		};
 		9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
@@ -1396,22 +1300,12 @@
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.4.1;
+				minimumVersion = 4.6.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3818E2769EAF60C7E31C2FCB /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		3A4A1BFB91076D124FFF7D49 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
 		DB47E389849AE75041AED97A /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */;

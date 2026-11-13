@@ -13,9 +13,9 @@ import UIKit
 class ConnectViewController: UIViewController {
     private let viewState = ConnectViewState()
 
-    lazy var presenter: ConnectPresenter = ConnectInjector.container.resolve(ConnectPresenter.self, argument: self as ConnectPresenterOutput)!
+    lazy var presenter: ConnectPresenter = Dependencies.makeConnectPresenter(output: self)
 
-    private lazy var wireframe: ConnectWireframe = ConnectInjector.container.resolve(ConnectWireframe.self)!
+    private lazy var wireframe: ConnectWireframe = Dependencies.makeConnectWireframe()
 
     var controller: Dualshock!
 
