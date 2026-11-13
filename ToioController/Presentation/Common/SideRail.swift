@@ -70,6 +70,8 @@ struct RailScreen<Bottom: View, Content: View>: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
         .padding(.vertical, 12)
+        // 右側にセーフエリアがない画面(iPhone Duoの外側の画面など)でも端にくっつかないようにする
+        .padding(.trailing, 16)
         .background(background.ignoresSafeArea())
     }
 }

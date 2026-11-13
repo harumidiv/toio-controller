@@ -14,6 +14,27 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+*.xcresult
+*.xcarchive
+*.dSYM
+*.dSYM.zip
+timeline.xctimeline
+playground.xcworkspace
+# xcodebuild -target で作られるインデックス
+*.xcodeproj/-Xcc/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Python（スクリーンショットの書き出しで使う仮想環境など）
+.venv/
+venv/
+__pycache__/
+
+# エディタ
+.idea/
+.vscode/
 
 # CocoaPod
 Pods/*

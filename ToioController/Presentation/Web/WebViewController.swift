@@ -30,7 +30,6 @@ class WebViewController: UIViewController {
         title = titleText
         view.backgroundColor = .white
         embed(WebPageView(
-            title: titleText,
             url: url,
             onBack: { [weak self] in self?.navigationController?.popViewController(animated: true) }
         ))

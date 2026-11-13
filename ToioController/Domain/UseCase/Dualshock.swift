@@ -145,7 +145,6 @@ class Dualshock {
                 return
             }
             if pressed {
-                print("▲")
                 self.isButtonEvent = true
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.WriteData.rotate)
             } else {
@@ -159,7 +158,6 @@ class Dualshock {
                 return
             }
             if pressed {
-                print("■")
                 self.isButtonEvent = true
                 // moter
                 self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.BackData.moter)
@@ -182,7 +180,6 @@ class Dualshock {
                 return
             }
             if pressed {
-                print("✖︎")
                 self.isButtonEvent = true
                 if self.isFirstZigZag {
                     self.writeValue(characteristics: .moter, writeType: .withoutResponse, value: Constant.ZigzagData.right)
@@ -210,7 +207,6 @@ class Dualshock {
                 return
             }
             if pressed {
-                print("●")
                 self.isButtonEvent = true
                 self.writeValue(characteristics: .sound, writeType: .withResponse, value: Constant.WriteData.hone)
             } else {
@@ -295,7 +291,6 @@ class Dualshock {
             let menuButton = gamepad.buttonMenu
             menuButton.valueChangedHandler = { (_: GCControllerButtonInput, _: Float, _ pressed: Bool) in
                 if pressed {
-                    print("pressed")
                     // TODO: Thumsthickのコントロール方法を制御できるようにする
                     // 設定用の新規画面を作成
                 }
@@ -313,7 +308,6 @@ class Dualshock {
 
     func unregisterGameController() {
         // TODO: Controllerがdisconnectされた時にAlertを表示する
-        print("disconnect")
     }
 
     func hasconnectionDevice() -> Bool {

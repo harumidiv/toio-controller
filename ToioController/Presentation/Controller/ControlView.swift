@@ -121,7 +121,8 @@ private struct DirectionPad: View {
     let onDirection: (ControlDirection, Bool) -> Void
 
     var body: some View {
-        let cell = side / 3
+        // 端数があるとマスの間に細いすき間が見えるので、整数に丸める
+        let cell = (side / 3).rounded(.down)
         Grid(horizontalSpacing: 0, verticalSpacing: 0) {
             GridRow {
                 Color.clear.frame(width: cell, height: cell)
