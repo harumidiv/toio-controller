@@ -1353,7 +1353,7 @@
 			repositoryURL = "https://github.com/mac-cain13/R.swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				minimumVersion = 7.8.0;
 			};
 		};
 		3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
@@ -1361,7 +1361,7 @@
 			repositoryURL = "https://github.com/realm/SwiftLint";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.50.0;
+				minimumVersion = 0.65.1;
 			};
 		};
 		9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
@@ -1369,7 +1369,7 @@
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.4.1;
+				minimumVersion = 4.6.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
