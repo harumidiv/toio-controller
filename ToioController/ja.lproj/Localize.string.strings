@@ -66,3 +66,5 @@
 "controller.action.horn" = "ホーン";
 "controller.action.spin" = "スピン";
 "controller.action.zigzag" = "ジグザグ";
+"common.back" = "戻る";
+"information.list.toioUpdate.button" = "入手";

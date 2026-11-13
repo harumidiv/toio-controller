@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0548AB5722B8EBE00003A2B1 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548AB5622B8EBE00003A2B1 /* OptionButton.swift */; };
+		D71278EBDEF255DAADC50F29 /* WebPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F1576F33C67E3DF1684B5 /* WebPageView.swift */; };
+		181CCD3AAF2CA0633C09442B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1A2C10680928696DC59E2 /* SettingView.swift */; };
+		B8F9A5FBC9374E57B0605480 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1916DBD854ED24C49D618D /* InformationView.swift */; };
+		5C4C09D479CBD9D9ED17E7AF /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E247B28EE3EA4C836A358AA /* ConnectView.swift */; };
+		79DA4266DEF301F53F29EBF9 /* RailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */; };
+		C5E3D0B27608246476E44DA0 /* SideRail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */; };
 		057DFD8223350FB100E9FB32 /* Dualshock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFD8123350FB100E9FB32 /* Dualshock.swift */; };
 		057DFDC12335A46700E9FB32 /* ModeA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC02335A46700E9FB32 /* ModeA.swift */; };
 		057DFDC32335A48B00E9FB32 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC22335A48B00E9FB32 /* Control.swift */; };
@@ -26,17 +31,11 @@
 		0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A75E22B4F3C800304AB7 /* Constant.swift */; };
 		0D94A76122B50EC800304AB7 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */; };
 		0D9E320A22B5CE66007B97D7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E320822B5CE66007B97D7 /* WebViewController.swift */; };
-		0D9E320B22B5CE66007B97D7 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E320922B5CE66007B97D7 /* WebViewController.xib */; };
 		0D9E324A22B5E263007B97D7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9E324922B5E263007B97D7 /* WebKit.framework */; };
 		0D9E324C22B5E362007B97D7 /* InformationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E324B22B5E362007B97D7 /* InformationData.swift */; };
 		0D9E325022B5E894007B97D7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E324E22B5E894007B97D7 /* SettingViewController.swift */; };
-		0D9E325122B5E894007B97D7 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E324F22B5E894007B97D7 /* SettingViewController.xib */; };
-		0D9E325322B61779007B97D7 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E325222B61779007B97D7 /* SearchButton.swift */; };
-		0D9E325722B6746E007B97D7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E325622B6746E007B97D7 /* RoundButton.swift */; };
 		0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */; };
-		0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */; };
 		0DA8BC4122B4977C009AEB5A /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */; };
-		0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4022B4977C009AEB5A /* ConnectViewController.xib */; };
 		0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4422B498E4009AEB5A /* ConnectInjector.swift */; };
 		0DA8BC4722B4990E009AEB5A /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4622B4990E009AEB5A /* Injector.swift */; };
 		0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */; };
@@ -57,16 +56,10 @@
 		0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */; };
 		A1C0DE0000000000000000A2 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE0000000000000000A1 /* ControlView.swift */; };
 		0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */; };
-		0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FA922B3E49B009E9D9C /* DirectionalPadUpButton.swift */; };
-		0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAB22B3E4A8009E9D9C /* DirectionalPadDownButton.swift */; };
-		0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAD22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift */; };
-		0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAF22B3E4C4009E9D9C /* DirectionalPadRightButton.swift */; };
 		0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3A4A1BFB91076D124FFF7D49 /* Swinject */; };
 		346159030AF3E59572974CD3 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3818E2769EAF60C7E31C2FCB /* Swinject */; };
 		498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724ED2479892700F09A9E /* DualshockViewController.swift */; };
 		498724F02479892700F09A9E /* DualshockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724EE2479892700F09A9E /* DualshockViewController.xib */; };
-		498724F4247A46EA00F09A9E /* StoreDownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */; };
-		498724F7247A4C0A00F09A9E /* StoreDownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724F6247A4C0A00F09A9E /* StoreDownloadCell.swift */; };
 		498724F9247A781E00F09A9E /* FirmwareVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724F8247A781E00F09A9E /* FirmwareVersion.swift */; };
 		498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FA247A7C0B00F09A9E /* Data+Addition.swift */; };
 		498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FC247A7C4D00F09A9E /* String+Addition.swift */; };
@@ -94,8 +87,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0548AB5622B8EBE00003A2B1 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
-		0548AB5822B8EBF20003A2B1 /* OptionButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionButton.xib; sourceTree = "<group>"; };
+		C15F1576F33C67E3DF1684B5 /* WebPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageView.swift; sourceTree = "<group>"; };
+		7CB1A2C10680928696DC59E2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		EA1916DBD854ED24C49D618D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		6E247B28EE3EA4C836A358AA /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
+		77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailNavigationController.swift; sourceTree = "<group>"; };
+		9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideRail.swift; sourceTree = "<group>"; };
 		057DFD8123350FB100E9FB32 /* Dualshock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dualshock.swift; sourceTree = "<group>"; };
 		057DFDC02335A46700E9FB32 /* ModeA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeA.swift; sourceTree = "<group>"; };
 		057DFDC22335A48B00E9FB32 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
@@ -113,19 +110,11 @@
 		0D94A75E22B4F3C800304AB7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0D94A76022B50EC800304AB7 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		0D9E320822B5CE66007B97D7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		0D9E320922B5CE66007B97D7 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		0D9E324922B5E263007B97D7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0D9E324B22B5E362007B97D7 /* InformationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationData.swift; sourceTree = "<group>"; };
 		0D9E324E22B5E894007B97D7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		0D9E324F22B5E894007B97D7 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
-		0D9E325222B61779007B97D7 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
-		0D9E325422B61796007B97D7 /* SearchButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchButton.xib; sourceTree = "<group>"; };
-		0D9E325622B6746E007B97D7 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		0D9E325822B6747A007B97D7 /* RoundButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundButton.xib; sourceTree = "<group>"; };
 		0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
-		0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
-		0DA8BC4022B4977C009AEB5A /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
 		0DA8BC4422B498E4009AEB5A /* ConnectInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectInjector.swift; sourceTree = "<group>"; };
 		0DA8BC4622B4990E009AEB5A /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPresenter.swift; sourceTree = "<group>"; };
@@ -156,19 +145,9 @@
 		0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
 		A1C0DE0000000000000000A1 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Addition.swift"; sourceTree = "<group>"; };
-		0DEB0FA922B3E49B009E9D9C /* DirectionalPadUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalPadUpButton.swift; sourceTree = "<group>"; };
-		0DEB0FAB22B3E4A8009E9D9C /* DirectionalPadDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalPadDownButton.swift; sourceTree = "<group>"; };
-		0DEB0FAD22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalPadLeftButton.swift; sourceTree = "<group>"; };
-		0DEB0FAF22B3E4C4009E9D9C /* DirectionalPadRightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalPadRightButton.swift; sourceTree = "<group>"; };
-		0DEB0FB122B3E4D7009E9D9C /* DirectionalPadUpButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionalPadUpButton.xib; sourceTree = "<group>"; };
-		0DEB0FB322B3E4E8009E9D9C /* DirectionalPadDownButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionalPadDownButton.xib; sourceTree = "<group>"; };
-		0DEB0FB522B3E4FB009E9D9C /* DirectionalPadLeftbutton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionalPadLeftbutton.xib; sourceTree = "<group>"; };
-		0DEB0FB722B3E510009E9D9C /* DirectionalPadRightButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionalPadRightButton.xib; sourceTree = "<group>"; };
 		379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		498724ED2479892700F09A9E /* DualshockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualshockViewController.swift; sourceTree = "<group>"; };
 		498724EE2479892700F09A9E /* DualshockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DualshockViewController.xib; sourceTree = "<group>"; };
-		498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDownloadCell.xib; sourceTree = "<group>"; };
-		498724F6247A4C0A00F09A9E /* StoreDownloadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDownloadCell.swift; sourceTree = "<group>"; };
 		498724F8247A781E00F09A9E /* FirmwareVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareVersion.swift; sourceTree = "<group>"; };
 		498724FA247A7C0B00F09A9E /* Data+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Addition.swift"; sourceTree = "<group>"; };
 		498724FC247A7C4D00F09A9E /* String+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Addition.swift"; sourceTree = "<group>"; };
@@ -209,6 +188,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AB6F3FFB48395DD177CA8A7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */,
+				9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		057DFDBF2335A45000E9FB32 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,8 +237,8 @@
 		0D9E320722B5CE4C007B97D7 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				C15F1576F33C67E3DF1684B5 /* WebPageView.swift */,
 				0D9E320822B5CE66007B97D7 /* WebViewController.swift */,
-				0D9E320922B5CE66007B97D7 /* WebViewController.xib */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -258,8 +246,8 @@
 		0D9E324D22B5E875007B97D7 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				7CB1A2C10680928696DC59E2 /* SettingView.swift */,
 				0D9E324E22B5E894007B97D7 /* SettingViewController.swift */,
-				0D9E324F22B5E894007B97D7 /* SettingViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -267,10 +255,10 @@
 		0DA8BC3E22B4976B009AEB5A /* Connect */ = {
 			isa = PBXGroup;
 			children = (
+				6E247B28EE3EA4C836A358AA /* ConnectView.swift */,
 				0DA8BC3F22B4977C009AEB5A /* ConnectViewController.swift */,
 				0DA8BC4822B49968009AEB5A /* ConnectPresenter.swift */,
 				0DA8BC4A22B49980009AEB5A /* ConnectWireframe.swift */,
-				0DA8BC4022B4977C009AEB5A /* ConnectViewController.xib */,
 			);
 			path = Connect;
 			sourceTree = "<group>";
@@ -391,7 +379,7 @@
 		0DC6BD0D22B3D70E00792ABB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				0DEB0FA322B3E39C009E9D9C /* CustomView */,
+				5AB6F3FFB48395DD177CA8A7 /* Common */,
 				0D9E324D22B5E875007B97D7 /* Setting */,
 				0D9E320722B5CE4C007B97D7 /* Web */,
 				0DEB0FB922B49559009E9D9C /* Information */,
@@ -425,42 +413,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0DEB0FA322B3E39C009E9D9C /* CustomView */ = {
-			isa = PBXGroup;
-			children = (
-				0DEB0FA822B3E472009E9D9C /* DirectionalPadButton */,
-				0D9E325222B61779007B97D7 /* SearchButton.swift */,
-				0D9E325422B61796007B97D7 /* SearchButton.xib */,
-				0D9E325622B6746E007B97D7 /* RoundButton.swift */,
-				0D9E325822B6747A007B97D7 /* RoundButton.xib */,
-				0548AB5622B8EBE00003A2B1 /* OptionButton.swift */,
-				0548AB5822B8EBF20003A2B1 /* OptionButton.xib */,
-			);
-			path = CustomView;
-			sourceTree = "<group>";
-		};
-		0DEB0FA822B3E472009E9D9C /* DirectionalPadButton */ = {
-			isa = PBXGroup;
-			children = (
-				0DEB0FA922B3E49B009E9D9C /* DirectionalPadUpButton.swift */,
-				0DEB0FB122B3E4D7009E9D9C /* DirectionalPadUpButton.xib */,
-				0DEB0FAB22B3E4A8009E9D9C /* DirectionalPadDownButton.swift */,
-				0DEB0FB322B3E4E8009E9D9C /* DirectionalPadDownButton.xib */,
-				0DEB0FAD22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift */,
-				0DEB0FB522B3E4FB009E9D9C /* DirectionalPadLeftbutton.xib */,
-				0DEB0FAF22B3E4C4009E9D9C /* DirectionalPadRightButton.swift */,
-				0DEB0FB722B3E510009E9D9C /* DirectionalPadRightButton.xib */,
-			);
-			path = DirectionalPadButton;
-			sourceTree = "<group>";
-		};
 		0DEB0FB922B49559009E9D9C /* Information */ = {
 			isa = PBXGroup;
 			children = (
+				EA1916DBD854ED24C49D618D /* InformationView.swift */,
 				0DA8BC3A22B495DC009AEB5A /* InformationViewController.swift */,
-				0DA8BC3B22B495DC009AEB5A /* InformationViewController.xib */,
 				0D9E324B22B5E362007B97D7 /* InformationData.swift */,
-				498724F5247A472B00F09A9E /* cell */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -472,15 +430,6 @@
 				498724EE2479892700F09A9E /* DualshockViewController.xib */,
 			);
 			path = Dualshock;
-			sourceTree = "<group>";
-		};
-		498724F5247A472B00F09A9E /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				498724F6247A4C0A00F09A9E /* StoreDownloadCell.swift */,
-				498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */,
-			);
-			path = cell;
 			sourceTree = "<group>";
 		};
 		49D229C7248143470035CAB3 /* Store */ = {
@@ -630,15 +579,10 @@
 				0DC6BCE422B3D02E00792ABB /* LaunchScreen.storyboard in Resources */,
 				0D0483DA232A487800CBBF3E /* 448-ripple-loading-animation.json in Resources */,
 				0DBC0198234CD66F00C04E76 /* Localize.string.strings in Resources */,
-				0DA8BC3D22B495DC009AEB5A /* InformationViewController.xib in Resources */,
 				0D68C30722BDC86400FD6CA9 /* Settings.bundle in Resources */,
 				498724F02479892700F09A9E /* DualshockViewController.xib in Resources */,
 				0DC6BCE122B3D02E00792ABB /* Assets.xcassets in Resources */,
-				498724F4247A46EA00F09A9E /* StoreDownloadCell.xib in Resources */,
-				0D9E320B22B5CE66007B97D7 /* WebViewController.xib in Resources */,
-				0DA8BC4222B4977C009AEB5A /* ConnectViewController.xib in Resources */,
 				0DC6BCDF22B3D02D00792ABB /* Main.storyboard in Resources */,
-				0D9E325122B5E894007B97D7 /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,23 +692,24 @@
 				0D42C4F9230ECF4A0083856A /* ConnectMockPresenterImpl.swift in Sources */,
 				498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */,
 				057DFDC32335A48B00E9FB32 /* Control.swift in Sources */,
-				498724F7247A4C0A00F09A9E /* StoreDownloadCell.swift in Sources */,
 				0DA8BC4F22B49AAA009AEB5A /* ConnectUseCase.swift in Sources */,
 				49D229C9248143710035CAB3 /* UserStore.swift in Sources */,
-				0DEB0FAC22B3E4A8009E9D9C /* DirectionalPadDownButton.swift in Sources */,
 				057DFDC52335BCA000E9FB32 /* ModeB.swift in Sources */,
 				0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */,
 				A1C0DE0000000000000000A2 /* ControlView.swift in Sources */,
+				D71278EBDEF255DAADC50F29 /* WebPageView.swift in Sources */,
+				181CCD3AAF2CA0633C09442B /* SettingView.swift in Sources */,
+				B8F9A5FBC9374E57B0605480 /* InformationView.swift in Sources */,
+				5C4C09D479CBD9D9ED17E7AF /* ConnectView.swift in Sources */,
+				79DA4266DEF301F53F29EBF9 /* RailNavigationController.swift in Sources */,
+				C5E3D0B27608246476E44DA0 /* SideRail.swift in Sources */,
 				0DA8BC4522B498E4009AEB5A /* ConnectInjector.swift in Sources */,
 				0D37740222B4E212000EFCCC /* Cube.swift in Sources */,
-				0D9E325722B6746E007B97D7 /* RoundButton.swift in Sources */,
-				0548AB5722B8EBE00003A2B1 /* OptionButton.swift in Sources */,
 				057DFD8223350FB100E9FB32 /* Dualshock.swift in Sources */,
 				0D37740622B4E3B5000EFCCC /* Collection+Addition.swift in Sources */,
 				0DA8BC5622B4A84D009AEB5A /* BluetoothError.swift in Sources */,
 				0D37740022B4D9AE000EFCCC /* Result.swift in Sources */,
 				0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */,
-				0DEB0FAE22B3E4B5009E9D9C /* DirectionalPadLeftButton.swift in Sources */,
 				0D9E320A22B5CE66007B97D7 /* WebViewController.swift in Sources */,
 				498724F9247A781E00F09A9E /* FirmwareVersion.swift in Sources */,
 				0D94A75F22B4F3C800304AB7 /* Constant.swift in Sources */,
@@ -773,10 +718,8 @@
 				498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */,
 				0DA8BC5422B49D7B009AEB5A /* BluetoothService.swift in Sources */,
 				0D02BF352349D2F30095F910 /* PhoneDeviceMockUsecase.swift in Sources */,
-				0D9E325322B61779007B97D7 /* SearchButton.swift in Sources */,
 				0DC6BCDA22B3D02D00792ABB /* AppDelegate.swift in Sources */,
 				0DA8BC4922B49968009AEB5A /* ConnectPresenter.swift in Sources */,
-				0DEB0FAA22B3E49B009E9D9C /* DirectionalPadUpButton.swift in Sources */,
 				0D9E325022B5E894007B97D7 /* SettingViewController.swift in Sources */,
 				0D37740422B4E247000EFCCC /* ToioPeripheral.swift in Sources */,
 				498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */,
@@ -787,7 +730,6 @@
 				0D9E324C22B5E362007B97D7 /* InformationData.swift in Sources */,
 				0D3773FD22B4D3FE000EFCCC /* CubeModel.swift in Sources */,
 				057DFDC12335A46700E9FB32 /* ModeA.swift in Sources */,
-				0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */,
 				0DA8BC5222B49CBE009AEB5A /* PhoneDeviceUseCase.swift in Sources */,
 				0DA8BC3C22B495DC009AEB5A /* InformationViewController.swift in Sources */,
 			);

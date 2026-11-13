@@ -7,83 +7,16 @@
 //
 
 import StoreKit
+import SwiftUI
 import UIKit
 
+/// 設定画面。表示はSwiftUIのSettingViewで行い、ここでは保存とレビュー依頼を扱う
 class SettingViewController: UIViewController {
-    @IBOutlet weak var informationLabel: UILabel! {
-        didSet {
-            informationLabel.text = R.string.localizeString.settingDescription()
-        }
-    }
-
     let titleText: String
-
-    lazy var upValue: Int = UserStore.up
-
-    lazy var leftValue: Int = UserStore.left
-
-    lazy var rightValue: Int = UserStore.right
-
-    lazy var downValue: Int = UserStore.down
-
-    /// Slider
-    @IBOutlet weak var upSlider: UISlider! {
-        didSet {
-            upSlider.value = Float(UserStore.up) / 100
-        }
-    }
-
-    @IBOutlet weak var leftSlider: UISlider! {
-        didSet {
-            leftSlider.value = Float(UserStore.left) / 100
-        }
-    }
-
-    @IBOutlet weak var rightSlider: UISlider! {
-        didSet {
-            rightSlider.value = Float(UserStore.right) / 100
-        }
-    }
-
-    @IBOutlet weak var downSlider: UISlider! {
-        didSet {
-            downSlider.value = Float(UserStore.down) / 100
-        }
-    }
-
-    @IBOutlet weak var upLabel: UILabel! {
-        didSet {
-            upLabel.text = UserStore.up.description
-        }
-    }
-
-    @IBOutlet weak var leftLabel: UILabel! {
-        didSet {
-            leftLabel.text = UserStore.left.description
-        }
-    }
-
-    @IBOutlet weak var rightLabel: UILabel! {
-        didSet {
-            rightLabel.text = UserStore.right.description
-        }
-    }
-
-    @IBOutlet weak var downLabel: UILabel! {
-        didSet {
-            downLabel.text = UserStore.down.description
-        }
-    }
-
-    @IBOutlet weak var saveButton: SearchButton! {
-        didSet {
-            saveButton.setTitle(R.string.localizeString.settingButtonTitle(), for: .normal)
-        }
-    }
 
     init(titleText: String) {
         self.titleText = titleText
-        super.init(nibName: String(describing: SettingViewController.self), bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
 
     @available(*, unavailable)
@@ -96,6 +29,13 @@ class SettingViewController: UIViewController {
 
         openAppReviewWindow()
         title = titleText
+        view.backgroundColor = .white
+        embed(SettingView(
+            title: titleText,
+            speed: SpeedSetting(up: UserStore.up, down: UserStore.down, left: UserStore.left, right: UserStore.right),
+            onBack: { [weak self] in self?.navigationController?.popViewController(animated: true) },
+            onSave: { [weak self] speed in self?.save(speed) }
+        ))
     }
 
     private func openAppReviewWindow() {
@@ -108,31 +48,11 @@ class SettingViewController: UIViewController {
 
     // MARK: - Event
 
-    @IBAction func upSlider(_ sender: UISlider) {
-        upLabel.text = String(Int(sender.value * 100)) + "%"
-        upValue = Int(sender.value * 100)
-    }
-
-    @IBAction func leftSlider(_ sender: UISlider) {
-        leftLabel.text = String(Int(sender.value * 100)) + "%"
-        leftValue = Int(sender.value * 100)
-    }
-
-    @IBAction func rightSlider(_ sender: UISlider) {
-        rightLabel.text = String(Int(sender.value * 100)) + "%"
-        rightValue = Int(sender.value * 100)
-    }
-
-    @IBAction func downSlider(_ sender: UISlider) {
-        downLabel.text = String(Int(sender.value * 100)) + "%"
-        downValue = Int(sender.value * 100)
-    }
-
-    @IBAction func saveTaped(_ sender: Any) {
-        UserStore.up = upValue
-        UserStore.down = downValue
-        UserStore.left = leftValue
-        UserStore.right = rightValue
+    private func save(_ speed: SpeedSetting) {
+        UserStore.up = speed.up
+        UserStore.down = speed.down
+        UserStore.left = speed.left
+        UserStore.right = speed.right
 
         let saveAlert = UIAlertController(title: R.string.localizeString.settingDialogSave(), message: "", preferredStyle: UIAlertController.Style.alert)
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in

@@ -2,31 +2,22 @@
 //  WebViewController.swift
 //  ToioController
 //
-//  Created by 佐川晴海 on 2019/06/16.
+//  Created by 佐川晴海 on 2019/06/15.
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
-import WebKit
 
+/// Webページを表示する画面。表示はSwiftUIのWebPageViewで行う
 class WebViewController: UIViewController {
-    @IBOutlet weak var webView: WKWebView! {
-        didSet {
-            webView.uiDelegate = self
-            webView.allowsBackForwardNavigationGestures = true
-            let urlRequest = URLRequest(url: url)
-            webView.load(urlRequest)
-        }
-    }
-
     let url: URL
     let titleText: String
 
     init(url: URL, titleText: String) {
         self.url = url
         self.titleText = titleText
-
-        super.init(nibName: String(describing: WebViewController.self), bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
 
     @available(*, unavailable)
@@ -37,16 +28,11 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleText
-    }
-}
-
-extension WebViewController: WKUIDelegate {
-    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration,
-                 for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        // The app catalog opens App Store and contact links in a new window.
-        if navigationAction.targetFrame == nil, let url = navigationAction.request.url {
-            UIApplication.shared.open(url)
-        }
-        return nil
+        view.backgroundColor = .white
+        embed(WebPageView(
+            title: titleText,
+            url: url,
+            onBack: { [weak self] in self?.navigationController?.popViewController(animated: true) }
+        ))
     }
 }

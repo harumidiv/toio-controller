@@ -33,8 +33,9 @@ struct ControlView: View {
     var onInformation: () -> Void = {}
 
     var body: some View {
-        HStack(spacing: 24) {
-            sideRail
+        RailScreen(top: .back(label: R.string.localizeString.controllerRailBack(), action: onBack)) {
+            railItems
+        } content: {
             GeometryReader { geometry in
                 // 十字キー + 間隔16 + アクション2列(直径×2 + 間隔14)が幅に収まる大きさにする
                 // 直径 = (padSide - 14) / 2 なので、合計幅は padSide * 2 + 16
@@ -47,38 +48,26 @@ struct ControlView: View {
                 .frame(maxHeight: .infinity)
             }
         }
-        .padding(.vertical, 12)
-        .background(Color.white)
     }
 
     // MARK: - サイドレール
 
-    private var sideRail: some View {
-        VStack {
-            RailButton(systemImage: "chevron.left", label: R.string.localizeString.controllerRailBack(), isHighlighted: true, onTap: onBack)
-            Spacer()
-            VStack(spacing: 8) {
-                RailButton(systemImage: state.isGamepadConnected ? "gamecontroller.fill" : "gamecontroller",
-                           label: state.isGamepadConnected
-                               ? R.string.localizeString.controllerRailGamepadConnected()
-                               : R.string.localizeString.controllerRailGamepadDisconnected(),
-                           onTap: onGamepad)
-                    .overlay(alignment: .topTrailing) {
-                        Circle()
-                            .fill(state.isGamepadConnected ? ControlColor.connected : ControlColor.disconnected)
-                            .frame(width: 9, height: 9)
-                            .overlay(Circle().stroke(ControlColor.rail, lineWidth: 2))
-                            .offset(x: -8, y: 8)
-                            .accessibilityHidden(true)
-                    }
-                RailButton(systemImage: "slider.horizontal.3", label: R.string.localizeString.informationListControllerSetting(), onTap: onSettings)
-                RailButton(systemImage: "info.circle", label: R.string.localizeString.navigationInformation(), onTap: onInformation)
+    @ViewBuilder private var railItems: some View {
+        RailButton(systemImage: state.isGamepadConnected ? "gamecontroller.fill" : "gamecontroller",
+                   label: state.isGamepadConnected
+                       ? R.string.localizeString.controllerRailGamepadConnected()
+                       : R.string.localizeString.controllerRailGamepadDisconnected(),
+                   onTap: onGamepad)
+            .overlay(alignment: .topTrailing) {
+                Circle()
+                    .fill(state.isGamepadConnected ? Palette.connected : Palette.disconnected)
+                    .frame(width: 9, height: 9)
+                    .overlay(Circle().stroke(Palette.rail, lineWidth: 2))
+                    .offset(x: -8, y: 8)
+                    .accessibilityHidden(true)
             }
-        }
-        .padding(.vertical, 10)
-        .frame(width: 68)
-        .frame(maxHeight: .infinity)
-        .background(ControlColor.rail, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
+        RailButton(systemImage: "slider.horizontal.3", label: R.string.localizeString.informationListControllerSetting(), onTap: onSettings)
+        RailButton(systemImage: "info.circle", label: R.string.localizeString.navigationInformation(), onTap: onInformation)
     }
 
     // MARK: - アクションボタン
@@ -98,19 +87,6 @@ struct ControlView: View {
         }
         .frame(width: diameter * 2 + spacing)
     }
-}
-
-// MARK: - 色
-
-enum ControlColor {
-    static let rail = Color(red: 0x00 / 255, green: 0xC8 / 255, blue: 0xF4 / 255)
-    static let railInk = Color(red: 0x06 / 255, green: 0x32 / 255, blue: 0x3D / 255)
-    static let pad = Color(red: 0xF4 / 255, green: 0xB4 / 255, blue: 0x00 / 255)
-    static let padInk = Color(red: 0x3A / 255, green: 0x2A / 255, blue: 0x00 / 255)
-    static let action = Color(red: 0x98 / 255, green: 0xBA / 255, blue: 0x42 / 255)
-    static let actionInk = Color(red: 0x1E / 255, green: 0x2A / 255, blue: 0x0C / 255)
-    static let connected = Color(red: 0x1E / 255, green: 0x9E / 255, blue: 0x5A / 255)
-    static let disconnected = Color(red: 0x8A / 255, green: 0x97 / 255, blue: 0x9C / 255)
 }
 
 // MARK: - 押している間を通知するボタンスタイル
@@ -142,27 +118,6 @@ struct PressReportingButtonStyle: ButtonStyle {
 
 // MARK: - 部品
 
-private struct RailButton: View {
-    let systemImage: String
-    let label: String
-    var isHighlighted = false
-    let onTap: () -> Void
-
-    var body: some View {
-        Button(action: onTap) {
-            Image(systemName: systemImage)
-                .font(.system(size: 22, weight: .semibold))
-                .foregroundStyle(ControlColor.railInk)
-                .frame(width: 48, height: 48)
-                .background(isHighlighted ? Color.white.opacity(0.55) : Color.clear,
-                            in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(label)
-    }
-}
-
 private struct DirectionPad: View {
     let side: CGFloat
     let isDisabled: Bool
@@ -178,7 +133,7 @@ private struct DirectionPad: View {
             }
             GridRow {
                 key(.left, cell: cell)
-                ControlColor.pad.frame(width: cell, height: cell)
+                Palette.pad.frame(width: cell, height: cell)
                 key(.right, cell: cell)
             }
             GridRow {
@@ -194,9 +149,9 @@ private struct DirectionPad: View {
         Button {} label: {
             Image(systemName: direction.systemImage)
                 .font(.system(size: cell * 0.34, weight: .bold))
-                .foregroundStyle(ControlColor.padInk)
+                .foregroundStyle(Palette.padInk)
                 .frame(width: cell, height: cell)
-                .background(ControlColor.pad, in: UnevenRoundedRectangle(cornerRadii: direction.cornerRadii(cell * 0.22), style: .continuous))
+                .background(Palette.pad, in: UnevenRoundedRectangle(cornerRadii: direction.cornerRadii(cell * 0.22), style: .continuous))
         }
         .buttonStyle(PressReportingButtonStyle { onDirection(direction, $0) })
         .disabled(isDisabled)
@@ -219,9 +174,9 @@ private struct ActionButton: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
             }
-            .foregroundStyle(ControlColor.actionInk)
+            .foregroundStyle(Palette.actionInk)
             .frame(width: diameter, height: diameter)
-            .background(ControlColor.action, in: Circle())
+            .background(Palette.action, in: Circle())
             .contentShape(Circle())
         }
         .buttonStyle(PressReportingButtonStyle(onPressChanged: onPressChanged))

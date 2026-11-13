@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UINavigationController(rootViewController: ConnectViewController())
+        window.rootViewController = RailNavigationController(rootViewController: ConnectViewController())
         window.makeKeyAndVisible()
         self.window = window
     }

@@ -62,3 +62,5 @@
 "controller.action.horn" = "Horn";
 "controller.action.spin" = "Spin";
 "controller.action.zigzag" = "Zigzag";
+"common.back" = "Back";
+"information.list.toioUpdate.button" = "Get";

@@ -18,7 +18,6 @@ struct _R {
   var info: info { .init(bundle: bundle) }
   var file: file { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
-  var reuseIdentifier: reuseIdentifier { .init() }
   var storyboard: storyboard { .init(bundle: bundle) }
 
   func string(bundle: Foundation.Bundle) -> string {
@@ -69,9 +68,16 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizeString` struct is generated, and contains static references to 43 localization keys.
+    /// This `_R.string.localizeString` struct is generated, and contains static references to 45 localization keys.
     struct localizeString {
       let source: RswiftResources.StringResource.Source
+
+      /// en translation: Back
+      ///
+      /// Key: common.back
+      ///
+      /// Locales: en, ja
+      var commonBack: RswiftResources.StringResource { .init(key: "common.back", tableName: "Localize.string", source: source, developmentValue: "Back", comment: nil) }
 
       /// en translation: Bluetooth Permission
       ///
@@ -304,6 +310,13 @@ struct _R {
       /// Locales: en, ja
       var informationListRelatedApps: RswiftResources.StringResource { .init(key: "information.list.relatedApps", tableName: "Localize.string", source: source, developmentValue: "Related Apps", comment: nil) }
 
+      /// en translation: Get
+      ///
+      /// Key: information.list.toioUpdate.button
+      ///
+      /// Locales: en, ja
+      var informationListToioUpdateButton: RswiftResources.StringResource { .init(key: "information.list.toioUpdate.button", tableName: "Localize.string", source: source, developmentValue: "Get", comment: nil) }
+
       /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
       ///
       /// Key: information.list.toioUpdate.message
@@ -466,41 +479,17 @@ struct _R {
     var settingsBundle: RswiftResources.FileResource { .init(name: "Settings", pathExtension: "bundle", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
     let bundle: Foundation.Bundle
-
-    /// Nib `ConnectViewController`.
-    var connectViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "ConnectViewController", bundle: bundle) }
 
     /// Nib `DualshockViewController`.
     var dualshockViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "DualshockViewController", bundle: bundle) }
 
-    /// Nib `InformationViewController`.
-    var informationViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "InformationViewController", bundle: bundle) }
-
-    /// Nib `SettingViewController`.
-    var settingViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "SettingViewController", bundle: bundle) }
-
-    /// Nib `StoreDownloadCell`.
-    var storeDownloadCell: RswiftResources.NibReferenceReuseIdentifier<StoreDownloadCell, StoreDownloadCell> { .init(name: "StoreDownloadCell", bundle: bundle, identifier: "storeDownloadCell") }
-
-    /// Nib `WebViewController`.
-    var webViewController: RswiftResources.NibReference<UIKit.UIView> { .init(name: "WebViewController", bundle: bundle) }
-
     func validate() throws {
       if UIKit.UIImage(named: "appControllerIcon", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'appControllerIcon' is used in nib 'DualshockViewController', but couldn't be loaded.") }
       if UIKit.UIImage(named: "gameController", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'gameController' is used in nib 'DualshockViewController', but couldn't be loaded.") }
-      if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "square.and.arrow.down") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'square.and.arrow.down' is used in nib 'StoreDownloadCell', but couldn't be loaded.") } }
-      if UIKit.UIImage(named: "toio_update", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'toio_update' is used in nib 'StoreDownloadCell', but couldn't be loaded.") }
     }
-  }
-
-  /// This `_R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-  struct reuseIdentifier {
-
-    /// Reuse identifier `storeDownloadCell`.
-    var storeDownloadCell: RswiftResources.ReuseIdentifier<StoreDownloadCell> { .init(identifier: "storeDownloadCell") }
   }
 
   /// This `_R.storyboard` struct is generated, and contains static references to 2 storyboards.

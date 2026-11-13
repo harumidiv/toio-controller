@@ -41,8 +41,6 @@ class ControlViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // この画面は左端のメニューで操作するのでナビゲーションバーを隠す
-        navigationController?.setNavigationBarHidden(true, animated: animated)
         // 十字キーが画面の左端に近いので、操作中に誤ってスワイプで戻らないようにする
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
 
@@ -61,7 +59,6 @@ class ControlViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 
@@ -96,18 +93,7 @@ class ControlViewController: UIViewController {
                 self?.showInformation()
             }
         )
-        let hostingController = UIHostingController(rootView: controlView)
-        hostingController.view.backgroundColor = .clear
-        addChild(hostingController)
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(hostingController.view)
-        NSLayoutConstraint.activate([
-            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        ])
-        hostingController.didMove(toParent: self)
+        embed(controlView)
     }
 
     // MARK: - Event
