@@ -36,7 +36,9 @@ struct ControlView: View {
         HStack(spacing: 24) {
             sideRail
             GeometryReader { geometry in
-                let padSide = min(geometry.size.height, 300)
+                // 十字キー + 間隔16 + アクション2列(直径×2 + 間隔14)が幅に収まる大きさにする
+                // 直径 = (padSide - 14) / 2 なので、合計幅は padSide * 2 + 16
+                let padSide = min(geometry.size.height, 300, (geometry.size.width - 16) / 2)
                 HStack {
                     DirectionPad(side: padSide, isDisabled: state.activeAction != nil, onDirection: onDirection)
                     Spacer(minLength: 16)
@@ -53,14 +55,14 @@ struct ControlView: View {
 
     private var sideRail: some View {
         VStack {
-            RailButton(systemImage: "chevron.left", label: R.string.localizeString.controllerRailBack(), isHighlighted: true, action: onBack)
+            RailButton(systemImage: "chevron.left", label: R.string.localizeString.controllerRailBack(), isHighlighted: true, onTap: onBack)
             Spacer()
             VStack(spacing: 8) {
                 RailButton(systemImage: state.isGamepadConnected ? "gamecontroller.fill" : "gamecontroller",
                            label: state.isGamepadConnected
                                ? R.string.localizeString.controllerRailGamepadConnected()
                                : R.string.localizeString.controllerRailGamepadDisconnected(),
-                           action: onGamepad)
+                           onTap: onGamepad)
                     .overlay(alignment: .topTrailing) {
                         Circle()
                             .fill(state.isGamepadConnected ? ControlColor.connected : ControlColor.disconnected)
@@ -69,8 +71,8 @@ struct ControlView: View {
                             .offset(x: -8, y: 8)
                             .accessibilityHidden(true)
                     }
-                RailButton(systemImage: "slider.horizontal.3", label: R.string.localizeString.informationListControllerSetting(), action: onSettings)
-                RailButton(systemImage: "info.circle", label: R.string.localizeString.navigationInformation(), action: onInformation)
+                RailButton(systemImage: "slider.horizontal.3", label: R.string.localizeString.informationListControllerSetting(), onTap: onSettings)
+                RailButton(systemImage: "info.circle", label: R.string.localizeString.navigationInformation(), onTap: onInformation)
             }
         }
         .padding(.vertical, 10)
@@ -83,17 +85,18 @@ struct ControlView: View {
 
     private func actionGrid(height: CGFloat) -> some View {
         let spacing: CGFloat = 14
-        let buttonHeight = (height - spacing) / 2
-        let columns = [GridItem(.fixed(118), spacing: spacing), GridItem(.fixed(118), spacing: spacing)]
+        // 2段で十字キーと同じ高さに収まる直径の正円にする
+        let diameter = min((height - spacing) / 2, 130)
+        let columns = [GridItem(.fixed(diameter), spacing: spacing), GridItem(.fixed(diameter), spacing: spacing)]
         return LazyVGrid(columns: columns, spacing: spacing) {
             ForEach(ControlAction.allCases, id: \.self) { action in
-                ActionButton(action: action, height: buttonHeight) { isPressed in
+                ActionButton(action: action, diameter: diameter) { isPressed in
                     onAction(action, isPressed)
                 }
                 .disabled(state.activeAction != nil && state.activeAction != action)
             }
         }
-        .frame(width: 118 * 2 + spacing)
+        .frame(width: diameter * 2 + spacing)
     }
 }
 
@@ -143,10 +146,10 @@ private struct RailButton: View {
     let systemImage: String
     let label: String
     var isHighlighted = false
-    let action: () -> Void
+    let onTap: () -> Void
 
     var body: some View {
-        Button(action: action) {
+        Button(action: onTap) {
             Image(systemName: systemImage)
                 .font(.system(size: 22, weight: .semibold))
                 .foregroundStyle(ControlColor.railInk)
@@ -203,7 +206,7 @@ private struct DirectionPad: View {
 
 private struct ActionButton: View {
     let action: ControlAction
-    let height: CGFloat
+    let diameter: CGFloat
     let onPressChanged: (Bool) -> Void
 
     var body: some View {
@@ -213,11 +216,13 @@ private struct ActionButton: View {
                     .frame(width: 34, height: 34)
                 Text(action.label)
                     .font(.system(size: 13, weight: .heavy))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
             }
             .foregroundStyle(ControlColor.actionInk)
-            .frame(maxWidth: .infinity)
-            .frame(height: height)
-            .background(ControlColor.action, in: Capsule())
+            .frame(width: diameter, height: diameter)
+            .background(ControlColor.action, in: Circle())
+            .contentShape(Circle())
         }
         .buttonStyle(PressReportingButtonStyle(onPressChanged: onPressChanged))
     }
