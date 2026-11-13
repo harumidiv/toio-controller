@@ -11,6 +11,17 @@ import UIKit
 
 /// 情報画面。表示はSwiftUIのInformationViewで行い、ここでは画面遷移を扱う
 class InformationViewController: UIViewController {
+    /// 関連アプリ一覧（アプリ内表示用ページ）。このアプリ自身はexcludeで除外し、表示言語はアプリに合わせる
+    private static var relatedAppsURL: URL {
+        var components = URLComponents(string: "https://harumidiv.github.io/AppleStoreDevelopprSite/in-app-apps.html")!
+        let lang = Bundle.main.preferredLocalizations.first == "ja" ? "ja" : "en"
+        components.queryItems = [
+            URLQueryItem(name: "exclude", value: "1469030441"),
+            URLQueryItem(name: "lang", value: lang),
+        ]
+        return components.url!
+    }
+
     /// toio アップデートアプリのApp Store
     private static let toioUpdateAppURL = URL(string: "https://itunes.apple.com/app/id1455128254?")!
 
@@ -29,7 +40,7 @@ class InformationViewController: UIViewController {
                         systemImage: "cube", tint: .toio),
         InformationData(label: R.string.localizeString.informationListRelatedApps(),
                         title: R.string.localizeString.informationListRelatedApps(),
-                        type: .webView(url: URL(string: "https://harumidiv.github.io/AppleStoreDevelopprSite/#apps")!),
+                        type: .webView(url: InformationViewController.relatedAppsURL),
                         systemImage: "square.grid.2x2", tint: .apps),
         InformationData(label: R.string.localizeString.informationListPrivacypolicy(),
                         title: R.string.localizeString.navigationPrivacypolicy(),
