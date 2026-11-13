@@ -27,7 +27,7 @@ struct ConnectView: View {
     var onInformation: () -> Void = {}
 
     var body: some View {
-        RailScreen(top: .mark) {
+        RailScreen(top: .none) {
             RailButton(systemImage: "info.circle", label: R.string.localizeString.navigationInformation(), onTap: onInformation)
         } content: {
             HStack(spacing: 48) {

@@ -88,9 +88,6 @@ class ControlViewController: UIViewController {
             },
             onSettings: { [weak self] in
                 self?.showSetting()
-            },
-            onInformation: { [weak self] in
-                self?.showInformation()
             }
         )
         embed(controlView)
@@ -110,10 +107,6 @@ class ControlViewController: UIViewController {
 
     @objc func viewDidEnterForground(_ notification: Notification) {
         updateControllerInfo()
-    }
-
-    private func showInformation() {
-        navigationController?.pushViewController(InformationViewController(), animated: true)
     }
 
     private func showSetting() {

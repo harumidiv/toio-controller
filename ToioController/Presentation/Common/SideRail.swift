@@ -39,8 +39,8 @@ extension Color {
 enum RailTop {
     /// 前の画面に戻るボタン
     case back(label: String, action: () -> Void)
-    /// 戻り先のない画面(最初の画面)に置くアプリのマーク
-    case mark
+    /// 戻り先のない画面(最初の画面)。押せるものと誤解されないよう何も置かない
+    case none
 }
 
 /// 左端にサイドレール、右側に内容を置く画面の共通レイアウト
@@ -87,13 +87,8 @@ struct SideRail<Bottom: View>: View {
             switch top {
             case let .back(label, action):
                 RailButton(systemImage: "chevron.left", label: label, isHighlighted: true, onTap: action)
-            case .mark:
-                Image(systemName: "cube")
-                    .font(.system(size: 24, weight: .semibold))
-                    .foregroundStyle(Palette.railInk)
-                    .frame(width: 48, height: 48)
-                    .background(Color.white.opacity(0.55), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .accessibilityHidden(true)
+            case .none:
+                EmptyView()
             }
             Spacer()
             VStack(spacing: 8) {

@@ -30,7 +30,6 @@ struct ControlView: View {
     var onBack: () -> Void = {}
     var onGamepad: () -> Void = {}
     var onSettings: () -> Void = {}
-    var onInformation: () -> Void = {}
 
     var body: some View {
         RailScreen(top: .back(label: R.string.localizeString.controllerRailBack(), action: onBack)) {
@@ -67,7 +66,6 @@ struct ControlView: View {
                     .accessibilityHidden(true)
             }
         RailButton(systemImage: "slider.horizontal.3", label: R.string.localizeString.informationListControllerSetting(), onTap: onSettings)
-        RailButton(systemImage: "info.circle", label: R.string.localizeString.navigationInformation(), onTap: onInformation)
     }
 
     // MARK: - アクションボタン
