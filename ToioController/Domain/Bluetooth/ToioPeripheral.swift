@@ -7,45 +7,16 @@
 //
 
 import CoreBluetooth
-import RxBluetoothKit
-import RxSwift
-import UIKit
 
 protocol ToioPeripheral {
     associatedtype ServiceType: ToioPeripheralService
-    init(peripheral: Peripheral)
-    var peripheral: Peripheral! { get }
+    init(peripheral: CBPeripheral)
+    var peripheral: CBPeripheral { get }
 }
 
 extension ToioPeripheral {
-    static var serviceTypes: [Self.ServiceType] {
-        return ServiceType.allCases as! [ServiceType]
-    }
-
-    func discoveryServices(types: [ServiceType]) -> Observable<[Service]> {
-        let uuids = types.map { type -> CBUUID in
-            CBUUID(string: type.uuid)
-        }
-        return peripheral.discoverServices(uuids).asObservable()
-    }
-
-    func discoveryService(type: ServiceType) -> Observable<Service> {
-        return discoveryServices(types: [type]).flatMap {
-            Observable.from(optional: $0[safe: 0])
-        }
-    }
-
-    func discoveryCharacteristics(types: [ServiceType.CharacteristicType], service: Service) -> Observable<[Characteristic]> {
-        let uuids = types.map { type -> CBUUID in
-            CBUUID(string: type.uuid)
-        }
-        return peripheral.discoverCharacteristics(uuids, for: service).asObservable()
-    }
-
-    func discoveryCharacterstic(type: ServiceType.CharacteristicType, service: Service) -> Observable<Characteristic> {
-        return discoveryCharacteristics(types: [type], service: service).flatMap {
-            Observable.from(optional: $0[safe: 0])
-        }
+    static var serviceTypes: [ServiceType] {
+        return Array(ServiceType.allCases)
     }
 }
 
@@ -58,6 +29,6 @@ protocol ToioPeripheralService: CaseIterable {
 
 // MARK: - ToioPeripheralCharacteristic
 
-protocol ToioPeripheralCharacteristic {
+protocol ToioPeripheralCharacteristic: CaseIterable {
     var uuid: String { get }
 }

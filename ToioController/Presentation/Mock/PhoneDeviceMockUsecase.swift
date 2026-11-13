@@ -6,17 +6,16 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import CoreBluetooth
 import Foundation
-import RxBluetoothKit
-import RxSwift
 
 class PhoneDeviceMockUsecase: PhoneDeviceUsecase {
-    func getBattery() -> Observable<Float> {
-        return Observable.just(100)
+    func getBattery() -> Float {
+        return 100
     }
 
-    func getBluetoothState() -> Observable<BluetoothState> {
-        return Observable.just(.poweredOn)
+    func getBluetoothState(completion: @escaping (CBManagerState) -> Void) {
+        completion(.poweredOn)
     }
 
     func checkBluetoothAuthorization() -> Bool {

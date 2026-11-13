@@ -63,7 +63,6 @@
 		0DEB0FB022B3E4C4009E9D9C /* DirectionalPadRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB0FAF22B3E4C4009E9D9C /* DirectionalPadRightButton.swift */; };
 		0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3A4A1BFB91076D124FFF7D49 /* Swinject */; };
 		346159030AF3E59572974CD3 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3818E2769EAF60C7E31C2FCB /* Swinject */; };
-		3F53B0459120D8F2361C733F /* RxBluetoothKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C84B3A1778865FB7455B3DF /* RxBluetoothKit */; };
 		498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724ED2479892700F09A9E /* DualshockViewController.swift */; };
 		498724F02479892700F09A9E /* DualshockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724EE2479892700F09A9E /* DualshockViewController.xib */; };
 		498724F4247A46EA00F09A9E /* StoreDownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724F2247A46EA00F09A9E /* StoreDownloadCell.xib */; };
@@ -74,10 +73,7 @@
 		49D229C9248143710035CAB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D229C8248143710035CAB3 /* UserStore.swift */; };
 		49FF05A72345A80900EA6550 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF05A62345A80800EA6550 /* SnapshotHelper.swift */; };
 		79DFAFE1E7D3E31239EF73A7 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E27CD49A0B029740D72B2926 /* RswiftLibrary */; };
-		84D3A8F710ECF28453120366 /* RxBluetoothKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9D27EF33E097A47D4594D8 /* RxBluetoothKit */; };
 		B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EED383C97B342524F62812CF /* Lottie */; };
-		D5A7A789D0181A9FB558FEEE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4602ABC770A53FD42B74FA92 /* RxSwift */; };
-		EB68D165DE2CC35B6A6199A7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F465D06621E2F2905254227 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,8 +186,6 @@
 				0D9E324A22B5E263007B97D7 /* WebKit.framework in Frameworks */,
 				0D03F4D8A6016880E349C915 /* Lottie in Frameworks */,
 				0EA55803760B9CC0ADBF575D /* Swinject in Frameworks */,
-				EB68D165DE2CC35B6A6199A7 /* RxSwift in Frameworks */,
-				84D3A8F710ECF28453120366 /* RxBluetoothKit in Frameworks */,
 				79DFAFE1E7D3E31239EF73A7 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,8 +203,6 @@
 			files = (
 				B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */,
 				346159030AF3E59572974CD3 /* Swinject in Frameworks */,
-				D5A7A789D0181A9FB558FEEE /* RxSwift in Frameworks */,
-				3F53B0459120D8F2361C733F /* RxBluetoothKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +509,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DC6BCFE22B3D02E00792ABB /* Build configuration list for PBXNativeTarget "ToioController" */;
 			buildPhases = (
-				FF001122334455667788AABB /* Patch SPM Packages */,
 				0DBC019F234E28F100C04E76 /* R swift */,
 				0DC6BCD222B3D02D00792ABB /* Sources */,
 				0DC6BCD322B3D02D00792ABB /* Frameworks */,
@@ -534,8 +525,6 @@
 			packageProductDependencies = (
 				DB47E389849AE75041AED97A /* Lottie */,
 				3A4A1BFB91076D124FFF7D49 /* Swinject */,
-				4F465D06621E2F2905254227 /* RxSwift */,
-				2C9D27EF33E097A47D4594D8 /* RxBluetoothKit */,
 				E27CD49A0B029740D72B2926 /* RswiftLibrary */,
 			);
 			productName = ToioController;
@@ -577,8 +566,6 @@
 			packageProductDependencies = (
 				EED383C97B342524F62812CF /* Lottie */,
 				3818E2769EAF60C7E31C2FCB /* Swinject */,
-				4602ABC770A53FD42B74FA92 /* RxSwift */,
-				0C84B3A1778865FB7455B3DF /* RxBluetoothKit */,
 			);
 			productName = ToioControllerUITests;
 			productReference = 0DC6BCF522B3D02E00792ABB /* ToioControllerUITests.xctest */;
@@ -621,8 +608,6 @@
 			packageReferences = (
 				9B470F4D310E4B47BE0C280B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */,
-				5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */,
 				2FD4A156B5835EE35057FBF6 /* XCRemoteSwiftPackageReference "R" */,
 				3A7CE441BB3795848ABB48A4 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
@@ -752,25 +737,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/swiftlint ]; then\n  /opt/homebrew/bin/swiftlint lint --quiet\nelif which swiftlint >/dev/null 2>&1; then\n  swiftlint lint --quiet\nelse\n  echo \"warning: SwiftLint not installed. Run: brew install swiftlint\"\nfi\n";
-		};
-		FF001122334455667788AABB /* Patch SPM Packages */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Patch SPM Packages";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# RxBluetoothKit の CoreBluetooth nullability パッチ（Xcode 15+ 対応）\nRXTK=\"$BUILD_DIR/../../SourcePackages/checkouts/RxBluetoothKit/Source\"\n\nif [ ! -d \"$RXTK\" ]; then\n  exit 0\nfi\n\n# Characteristic.swift: characteristic.service → characteristic.service!\nsed -i '' 's/Service(peripheral: peripheral, service: characteristic\\.service)/Service(peripheral: peripheral, service: characteristic.service!)/g' \"$RXTK/Characteristic.swift\" 2>/dev/null || true\n\n# Descriptor.swift: descriptor.characteristic → descriptor.characteristic!\nsed -i '' 's/Service(peripheral: peripheral, service: descriptor\\.characteristic\\.service)/Service(peripheral: peripheral, service: descriptor.characteristic!.service!)/g' \"$RXTK/Descriptor.swift\" 2>/dev/null || true\nsed -i '' 's/Characteristic(characteristic: descriptor\\.characteristic, service: service)/Characteristic(characteristic: descriptor.characteristic!, service: service)/g' \"$RXTK/Descriptor.swift\" 2>/dev/null || true\n\n# CentralManagerRestoredState.swift: $0.peripheral → $0.peripheral!\nsed -i '' 's/retrievePeripheral(for: \\$0\\.peripheral)/retrievePeripheral(for: $0.peripheral!)/g' \"$RXTK/CentralManagerRestoredState.swift\" 2>/dev/null || true\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1475,14 +1441,6 @@
 				minimumVersion = 0.50.0;
 			};
 		};
-		5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.1;
-			};
-		};
 		8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject";
@@ -1499,27 +1457,9 @@
 				minimumVersion = 4.4.1;
 			};
 		};
-		F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Polidea/RxBluetoothKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0C84B3A1778865FB7455B3DF /* RxBluetoothKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */;
-			productName = RxBluetoothKit;
-		};
-		2C9D27EF33E097A47D4594D8 /* RxBluetoothKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F5D872ADDD0B804245C450D1 /* XCRemoteSwiftPackageReference "RxBluetoothKit" */;
-			productName = RxBluetoothKit;
-		};
 		3818E2769EAF60C7E31C2FCB /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */;
@@ -1529,16 +1469,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8AF3907F4269C5CB5646E83D /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
-		};
-		4602ABC770A53FD42B74FA92 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		4F465D06621E2F2905254227 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E2C57A1845B3E96891F2995 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 		DB47E389849AE75041AED97A /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

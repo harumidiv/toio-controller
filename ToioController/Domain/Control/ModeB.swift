@@ -83,6 +83,6 @@ class ModeB: Control {
     }
 
     override func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
-        _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+        cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType)
     }
 }

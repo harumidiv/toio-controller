@@ -7,8 +7,6 @@
 //
 
 import CoreBluetooth
-import RxBluetoothKit
-import RxSwift
 import UIKit
 
 class ControlViewController: UIViewController {
@@ -317,7 +315,7 @@ class ControlViewController: UIViewController {
     }
 
     private func writeValue(characteristics: CubeCharacteristic, writeType: CBCharacteristicWriteType, value: Data) {
-        _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType).subscribe(onNext: { _ in })
+        _ = cubeModel?.peripheral.writeValue(characteristic: characteristics, data: value, type: writeType)
     }
 
     private func updateControllerInfo() {

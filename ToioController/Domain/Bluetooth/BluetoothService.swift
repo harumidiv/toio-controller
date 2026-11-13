@@ -7,74 +7,125 @@
 //
 
 import CoreBluetooth
-import RxBluetoothKit
-import RxSwift
 
-final class BluetoothService {
+/// CBCentralManagerをラップし、スキャン・接続・状態監視を提供する
+/// delegateはメインキューで呼ばれる
+final class BluetoothService: NSObject {
     static let shared = BluetoothService()
 
-    private let scanningSubjet = PublishSubject<Result<ScannedPeripheral, ToioBluetoothError>>()
-    private var scannedPeripheral = [UUID: ScannedPeripheral]()
-    private var scannningDisposable: Disposable?
-    private let scheduler: ConcurrentDispatchQueueScheduler
-    private let disposeBag = DisposeBag()
+    typealias ScanHandler = (Result<CBPeripheral, ToioBluetoothError>) -> Void
+    typealias ConnectHandler = (Result<CBPeripheral, ToioBluetoothError>) -> Void
+    typealias DisconnectHandler = (Error?) -> Void
 
-    private let queue = DispatchQueue(label: "harumidiv.ToioController", qos: .userInitiated)
-    private lazy var centralManager: CentralManager = .init(queue: queue)
+    private lazy var centralManager = CBCentralManager(delegate: self, queue: .main)
+
+    private var scanHandler: ScanHandler?
+    private var scanServiceUUIDs: [CBUUID]?
+    private var scanTimeoutWorkItem: DispatchWorkItem?
+    private var stateHandlers = [(CBManagerState) -> Void]()
+    private var connectHandlers = [UUID: ConnectHandler]()
+    private var disconnectHandlers = [UUID: DisconnectHandler]()
 
     // MARK: - Public outputs
 
-    var manager: CentralManager {
-        return centralManager
-    }
-
-    var bluetoothState: BluetoothState {
-        return manager.state
-    }
-
-    var scanningOutput: Observable<Result<ScannedPeripheral, ToioBluetoothError>> {
-        return scanningSubjet.share(replay: 1, scope: .forever).asObservable()
+    var bluetoothState: CBManagerState {
+        return centralManager.state
     }
 
     // MARK: - Initialization
 
-    private init() {
-        let timerQueue = DispatchQueue(label: "ToioController")
-        scheduler = ConcurrentDispatchQueueScheduler(queue: timerQueue)
-    }
-
-    deinit {
-        scannningDisposable?.dispose()
+    override private init() {
+        super.init()
     }
 
     // MARK: - Public methods
 
-    func startScaning(serviceUUIDs: [CBUUID]? = nil, duration: TimeInterval = 15) {
-        centralManager.attach()
+    /// 状態が確定したら(unknown/resetting以外になったら)一度だけhandlerを呼ぶ
+    func observeState(_ handler: @escaping (CBManagerState) -> Void) {
+        let state = centralManager.state
+        if state == .unknown || state == .resetting {
+            stateHandlers.append(handler)
+        } else {
+            handler(state)
+        }
+    }
 
-        scannningDisposable = manager.observeState()
-            .startWith(centralManager.state)
-            .filter { $0 == .poweredOn }
-            .subscribeOn(MainScheduler.instance)
-            .timeout(.milliseconds(Int(duration * 1000)), scheduler: scheduler)
-            .flatMap { [weak self] _ -> Observable<ScannedPeripheral> in
-                guard let self = self else {
-                    return Observable.empty()
-                }
-                return self.centralManager.scanForPeripherals(withServices: serviceUUIDs)
-            }.subscribe(onNext: { [weak self] scannedPeripheral in
-                self?.scannedPeripheral[scannedPeripheral.peripheral.peripheral.identifier] = scannedPeripheral
-                self?.scanningSubjet.onNext(Result.success(scannedPeripheral))
-            }, onError: { [weak self] error in
-                if let rxError = error as? RxError, case RxError.timeout = rxError {
-                    self?.scanningSubjet.onNext(Result.error(ToioBluetoothError(type: .scanTimeout)))
-                } else {
-                    self?.scanningSubjet.onNext(Result.error(ToioBluetoothError(type: .unknown)))
-                }
-            })
+    /// ペリフェラルを見つけるたびにhandlerを呼ぶ。durationを過ぎるとscanTimeoutを返して停止する
+    func startScaning(serviceUUIDs: [CBUUID]? = nil, duration: TimeInterval = 15, handler: @escaping ScanHandler) {
+        stopScaning()
+        scanHandler = handler
+        scanServiceUUIDs = serviceUUIDs
+
+        let timeout = DispatchWorkItem { [weak self] in
+            guard let self = self, let handler = self.scanHandler else {
+                return
+            }
+            self.stopScaning()
+            handler(.error(ToioBluetoothError(type: .scanTimeout)))
+        }
+        scanTimeoutWorkItem = timeout
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration, execute: timeout)
+
+        // poweredOnでなければcentralManagerDidUpdateStateで開始する
+        if centralManager.state == .poweredOn {
+            centralManager.scanForPeripherals(withServices: serviceUUIDs, options: nil)
+        }
     }
 
     func stopScaning() {
-        scannningDisposable?.dispose()
+        scanTimeoutWorkItem?.cancel()
+        scanTimeoutWorkItem = nil
+        scanHandler = nil
+        scanServiceUUIDs = nil
+        if centralManager.state == .poweredOn, centralManager.isScanning {
+            centralManager.stopScan()
+        }
+    }
+
+    func connect(_ peripheral: CBPeripheral, completion: @escaping ConnectHandler, onDisconnect: @escaping DisconnectHandler) {
+        connectHandlers[peripheral.identifier] = completion
+        disconnectHandlers[peripheral.identifier] = onDisconnect
+        centralManager.connect(peripheral, options: nil)
+    }
+
+    func cancelConnection(_ peripheral: CBPeripheral) {
+        connectHandlers[peripheral.identifier] = nil
+        disconnectHandlers[peripheral.identifier] = nil
+        centralManager.cancelPeripheralConnection(peripheral)
+    }
+}
+
+// MARK: - CBCentralManagerDelegate
+
+extension BluetoothService: CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        let state = central.state
+        if state != .unknown, state != .resetting {
+            let handlers = stateHandlers
+            stateHandlers.removeAll()
+            handlers.forEach { $0(state) }
+        }
+
+        if state == .poweredOn, scanHandler != nil {
+            central.scanForPeripherals(withServices: scanServiceUUIDs, options: nil)
+        }
+    }
+
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
+        scanHandler?(.success(peripheral))
+    }
+
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        connectHandlers.removeValue(forKey: peripheral.identifier)?(.success(peripheral))
+    }
+
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        disconnectHandlers[peripheral.identifier] = nil
+        connectHandlers.removeValue(forKey: peripheral.identifier)?(.error(ToioBluetoothError(type: .unknown)))
+    }
+
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        connectHandlers[peripheral.identifier] = nil
+        disconnectHandlers.removeValue(forKey: peripheral.identifier)?(error)
     }
 }

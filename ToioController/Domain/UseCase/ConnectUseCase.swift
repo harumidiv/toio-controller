@@ -7,80 +7,70 @@
 //
 
 import CoreBluetooth
-import RxBluetoothKit
-import RxSwift
 
-protocol ConnectUseCase {
-    var targetDevice: Observable<Result<CubeModel, ToioBluetoothError>> { get }
+protocol ConnectUseCase: AnyObject {
+    /// 接続結果の通知先。メインスレッドで呼ばれる
+    var onTargetDevice: ((Result<CubeModel, ToioBluetoothError>) -> Void)? { get set }
     func loadDevice()
     func loadStop()
 }
 
 class ConnectUseCaseImpl: ConnectUseCase {
-    fileprivate var manager: CBCentralManager?
-    private let disposeBag = DisposeBag()
-    private var targetSubject = PublishSubject<Result<CubeModel, ToioBluetoothError>>()
+    var onTargetDevice: ((Result<CubeModel, ToioBluetoothError>) -> Void)?
 
-    var targetDevice: Observable<Result<CubeModel, ToioBluetoothError>> {
-        return targetSubject
-    }
+    /// 接続処理中のcubeを保持する
+    private var connectingCube: Cube?
 
     func loadDevice() {
-        let scheduler = CurrentThreadScheduler.instance
-        var retDevice: Cube?
-        BluetoothService.shared
-            .scanningOutput
-            .subscribeOn(scheduler)
-            .flatMap { [weak self] event -> Observable<ScannedPeripheral> in
-                switch event {
-                case let .success(scanned):
-                    return Observable.from(optional: scanned)
-                case let .error(e):
-                    self?.targetSubject.onNext(Result.error(e))
-                    return Observable.empty()
-                }
+        connectingCube = nil
+        BluetoothService.shared.startScaning(serviceUUIDs: [CBUUID(string: CubeService.toioTrolley.uuid)], duration: 15) { [weak self] result in
+            guard let self = self else {
+                return
             }
-            .filter { device -> Bool in
-                guard let name = device.peripheral.name else {
-                    return false
-                }
+            switch result {
+            case let .success(peripheral):
                 // 接続するデバイスがtoioか判定する
-                return name.contains("toio")
-            }
-            .take(1)
-            .flatMap { scanned -> Observable<Cube> in
-                retDevice = Cube(peripheral: scanned.peripheral)
-                return retDevice!.connect()
-            }
-            .flatMap { cube -> Observable<FirmwareVersion> in
-                cube.getFirmwareVersion()
-            }
-            .flatMap { version -> Observable<Cube> in
-                retDevice?.firmwareVersion = version
-                return Observable.from(optional: retDevice)
-            }
-            .subscribe(
-                onNext: { [weak self] _ in
-                    guard let self = self else {
-                        return
-                    }
-                    self.targetSubject.onNext(Result.success(CubeModel(peripheral: retDevice!)))
-                },
-                onError: { [weak self] error in
-                    if error is ToioBluetoothError {
-                        self?.targetSubject.onNext(Result.error(error as! ToioBluetoothError))
-                    } else {
-                        // cubeの接続が切れたらNotificationを飛ばす
-                        NotificationCenter.default.post(name: .cubeDissconect, object: nil)
-                    }
-                    self?.targetSubject.onError(error)
+                guard self.connectingCube == nil, let name = peripheral.name, name.contains("toio") else {
+                    return
                 }
-            ).disposed(by: disposeBag)
-        BluetoothService.shared.startScaning(serviceUUIDs: [CBUUID(string: "10B20100-5B3B-4571-9508-CF3EFCD7BBAE".uppercased())], duration: 15)
+                BluetoothService.shared.stopScaning()
+                self.connect(peripheral: peripheral)
+            case let .error(e):
+                self.onTargetDevice?(.error(e))
+            }
+        }
     }
 
     func loadStop() {
         BluetoothService.shared.stopScaning()
+    }
+
+    private func connect(peripheral: CBPeripheral) {
+        let cube = Cube(peripheral: peripheral)
+        connectingCube = cube
+        cube.onDisconnect = {
+            // cubeの接続が切れたらNotificationを飛ばす
+            NotificationCenter.default.post(name: .cubeDissconect, object: nil)
+        }
+        cube.connect { [weak self] result in
+            switch result {
+            case let .success(cube):
+                cube.getFirmwareVersion { [weak self] result in
+                    self?.connectingCube = nil
+                    switch result {
+                    case let .success(version):
+                        cube.firmwareVersion = version
+                        self?.onTargetDevice?(.success(CubeModel(peripheral: cube)))
+                    case let .error(e):
+                        cube.disconnect()
+                        self?.onTargetDevice?(.error(e))
+                    }
+                }
+            case let .error(e):
+                self?.connectingCube = nil
+                self?.onTargetDevice?(.error(e))
+            }
+        }
     }
 }
 
