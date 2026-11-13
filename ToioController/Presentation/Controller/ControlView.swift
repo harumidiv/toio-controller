@@ -100,12 +100,11 @@ struct PressReportingButtonStyle: ButtonStyle {
     private struct PressReportingBody: View {
         let configuration: Configuration
         let onPressChanged: (Bool) -> Void
-        @Environment(\.isEnabled) private var isEnabled
 
         var body: some View {
+            // 無効時の見た目は各ボタンが色を切り替えて表す(透過すると背景とアイコンが重なって色ムラになるため)
             configuration.label
                 .scaleEffect(configuration.isPressed ? 0.95 : 1)
-                .opacity(isEnabled ? 1 : 0.4)
                 .animation(.easeOut(duration: 0.08), value: configuration.isPressed)
                 .onChange(of: configuration.isPressed) { _, isPressed in
                     onPressChanged(isPressed)
@@ -131,7 +130,7 @@ private struct DirectionPad: View {
             }
             GridRow {
                 key(.left, cell: cell)
-                Palette.pad.frame(width: cell, height: cell)
+                padColor.frame(width: cell, height: cell)
                 key(.right, cell: cell)
             }
             GridRow {
@@ -141,15 +140,18 @@ private struct DirectionPad: View {
             }
         }
         .frame(width: side, height: side)
+        .animation(.easeOut(duration: 0.12), value: isDisabled)
     }
+
+    private var padColor: Color { isDisabled ? Palette.disabled : Palette.pad }
 
     private func key(_ direction: ControlDirection, cell: CGFloat) -> some View {
         Button {} label: {
             Image(systemName: direction.systemImage)
                 .font(.system(size: cell * 0.34, weight: .bold))
-                .foregroundStyle(Palette.padInk)
+                .foregroundStyle(isDisabled ? Palette.disabledInk : Palette.padInk)
                 .frame(width: cell, height: cell)
-                .background(Palette.pad, in: UnevenRoundedRectangle(cornerRadii: direction.cornerRadii(cell * 0.22), style: .continuous))
+                .background(padColor, in: UnevenRoundedRectangle(cornerRadii: direction.cornerRadii(cell * 0.22), style: .continuous))
         }
         .buttonStyle(PressReportingButtonStyle { onDirection(direction, $0) })
         .disabled(isDisabled)
@@ -161,6 +163,7 @@ private struct ActionButton: View {
     let action: ControlAction
     let diameter: CGFloat
     let onPressChanged: (Bool) -> Void
+    @Environment(\.isEnabled) private var isEnabled
 
     var body: some View {
         Button {} label: {
@@ -172,10 +175,11 @@ private struct ActionButton: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
             }
-            .foregroundStyle(Palette.actionInk)
+            .foregroundStyle(isEnabled ? Palette.actionInk : Palette.disabledInk)
             .frame(width: diameter, height: diameter)
-            .background(Palette.action, in: Circle())
+            .background(isEnabled ? Palette.action : Palette.disabled, in: Circle())
             .contentShape(Circle())
+            .animation(.easeOut(duration: 0.12), value: isEnabled)
         }
         .buttonStyle(PressReportingButtonStyle(onPressChanged: onPressChanged))
     }
@@ -251,4 +255,10 @@ private extension ControlAction {
 
 #Preview(traits: .landscapeRight) {
     ControlView(state: ControlViewState())
+}
+
+#Preview("アクション中", traits: .landscapeRight) {
+    let state = ControlViewState()
+    state.activeAction = .spin
+    return ControlView(state: state)
 }

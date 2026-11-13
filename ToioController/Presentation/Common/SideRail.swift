@@ -23,6 +23,9 @@ enum Palette {
     static let retry = Color(hex: 0xE3E8EA)
     static let connected = Color(hex: 0x1E9E5A)
     static let disconnected = Color(hex: 0x8A979C)
+    /// 操作できない状態のボタンの背景と文字
+    static let disabled = Color(hex: 0xE4E9EB)
+    static let disabledInk = Color(hex: 0x9AA6AB)
 }
 
 extension Color {
