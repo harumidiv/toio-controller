@@ -99,8 +99,6 @@ class ControlViewController: UIViewController {
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
         }
-
-        print("cubeとの接続が切れました")
     }
 
     @objc func viewDidEnterBackground(_ notification: Notification) {}

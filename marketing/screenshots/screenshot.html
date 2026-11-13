@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=block" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; overflow: hidden; background: #00AECA; }
+  #stage { position: absolute; left: 0; top: 0; transform-origin: 0 0; background: #00AECA; overflow: hidden; }
+  .line { position: absolute; z-index: 2; margin: 0; white-space: nowrap; color: #fff; font-family: 'Dela Gothic One', sans-serif; font-weight: 400; line-height: 1; letter-spacing: -0.01em; }
+  .art { position: absolute; display: block; }
+  .phone { position: absolute; background: #0c0c0e; box-shadow: 0 0 0 6px #a7abb1, 0 0 0 9px #6f737a; }
+  .phone img { position: absolute; display: block; }
+  .island { position: absolute; background: #000; border-radius: 999px; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const params = new URLSearchParams(location.search);
+const device = params.get('device') || 'iphone';
+const shot = params.get('shot') || '1';
+const scale = Number(params.get('scale') || 2);
+
+const canvas = device === 'duo' ? { w: 2853, h: 2007 } : { w: 2622, h: 1206 };
+const screens = {
+  iphone: { control: 'assets/iphone_control.png', setting: 'assets/iphone_setting.png', aspect: 2868 / 1320 },
+  duo: { control: 'assets/duo_control.png', setting: 'assets/duo_setting.png', aspect: 2034 / 1398 },
+};
+
+// 位置はすべてキャンバスのピクセル。元のスクリーンショット(2688x1242)の構図に合わせている
+const layouts = {
+  iphone: {
+    '1': {
+      lines: [
+        { text: 'toioをスマホで', left: 470, top: 60, size: 196, rotate: -1.5 },
+        { text: 'らくらく操作♪', left: 880, top: 300, size: 196, rotate: -1.5 },
+      ],
+      arts: [{ src: 'assets/cube.png', left: 228, top: 376, width: 655 }],
+      phone: { screen: 'control', left: 975, top: 556, width: 1222 },
+    },
+    '2': {
+      lines: [{ text: 'Dualshock4対応!!', center: true, top: 55, size: 205, rotate: -1.5 }],
+      arts: [{ src: 'assets/dualshock.png', left: 563, top: 335, width: 676 }],
+      phone: { screen: 'control', right: 2106, top: 312, height: 836, clipLeft: 1239 },
+    },
+    '3': {
+      lines: [
+        { text: 'スピード調整対応！', left: 60, top: 95, size: 158, rotate: -1.5 },
+        { text: 'コントローラ不要！', left: 180, top: 300, size: 158, rotate: -1.5 },
+      ],
+      arts: [{ src: 'assets/track.png', right: 0, bottom: 0, width: 1105 }],
+      phone: { screen: 'setting', left: 198, top: 553, width: 1259 },
+    },
+  },
+  duo: {
+    '1': {
+      lines: [
+        { text: 'toioをスマホで', center: true, dx: -150, top: 90, size: 240, rotate: -1.5 },
+        { text: 'らくらく操作♪', center: true, dx: 250, top: 380, size: 240, rotate: -1.5 },
+      ],
+      arts: [{ src: 'assets/cube.png', left: 140, top: 860, width: 800 }],
+      phone: { screen: 'control', left: 1040, top: 760, width: 1620 },
+    },
+    '2': {
+      lines: [{ text: 'Dualshock4対応!!', center: true, top: 110, size: 225, rotate: -1.5 }],
+      arts: [{ src: 'assets/dualshock.png', left: 470, top: 600, width: 865 }],
+      phone: { screen: 'control', right: 2660, top: 540, height: 1240, clipLeft: 1335 },
+    },
+    '3': {
+      lines: [
+        { text: 'スピード調整対応！', left: 110, top: 120, size: 215, rotate: -1.5 },
+        { text: 'コントローラ不要！', left: 290, top: 390, size: 215, rotate: -1.5 },
+      ],
+      arts: [{ src: 'assets/track.png', right: 0, bottom: 0, width: 1250 }],
+      phone: { screen: 'setting', left: 140, top: 790, width: 1520 },
+    },
+  },
+};
+
+async function build() {
+await document.fonts.load('200px "Dela Gothic One"', 'toioをスマホでらくらく操作♪Dualshock4対応!!スピード調整対応！コントローラ不要！');
+const stage = document.getElementById('stage');
+stage.style.width = canvas.w + 'px';
+stage.style.height = canvas.h + 'px';
+stage.style.transform = `scale(${1 / scale})`;
+
+const layout = layouts[device][shot];
+const px = v => v + 'px';
+
+for (const l of layout.lines) {
+  const el = document.createElement('p');
+  el.className = 'line';
+  el.textContent = l.text;
+  el.style.fontSize = px(l.size);
+  el.style.top = px(l.top);
+  el.style.transform = `rotate(${l.rotate || 0}deg)`;
+  stage.append(el);
+  if (l.center) {
+    el.style.left = px((canvas.w - el.offsetWidth) / 2 + (l.dx || 0));
+  } else {
+    el.style.left = px(l.left);
+  }
+}
+
+for (const a of layout.arts) {
+  const img = document.createElement('img');
+  img.className = 'art';
+  img.src = a.src;
+  img.style.width = px(a.width);
+  if (a.left != null) img.style.left = px(a.left);
+  if (a.right != null) img.style.right = px(a.right);
+  if (a.top != null) img.style.top = px(a.top);
+  if (a.bottom != null) img.style.bottom = px(a.bottom);
+  stage.append(img);
+}
+
+// 端末の枠。画面のアスペクト比から枠の大きさを決める
+const p = layout.phone;
+const aspect = screens[device].aspect;
+let frameW, frameH, bezel;
+if (p.width) {
+  frameW = p.width;
+  bezel = Math.round(frameW * 0.02);
+  frameH = Math.round((frameW - bezel * 2) / aspect + bezel * 2);
+} else {
+  frameH = p.height;
+  bezel = Math.round(frameH * 0.04);
+  frameW = Math.round((frameH - bezel * 2) * aspect + bezel * 2);
+}
+const left = p.left != null ? p.left : p.right - frameW;
+const radius = Math.round(frameH * (device === 'duo' ? 0.07 : 0.12));
+const phone = document.createElement('div');
+phone.className = 'phone';
+Object.assign(phone.style, { left: px(left), top: px(p.top), width: px(frameW), height: px(frameH), borderRadius: px(radius) });
+const screen = document.createElement('img');
+screen.src = screens[device][p.screen];
+Object.assign(screen.style, { left: px(bezel), top: px(bezel), width: px(frameW - bezel * 2), height: px(frameH - bezel * 2), borderRadius: px(radius - bezel) });
+phone.append(screen);
+if (device === 'iphone') {
+  // 横向きのDynamic Island(左側)
+  const island = document.createElement('div');
+  island.className = 'island';
+  const ih = Math.round(frameH * 0.24), iw = Math.round(frameH * 0.065);
+  Object.assign(island.style, { width: px(iw), height: px(ih), left: px(bezel + Math.round(frameH * 0.03)), top: px((frameH - ih) / 2) });
+  phone.append(island);
+}
+if (p.clipLeft != null) {
+  // 元の構図と同じく、コントローラの写真との境目で端末を切り落とす
+  phone.style.clipPath = `inset(-20px -20px -20px ${p.clipLeft - left}px)`;
+}
+stage.append(phone);
+}
+build();
+</script>
+</body>
+</html>

@@ -45,8 +45,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = RailNavigationController(rootViewController: ConnectViewController())
+        let navigationController = RailNavigationController(rootViewController: ConnectViewController())
+        #if DEBUG
+            openScreenshotScreen(in: navigationController)
+        #endif
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
     }
+
+    #if DEBUG
+        /// App Store用のスクリーンショット撮影で、cubeに接続しなくても各画面を開けるようにする(DEBUGビルドのみ)
+        /// 例: 起動引数に `-screenshotScreen control` / `-screenshotScreen setting` を指定する
+        private func openScreenshotScreen(in navigationController: UINavigationController) {
+            switch UserDefaults.standard.string(forKey: "screenshotScreen") {
+            case "control":
+                navigationController.pushViewController(ControlViewController(cubeModel: nil), animated: false)
+            case "setting":
+                navigationController.pushViewController(InformationViewController(), animated: false)
+                navigationController.pushViewController(SettingViewController(titleText: R.string.localizeString.navigationSetting()), animated: false)
+            default:
+                break
+            }
+        }
+    #endif
 }

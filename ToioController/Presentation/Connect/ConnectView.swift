@@ -30,7 +30,7 @@ struct ConnectView: View {
         RailScreen(top: .none) {
             RailButton(systemImage: "info.circle", label: R.string.localizeString.navigationInformation(), onTap: onInformation)
         } content: {
-            HStack(spacing: 48) {
+            HStack(spacing: 40) {
                 indicator
                 VStack(alignment: .leading, spacing: 14) {
                     RailTitle(text: R.string.localizeString.navigationbarConnection())
@@ -42,7 +42,8 @@ struct ConnectView: View {
                     searchButton
                         .padding(.top, 8)
                 }
-                .frame(maxWidth: 320, alignment: .leading)
+                .frame(minWidth: 260, maxWidth: 320, alignment: .leading)
+                .layoutPriority(1)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
@@ -70,7 +71,9 @@ struct ConnectView: View {
                     .foregroundStyle(Color(hex: 0x0B6E87))
             }
         }
-        .frame(width: 230, height: 230)
+        // 幅が狭い画面ではイラストを縮めて、ボタンが切れないようにする
+        .frame(minWidth: 120, maxWidth: 230, minHeight: 120, maxHeight: 230)
+        .aspectRatio(1, contentMode: .fit)
         .accessibilityHidden(true)
     }
 
