@@ -6,7 +6,7 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
-import RxBluetoothKit
+import Foundation
 
 struct CubeModel {
     let peripheral: Cube

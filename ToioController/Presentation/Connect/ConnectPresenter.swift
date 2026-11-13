@@ -6,8 +6,7 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
-import RxBluetoothKit
-import RxSwift
+import CoreBluetooth
 
 protocol ConnectPresenter: AnyObject {
     func checkPhoneState()
@@ -31,7 +30,6 @@ class ConnectPresenterImpl: ConnectPresenter {
     private lazy var usecase: ConnectUseCase = ConnectInjector.container.resolve(ConnectUseCase.self)!
 
     private weak var output: ConnectPresenterOutput?
-    private let disposeBag = DisposeBag()
 
     init(output: ConnectPresenterOutput) {
         self.output = output
@@ -45,32 +43,23 @@ class ConnectPresenterImpl: ConnectPresenter {
     }
 
     func checkPhoneState() {
-        phoneDeviceUseCase.getBattery()
-            .take(1)
-            .observeOn(MainScheduler.instance)
-            .flatMap { [weak self] battery -> Observable<BluetoothState> in
-                guard let self = self else {
-                    return Observable.empty()
-                }
-                if battery < 0.2 {
-                    self.output?.showBatteryError()
-                    return Observable.empty()
-                }
-                return self.phoneDeviceUseCase.getBluetoothState()
+        if phoneDeviceUseCase.getBattery() < 0.2 {
+            output?.showBatteryError()
+            return
+        }
+        phoneDeviceUseCase.getBluetoothState { [weak self] state in
+            guard let self = self else {
+                return
             }
-            .subscribe(onNext: { [weak self] state in
-                guard let self = self else {
-                    return
-                }
-                switch state {
-                case .poweredOn:
-                    self.output?.showDevice()
-                case .unauthorized:
-                    self.output?.showBluetoothPermissionAlert()
-                default:
-                    self.output?.showBluetoothError()
-                }
-            }).disposed(by: disposeBag)
+            switch state {
+            case .poweredOn:
+                self.output?.showDevice()
+            case .unauthorized:
+                self.output?.showBluetoothPermissionAlert()
+            default:
+                self.output?.showBluetoothError()
+            }
+        }
     }
 
     func loadDevice() {
@@ -78,7 +67,7 @@ class ConnectPresenterImpl: ConnectPresenter {
     }
 
     private func subscribeTargetDevice() {
-        usecase.targetDevice.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] result in
+        usecase.onTargetDevice = { [weak self] result in
             guard let self = self else {
                 return
             }
@@ -93,6 +82,6 @@ class ConnectPresenterImpl: ConnectPresenter {
                     self.output?.showErrorDialog()
                 }
             }
-        }).disposed(by: disposeBag)
+        }
     }
 }

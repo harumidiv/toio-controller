@@ -6,6 +6,7 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 
 extension UIViewController {
@@ -21,5 +22,25 @@ extension UIViewController {
         })
         bleAlert.addAction(close)
         present(bleAlert, animated: true, completion: nil)
+    }
+}
+
+extension UIViewController {
+    /// SwiftUIの画面を子ViewControllerとして画面いっぱいに配置する
+    @discardableResult
+    func embed<Content: View>(_ rootView: Content) -> UIHostingController<Content> {
+        let hostingController = UIHostingController(rootView: rootView)
+        hostingController.view.backgroundColor = .clear
+        addChild(hostingController)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(hostingController.view)
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
+        hostingController.didMove(toParent: self)
+        return hostingController
     }
 }

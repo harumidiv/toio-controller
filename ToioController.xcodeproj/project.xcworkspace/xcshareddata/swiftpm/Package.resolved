@@ -1,5 +1,5 @@
 {
-  "originHash" : "0a4fdcdb5d3540e518cab050218667e3c360d43e24c31d27e22002a698534d43",
+  "originHash" : "166255a7abfbf15d9f57194df5337c697bdaa790a44fc95b5e9545db5dbfd6c1",
   "pins" : [
     {
       "identity" : "collectionconcurrencykit",
@@ -35,24 +35,6 @@
       "state" : {
         "revision" : "a9abc6b0afe0fc4a5a71e1d7d2872143dff2d2f1",
         "version" : "7.8.0"
-      }
-    },
-    {
-      "identity" : "rxbluetoothkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Polidea/RxBluetoothKit",
-      "state" : {
-        "revision" : "20a0736b5f53dedd291254236a99509d2be1855f",
-        "version" : "6.0.0"
-      }
-    },
-    {
-      "identity" : "rxswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveX/RxSwift",
-      "state" : {
-        "revision" : "cec68169a048a079f461ba203fe85636548d7a89",
-        "version" : "5.1.3"
       }
     },
     {

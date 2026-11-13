@@ -2,29 +2,22 @@
 //  WebViewController.swift
 //  ToioController
 //
-//  Created by 佐川晴海 on 2019/06/16.
+//  Created by 佐川晴海 on 2019/06/15.
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
-import WebKit
 
+/// Webページを表示する画面。表示はSwiftUIのWebPageViewで行う
 class WebViewController: UIViewController {
-    @IBOutlet weak var webView: WKWebView! {
-        didSet {
-            let urlRequest = URLRequest(url: url)
-            webView.load(urlRequest)
-        }
-    }
-
     let url: URL
     let titleText: String
 
     init(url: URL, titleText: String) {
         self.url = url
         self.titleText = titleText
-
-        super.init(nibName: String(describing: WebViewController.self), bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
 
     @available(*, unavailable)
@@ -35,5 +28,11 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = titleText
+        view.backgroundColor = .white
+        embed(WebPageView(
+            title: titleText,
+            url: url,
+            onBack: { [weak self] in self?.navigationController?.popViewController(animated: true) }
+        ))
     }
 }

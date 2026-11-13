@@ -43,6 +43,7 @@
 "information.list.privacypolicy" = "プライバシーポリシー";
 "information.list.aboutToio" = "toioについて";
 "information.list.abountDualshock" = "dualshock4について";
+"information.list.relatedApps" = "関連アプリ";
 "information.list.toioUpdate.title" = "toio アップデートアプリ";
 "information.list.toioUpdate.message" = "toio コンソール/toio コア キューブのソフトウェアをアップデートして頂くことにより、toioに新しい機能が追加されたり、安定性が向上します。";
 
@@ -54,3 +55,16 @@
 //controller
 "controller.dialog.message" = "コントローラが端末に接続されていません\n設定からbluetooth接続を確認してください";
 "controller.dialog.buttonText" =  "閉じる";
+"controller.rail.back" = "接続画面に戻る";
+"controller.rail.gamepadConnected" = "ゲームコントローラ（接続中）";
+"controller.rail.gamepadDisconnected" = "ゲームコントローラ（未接続）";
+"controller.direction.up" = "前進";
+"controller.direction.down" = "後退";
+"controller.direction.left" = "左";
+"controller.direction.right" = "右";
+"controller.action.back" = "バック";
+"controller.action.horn" = "ホーン";
+"controller.action.spin" = "スピン";
+"controller.action.zigzag" = "ジグザグ";
+"common.back" = "戻る";
+"information.list.toioUpdate.button" = "入手";

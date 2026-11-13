@@ -8,13 +8,11 @@
 
 import CoreBluetooth
 import Foundation
-import RxBluetoothKit
-import RxSwift
 import UIKit
 
 protocol PhoneDeviceUsecase: AnyObject {
-    func getBattery() -> Observable<Float>
-    func getBluetoothState() -> Observable<BluetoothState>
+    func getBattery() -> Float
+    func getBluetoothState(completion: @escaping (CBManagerState) -> Void)
     func checkBluetoothAuthorization() -> Bool
 }
 
@@ -23,20 +21,16 @@ class PhoneDeviceUsecaseImpl: PhoneDeviceUsecase {
         return CBCentralManager.authorization == .allowedAlways
     }
 
-    func getBattery() -> Observable<Float> {
+    func getBattery() -> Float {
         defer {
             // メソッドを抜けた時にバッテリーモニタリングを不可に戻す
             UIDevice.current.isBatteryMonitoringEnabled = false
         }
         UIDevice.current.isBatteryMonitoringEnabled = true
-        return Observable.just(UIDevice.current.batteryLevel)
+        return UIDevice.current.batteryLevel
     }
 
-    func getBluetoothState() -> Observable<BluetoothState> {
-        if BluetoothService.shared.bluetoothState == .unknown {
-            return BluetoothService.shared.manager.observeState()
-        } else {
-            return Observable.of(BluetoothService.shared.bluetoothState)
-        }
+    func getBluetoothState(completion: @escaping (CBManagerState) -> Void) {
+        BluetoothService.shared.observeState(completion)
     }
 }

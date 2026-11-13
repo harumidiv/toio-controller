@@ -6,28 +6,12 @@
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
-import Lottie
+import SwiftUI
 import UIKit
 
+/// 接続画面。表示はSwiftUIのConnectViewで行い、ここではPresenterとの連携と画面遷移を扱う
 class ConnectViewController: UIViewController {
-    @IBOutlet weak var animationView: LottieAnimationView! {
-        didSet {
-            animationView.animation = LottieAnimation.named("448-ripple-loading-animation")
-            animationView.loopMode = .loop
-        }
-    }
-
-    @IBOutlet weak var descriptionLabel: UILabel! {
-        didSet {
-            descriptionLabel.text = R.string.localizeString.connectionDescriptionPrev()
-        }
-    }
-
-    @IBOutlet weak var searchButton: SearchButton! {
-        didSet {
-            searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
-        }
-    }
+    private let viewState = ConnectViewState()
 
     lazy var presenter: ConnectPresenter = ConnectInjector.container.resolve(ConnectPresenter.self, argument: self as ConnectPresenterOutput)!
 
@@ -47,18 +31,17 @@ class ConnectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = R.string.localizeString.navigationbarConnection()
-
-        let informationButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(showInformation(_:)))
-        informationButton.accessibilityLabel = R.string.localizeString.navigationInformation()
-        if #available(iOS 26.0, *) {
-            informationButton.hidesSharedBackground = true
-        }
-        navigationItem.rightBarButtonItem = informationButton
+        view.backgroundColor = .white
+        embed(ConnectView(
+            state: viewState,
+            onSearch: { [weak self] in self?.searchStart() },
+            onInformation: { [weak self] in self?.showInformation() }
+        ))
     }
 
     // MARK: - Event
 
-    @objc func showInformation(_ sender: UIBarButtonItem) {
+    private func showInformation() {
         showTimeout()
         wireframe.showInformation(vc: self)
     }
@@ -76,11 +59,8 @@ class ConnectViewController: UIViewController {
         }
     }
 
-    @IBAction func searchStart(_ sender: UIButton) {
-        searchButton.isHidden = true
-        animationView.play()
-        animationView.isHidden = false
-        descriptionLabel.text = R.string.localizeString.connectionDescriotionScanning()
+    private func searchStart() {
+        viewState.phase = .scanning
         presenter.checkPhoneState()
     }
 }
@@ -92,12 +72,7 @@ extension ConnectViewController: ConnectPresenterOutput {
                                  message: R.string.localizeString.connectionAlertBluetoothCatheMessage(),
                                  buttonText: R.string.localizeString.connectionAlertBluetoothClose())
             {
-                self.searchButton.isHidden = false
-                self.animationView.stop()
-                self.animationView.isHidden = true
-                self.searchButton.setTitle(R.string.localizeString.connectionButtonRescan(), for: .normal)
-                self.searchButton.backgroundColor = UIColor(appColor: .again)
-                self.descriptionLabel.text = R.string.localizeString.connectionDescriptionPrev()
+                self.viewState.phase = .retry
             }
         }
     }
@@ -115,11 +90,7 @@ extension ConnectViewController: ConnectPresenterOutput {
     func showController(cube: CubeModel?) {
         DispatchQueue.main.async {
             if (cube?.peripheral.firmwareVersion)! > FirmwareVersion(major: 2, minor: 2, patch: 0) {
-                self.searchButton.isHidden = false
-                self.animationView.stop()
-                self.animationView.isHidden = true
-                self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
-                self.searchButton.backgroundColor = UIColor(appColor: .search)
+                self.viewState.phase = .idle
                 self.wireframe.showController(vc: self, model: cube)
             } else {
                 // TODO: ダイアログを表示する
@@ -127,11 +98,7 @@ extension ConnectViewController: ConnectPresenterOutput {
                                      message: R.string.localizeString.connectionAlertLowVersionMessage(),
                                      buttonText: R.string.localizeString.connectionAlertBluetoothClose())
                 {
-                    self.searchButton.isHidden = false
-                    self.animationView.stop()
-                    self.animationView.isHidden = true
-                    self.searchButton.setTitle(R.string.localizeString.connectionSearchbutton(), for: .normal)
-                    self.searchButton.backgroundColor = UIColor(appColor: .search)
+                    self.viewState.phase = .idle
                     self.wireframe.showController(vc: self, model: cube)
                 }
             }
@@ -152,11 +119,6 @@ extension ConnectViewController: ConnectPresenterOutput {
     }
 
     func showTimeout() {
-        searchButton.isHidden = false
-        animationView.stop()
-        animationView.isHidden = true
-        searchButton.setTitle(R.string.localizeString.connectionButtonRescan(), for: .normal)
-        searchButton.backgroundColor = UIColor(appColor: .again)
-        descriptionLabel.text = R.string.localizeString.connectionDescriptionPrev()
+        viewState.phase = .retry
     }
 }
