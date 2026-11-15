@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D71278EBDEF255DAADC50F29 /* WebPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F1576F33C67E3DF1684B5 /* WebPageView.swift */; };
-		181CCD3AAF2CA0633C09442B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1A2C10680928696DC59E2 /* SettingView.swift */; };
-		B8F9A5FBC9374E57B0605480 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1916DBD854ED24C49D618D /* InformationView.swift */; };
-		5C4C09D479CBD9D9ED17E7AF /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E247B28EE3EA4C836A358AA /* ConnectView.swift */; };
-		79DA4266DEF301F53F29EBF9 /* RailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */; };
-		C5E3D0B27608246476E44DA0 /* SideRail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */; };
 		057DFD8223350FB100E9FB32 /* Dualshock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFD8123350FB100E9FB32 /* Dualshock.swift */; };
 		057DFDC12335A46700E9FB32 /* ModeA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC02335A46700E9FB32 /* ModeA.swift */; };
 		057DFDC32335A48B00E9FB32 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057DFDC22335A48B00E9FB32 /* Control.swift */; };
@@ -52,16 +46,22 @@
 		0DC6BCEF22B3D02E00792ABB /* ToioControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCEE22B3D02E00792ABB /* ToioControllerTests.swift */; };
 		0DC6BCFA22B3D02E00792ABB /* ToioControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BCF922B3D02E00792ABB /* ToioControllerUITests.swift */; };
 		0DC6BD0B22B3D6F000792ABB /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */; };
-		A1C0DE0000000000000000A2 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE0000000000000000A1 /* ControlView.swift */; };
 		0DC6BD1022B3D82900792ABB /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */; };
+		181CCD3AAF2CA0633C09442B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1A2C10680928696DC59E2 /* SettingView.swift */; };
 		498724EF2479892700F09A9E /* DualshockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724ED2479892700F09A9E /* DualshockViewController.swift */; };
 		498724F02479892700F09A9E /* DualshockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498724EE2479892700F09A9E /* DualshockViewController.xib */; };
 		498724F9247A781E00F09A9E /* FirmwareVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724F8247A781E00F09A9E /* FirmwareVersion.swift */; };
 		498724FB247A7C0B00F09A9E /* Data+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FA247A7C0B00F09A9E /* Data+Addition.swift */; };
 		498724FD247A7C4D00F09A9E /* String+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498724FC247A7C4D00F09A9E /* String+Addition.swift */; };
 		49D229C9248143710035CAB3 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D229C8248143710035CAB3 /* UserStore.swift */; };
+		5C4C09D479CBD9D9ED17E7AF /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E247B28EE3EA4C836A358AA /* ConnectView.swift */; };
+		79DA4266DEF301F53F29EBF9 /* RailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */; };
 		79DFAFE1E7D3E31239EF73A7 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E27CD49A0B029740D72B2926 /* RswiftLibrary */; };
+		A1C0DE0000000000000000A2 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE0000000000000000A1 /* ControlView.swift */; };
 		B33AF9E3FC162D43BEA787D3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EED383C97B342524F62812CF /* Lottie */; };
+		B8F9A5FBC9374E57B0605480 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1916DBD854ED24C49D618D /* InformationView.swift */; };
+		C5E3D0B27608246476E44DA0 /* SideRail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */; };
+		D71278EBDEF255DAADC50F29 /* WebPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F1576F33C67E3DF1684B5 /* WebPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,12 +82,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C15F1576F33C67E3DF1684B5 /* WebPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageView.swift; sourceTree = "<group>"; };
-		7CB1A2C10680928696DC59E2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		EA1916DBD854ED24C49D618D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
-		6E247B28EE3EA4C836A358AA /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
-		77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailNavigationController.swift; sourceTree = "<group>"; };
-		9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideRail.swift; sourceTree = "<group>"; };
 		057DFD8123350FB100E9FB32 /* Dualshock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dualshock.swift; sourceTree = "<group>"; };
 		057DFDC02335A46700E9FB32 /* ModeA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeA.swift; sourceTree = "<group>"; };
 		057DFDC22335A48B00E9FB32 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
@@ -136,7 +130,6 @@
 		0DC6BCF922B3D02E00792ABB /* ToioControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToioControllerUITests.swift; sourceTree = "<group>"; };
 		0DC6BCFB22B3D02E00792ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC6BD0922B3D6F000792ABB /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
-		A1C0DE0000000000000000A1 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		0DC6BD0F22B3D82900792ABB /* UIColor+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Addition.swift"; sourceTree = "<group>"; };
 		379AC7C24A671ED3D8F97AE1 /* Pods_ToioControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		498724ED2479892700F09A9E /* DualshockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualshockViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +138,14 @@
 		498724FA247A7C0B00F09A9E /* Data+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Addition.swift"; sourceTree = "<group>"; };
 		498724FC247A7C4D00F09A9E /* String+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Addition.swift"; sourceTree = "<group>"; };
 		49D229C8248143710035CAB3 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		6E247B28EE3EA4C836A358AA /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
+		77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailNavigationController.swift; sourceTree = "<group>"; };
+		7CB1A2C10680928696DC59E2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideRail.swift; sourceTree = "<group>"; };
+		A1C0DE0000000000000000A1 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		C15F1576F33C67E3DF1684B5 /* WebPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageView.swift; sourceTree = "<group>"; };
 		E3C45EC4FF5B4A2FE775A5B4 /* Pods_ToioController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1916DBD854ED24C49D618D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		FD5D583772A16E301219CEA0 /* Pods_ToioControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToioControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -178,15 +178,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5AB6F3FFB48395DD177CA8A7 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */,
-				9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		057DFDBF2335A45000E9FB32 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +416,15 @@
 				49D229C8248143710035CAB3 /* UserStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		5AB6F3FFB48395DD177CA8A7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				77A41F4C712CFE41CDE166A2 /* RailNavigationController.swift */,
+				9D8C65BA3EB6C5B32BF4E5B8 /* SideRail.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		7906129FA4D20DBECF0CCC97 /* Frameworks */ = {
@@ -789,7 +789,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEVELOP=1",
@@ -801,7 +801,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				OTHER_SWIFT_FLAGS = "-D DEVELOP";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -921,7 +921,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"MOCK=1",
@@ -933,7 +933,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D MOCK";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1113,7 +1113,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = ToioController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -1121,7 +1121,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1137,7 +1137,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -1149,7 +1149,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.toio.controller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
