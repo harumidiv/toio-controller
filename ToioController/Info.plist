@@ -25,11 +25,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>toioとの通信のためにBluetoothをONにします</string>
+	<string>Bluetooth lets the app communicate with your toio cube.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>For Toio Core Cube</string>
+	<string>Bluetooth lets the app communicate with your toio cube.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>写真アプリへの保存を許可します</string>
+	<string>This allows the app to save images to Photos.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIApplicationSceneManifest</key>

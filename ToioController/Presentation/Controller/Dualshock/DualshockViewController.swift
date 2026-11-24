@@ -10,12 +10,15 @@ import StoreKit
 import UIKit
 
 class DualshockViewController: UIViewController {
+    @IBOutlet private weak var appControllerButton: UIButton!
+
     var controller: Dualshock!
     var dismissAction: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        appControllerButton.accessibilityLabel = R.string.localizeString.commonBack()
         openAppReviewWindow()
         controller.setTimer()
         controller.isOperationPossible = true

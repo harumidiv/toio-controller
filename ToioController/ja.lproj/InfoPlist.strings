@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "アプリがtoioのキューブと通信するためにBluetoothを使用します。";
+"NSBluetoothPeripheralUsageDescription" = "アプリがtoioのキューブと通信するためにBluetoothを使用します。";
+"NSPhotoLibraryAddUsageDescription" = "アプリから「写真」に画像を保存できるようにします。";

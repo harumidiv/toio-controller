@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "Bluetooth нужен приложению для связи с кубиком toio.";
+"NSBluetoothPeripheralUsageDescription" = "Bluetooth нужен приложению для связи с кубиком toio.";
+"NSPhotoLibraryAddUsageDescription" = "Доступ к приложению «Фото» позволяет сохранять в нём изображения.";

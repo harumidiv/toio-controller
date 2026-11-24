@@ -56,17 +56,47 @@ struct _R {
     let developmentRegion = "en"
   }
 
-  /// This `_R.string` struct is generated, and contains static references to 1 localization tables.
+  /// This `_R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
     let bundle: Foundation.Bundle
     let preferredLanguages: [String]?
     let locale: Locale?
+    var infoPlist: infoPlist { .init(source: .init(bundle: bundle, tableName: "InfoPlist", preferredLanguages: preferredLanguages, locale: locale)) }
     var localizeString: localizeString { .init(source: .init(bundle: bundle, tableName: "Localize.string", preferredLanguages: preferredLanguages, locale: locale)) }
 
+    func infoPlist(preferredLanguages: [String]) -> infoPlist {
+      .init(source: .init(bundle: bundle, tableName: "InfoPlist", preferredLanguages: preferredLanguages, locale: locale))
+    }
     func localizeString(preferredLanguages: [String]) -> localizeString {
       .init(source: .init(bundle: bundle, tableName: "Localize.string", preferredLanguages: preferredLanguages, locale: locale))
     }
 
+
+    /// This `_R.string.infoPlist` struct is generated, and contains static references to 3 localization keys.
+    struct infoPlist {
+      let source: RswiftResources.StringResource.Source
+
+      /// en translation: Bluetooth lets the app communicate with your toio cube.
+      ///
+      /// Key: NSBluetoothAlwaysUsageDescription
+      ///
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var nsBluetoothAlwaysUsageDescription: RswiftResources.StringResource { .init(key: "NSBluetoothAlwaysUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Bluetooth lets the app communicate with your toio cube.", comment: nil) }
+
+      /// en translation: Bluetooth lets the app communicate with your toio cube.
+      ///
+      /// Key: NSBluetoothPeripheralUsageDescription
+      ///
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var nsBluetoothPeripheralUsageDescription: RswiftResources.StringResource { .init(key: "NSBluetoothPeripheralUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "Bluetooth lets the app communicate with your toio cube.", comment: nil) }
+
+      /// en translation: This allows the app to save images to Photos.
+      ///
+      /// Key: NSPhotoLibraryAddUsageDescription
+      ///
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var nsPhotoLibraryAddUsageDescription: RswiftResources.StringResource { .init(key: "NSPhotoLibraryAddUsageDescription", tableName: "InfoPlist", source: source, developmentValue: "This allows the app to save images to Photos.", comment: nil) }
+    }
 
     /// This `_R.string.localizeString` struct is generated, and contains static references to 45 localization keys.
     struct localizeString {
@@ -76,316 +106,316 @@ struct _R {
       ///
       /// Key: common.back
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var commonBack: RswiftResources.StringResource { .init(key: "common.back", tableName: "Localize.string", source: source, developmentValue: "Back", comment: nil) }
 
-      /// en translation: Bluetooth Permission
+      /// en translation: Bluetooth Access
       ///
       /// Key: connection.alert.bluetooth
       ///
-      /// Locales: en, ja
-      var connectionAlertBluetooth: RswiftResources.StringResource { .init(key: "connection.alert.bluetooth", tableName: "Localize.string", source: source, developmentValue: "Bluetooth Permission", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertBluetooth: RswiftResources.StringResource { .init(key: "connection.alert.bluetooth", tableName: "Localize.string", source: source, developmentValue: "Bluetooth Access", comment: nil) }
 
-      /// en translation: close
+      /// en translation: Close
       ///
       /// Key: connection.alert.bluetooth.close
       ///
-      /// Locales: en, ja
-      var connectionAlertBluetoothClose: RswiftResources.StringResource { .init(key: "connection.alert.bluetooth.close", tableName: "Localize.string", source: source, developmentValue: "close", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertBluetoothClose: RswiftResources.StringResource { .init(key: "connection.alert.bluetooth.close", tableName: "Localize.string", source: source, developmentValue: "Close", comment: nil) }
 
-      /// en translation: The bluetooth setting is off  Switch to non
+      /// en translation: Bluetooth is off. Turn it on in Settings.
       ///
       /// Key: connection.alert.bluetooth.message
       ///
-      /// Locales: en, ja
-      var connectionAlertBluetoothMessage: RswiftResources.StringResource { .init(key: "connection.alert.bluetooth.message", tableName: "Localize.string", source: source, developmentValue: "The bluetooth setting is off  Switch to non", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertBluetoothMessage: RswiftResources.StringResource { .init(key: "connection.alert.bluetooth.message", tableName: "Localize.string", source: source, developmentValue: "Bluetooth is off. Turn it on in Settings.", comment: nil) }
 
-      /// en translation: Bluetooth cache is left Reboot iPhone
+      /// en translation: Restart your iPhone to clear the Bluetooth cache.
       ///
       /// Key: connection.alert.bluetoothCathe.message
       ///
-      /// Locales: en, ja
-      var connectionAlertBluetoothCatheMessage: RswiftResources.StringResource { .init(key: "connection.alert.bluetoothCathe.message", tableName: "Localize.string", source: source, developmentValue: "Bluetooth cache is left Reboot iPhone", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertBluetoothCatheMessage: RswiftResources.StringResource { .init(key: "connection.alert.bluetoothCathe.message", tableName: "Localize.string", source: source, developmentValue: "Restart your iPhone to clear the Bluetooth cache.", comment: nil) }
 
-      /// en translation: ⚠️Error
+      /// en translation: ⚠️ Error
       ///
       /// Key: connection.alert.bluetoothCathe.title
       ///
-      /// Locales: en, ja
-      var connectionAlertBluetoothCatheTitle: RswiftResources.StringResource { .init(key: "connection.alert.bluetoothCathe.title", tableName: "Localize.string", source: source, developmentValue: "⚠️Error", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertBluetoothCatheTitle: RswiftResources.StringResource { .init(key: "connection.alert.bluetoothCathe.title", tableName: "Localize.string", source: source, developmentValue: "⚠️ Error", comment: nil) }
 
-      /// en translation: Go to settings
+      /// en translation: Open Settings
       ///
       /// Key: connection.alert.button
       ///
-      /// Locales: en, ja
-      var connectionAlertButton: RswiftResources.StringResource { .init(key: "connection.alert.button", tableName: "Localize.string", source: source, developmentValue: "Go to settings", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertButton: RswiftResources.StringResource { .init(key: "connection.alert.button", tableName: "Localize.string", source: source, developmentValue: "Open Settings", comment: nil) }
 
-      /// en translation: close
+      /// en translation: Close
       ///
       /// Key: connection.alert.lessbattery.close
       ///
-      /// Locales: en, ja
-      var connectionAlertLessbatteryClose: RswiftResources.StringResource { .init(key: "connection.alert.lessbattery.close", tableName: "Localize.string", source: source, developmentValue: "close", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertLessbatteryClose: RswiftResources.StringResource { .init(key: "connection.alert.lessbattery.close", tableName: "Localize.string", source: source, developmentValue: "Close", comment: nil) }
 
-      /// en translation: iPhone is low on charge  nPlease charge before playing
+      /// en translation: Your iPhone battery is low. Charge it before playing.
       ///
       /// Key: connection.alert.lessbattery.message
       ///
-      /// Locales: en, ja
-      var connectionAlertLessbatteryMessage: RswiftResources.StringResource { .init(key: "connection.alert.lessbattery.message", tableName: "Localize.string", source: source, developmentValue: "iPhone is low on charge  nPlease charge before playing", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertLessbatteryMessage: RswiftResources.StringResource { .init(key: "connection.alert.lessbattery.message", tableName: "Localize.string", source: source, developmentValue: "Your iPhone battery is low. Charge it before playing.", comment: nil) }
 
       /// en translation: Updates may improve performance
       ///
       /// Key: connection.alert.lowVersion.message
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var connectionAlertLowVersionMessage: RswiftResources.StringResource { .init(key: "connection.alert.lowVersion.message", tableName: "Localize.string", source: source, developmentValue: "Updates may improve performance", comment: nil) }
 
       /// en translation: toio is not up to date
       ///
       /// Key: connection.alert.lowVersion.title
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var connectionAlertLowVersionTitle: RswiftResources.StringResource { .init(key: "connection.alert.lowVersion.title", tableName: "Localize.string", source: source, developmentValue: "toio is not up to date", comment: nil) }
 
-      /// en translation: Bluetooth permission is required to use the controller
+      /// en translation: Allow Bluetooth access to use the controller.
       ///
       /// Key: connection.alert.message
       ///
-      /// Locales: en, ja
-      var connectionAlertMessage: RswiftResources.StringResource { .init(key: "connection.alert.message", tableName: "Localize.string", source: source, developmentValue: "Bluetooth permission is required to use the controller", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionAlertMessage: RswiftResources.StringResource { .init(key: "connection.alert.message", tableName: "Localize.string", source: source, developmentValue: "Allow Bluetooth access to use the controller.", comment: nil) }
 
       /// en translation: Search again
       ///
       /// Key: connection.button.rescan
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var connectionButtonRescan: RswiftResources.StringResource { .init(key: "connection.button.rescan", tableName: "Localize.string", source: source, developmentValue: "Search again", comment: nil) }
 
       /// en translation: Searching for nearby cubes
       ///
       /// Key: connection.descriotion.scanning
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var connectionDescriotionScanning: RswiftResources.StringResource { .init(key: "connection.descriotion.scanning", tableName: "Localize.string", source: source, developmentValue: "Searching for nearby cubes", comment: nil) }
 
-      /// en translation: Turn on the cube  and press search button
+      /// en translation: Turn on the cube, then tap Find cube.
       ///
       /// Key: connection.description.prev
       ///
-      /// Locales: en, ja
-      var connectionDescriptionPrev: RswiftResources.StringResource { .init(key: "connection.description.prev", tableName: "Localize.string", source: source, developmentValue: "Turn on the cube \nand press search button", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var connectionDescriptionPrev: RswiftResources.StringResource { .init(key: "connection.description.prev", tableName: "Localize.string", source: source, developmentValue: "Turn on the cube, then tap Find cube.", comment: nil) }
 
       /// en translation: Find cube
       ///
       /// Key: connection.searchbutton
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var connectionSearchbutton: RswiftResources.StringResource { .init(key: "connection.searchbutton", tableName: "Localize.string", source: source, developmentValue: "Find cube", comment: nil) }
 
-      /// en translation: Back
+      /// en translation: Reverse
       ///
       /// Key: controller.action.back
       ///
-      /// Locales: en, ja
-      var controllerActionBack: RswiftResources.StringResource { .init(key: "controller.action.back", tableName: "Localize.string", source: source, developmentValue: "Back", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var controllerActionBack: RswiftResources.StringResource { .init(key: "controller.action.back", tableName: "Localize.string", source: source, developmentValue: "Reverse", comment: nil) }
 
       /// en translation: Horn
       ///
       /// Key: controller.action.horn
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerActionHorn: RswiftResources.StringResource { .init(key: "controller.action.horn", tableName: "Localize.string", source: source, developmentValue: "Horn", comment: nil) }
 
       /// en translation: Spin
       ///
       /// Key: controller.action.spin
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerActionSpin: RswiftResources.StringResource { .init(key: "controller.action.spin", tableName: "Localize.string", source: source, developmentValue: "Spin", comment: nil) }
 
       /// en translation: Zigzag
       ///
       /// Key: controller.action.zigzag
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerActionZigzag: RswiftResources.StringResource { .init(key: "controller.action.zigzag", tableName: "Localize.string", source: source, developmentValue: "Zigzag", comment: nil) }
 
-      /// en translation: close
+      /// en translation: Close
       ///
       /// Key: controller.dialog.buttonText
       ///
-      /// Locales: en, ja
-      var controllerDialogButtonText: RswiftResources.StringResource { .init(key: "controller.dialog.buttonText", tableName: "Localize.string", source: source, developmentValue: "close", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var controllerDialogButtonText: RswiftResources.StringResource { .init(key: "controller.dialog.buttonText", tableName: "Localize.string", source: source, developmentValue: "Close", comment: nil) }
 
-      /// en translation: Controller is not connected to the terminal   Please check the bluetooth connection from the settings
+      /// en translation: No controller is connected. Check Bluetooth in Settings.
       ///
       /// Key: controller.dialog.message
       ///
-      /// Locales: en, ja
-      var controllerDialogMessage: RswiftResources.StringResource { .init(key: "controller.dialog.message", tableName: "Localize.string", source: source, developmentValue: "Controller is not connected to the terminal \n Please check the bluetooth connection from the settings", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var controllerDialogMessage: RswiftResources.StringResource { .init(key: "controller.dialog.message", tableName: "Localize.string", source: source, developmentValue: "No controller is connected. Check Bluetooth in Settings.", comment: nil) }
 
       /// en translation: Backward
       ///
       /// Key: controller.direction.down
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerDirectionDown: RswiftResources.StringResource { .init(key: "controller.direction.down", tableName: "Localize.string", source: source, developmentValue: "Backward", comment: nil) }
 
       /// en translation: Left
       ///
       /// Key: controller.direction.left
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerDirectionLeft: RswiftResources.StringResource { .init(key: "controller.direction.left", tableName: "Localize.string", source: source, developmentValue: "Left", comment: nil) }
 
       /// en translation: Right
       ///
       /// Key: controller.direction.right
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerDirectionRight: RswiftResources.StringResource { .init(key: "controller.direction.right", tableName: "Localize.string", source: source, developmentValue: "Right", comment: nil) }
 
       /// en translation: Forward
       ///
       /// Key: controller.direction.up
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerDirectionUp: RswiftResources.StringResource { .init(key: "controller.direction.up", tableName: "Localize.string", source: source, developmentValue: "Forward", comment: nil) }
 
       /// en translation: Back to connection
       ///
       /// Key: controller.rail.back
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerRailBack: RswiftResources.StringResource { .init(key: "controller.rail.back", tableName: "Localize.string", source: source, developmentValue: "Back to connection", comment: nil) }
 
       /// en translation: Game controller (connected)
       ///
       /// Key: controller.rail.gamepadConnected
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerRailGamepadConnected: RswiftResources.StringResource { .init(key: "controller.rail.gamepadConnected", tableName: "Localize.string", source: source, developmentValue: "Game controller (connected)", comment: nil) }
 
       /// en translation: Game controller (not connected)
       ///
       /// Key: controller.rail.gamepadDisconnected
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var controllerRailGamepadDisconnected: RswiftResources.StringResource { .init(key: "controller.rail.gamepadDisconnected", tableName: "Localize.string", source: source, developmentValue: "Game controller (not connected)", comment: nil) }
 
-      /// en translation: About dualshock4
+      /// en translation: About DUALSHOCK 4
       ///
       /// Key: information.list.abountDualshock
       ///
-      /// Locales: en, ja
-      var informationListAbountDualshock: RswiftResources.StringResource { .init(key: "information.list.abountDualshock", tableName: "Localize.string", source: source, developmentValue: "About dualshock4", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var informationListAbountDualshock: RswiftResources.StringResource { .init(key: "information.list.abountDualshock", tableName: "Localize.string", source: source, developmentValue: "About DUALSHOCK 4", comment: nil) }
 
       /// en translation: About toio
       ///
       /// Key: information.list.aboutToio
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var informationListAboutToio: RswiftResources.StringResource { .init(key: "information.list.aboutToio", tableName: "Localize.string", source: source, developmentValue: "About toio", comment: nil) }
 
-      /// en translation: Controller setting
+      /// en translation: Controller Settings
       ///
       /// Key: information.list.controllerSetting
       ///
-      /// Locales: en, ja
-      var informationListControllerSetting: RswiftResources.StringResource { .init(key: "information.list.controllerSetting", tableName: "Localize.string", source: source, developmentValue: "Controller setting", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var informationListControllerSetting: RswiftResources.StringResource { .init(key: "information.list.controllerSetting", tableName: "Localize.string", source: source, developmentValue: "Controller Settings", comment: nil) }
 
-      /// en translation: Privacypolisy
+      /// en translation: Privacy Policy
       ///
       /// Key: information.list.privacypolicy
       ///
-      /// Locales: en, ja
-      var informationListPrivacypolicy: RswiftResources.StringResource { .init(key: "information.list.privacypolicy", tableName: "Localize.string", source: source, developmentValue: "Privacypolisy", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var informationListPrivacypolicy: RswiftResources.StringResource { .init(key: "information.list.privacypolicy", tableName: "Localize.string", source: source, developmentValue: "Privacy Policy", comment: nil) }
 
       /// en translation: Related Apps
       ///
       /// Key: information.list.relatedApps
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var informationListRelatedApps: RswiftResources.StringResource { .init(key: "information.list.relatedApps", tableName: "Localize.string", source: source, developmentValue: "Related Apps", comment: nil) }
 
       /// en translation: Get
       ///
       /// Key: information.list.toioUpdate.button
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var informationListToioUpdateButton: RswiftResources.StringResource { .init(key: "information.list.toioUpdate.button", tableName: "Localize.string", source: source, developmentValue: "Get", comment: nil) }
 
-      /// en translation: Updates toio console / toio core cube software will add new features to toio and improve stability.
+      /// en translation: Update the toio console and Core Cube for new features and improved stability.
       ///
       /// Key: information.list.toioUpdate.message
       ///
-      /// Locales: en, ja
-      var informationListToioUpdateMessage: RswiftResources.StringResource { .init(key: "information.list.toioUpdate.message", tableName: "Localize.string", source: source, developmentValue: "Updates toio console / toio core cube software will add new features to toio and improve stability.", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var informationListToioUpdateMessage: RswiftResources.StringResource { .init(key: "information.list.toioUpdate.message", tableName: "Localize.string", source: source, developmentValue: "Update the toio console and Core Cube for new features and improved stability.", comment: nil) }
 
-      /// en translation: toio update app
+      /// en translation: toio Update App
       ///
       /// Key: information.list.toioUpdate.title
       ///
-      /// Locales: en, ja
-      var informationListToioUpdateTitle: RswiftResources.StringResource { .init(key: "information.list.toioUpdate.title", tableName: "Localize.string", source: source, developmentValue: "toio update app", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var informationListToioUpdateTitle: RswiftResources.StringResource { .init(key: "information.list.toioUpdate.title", tableName: "Localize.string", source: source, developmentValue: "toio Update App", comment: nil) }
 
       /// en translation: toio
       ///
       /// Key: navigation.abountToio
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var navigationAbountToio: RswiftResources.StringResource { .init(key: "navigation.abountToio", tableName: "Localize.string", source: source, developmentValue: "toio", comment: nil) }
 
       /// en translation: Information
       ///
       /// Key: navigation.information
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var navigationInformation: RswiftResources.StringResource { .init(key: "navigation.information", tableName: "Localize.string", source: source, developmentValue: "Information", comment: nil) }
 
-      /// en translation: Privacypolicy
+      /// en translation: Privacy Policy
       ///
       /// Key: navigation.privacypolicy
       ///
-      /// Locales: en, ja
-      var navigationPrivacypolicy: RswiftResources.StringResource { .init(key: "navigation.privacypolicy", tableName: "Localize.string", source: source, developmentValue: "Privacypolicy", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var navigationPrivacypolicy: RswiftResources.StringResource { .init(key: "navigation.privacypolicy", tableName: "Localize.string", source: source, developmentValue: "Privacy Policy", comment: nil) }
 
-      /// en translation: Setting
+      /// en translation: Settings
       ///
       /// Key: navigation.setting
       ///
-      /// Locales: en, ja
-      var navigationSetting: RswiftResources.StringResource { .init(key: "navigation.setting", tableName: "Localize.string", source: source, developmentValue: "Setting", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var navigationSetting: RswiftResources.StringResource { .init(key: "navigation.setting", tableName: "Localize.string", source: source, developmentValue: "Settings", comment: nil) }
 
       /// en translation: Connect to cube
       ///
       /// Key: navigationbar.connection
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var navigationbarConnection: RswiftResources.StringResource { .init(key: "navigationbar.connection", tableName: "Localize.string", source: source, developmentValue: "Connect to cube", comment: nil) }
 
       /// en translation: Save settings
       ///
       /// Key: setting.button.title
       ///
-      /// Locales: en, ja
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
       var settingButtonTitle: RswiftResources.StringResource { .init(key: "setting.button.title", tableName: "Localize.string", source: source, developmentValue: "Save settings", comment: nil) }
 
-      /// en translation: This screen allows you to set the speed of the cube that is operated by the controller.
+      /// en translation: Set the cube’s speed.
       ///
       /// Key: setting.description
       ///
-      /// Locales: en, ja
-      var settingDescription: RswiftResources.StringResource { .init(key: "setting.description", tableName: "Localize.string", source: source, developmentValue: "This screen allows you to set the speed of the cube that is operated by the controller.", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var settingDescription: RswiftResources.StringResource { .init(key: "setting.description", tableName: "Localize.string", source: source, developmentValue: "Set the cube’s speed.", comment: nil) }
 
-      /// en translation: saved the setting
+      /// en translation: Settings saved
       ///
       /// Key: setting.dialog.save
       ///
-      /// Locales: en, ja
-      var settingDialogSave: RswiftResources.StringResource { .init(key: "setting.dialog.save", tableName: "Localize.string", source: source, developmentValue: "saved the setting", comment: nil) }
+      /// Locales: af, bg, ca, cs, da, de, el, en, es, es-419, et, fi, fil, fr, gl, hr, hu, id, is, it, ja, ko, lt, lv, ms, nb, nl, pl, pt-BR, pt-PT, ro, ru, sk, sl, sr-Latn, sv, sw, tr, uk, vi, zh-Hans, zh-Hant
+      var settingDialogSave: RswiftResources.StringResource { .init(key: "setting.dialog.save", tableName: "Localize.string", source: source, developmentValue: "Settings saved", comment: nil) }
     }
   }
 
