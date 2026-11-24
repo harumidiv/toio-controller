@@ -51,3 +51,20 @@ jobs:
             -authenticationKeyPath ~/private_keys/AuthKey_${ASC_KEY_ID}.p8 \
             -authenticationKeyID "$ASC_KEY_ID" \
             -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+
+      - name: Record certificates created in this run
+        if: always()
+        run: python3 ci/record_created_certs.py "$RUNNER_TEMP/created_cert_serials.txt"
+
+      - name: Revoke certificates created in this run
+        if: always()
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_CONTENT: ${{ secrets.ASC_KEY_CONTENT }}
+        run: |
+          if [ -s "$RUNNER_TEMP/created_cert_serials.txt" ]; then
+            python3 ci/cleanup_certs.py --serials-file "$RUNNER_TEMP/created_cert_serials.txt"
+          else
+            echo "No certificates were created in this run. Skipping cleanup."
+          fi
