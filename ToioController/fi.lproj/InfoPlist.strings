@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "Bluetoothia käytetään yhteyteen toio-kuution kanssa.";
+"NSBluetoothPeripheralUsageDescription" = "Bluetoothia käytetään yhteyteen toio-kuution kanssa.";
+"NSPhotoLibraryAddUsageDescription" = "Kuvien käyttöoikeus mahdollistaa kuvien tallentamisen.";

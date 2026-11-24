@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "Bluetooth memungkinkan app berkomunikasi dengan kubus toio.";
+"NSBluetoothPeripheralUsageDescription" = "Bluetooth memungkinkan app berkomunikasi dengan kubus toio.";
+"NSPhotoLibraryAddUsageDescription" = "Akses ke Foto memungkinkan app menyimpan gambar di sana.";

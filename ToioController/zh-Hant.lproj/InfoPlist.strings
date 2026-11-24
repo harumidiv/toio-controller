@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "App 透過藍牙與 toio 方塊通訊。";
+"NSBluetoothPeripheralUsageDescription" = "App 透過藍牙與 toio 方塊通訊。";
+"NSPhotoLibraryAddUsageDescription" = "允許 App 將影像儲存到「照片」。";

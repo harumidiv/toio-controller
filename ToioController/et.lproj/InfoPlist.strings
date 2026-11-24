@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "Rakendus kasutab toio kuubikuga suhtlemiseks Bluetoothi.";
+"NSBluetoothPeripheralUsageDescription" = "Rakendus kasutab toio kuubikuga suhtlemiseks Bluetoothi.";
+"NSPhotoLibraryAddUsageDescription" = "Ligipääs rakendusele Fotod lubab sinna pilte salvestada.";

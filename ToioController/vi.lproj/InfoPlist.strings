@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "Bluetooth cho phép ứng dụng giao tiếp với khối toio.";
+"NSBluetoothPeripheralUsageDescription" = "Bluetooth cho phép ứng dụng giao tiếp với khối toio.";
+"NSPhotoLibraryAddUsageDescription" = "Quyền truy cập Ảnh cho phép lưu hình ảnh vào thư viện.";

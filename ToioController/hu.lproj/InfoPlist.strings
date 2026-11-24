@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "A Bluetooth az app és a toio kocka közötti kapcsolathoz szükséges.";
+"NSBluetoothPeripheralUsageDescription" = "A Bluetooth az app és a toio kocka közötti kapcsolathoz szükséges.";
+"NSPhotoLibraryAddUsageDescription" = "A Fotók elérése a képek mentését teszi lehetővé.";

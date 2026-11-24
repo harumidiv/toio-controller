@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "Bluetooth дає програмі змогу обмінюватися даними з кубиком toio.";
+"NSBluetoothPeripheralUsageDescription" = "Bluetooth дає програмі змогу обмінюватися даними з кубиком toio.";
+"NSPhotoLibraryAddUsageDescription" = "Доступ до програми «Фотографії» дає змогу зберігати в ній зображення.";

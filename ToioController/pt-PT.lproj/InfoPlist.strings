@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "O Bluetooth permite que a app comunique com o cubo toio.";
+"NSBluetoothPeripheralUsageDescription" = "O Bluetooth permite que a app comunique com o cubo toio.";
+"NSPhotoLibraryAddUsageDescription" = "O acesso à app Fotografias permite guardar imagens na fototeca.";

@@ -52,7 +52,7 @@ class ConnectViewController: UIViewController {
             return
         }
 
-        showInformation(title: R.string.localizeString.connectionAlertBluetooth(), message: R.string.localizeString.connectionAlertBluetoothMessage(), buttonText: R.string.localizeString.connectionAlertButton()) {
+        showInformation(title: R.string.localizeString.connectionAlertBluetooth(), message: R.string.localizeString.connectionAlertMessage(), buttonText: R.string.localizeString.connectionAlertButton()) {
             if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
@@ -79,7 +79,7 @@ extension ConnectViewController: ConnectPresenterOutput {
 
     func showBluetoothPermissionAlert() {
         DispatchQueue.main.async {
-            self.showInformation(title: R.string.localizeString.connectionAlertBluetooth(), message: R.string.localizeString.connectionAlertBluetoothMessage(), buttonText: R.string.localizeString.connectionAlertBluetoothClose()) {
+            self.showInformation(title: R.string.localizeString.connectionAlertBluetooth(), message: R.string.localizeString.connectionAlertMessage(), buttonText: R.string.localizeString.connectionAlertButton()) {
                 if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }

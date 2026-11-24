@@ -16,7 +16,7 @@
 
 //ConnectionView
 "connection.searchbutton" = "cubeを探す";
-"connection.alert.bluetooth" = "Bluetooth Permission";
+"connection.alert.bluetooth" = "Bluetoothの使用許可";
 "connection.alert.message" = "コントローラを使用するにはBluetoothの許可が必要です";
 "connection.alert.button" = "設定に移動";
 
@@ -26,7 +26,7 @@
 "connection.alert.lessbattery.message" = "iPhoneの充電が少なくなっています\n充電してから遊んでください";
 "connection.alert.lessbattery.close" = "閉じる";
 
-"connection.alert.bluetooth.message" = "bluetoothの設定がoffになっています\nonに切り替えてください";
+"connection.alert.bluetooth.message" = "Bluetoothがオフになっています。設定でオンにしてください。";
 "connection.alert.bluetooth.close" = "閉じる";
 
 
@@ -35,14 +35,14 @@
 "connection.alert.lowVersion.title" = "toioが最新ではありません";
 "connection.alert.lowVersion.message" = "アップデートをするとパフォーマンスが上がる可能性があります";
 
-"connection.alert.bluetoothCathe.title" = "⚠️エラー";
-"connection.alert.bluetoothCathe.message" = "bluetoothのキャッシュが残っていますiPhoneを再起動してください";
+"connection.alert.bluetoothCathe.title" = "⚠️ エラー";
+"connection.alert.bluetoothCathe.message" = "Bluetoothのキャッシュを消去するには、iPhoneを再起動してください。";
 
 //information
 "information.list.controllerSetting" = "コントローラ設定";
 "information.list.privacypolicy" = "プライバシーポリシー";
 "information.list.aboutToio" = "toioについて";
-"information.list.abountDualshock" = "dualshock4について";
+"information.list.abountDualshock" = "DUALSHOCK 4について";
 "information.list.relatedApps" = "関連アプリ";
 "information.list.toioUpdate.title" = "toio アップデートアプリ";
 "information.list.toioUpdate.message" = "toio コンソール/toio コア キューブのソフトウェアをアップデートして頂くことにより、toioに新しい機能が追加されたり、安定性が向上します。";
