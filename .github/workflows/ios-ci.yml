@@ -12,7 +12,7 @@ concurrency:
 jobs:
   build:
     name: Build
-    runs-on: macos-latest
+    runs-on: xcode-27
     timeout-minutes: 30
 
     env:
@@ -23,11 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Select Xcode
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: latest-stable
 
       - name: Show Xcode version
         run: xcodebuild -version
