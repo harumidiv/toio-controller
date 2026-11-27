@@ -1,0 +1,68 @@
+name: Bump Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: "どのバージョンを上げるか"
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: patch
+      upload:
+        description: "バンプ後に App Store Connect へアップロード (upload-app-store) も実行する"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: bump-version
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    name: Bump version and build number
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Guard - main branch only
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "::error::This workflow must be run on the main branch (got: ${{ github.ref }})"
+          exit 1
+
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Bump versions in project.pbxproj
+        id: bump
+        run: |
+          python3 ci/bump_version.py ToioController.xcodeproj/project.pbxproj "${{ inputs.bump }}" | tee /tmp/bump.log
+          grep '^NEW_VERSION=' /tmp/bump.log | cut -d= -f2- > /tmp/new_version.txt
+          echo "new_version=$(cat /tmp/new_version.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Show diff
+        run: git diff
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ToioController.xcodeproj/project.pbxproj
+          git commit -m "Bump version to ${{ steps.bump.outputs.new_version }} (${{ inputs.bump }}, build +1)"
+          git push origin main
+
+      - name: Dispatch upload workflow
+        if: inputs.upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run upload-app-store.yml --ref main
